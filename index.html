@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="description" content="An installable priority reminder app with notes, photos, camera capture and notifications." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Priority Reminders</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">MY REMINDERS</p>
+      <h1>Priority Reminders</h1>
+    </div>
+    <button id="notifyBtn" class="icon-btn" type="button" title="Enable notifications" aria-label="Enable notifications">🔔</button>
+  </header>
+
+  <main class="app-shell">
+    <section class="summary-grid" aria-label="Reminder summary">
+      <button class="summary-card active" data-filter="all"><strong id="countAll">0</strong><span>All</span></button>
+      <button class="summary-card high" data-filter="high"><strong id="countHigh">0</strong><span>High</span></button>
+      <button class="summary-card medium" data-filter="medium"><strong id="countMedium">0</strong><span>Medium</span></button>
+      <button class="summary-card low" data-filter="low"><strong id="countLow">0</strong><span>Low</span></button>
+    </section>
+
+    <section class="toolbar">
+      <label class="search-wrap">
+        <span>🔎</span>
+        <input id="searchInput" type="search" placeholder="Search reminders" autocomplete="off" />
+      </label>
+      <select id="sortSelect" aria-label="Sort reminders">
+        <option value="priority">Priority</option>
+        <option value="due">Due date</option>
+        <option value="newest">Newest</option>
+      </select>
+    </section>
+
+    <section id="emptyState" class="empty-state">
+      <div class="empty-icon">✓</div>
+      <h2>No reminders yet</h2>
+      <p>Tap the + button to add your first reminder.</p>
+    </section>
+
+    <section id="reminderList" class="reminder-list" aria-live="polite"></section>
+  </main>
+
+  <button id="addBtn" class="fab" type="button" aria-label="Add reminder">+</button>
+
+  <dialog id="editorDialog" class="editor-dialog">
+    <form id="reminderForm" method="dialog">
+      <div class="dialog-head">
+        <button id="cancelBtn" class="text-btn" type="button">Cancel</button>
+        <h2 id="dialogTitle">New Reminder</h2>
+        <button class="text-btn save" type="submit">Save</button>
+      </div>
+
+      <input id="reminderId" type="hidden" />
+
+      <label class="field">
+        <span>Title</span>
+        <input id="titleInput" type="text" maxlength="120" placeholder="What do you need to do?" required />
+      </label>
+
+      <fieldset class="field priority-fieldset">
+        <legend>Priority</legend>
+        <div class="priority-picker">
+          <label><input type="radio" name="priority" value="high" checked /><span class="pill high">High</span></label>
+          <label><input type="radio" name="priority" value="medium" /><span class="pill medium">Medium</span></label>
+          <label><input type="radio" name="priority" value="low" /><span class="pill low">Low</span></label>
+        </div>
+      </fieldset>
+
+      <label class="field">
+        <span>Notes / information</span>
+        <textarea id="notesInput" rows="5" maxlength="3000" placeholder="Add details, addresses, measurements, shopping notes, etc."></textarea>
+      </label>
+
+      <div class="two-col">
+        <label class="field">
+          <span>Due date</span>
+          <input id="dateInput" type="date" />
+        </label>
+        <label class="field">
+          <span>Alert time</span>
+          <input id="timeInput" type="time" />
+        </label>
+      </div>
+
+      <label class="toggle-row">
+        <div>
+          <strong>Notification alert</strong>
+          <small>Notify me at the date and time above</small>
+        </div>
+        <input id="alertToggle" type="checkbox" />
+      </label>
+
+      <section class="photo-section">
+        <div class="field-label">Photos</div>
+        <div class="photo-actions">
+          <label class="photo-btn">📷 Camera<input id="cameraInput" type="file" accept="image/*" capture="environment" hidden /></label>
+          <label class="photo-btn">🖼️ Gallery<input id="galleryInput" type="file" accept="image/*" multiple hidden /></label>
+        </div>
+        <div id="photoPreview" class="photo-preview"></div>
+      </section>
+
+      <button id="deleteBtn" class="danger-btn hidden" type="button">Delete reminder</button>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
