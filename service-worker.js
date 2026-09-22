@@ -1,5 +1,5 @@
-const CACHE='priority-reminders-v12';
-const ASSETS=['./','./index.html','./styles.css','./nav-polish.css?v=12','./app.js?v=12','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
+const CACHE='priority-reminders-v13';
+const ASSETS=['./','./index.html','./styles.css','./nav-polish.css?v=13','./app.js?v=13','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
