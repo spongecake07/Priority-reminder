@@ -98,3 +98,8 @@ body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
 .settings-dialog .settings-section{margin-bottom:12px}
 html[data-theme="dark"] .bottom-nav{background:rgba(24,28,37,.97)!important;border-color:#303542!important;box-shadow:0 -8px 30px rgba(0,0,0,.25)}html[data-theme="dark"] .bottom-nav-item{color:#8992a4!important}html[data-theme="dark"] .bottom-nav-item.active{color:#bcc2ff!important;background:#292e43!important}html[data-theme="dark"] .bottom-nav-add{border-color:#151821!important}html[data-theme="dark"] .calendar-dialog[open],html[data-theme="dark"] .settings-dialog[open]{background:#151821!important}html[data-theme="dark"] .you-page-head h2{color:#f2f3f8!important}html[data-theme="dark"] .you-page-head p,html[data-theme="dark"] .you-page-head small{color:#929bac!important}
 @media(max-width:430px){.bottom-nav{grid-template-columns:1fr 1fr 70px 1fr 1fr;padding-left:5px;padding-right:5px}.bottom-nav-item{padding:0 3px}.bottom-nav-add{width:58px;height:58px;font-size:30px}.calendar-dialog .calendar-sheet,.settings-dialog .settings-sheet{padding-left:13px;padding-right:13px}.calendar-dialog .calendar-grid{gap:4px}.calendar-dialog .calendar-day{min-height:52px}}
+
+/* Persistent navigation over Calendar and You v23 */
+.bottom-nav{z-index:2147483647!important}
+.calendar-dialog[open],.settings-dialog[open]{bottom:calc(72px + env(safe-area-inset-bottom))!important;height:calc(100dvh - 72px - env(safe-area-inset-bottom))!important;overflow:auto!important}
+.calendar-dialog .calendar-sheet,.settings-dialog .settings-sheet{min-height:100%!important;padding-bottom:28px!important}
