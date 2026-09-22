@@ -103,3 +103,13 @@ html[data-theme="dark"] .bottom-nav{background:rgba(24,28,37,.97)!important;bord
 .bottom-nav{z-index:2147483647!important}
 .calendar-dialog[open],.settings-dialog[open]{bottom:calc(72px + env(safe-area-inset-bottom))!important;height:calc(100dvh - 72px - env(safe-area-inset-bottom))!important;overflow:auto!important}
 .calendar-dialog .calendar-sheet,.settings-dialog .settings-sheet{min-height:100%!important;padding-bottom:28px!important}
+
+/* True app pages v24 - no modal backdrop */
+.app-page{position:relative;width:100%;min-height:calc(100dvh - 72px - env(safe-area-inset-bottom));padding:calc(18px + env(safe-area-inset-top)) 0 calc(90px + env(safe-area-inset-bottom));background:#f6f7fb}
+.app-page.hidden{display:none!important}
+.calendar-dialog,.settings-dialog{inset:auto!important;height:auto!important;max-height:none!important;margin:0!important;border:0!important;border-radius:0!important;overflow:visible!important}
+.calendar-dialog .calendar-sheet,.settings-dialog .settings-sheet{width:min(720px,100%);min-height:0!important;margin:0 auto;padding:0 18px 28px!important;background:transparent!important;box-shadow:none!important}
+.calendar-dialog .calendar-close{display:none!important}
+.bottom-nav{z-index:1000!important}
+html[data-theme="dark"] .app-page{background:#151821!important}
+@media(max-width:430px){.calendar-dialog .calendar-sheet,.settings-dialog .settings-sheet{padding-left:13px!important;padding-right:13px!important}}
