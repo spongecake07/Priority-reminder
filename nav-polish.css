@@ -794,3 +794,35 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
   gap:5px!important;
  }
 }
+
+
+/* Calendar collapsed cards v69 — align and remove outer cutout */
+.calendar-day-list .calendar-home-card.collapsed{
+ width:100%!important;
+ max-width:none!important;
+ margin:0!important;
+ padding:0!important;
+ left:auto!important;
+ right:auto!important;
+ transform:none!important;
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+ overflow:visible!important;
+}
+.calendar-day-list .calendar-home-card.collapsed>.card-body{
+ width:100%!important;
+ min-width:0!important;
+ margin:0!important;
+ box-sizing:border-box!important;
+ border-radius:12px!important;
+ overflow:hidden!important;
+}
+.calendar-day-list .calendar-home-card.collapsed::before,
+.calendar-day-list .calendar-home-card.collapsed::after{
+ content:none!important;
+ display:none!important;
+}
+.calendar-day-list .calendar-home-card.collapsed>.priority-bar{
+ border-radius:12px 0 0 12px!important;
+}
