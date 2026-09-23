@@ -246,3 +246,15 @@ html[data-theme="dark"] .category-creator{background:#1d222d!important}
 .reminder-card.expanded::after{content:'⌃'!important;right:12px!important;top:10px!important;font-size:13px!important}
 .reminder-card.collapsed .category-badge{display:inline-flex!important;align-items:center!important;gap:4px!important}
 .reminder-card.collapsed .category-badge b{font-size:8px!important}
+
+/* Completed reminders v34 */
+.compact-smart-views{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+.smart-view.completed-view{color:#69717f!important}
+.reminder-card.is-completed.collapsed{filter:saturate(.32)!important;opacity:.64!important;background:#8b9198!important;border-color:#989ea5!important}
+.reminder-card.is-completed.collapsed:has(.priority-bar.high){background:#987d7f!important;border-color:#a38a8c!important}
+.reminder-card.is-completed.collapsed:has(.priority-bar.medium){background:#9a8c78!important;border-color:#a69a88!important}
+.reminder-card.is-completed.collapsed:has(.priority-bar.low){background:#788c82!important;border-color:#86988f!important}
+.reminder-card.is-completed.collapsed:has(.priority-bar.misc){background:#788793!important;border-color:#8795a0!important}
+.reminder-card.is-completed.expanded{filter:saturate(.45)!important;opacity:.76!important}
+.reminder-card.is-completed .card-title{text-decoration:line-through!important;text-decoration-thickness:1px!important}
+@media(max-width:430px){.compact-smart-views{grid-template-columns:repeat(5,minmax(62px,1fr))!important;overflow-x:auto!important;padding-bottom:3px!important}.smart-view{min-width:62px!important}}
