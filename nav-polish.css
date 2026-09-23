@@ -470,3 +470,13 @@ html[data-scheme]:not([data-scheme="current"]) .empty-icon{background:var(--sche
 html[data-scheme]:not([data-scheme="current"]) .checklist-progress>i,html[data-scheme]:not([data-scheme="current"]) .progress-fill{background:linear-gradient(90deg,var(--scheme-primary),var(--scheme-primary2))!important}
 html[data-scheme]:not([data-scheme="current"]) .quick-add-head small{color:var(--scheme-primary2)!important}
 html[data-scheme]:not([data-scheme="current"]) .you-page-head p{color:var(--scheme-muted)!important}
+
+/* Filled center add button v57 — override broad themed button rule */
+html[data-scheme]:not([data-scheme="current"]) .bottom-nav button.bottom-nav-add,
+html[data-scheme]:not([data-scheme="current"]) #addBtn.bottom-nav-add{
+ background:linear-gradient(145deg,var(--scheme-primary),var(--scheme-primary2))!important;
+ color:#fff!important;
+ border:5px solid var(--scheme-soft)!important;
+ box-shadow:0 9px 24px color-mix(in srgb,var(--scheme-primary) 38%,transparent)!important;
+}
+html[data-scheme]:not([data-scheme="current"]) #addBtn.bottom-nav-add:active{background:var(--scheme-primary2)!important}
