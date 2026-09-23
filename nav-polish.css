@@ -142,3 +142,18 @@ html[data-theme="dark"] .minna-brand h1{color:#f4f5fa!important}
 .reminder-list{gap:10px!important}
 html[data-theme="dark"] .reminder-card.collapsed::after,html[data-theme="dark"] .reminder-card.expanded::after{color:#7e8799!important}
 @media(max-width:430px){.reminder-card.collapsed{height:64px!important;min-height:64px!important}.reminder-card.collapsed .card-body{padding-left:12px!important}.reminder-card.collapsed .category-icon{width:36px!important;height:36px!important;min-width:36px!important}.reminder-card.collapsed .card-title{font-size:15px!important}}
+
+/* Ultra-compact priority cards v28 */
+.reminder-card.collapsed{height:36px!important;min-height:36px!important;border-radius:11px!important;border:1px solid transparent!important;box-shadow:none!important}
+.reminder-card.collapsed:has(.priority-bar.high){background:#9d5558!important;border-color:#aa6063!important}
+.reminder-card.collapsed:has(.priority-bar.medium){background:#a77b43!important;border-color:#b18751!important}
+.reminder-card.collapsed:has(.priority-bar.low){background:#557d69!important;border-color:#628a76!important}
+.reminder-card.collapsed .priority-bar{display:none!important}
+.reminder-card.collapsed .card-body{padding:4px 35px 4px 10px!important}
+.reminder-card.collapsed .category-icon{width:26px!important;height:26px!important;min-width:26px!important;border-radius:8px!important;font-size:12px!important;background:rgba(255,255,255,.16)!important;color:#fff!important}
+.reminder-card.collapsed .card-title{font-size:13px!important;font-weight:750!important;color:#fff!important}
+.reminder-card.collapsed .category-chip{font-size:8px!important;line-height:1!important;padding:4px 6px!important;background:rgba(20,22,28,.18)!important;color:rgba(255,255,255,.88)!important;border:0!important}
+.reminder-card.collapsed::after{right:12px!important;font-size:19px!important;color:rgba(255,255,255,.72)!important}
+.reminder-card.expanded{cursor:pointer}
+.reminder-card.expanded .card-body,.reminder-card.expanded .card-actions{cursor:default}
+@media(max-width:430px){.reminder-card.collapsed{height:36px!important;min-height:36px!important}.reminder-card.collapsed .card-body{padding:4px 34px 4px 9px!important}.reminder-card.collapsed .category-icon{width:26px!important;height:26px!important;min-width:26px!important}.reminder-card.collapsed .card-title{font-size:13px!important}}
