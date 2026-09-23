@@ -265,3 +265,10 @@ html[data-theme="dark"] .category-creator{background:#1d222d!important}
 .completed-divider span{white-space:nowrap}
 html[data-theme="dark"] .completed-divider{color:#7f8795}
 html[data-theme="dark"] .completed-divider::before,html[data-theme="dark"] .completed-divider::after{background:#333a47}
+
+/* Space-efficient expanded checklist v38 */
+.reminder-card.expanded .card-checklist{display:flex!important;flex-wrap:wrap!important;align-items:flex-start!important;gap:5px!important;margin:6px 0 2px!important;padding:0!important;border:0!important;background:transparent!important}
+.reminder-card.expanded .card-checklist label{display:inline-flex!important;flex:0 1 auto!important;width:auto!important;max-width:100%!important;min-height:0!important;align-items:center!important;gap:5px!important;margin:0!important;padding:4px 7px!important;border:1px solid rgba(130,138,154,.18)!important;border-radius:9px!important;background:rgba(255,255,255,.045)!important;font-size:10px!important;line-height:1.2!important}
+.reminder-card.expanded .card-checklist label input{flex:0 0 auto!important;width:15px!important;height:15px!important;margin:0!important}
+.reminder-card.expanded .card-checklist label span{display:block!important;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important}
+html[data-theme="dark"] .reminder-card.expanded .card-checklist label{background:rgba(255,255,255,.035)!important;border-color:rgba(255,255,255,.08)!important}
