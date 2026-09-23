@@ -384,3 +384,6 @@ html[data-theme="dark"] .minna-progress{background:#1b202b;border-color:#2b3240;
 .home-section-divider span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
 .home-section-divider.overdue{color:#a55d61}.home-section-divider.today{color:#6570e8}.home-section-divider.tomorrow{color:#7d72b6}.home-section-divider.completed{color:#7f8796}
 html[data-theme="dark"] .home-section-divider{color:#7f8899}html[data-theme="dark"] .home-section-divider::after{background:#303642}html[data-theme="dark"] .home-section-divider.overdue{color:#c2767b}html[data-theme="dark"] .home-section-divider.today{color:#9199ff}html[data-theme="dark"] .home-section-divider.tomorrow{color:#a79bd6}
+
+/* Start fresh control v48 */
+.danger-settings{border-color:#f0d7d9!important}.danger-settings .settings-row{align-items:center}.danger-btn{border:1px solid #e5bfc2!important;background:#fff5f5!important;color:#a94e55!important;border-radius:9px!important;padding:7px 9px!important;font-size:9px!important;font-weight:800!important;white-space:nowrap}html[data-theme="dark"] .danger-settings{border-color:#57373b!important}html[data-theme="dark"] .danger-btn{background:#352427!important;border-color:#674147!important;color:#e59097!important}
