@@ -503,3 +503,49 @@ html[data-scheme]:not([data-scheme="current"]) .calendar-add{background:var(--sc
 html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-actions{border-top-color:var(--scheme-border)!important}
 html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-actions button{background:var(--scheme-soft)!important;border-color:var(--scheme-border)!important;color:var(--scheme-text)!important}
 html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-actions button.pin-btn.pinned{color:var(--scheme-primary2)!important}
+
+
+/* Reminder actions v62 — utilities grouped, completion distinct */
+.reminder-card.expanded .card-actions{
+ display:flex!important;
+ grid-template-columns:none!important;
+ align-items:stretch!important;
+ justify-content:space-between!important;
+ gap:16px!important;
+}
+.reminder-card.expanded .card-actions-main{
+ display:flex!important;
+ flex:1 1 auto!important;
+ min-width:0!important;
+ gap:6px!important;
+}
+.reminder-card.expanded .card-actions-main button{
+ flex:1 1 0!important;
+ min-width:0!important;
+}
+.reminder-card.expanded .card-actions>.done-action{
+ flex:0 0 82px!important;
+ width:82px!important;
+ margin-left:4px!important;
+ background:#e4f3e7!important;
+ border-color:#bdddc4!important;
+ color:#27733b!important;
+}
+.reminder-card.expanded .card-actions>.done-action:hover,
+.reminder-card.expanded .card-actions>.done-action:active{background:#d5ebda!important}
+.reminder-card.expanded.is-completed .card-actions>.done-action{
+ background:#edf4ee!important;
+ color:#497454!important;
+}
+html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-actions>.done-action{
+ background:#e4f3e7!important;
+ border-color:#bdddc4!important;
+ color:#27733b!important;
+}
+@media(max-width:420px){
+ .reminder-card.expanded .card-actions{gap:10px!important;margin-left:10px!important;margin-right:10px!important}
+ .reminder-card.expanded .card-actions-main{gap:4px!important}
+ .reminder-card.expanded .card-actions>.done-action{flex-basis:70px!important;width:70px!important;margin-left:2px!important}
+ .reminder-card.expanded .card-actions button{padding-left:3px!important;padding-right:3px!important;gap:3px!important}
+ .reminder-card.expanded .card-actions button small{font-size:9px!important}
+}
