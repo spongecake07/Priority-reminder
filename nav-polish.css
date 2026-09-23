@@ -354,3 +354,10 @@ html[data-theme="dark"] .calendar-reminder-title small,html[data-theme="dark"] .
 .calendar-day-list .calendar-home-card.expanded .card-body{cursor:pointer!important}
 .calendar-day-list .calendar-home-card .card-actions button{border:0!important}
 .calendar-day-list .calendar-home-card.is-completed.collapsed{opacity:.5!important}
+
+/* Fix Calendar expanded priority strip v42 */
+.calendar-day-list .calendar-home-card{position:relative!important;display:block!important}
+.calendar-day-list .calendar-home-card>.priority-bar{position:absolute!important;left:0!important;top:0!important;bottom:0!important;width:5px!important;height:auto!important;min-width:5px!important;max-width:5px!important;margin:0!important;padding:0!important;border-radius:12px 0 0 12px!important;z-index:2!important;pointer-events:none!important}
+.calendar-day-list .calendar-home-card.expanded>.priority-bar{width:5px!important;height:auto!important;right:auto!important}
+.calendar-day-list .calendar-home-card>.card-body{position:relative!important;z-index:1!important;width:auto!important;margin:0!important}
+.calendar-day-list .calendar-home-card>.card-actions{position:relative!important;z-index:3!important}
