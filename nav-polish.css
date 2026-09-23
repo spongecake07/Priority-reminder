@@ -622,3 +622,29 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
  .reminder-card.expanded .card-actions button small,
  .reminder-card.calendar-home-card.expanded .card-actions button small{font-size:9px!important}
 }
+
+
+/* Reminder actions v64 — four exactly equal-width buttons */
+.reminder-card.expanded .card-actions,
+.reminder-card.calendar-home-card.expanded .card-actions{
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
+.reminder-card.expanded .card-actions>.done-action,
+.reminder-card.calendar-home-card.expanded .card-actions>.done-action{
+ width:100%!important;
+ margin-left:0!important;
+ position:relative!important;
+ transform:translateX(4px)!important;
+}
+@media(max-width:420px){
+ .reminder-card.expanded .card-actions,
+ .reminder-card.calendar-home-card.expanded .card-actions{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ }
+ .reminder-card.expanded .card-actions>.done-action,
+ .reminder-card.calendar-home-card.expanded .card-actions>.done-action{
+  width:100%!important;
+  margin-left:0!important;
+  transform:translateX(3px)!important;
+ }
+}
