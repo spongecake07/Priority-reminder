@@ -648,3 +648,34 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
   transform:translateX(3px)!important;
  }
 }
+
+
+/* Reminder actions v65 — neutralize legacy direct-child sizing */
+.reminder-card.expanded .card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ display:grid!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ width:auto!important;
+ box-sizing:border-box!important;
+}
+.reminder-card.expanded .card-actions-main,
+.calendar-day-list .calendar-home-card.expanded>.card-actions .card-actions-main{
+ display:contents!important;
+}
+.reminder-card.expanded .card-actions button,
+.calendar-day-list .calendar-home-card.expanded>.card-actions button,
+.reminder-card.expanded .card-actions>.done-action,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>.done-action{
+ position:static!important;
+ flex:none!important;
+ flex-basis:auto!important;
+ width:100%!important;
+ min-width:0!important;
+ max-width:none!important;
+ height:44px!important;
+ min-height:44px!important;
+ max-height:44px!important;
+ margin:0!important;
+ transform:none!important;
+ box-sizing:border-box!important;
+}
