@@ -345,3 +345,12 @@ html[data-theme="light"] .completed-divider::before,html[data-theme="light"] .co
 html[data-theme="dark"] .calendar-dialog.app-page,html[data-theme="dark"] .settings-dialog.app-page{background:#12161f!important}
 html[data-theme="dark"] .calendar-reminder-title small,html[data-theme="dark"] .calendar-reminder-details>p,html[data-theme="dark"] .you-page-head p{color:#8f98aa!important}
 @media(max-width:430px){.calendar-dialog.app-page,.settings-dialog.app-page{padding-left:11px!important;padding-right:11px!important}.calendar-day{min-height:41px!important}.settings-section{padding:11px!important}}
+
+/* Calendar reminders use the Home card system v41 */
+.calendar-day-list{display:flex!important;flex-direction:column!important;gap:6px!important;max-height:none!important;overflow:visible!important;padding:1px 0!important}
+.calendar-day-list .calendar-home-card{width:100%!important;margin:0!important}
+.calendar-day-list .calendar-home-card.collapsed{height:38px!important;min-height:0!important}
+.calendar-day-list .calendar-home-card .card-expand-hit{display:block!important}
+.calendar-day-list .calendar-home-card.expanded .card-body{cursor:pointer!important}
+.calendar-day-list .calendar-home-card .card-actions button{border:0!important}
+.calendar-day-list .calendar-home-card.is-completed.collapsed{opacity:.5!important}
