@@ -490,3 +490,16 @@ html[data-scheme]:not([data-scheme="current"]) .home-profile-copy>small b{color:
 html[data-scheme]:not([data-scheme="current"]) .home-profile-copy>small i{color:var(--scheme-border)!important}
 html[data-scheme]:not([data-scheme="current"]) .dev-divider{background:var(--scheme-border)!important}
 html[data-scheme]:not([data-scheme="current"]) .calendar-add{background:var(--scheme-soft)!important;border-color:var(--scheme-border)!important;color:var(--scheme-primary2)!important}
+
+
+/* Expanded reminder action bar v60 */
+.reminder-card.expanded{grid-template-columns:7px minmax(0,1fr)!important}
+.reminder-card.expanded .card-body{grid-column:2!important;padding-bottom:8px!important}
+.reminder-card.expanded .card-actions{grid-column:2!important;grid-row:auto!important;position:relative!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important;margin:0 12px 12px!important;padding-top:8px!important;border-top:1px solid var(--line,#e6e8ef)!important}
+.reminder-card.expanded .card-actions button{width:100%!important;height:42px!important;min-width:0!important;border-radius:11px!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:5px!important;padding:0 5px!important;font-size:15px!important;box-shadow:none!important}
+.reminder-card.expanded .card-actions button span{line-height:1!important}
+.reminder-card.expanded .card-actions button small{display:inline!important;font-size:10px!important;font-weight:700!important;line-height:1!important;color:inherit!important}
+.reminder-card.collapsed .card-actions{display:none!important}
+html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-actions{border-top-color:var(--scheme-border)!important}
+html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-actions button{background:var(--scheme-soft)!important;border-color:var(--scheme-border)!important;color:var(--scheme-text)!important}
+html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-actions button.pin-btn.pinned{color:var(--scheme-primary2)!important}
