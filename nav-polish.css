@@ -450,3 +450,23 @@ html[data-scheme]:not([data-scheme="current"]) .home-section-divider:not(.overdu
 html[data-scheme]:not([data-scheme="current"]) .dev-settings{background:var(--scheme-surface)!important;border-color:var(--scheme-primary)!important}
 html[data-scheme]:not([data-scheme="current"]) .scheme-picker button{background:var(--scheme-surface)!important;color:var(--scheme-text)!important;border-color:var(--scheme-border)!important}
 html[data-scheme]:not([data-scheme="current"]) .scheme-picker button.active{background:var(--scheme-soft)!important;border-color:var(--scheme-primary)!important;box-shadow:inset 0 0 0 1px var(--scheme-primary)!important}
+
+/* Palette hard-coded color cleanup v56 */
+html[data-scheme]:not([data-scheme="current"]) .app-shell,html[data-scheme]:not([data-scheme="current"]) .calendar-dialog.app-page,html[data-scheme]:not([data-scheme="current"]) .settings-dialog.app-page,html[data-scheme]:not([data-scheme="current"]) .page-view,html[data-scheme]:not([data-scheme="current"]) main{background:var(--scheme-bg)!important}
+html[data-scheme]:not([data-scheme="current"]) .home-filter-toggle{background:var(--scheme-surface)!important;border-color:var(--scheme-border)!important;color:var(--scheme-text)!important}
+html[data-scheme]:not([data-scheme="current"]) .home-filter-toggle strong{color:var(--scheme-text)!important}html[data-scheme]:not([data-scheme="current"]) .home-filter-toggle small{color:var(--scheme-muted)!important}html[data-scheme]:not([data-scheme="current"]) .home-filter-toggle>span,html[data-scheme]:not([data-scheme="current"]) .home-filter-toggle b{color:var(--scheme-primary2)!important}
+html[data-scheme]:not([data-scheme="current"]) .home-filter-panel{background:var(--scheme-soft)!important}
+html[data-scheme]:not([data-scheme="current"]) .quick-add>button{background:var(--scheme-surface)!important;border-color:var(--scheme-border)!important;color:var(--scheme-text)!important}html[data-scheme]:not([data-scheme="current"]) .quick-add>button>span{background:var(--scheme-soft)!important;color:var(--scheme-primary2)!important}
+html[data-scheme]:not([data-scheme="current"]) .calendar-dialog,html[data-scheme]:not([data-scheme="current"]) .settings-dialog,html[data-scheme]:not([data-scheme="current"]) .quick-add-dialog,html[data-scheme]:not([data-scheme="current"]) .editor-dialog{background:var(--scheme-surface)!important;color:var(--scheme-text)!important}
+html[data-scheme]:not([data-scheme="current"]) .calendar-head button,html[data-scheme]:not([data-scheme="current"]) .calendar-close,html[data-scheme]:not([data-scheme="current"]) .calendar-day-head button{background:var(--scheme-soft)!important;color:var(--scheme-primary2)!important}
+html[data-scheme]:not([data-scheme="current"]) .calendar-weekdays span,html[data-scheme]:not([data-scheme="current"]) .calendar-grid button,html[data-scheme]:not([data-scheme="current"]) .calendar-day-head{color:var(--scheme-text)!important}
+html[data-scheme]:not([data-scheme="current"]) .calendar-empty,html[data-scheme]:not([data-scheme="current"]) .calendar-empty-state{background:var(--scheme-soft)!important;color:var(--scheme-muted)!important;border-color:var(--scheme-border)!important}
+html[data-scheme]:not([data-scheme="current"]) .calendar-add-day,html[data-scheme]:not([data-scheme="current"]) .add-for-day{background:var(--scheme-surface)!important;color:var(--scheme-primary2)!important;border-color:var(--scheme-primary)!important}
+html[data-scheme]:not([data-scheme="current"]) .bottom-nav-add{background:var(--scheme-primary)!important;color:#fff!important;border-color:var(--scheme-soft)!important;box-shadow:0 9px 24px color-mix(in srgb,var(--scheme-primary) 30%,transparent)!important}
+html[data-scheme]:not([data-scheme="current"]) .bottom-nav-add::before,html[data-scheme]:not([data-scheme="current"]) .bottom-nav-add::after{background:currentColor!important}
+html[data-scheme]:not([data-scheme="current"]) .bottom-nav-item.active{background:var(--scheme-soft)!important;color:var(--scheme-primary2)!important}
+html[data-scheme]:not([data-scheme="current"]) .bottom-nav-item small{color:inherit!important}
+html[data-scheme]:not([data-scheme="current"]) .empty-icon{background:var(--scheme-soft)!important;color:var(--scheme-primary2)!important}
+html[data-scheme]:not([data-scheme="current"]) .checklist-progress>i,html[data-scheme]:not([data-scheme="current"]) .progress-fill{background:linear-gradient(90deg,var(--scheme-primary),var(--scheme-primary2))!important}
+html[data-scheme]:not([data-scheme="current"]) .quick-add-head small{color:var(--scheme-primary2)!important}
+html[data-scheme]:not([data-scheme="current"]) .you-page-head p{color:var(--scheme-muted)!important}
