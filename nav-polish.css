@@ -123,3 +123,22 @@ html[data-theme="dark"] .home-filter-toggle{background:#1d222d!important;border-
 /* Minna centered branding + notification settings v26 */
 .minna-topbar{display:flex!important;align-items:center!important;justify-content:center!important;min-height:72px;position:sticky}.minna-brand{text-align:center;width:100%}.minna-brand h1{margin:0;font-size:24px;line-height:1;font-weight:850;letter-spacing:-.6px}.notification-settings-btn{white-space:nowrap}.notification-settings .settings-row{align-items:center}
 html[data-theme="dark"] .minna-brand h1{color:#f4f5fa!important}
+
+/* Compact expandable reminders v27 */
+.reminder-card{position:relative}.card-expand-hit{display:none}
+.reminder-card.collapsed{min-height:68px!important;height:68px!important;overflow:hidden!important;display:flex!important;align-items:center!important;border-radius:18px!important}
+.reminder-card.collapsed .priority-bar{height:100%!important}
+.reminder-card.collapsed .card-body{padding:10px 52px 10px 14px!important;min-width:0!important;display:flex!important;align-items:center!important;width:100%!important}
+.reminder-card.collapsed .card-heading{width:100%!important;margin:0!important;display:flex!important;align-items:center!important;gap:8px!important}
+.reminder-card.collapsed .card-title-wrap{min-width:0!important;display:flex!important;align-items:center!important;gap:10px!important}
+.reminder-card.collapsed .category-icon{width:38px!important;height:38px!important;min-width:38px!important;border-radius:12px!important;font-size:17px!important}
+.reminder-card.collapsed .card-title{font-size:16px!important;line-height:1.2!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;margin:0!important}
+.reminder-card.collapsed .category-chip{font-size:9px!important;padding:5px 7px!important;margin-left:auto!important;max-width:86px!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reminder-card.collapsed .card-notes,.reminder-card.collapsed .card-meta,.reminder-card.collapsed .checklist-progress,.reminder-card.collapsed .card-checklist,.reminder-card.collapsed .card-photo-strip,.reminder-card.collapsed .card-actions{display:none!important}
+.reminder-card.collapsed .card-expand-hit{display:block;position:absolute;inset:0;z-index:5;border:0;background:transparent;cursor:pointer}
+.reminder-card.collapsed::after{content:'›';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:25px;color:#8d95a7;pointer-events:none}
+.reminder-card.expanded{height:auto!important;min-height:0!important}
+.reminder-card.expanded::after{content:'⌃';position:absolute;right:18px;top:18px;font-size:16px;color:#8d95a7;pointer-events:none}
+.reminder-list{gap:10px!important}
+html[data-theme="dark"] .reminder-card.collapsed::after,html[data-theme="dark"] .reminder-card.expanded::after{color:#7e8799!important}
+@media(max-width:430px){.reminder-card.collapsed{height:64px!important;min-height:64px!important}.reminder-card.collapsed .card-body{padding-left:12px!important}.reminder-card.collapsed .category-icon{width:36px!important;height:36px!important;min-width:36px!important}.reminder-card.collapsed .card-title{font-size:15px!important}}
