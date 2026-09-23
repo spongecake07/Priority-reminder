@@ -258,3 +258,10 @@ html[data-theme="dark"] .category-creator{background:#1d222d!important}
 .reminder-card.is-completed.expanded{filter:saturate(.45)!important;opacity:.76!important}
 .reminder-card.is-completed .card-title{text-decoration:line-through!important;text-decoration-thickness:1px!important}
 @media(max-width:430px){.compact-smart-views{grid-template-columns:repeat(5,minmax(62px,1fr))!important;overflow-x:auto!important;padding-bottom:3px!important}.smart-view{min-width:62px!important}}
+
+/* Completed section divider v35 */
+.completed-divider{display:flex;align-items:center;gap:9px;margin:10px 2px 2px;color:#9299a5;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.completed-divider::before,.completed-divider::after{content:"";height:1px;background:#dfe3e9;flex:1}
+.completed-divider span{white-space:nowrap}
+html[data-theme="dark"] .completed-divider{color:#7f8795}
+html[data-theme="dark"] .completed-divider::before,html[data-theme="dark"] .completed-divider::after{background:#333a47}
