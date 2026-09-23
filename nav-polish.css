@@ -157,3 +157,10 @@ html[data-theme="dark"] .reminder-card.collapsed::after,html[data-theme="dark"] 
 .reminder-card.expanded{cursor:pointer}
 .reminder-card.expanded .card-body,.reminder-card.expanded .card-actions{cursor:default}
 @media(max-width:430px){.reminder-card.collapsed{height:36px!important;min-height:36px!important}.reminder-card.collapsed .card-body{padding:4px 34px 4px 9px!important}.reminder-card.collapsed .category-icon{width:26px!important;height:26px!important;min-width:26px!important}.reminder-card.collapsed .card-title{font-size:13px!important}}
+
+/* Miscellaneous priority v30 */
+.reminder-card.collapsed:has(.priority-bar.misc){background:#55758d!important;border-color:#64849b!important}
+.priority-bar.misc{background:#668aa3!important}
+.pill.misc{background:#dce9f2!important;color:#36566d!important;border-color:#bfd3e1!important}
+.composer-priorities button[data-composer-priority="misc"]{background:#e6f0f6!important;color:#36566d!important}
+html[data-theme="dark"] .pill.misc{background:#263b4a!important;color:#c5dce9!important;border-color:#365468!important}
