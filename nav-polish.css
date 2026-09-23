@@ -826,3 +826,87 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
 .calendar-day-list .calendar-home-card.collapsed>.priority-bar{
  border-radius:12px 0 0 12px!important;
 }
+
+
+/* Calendar collapsed cards v70 — root repair */
+.calendar-day-list{
+ width:100%!important;
+ box-sizing:border-box!important;
+ padding-left:0!important;
+ padding-right:0!important;
+}
+.calendar-day-list .calendar-home-card.collapsed{
+ position:relative!important;
+ display:grid!important;
+ grid-template-columns:6px minmax(0,1fr)!important;
+ width:100%!important;
+ max-width:100%!important;
+ height:38px!important;
+ min-height:38px!important;
+ margin:0!important;
+ padding:0!important;
+ transform:none!important;
+ border-radius:12px!important;
+ overflow:hidden!important;
+ box-sizing:border-box!important;
+ /* restore the reminder-card's own colored surface */
+ background:var(--collapsed-bg,inherit);
+ border:1px solid transparent!important;
+ box-shadow:none!important;
+}
+.calendar-day-list .calendar-home-card.collapsed>.priority-bar{
+ position:relative!important;
+ inset:auto!important;
+ grid-column:1!important;
+ grid-row:1!important;
+ width:6px!important;
+ min-width:6px!important;
+ max-width:6px!important;
+ height:38px!important;
+ border-radius:0!important;
+}
+.calendar-day-list .calendar-home-card.collapsed>.card-body{
+ position:relative!important;
+ grid-column:2!important;
+ grid-row:1!important;
+ display:flex!important;
+ align-items:center!important;
+ width:auto!important;
+ min-width:0!important;
+ height:38px!important;
+ margin:0!important;
+ padding:0 38px 0 13px!important;
+ box-sizing:border-box!important;
+ background:transparent!important;
+ border-radius:0!important;
+ overflow:hidden!important;
+}
+.calendar-day-list .calendar-home-card.collapsed>.card-expand-hit{
+ position:absolute!important;
+ inset:0!important;
+ z-index:5!important;
+ display:block!important;
+ width:100%!important;
+ height:100%!important;
+ margin:0!important;
+ padding:0!important;
+ border:0!important;
+ background:transparent!important;
+}
+.calendar-day-list .calendar-home-card.collapsed::before{
+ content:none!important;
+ display:none!important;
+}
+.calendar-day-list .calendar-home-card.collapsed::after{
+ content:'⌄'!important;
+ display:block!important;
+ position:absolute!important;
+ z-index:6!important;
+ right:12px!important;
+ top:50%!important;
+ transform:translateY(-50%)!important;
+ font-size:13px!important;
+ line-height:1!important;
+ opacity:.55!important;
+ pointer-events:none!important;
+}
