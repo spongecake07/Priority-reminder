@@ -361,3 +361,13 @@ html[data-theme="dark"] .calendar-reminder-title small,html[data-theme="dark"] .
 .calendar-day-list .calendar-home-card.expanded>.priority-bar{width:5px!important;height:auto!important;right:auto!important}
 .calendar-day-list .calendar-home-card>.card-body{position:relative!important;z-index:1!important;width:auto!important;margin:0!important}
 .calendar-day-list .calendar-home-card>.card-actions{position:relative!important;z-index:3!important}
+
+/* Calendar card alignment repair v43 */
+.calendar-day-list .calendar-home-card{display:flex!important;flex-direction:column!important;position:relative!important;overflow:hidden!important}
+.calendar-day-list .calendar-home-card>.priority-bar{position:absolute!important;inset:0 auto 0 0!important;width:5px!important;min-width:5px!important;max-width:5px!important;height:100%!important;border-radius:0!important;z-index:2!important}
+.calendar-day-list .calendar-home-card>.priority-bar::before,.calendar-day-list .calendar-home-card>.priority-bar::after{content:none!important;display:none!important}
+.calendar-day-list .calendar-home-card>.card-body{display:block!important;flex:0 0 auto!important;width:100%!important;box-sizing:border-box!important;padding-left:22px!important}
+.calendar-day-list .calendar-home-card.expanded>.card-actions{position:relative!important;display:flex!important;flex-direction:row!important;justify-content:flex-end!important;align-items:center!important;align-self:stretch!important;width:100%!important;height:auto!important;min-height:0!important;box-sizing:border-box!important;margin:0!important;padding:4px 9px 8px 22px!important;gap:5px!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;background:transparent!important}
+.calendar-day-list .calendar-home-card.expanded>.card-actions button{position:static!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;width:30px!important;height:28px!important;min-width:30px!important;min-height:28px!important;margin:0!important;padding:0!important;transform:none!important;border-radius:8px!important}
+.calendar-day-list .calendar-home-card.collapsed>.card-actions{display:none!important}
+.calendar-day-list .calendar-home-card::before{content:none!important;display:none!important}
