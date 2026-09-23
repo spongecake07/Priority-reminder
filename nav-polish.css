@@ -679,3 +679,6 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
  transform:none!important;
  box-sizing:border-box!important;
 }
+
+/* Visible release marker v66 */
+.minna-version{display:inline-block!important;margin-left:5px!important;vertical-align:middle!important;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:10px!important;font-style:normal!important;font-weight:700!important;letter-spacing:.02em!important;opacity:.48!important}
