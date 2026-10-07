@@ -238,3 +238,25 @@ button:focus-visible,.bottom-nav-item:focus-visible,.card-actions button:focus-v
 
 /* remove reminder expand/collapse chevrons; card remains tappable */
 .reminder-card.collapsed::after,.reminder-card.expanded::after,.calendar-day-list .calendar-home-card.collapsed::after,.calendar-day-list .calendar-home-card.expanded::after{content:none!important;display:none!important}
+
+/* reminder card polish */
+.reminder-card .card-body,.calendar-home-card .card-body{min-width:0!important}
+.reminder-card .card-heading,.calendar-home-card .card-heading{align-items:flex-start!important;gap:8px!important}
+.reminder-card .card-title,.calendar-home-card .card-title{font-weight:750!important;letter-spacing:-.012em!important;line-height:1.22!important;color:var(--ui-text)!important}
+.reminder-card.collapsed .card-title,.calendar-home-card.collapsed .card-title{font-size:15px!important}
+.reminder-card.expanded .card-title,.calendar-home-card.expanded .card-title{font-size:17px!important}
+.reminder-card .card-notes,.calendar-home-card .card-notes{color:#b8b8b8!important;line-height:1.42!important}
+.reminder-card.expanded .card-notes,.calendar-home-card.expanded .card-notes{margin:6px 0 8px!important;font-size:13px!important}
+.reminder-card .category-badge,.calendar-home-card .category-badge{font-weight:650!important;letter-spacing:.01em!important}
+.reminder-card.expanded>.card-body,.calendar-home-card.expanded>.card-body{padding-top:12px!important;padding-bottom:10px!important}
+.reminder-card.expanded .card-meta,.calendar-home-card.expanded .card-meta{margin-top:7px!important;gap:6px!important}
+.reminder-card.expanded .checklist-progress,.calendar-home-card.expanded .checklist-progress{margin:9px 0 8px!important}
+.reminder-card.expanded .checklist-progress-track,.calendar-home-card.expanded .checklist-progress-track{height:5px!important;border-radius:999px!important;overflow:hidden!important}
+.reminder-card.expanded .card-checklist,.calendar-home-card.expanded .card-checklist{margin-top:6px!important}
+.reminder-card.expanded .card-checklist label,.calendar-home-card.expanded .card-checklist label{min-height:34px!important;align-items:center!important}
+.reminder-card.is-completed,.calendar-home-card.is-completed{opacity:.72!important}
+.reminder-card.is-completed .card-title,.calendar-home-card.is-completed .card-title{color:#aaa!important}
+.reminder-card .card-actions button,.calendar-home-card .card-actions button{border-radius:12px!important;font-weight:650!important}
+.reminder-card .card-actions button small,.calendar-home-card .card-actions button small{letter-spacing:.01em!important}
+.reminder-card .card-actions .pin-btn.pinned,.calendar-home-card .card-actions .pin-btn.pinned{background:rgba(242,201,76,.09)!important;border-color:rgba(242,201,76,.42)!important}
+.reminder-card .card-actions [data-action="done"],.calendar-home-card .card-actions [data-calendar-action="done"]{font-weight:750!important}
