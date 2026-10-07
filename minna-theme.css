@@ -235,3 +235,6 @@ button:focus-visible,.bottom-nav-item:focus-visible,.card-actions button:focus-v
 .card-actions button,.bottom-nav-item,.five-priorities .summary-card,#homeFilterToggle{transition:transform .1s ease,background-color .15s ease,border-color .15s ease,color .15s ease}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 @media (max-width:430px){.card-actions button small,.bottom-nav-item small{font-size:max(10px,.72rem)!important}.five-priorities .summary-card span{font-size:max(10px,.68rem)!important}}
+
+/* remove reminder expand/collapse chevrons; card remains tappable */
+.reminder-card.collapsed::after,.reminder-card.expanded::after,.calendar-day-list .calendar-home-card.collapsed::after,.calendar-day-list .calendar-home-card.expanded::after{content:none!important;display:none!important}
