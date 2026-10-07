@@ -39,3 +39,11 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.expanded:has(.priority-bar.medium)>.card-body{background:linear-gradient(90deg,#e88732 0%,#85552f 38%,var(--ui-panel) 88%)!important}
 .reminder-card.expanded:has(.priority-bar.low)>.card-body{background:linear-gradient(90deg,#d5b63e 0%,#786b32 38%,var(--ui-panel) 88%)!important}
 .reminder-card.expanded:has(.priority-bar.misc)>.card-body{background:linear-gradient(90deg,#4d8bca 0%,#385b7d 38%,var(--ui-panel) 88%)!important}
+
+/* v96 correct dated-card grid and fully remove legacy urgency rail */
+.reminder-card>.priority-bar,.calendar-day-list .calendar-home-card>.priority-bar{display:none!important;width:0!important;min-width:0!important;max-width:0!important;padding:0!important;margin:0!important;border:0!important;box-shadow:none!important}
+.reminder-card.collapsed:has(.card-due-split),.calendar-day-list .calendar-home-card.collapsed:has(.card-due-split){display:grid!important;grid-template-columns:66px minmax(0,1fr)!important}
+.reminder-card.collapsed:has(.card-due-split)>.card-due-split,.calendar-day-list .calendar-home-card.collapsed:has(.card-due-split)>.card-due-split{grid-column:1!important;grid-row:1!important}
+.reminder-card.collapsed:has(.card-due-split)>.card-body,.calendar-day-list .calendar-home-card.collapsed:has(.card-due-split)>.card-body{grid-column:2!important;grid-row:1!important;width:auto!important;min-width:0!important}
+.reminder-card.collapsed:not(:has(.card-due-split)),.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split)){display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+.reminder-card.collapsed:not(:has(.card-due-split))>.card-body,.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split))>.card-body{grid-column:1!important;width:auto!important;min-width:0!important}
