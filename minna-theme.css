@@ -235,3 +235,7 @@ html body .app-shell>.home-tools.glance-filter>#homeFilterPanel{border:0!importa
 .expanded-due .due-date b{font-size:23px!important;line-height:1!important}
 .expanded-due .due-date small{font-size:11px!important}
 .expanded-due .due-time{display:block!important;width:100%!important;box-sizing:border-box!important;font-size:13px!important;line-height:1.15!important;text-align:center!important;white-space:nowrap!important}
+
+/* v1.16 collapsed Today's Summary matches Today's Progress */
+html body .app-shell>.home-tools.glance-filter:has(>#homeFilterPanel.hidden){margin:8px 0 10px!important;border-radius:14px!important}
+html body .app-shell>.home-tools.glance-filter:has(>#homeFilterPanel.hidden)>#homeFilterToggle{min-height:0!important;height:auto!important;padding:10px 12px!important}
