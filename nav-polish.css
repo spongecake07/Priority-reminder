@@ -910,3 +910,15 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
  opacity:.55!important;
  pointer-events:none!important;
 }
+
+
+/* Manual reminder reorder v71 — interaction only */
+.reminder-list.minna-reordering{user-select:none!important;-webkit-user-select:none!important;touch-action:none!important}
+.reminder-card.collapsed.minna-dragging{
+ z-index:20!important;
+ opacity:.92!important;
+ transform:scale(1.025)!important;
+ box-shadow:0 16px 34px rgba(18,24,38,.18)!important;
+ transition:box-shadow .12s ease,transform .12s ease,opacity .12s ease!important;
+}
+.reminder-list.minna-reordering .reminder-card.collapsed:not(.minna-dragging){transition:transform .14s ease!important}
