@@ -47,3 +47,15 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.collapsed:has(.card-due-split)>.card-body,.calendar-day-list .calendar-home-card.collapsed:has(.card-due-split)>.card-body{grid-column:2!important;grid-row:1!important;width:auto!important;min-width:0!important}
 .reminder-card.collapsed:not(:has(.card-due-split)),.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split)){display:grid!important;grid-template-columns:minmax(0,1fr)!important}
 .reminder-card.collapsed:not(:has(.card-due-split))>.card-body,.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split))>.card-body{grid-column:1!important;width:auto!important;min-width:0!important}
+
+/* v98 softer typography + larger reminder titles */
+:root{--ui-text:#e6e6e6;--ui-muted:#a9a9a9}
+.reminder-card .card-title,.calendar-day-list .calendar-home-card .card-title{
+ color:#e8e8e8!important;
+ font-size:18px!important;
+ line-height:1.2!important;
+}
+.reminder-card.collapsed .card-title,.calendar-day-list .calendar-home-card.collapsed .card-title{
+ white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
+}
+.reminder-card .card-due-split,.calendar-day-list .calendar-home-card .card-due-split{color:#dedede!important}
