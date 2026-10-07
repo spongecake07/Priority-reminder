@@ -2064,3 +2064,38 @@ dialog input,dialog textarea,dialog select{
  background:var(--oneui-control)!important;color:var(--oneui-text)!important;
  border:0!important;border-radius:16px!important;
 }
+
+
+/* v89 One UI edge refinement — stronger, softer component definition */
+:root{
+ --oneui-edge:#464646;
+ --oneui-edge-soft:#393939;
+}
+/* Reference UI uses subtle but substantial edges: 2px dark-gray, never bright white. */
+.home-filter-toggle,#homeFilterToggle,.home-filter-panel,#homeFilterPanel,
+.today-dashboard,.minna-progress,
+.reminder-card.collapsed,.reminder-card.expanded,
+.calendar-day-list .calendar-home-card.collapsed,
+.calendar-day-list .calendar-home-card.expanded,
+#calendarDialog .calendar-day,#calendarDialog .calendar-empty,#calendarDialog .calendar-add,
+#calendarDialog .calendar-head button,#calendarDialog #calendarTodayBtn,
+#settingsDialog .settings-section,#settingsDialog .achievement-stats>div,
+#settingsDialog .achievement-grid>*,#settingsDialog .rank-panel>*,
+.home-profile,.minna-logo{
+ border:2px solid var(--oneui-edge)!important;
+}
+.reminder-card.collapsed>.card-due-split,
+.calendar-day-list .calendar-home-card.collapsed>.card-due-split{
+ border-right:2px solid var(--oneui-edge)!important;
+}
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ border-top:2px solid var(--oneui-edge-soft)!important;
+}
+.bottom-nav{border-top:2px solid var(--oneui-edge-soft)!important}
+.search-wrap,.search-wrap input,#searchInput,
+#homeFilterPanel input,#homeFilterPanel select,
+#settingsDialog button:not(.danger-btn),#settingsDialog input,#settingsDialog select,
+dialog input,dialog textarea,dialog select{
+ border:2px solid var(--oneui-edge-soft)!important;
+}
