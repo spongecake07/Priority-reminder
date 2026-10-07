@@ -202,3 +202,13 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .glance-filter .glance-toggle{grid-template-columns:repeat(3,minmax(0,1fr))!important;cursor:pointer!important}
 .glance-stat{pointer-events:none!important;cursor:default!important}
 .glance-expand-btn{display:none!important}
+
+/* v1.11 unified glance/filter card */
+.glance-filter{border:2px solid var(--ui-line)!important;border-radius:20px!important;overflow:hidden!important;background:var(--ui-panel)!important}
+.glance-filter .glance-toggle{width:100%!important;margin:0!important;border:0!important;border-radius:0!important;background:var(--ui-panel)!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;padding:18px 14px!important;min-height:118px!important}
+.glance-filter .glance-stat{width:100%!important;min-width:0!important;text-align:center!important;align-items:center!important;justify-content:center!important}
+.glance-filter .glance-stat strong{display:block!important;width:100%!important;text-align:center!important;font-size:30px!important}
+.glance-filter .glance-stat small{display:block!important;width:100%!important;text-align:center!important;font-size:14px!important;white-space:nowrap!important}
+.glance-filter .home-filter-panel{margin:0!important;padding:12px 14px 14px!important;border:0!important;border-top:1px solid #383838!important;border-radius:0!important;background:var(--ui-panel)!important;box-shadow:none!important}
+.glance-filter .home-filter-panel.hidden{display:none!important}
+.glance-filter .five-priorities{margin:0!important}
