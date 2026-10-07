@@ -178,3 +178,13 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.expanded .checklist-progress,.calendar-home-card.expanded .checklist-progress{display:block!important;margin:10px 0 8px!important}
 .reminder-card.expanded .checklist-progress-head,.reminder-card.expanded .checklist-progress>small,.calendar-home-card.expanded .checklist-progress-head,.calendar-home-card.expanded .checklist-progress>small{display:none!important}
 .reminder-card.expanded .checklist-progress-track,.calendar-home-card.expanded .checklist-progress-track{height:5px!important;margin:0!important}
+
+/* v107 collapsed glance + expanded priority filters */
+.glance-filter .glance-toggle{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr)) 28px!important;gap:4px!important;height:auto!important;min-height:82px!important;padding:10px 8px!important}
+.glance-stat{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;min-width:0!important}
+.glance-stat strong{font-size:24px!important;line-height:1!important;color:var(--ui-text)!important}.glance-stat small{font-size:12px!important;color:var(--ui-muted)!important}.glance-stat.danger strong{color:#ef7777!important}
+.glance-toggle>b{align-self:center!important;justify-self:center!important}.glance-filter .home-filter-panel{padding-top:10px!important}
+.five-priorities{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:6px!important}
+.five-priorities .summary-card{min-width:0!important;padding:10px 2px!important}.five-priorities .summary-card strong{font-size:18px!important}.five-priorities .summary-card span{font-size:10px!important}
+.five-priorities .summary-card.misc{border-color:#3f6688!important}
+@media(max-width:420px){.five-priorities{gap:4px!important}.five-priorities .summary-card{padding-left:1px!important;padding-right:1px!important}}
