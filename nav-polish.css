@@ -1245,7 +1245,7 @@ small,.muted,.card-meta,.reminder-meta{color:#5f5f5f!important}
 .category-icon,.today-summary-icon,.coded-rank-badge,.rank-badge{filter:grayscale(1)!important}
 
 /* Surfaces and navigation */
-.topbar,.bottom-nav,.home-filter-panel,.home-filter-toggle,.today-dashboard,.minna-progress,
+.topbar,.bottom-nav,.today-dashboard,.minna-progress,
 .reminder-card,.calendar-shell,.calendar-day-list,.settings-card,.you-card,.achievement-card,
 dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
  background:#fff!important;color:#000!important;border-color:#cfcfcf!important;
