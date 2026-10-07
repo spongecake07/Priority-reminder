@@ -9,3 +9,9 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .priority-bar.high{background:#d94a4a!important}.priority-bar.medium{background:#e58a32!important}.priority-bar.low{background:#e0bd42!important}.priority-bar.misc{background:#4f86c6!important}
 .home-section-divider::after,.home-section-divider i{background:var(--ui-line)!important}
 .bottom-nav{background:#050505!important;border-top:2px solid var(--ui-line)!important;overflow:visible!important}.bottom-nav .bottom-nav-item,.bottom-nav .bottom-nav-item.active{background:transparent!important;border:0!important;box-shadow:none!important}.bottom-nav .bottom-nav-item{color:#8d8d8d!important}.bottom-nav .bottom-nav-item.active{color:var(--ui-text)!important}.bottom-nav .bottom-nav-add{background:var(--ui-accent)!important;color:#071516!important;border:0!important}
+
+.reminder-list{gap:12px!important}
+.priority-bar.high{background:#f25b5b!important}
+.priority-bar.medium{background:#ff9a3d!important}
+.priority-bar.low{background:#f2cf4a!important}
+.priority-bar.misc{background:#5a9ee8!important}
