@@ -1778,3 +1778,77 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
  .reminder-card.collapsed>.card-due-split{width:58px!important;min-width:58px!important}
  .reminder-card.collapsed>.card-due-split b{font-size:10px!important}
 }
+
+
+/* v86 consistency pass — search and expanded reminders use the same black shell */
+.home-filter-toggle,
+#homeFilterToggle{
+ background:#050505!important;
+ color:#fff!important;
+ border:1px solid #777!important;
+ box-shadow:none!important;
+}
+#homeFilterToggle span,#homeFilterToggle strong,#homeFilterToggle b{color:#fff!important}
+#homeFilterToggle small{color:#aaa!important}
+.home-filter-panel,#homeFilterPanel{
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
+}
+.search-wrap,.search-wrap input,#searchInput{
+ background:#080808!important;color:#fff!important;border-color:#666!important;
+}
+.search-wrap span{color:#aaa!important}
+
+/* Expanded reminder should not switch to the old blue/navy surface. */
+.reminder-card.expanded,
+.calendar-day-list .calendar-home-card.expanded{
+ background:#050505!important;
+ color:#fff!important;
+ border:1px solid #d8d8d8!important;
+ box-shadow:none!important;
+}
+.reminder-card.expanded>.card-body,
+.calendar-day-list .calendar-home-card.expanded>.card-body{
+ background:#050505!important;color:#fff!important;
+}
+.reminder-card.expanded .card-heading,
+.reminder-card.expanded .card-meta,
+.reminder-card.expanded .card-checklist,
+.reminder-card.expanded .checklist-progress,
+.calendar-home-card.expanded .card-heading,
+.calendar-home-card.expanded .card-meta{
+ background:transparent!important;color:#fff!important;
+}
+.reminder-card.expanded .card-title,
+.reminder-card.expanded .card-notes,
+.calendar-home-card.expanded .card-title,
+.calendar-home-card.expanded .card-notes{color:#fff!important}
+.reminder-card.expanded .card-notes{color:#b5b5b5!important}
+.reminder-card.expanded .meta-chip,
+.reminder-card.expanded .category-chip,
+.calendar-home-card.expanded .meta-chip,
+.calendar-home-card.expanded .category-chip{
+ background:#0b0b0b!important;color:#fff!important;border:1px solid #555!important;
+}
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ background:#050505!important;border-top:1px solid #555!important;
+}
+.reminder-card.expanded>.card-actions>button,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button{
+ background:#0a0a0a!important;color:#fff!important;border:1px solid #555!important;box-shadow:none!important;
+}
+.reminder-card.expanded>.card-actions>button.pin-btn.pinned{
+ background:#111!important;color:#fff!important;border-color:#777!important;
+}
+.reminder-card.expanded>.card-actions>button.done-action,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button.done-action{
+ background:#fff!important;color:#000!important;border-color:#fff!important;
+}
+.reminder-card.expanded>.card-actions>button.done-action *,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button.done-action *{color:#000!important}
+
+/* Preserve urgency colors identically collapsed or expanded. */
+.reminder-card .priority-bar.high,.calendar-home-card .priority-bar.high{background:#d94a4a!important}
+.reminder-card .priority-bar.medium,.calendar-home-card .priority-bar.medium{background:#e58a32!important}
+.reminder-card .priority-bar.low,.calendar-home-card .priority-bar.low{background:#e0bd42!important}
+.reminder-card .priority-bar.misc,.calendar-home-card .priority-bar.misc{background:#4f86c6!important}
