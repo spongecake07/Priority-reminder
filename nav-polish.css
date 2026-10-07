@@ -1715,3 +1715,66 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
  overflow:visible!important;
  flex-shrink:0!important;
 }
+
+
+/* v85 dated reminder split — date/time panel + reminder body */
+.reminder-card.collapsed:has(.card-due-split){
+ display:grid!important;
+ grid-template-columns:8px 66px minmax(0,1fr)!important;
+}
+.reminder-card.collapsed:has(.card-due-split)>.priority-bar{
+ grid-column:1!important;grid-row:1!important;
+ position:relative!important;inset:auto!important;
+ width:8px!important;height:39px!important;
+}
+.reminder-card.collapsed>.card-due-split{
+ grid-column:2!important;grid-row:1!important;
+ position:relative!important;
+ z-index:3!important;
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ width:66px!important;
+ min-width:66px!important;
+ height:39px!important;
+ padding:0 5px!important;
+ background:#050505!important;
+ color:#fff!important;
+ border-right:1px solid #777!important;
+ line-height:1!important;
+ overflow:hidden!important;
+}
+.reminder-card.collapsed>.card-due-split b{
+ display:block!important;
+ max-width:100%!important;
+ color:#fff!important;
+ font-size:11px!important;
+ font-weight:850!important;
+ white-space:nowrap!important;
+ overflow:hidden!important;
+ text-overflow:ellipsis!important;
+}
+.reminder-card.collapsed>.card-due-split small{
+ display:block!important;
+ margin-top:3px!important;
+ color:#929292!important;
+ font-size:6.5px!important;
+ font-weight:850!important;
+ letter-spacing:.08em!important;
+ white-space:nowrap!important;
+}
+.reminder-card.collapsed:has(.card-due-split)>.card-body{
+ grid-column:3!important;grid-row:1!important;
+ position:relative!important;
+ width:auto!important;
+ min-width:0!important;
+ height:39px!important;
+ padding-left:12px!important;
+}
+.reminder-card.expanded>.card-due-split{display:none!important}
+@media(max-width:370px){
+ .reminder-card.collapsed:has(.card-due-split){grid-template-columns:8px 58px minmax(0,1fr)!important}
+ .reminder-card.collapsed>.card-due-split{width:58px!important;min-width:58px!important}
+ .reminder-card.collapsed>.card-due-split b{font-size:10px!important}
+}
