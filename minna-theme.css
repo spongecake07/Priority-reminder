@@ -203,30 +203,16 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .glance-stat{pointer-events:none!important;cursor:default!important}
 .glance-expand-btn{display:none!important}
 
-/* v1.11 unified glance/filter card */
-.glance-filter{border:2px solid var(--ui-line)!important;border-radius:20px!important;overflow:hidden!important;background:var(--ui-panel)!important}
-.glance-filter .glance-toggle{width:100%!important;margin:0!important;border:0!important;border-radius:0!important;background:var(--ui-panel)!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;padding:18px 14px!important;min-height:118px!important}
+/* canonical glance/filter card */
+html body .app-shell>.home-tools.glance-filter{border:2px solid var(--ui-line)!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:var(--ui-panel)!important;border-radius:20px!important;background-clip:padding-box!important;overflow:hidden!important;padding:0!important}
+html body .app-shell>.home-tools.glance-filter>#homeFilterToggle{width:100%!important;margin:0!important;border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;padding:18px 14px!important;min-height:118px!important}
 .glance-filter .glance-stat{width:100%!important;min-width:0!important;text-align:center!important;align-items:center!important;justify-content:center!important}
 .glance-filter .glance-stat strong{display:block!important;width:100%!important;text-align:center!important;font-size:30px!important}
 .glance-filter .glance-stat small{display:block!important;width:100%!important;text-align:center!important;font-size:14px!important;white-space:nowrap!important}
-.glance-filter .home-filter-panel{margin:0!important;padding:12px 14px 14px!important;border:0!important;border-top:1px solid #383838!important;border-radius:0!important;background:var(--ui-panel)!important;box-shadow:none!important}
+html body .app-shell>.home-tools.glance-filter>#homeFilterPanel{margin:0!important;padding:12px 14px 14px!important;border:0!important;border-top:1px solid #383838!important;outline:0!important;border-radius:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important}
 .glance-filter .home-filter-panel.hidden{display:none!important}
 .glance-filter .five-priorities{margin:0!important}
-
-/* v1.12 single-border glance component */
-.glance-filter{border:2px solid var(--ui-line)!important;border-radius:20px!important;overflow:hidden!important;background:var(--ui-panel)!important;box-shadow:none!important;padding:0!important}
-.glance-filter .glance-toggle{border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;background:transparent!important}
-.glance-filter .home-filter-panel{border:0!important;border-top:1px solid #383838!important;outline:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;background:transparent!important}
 .glance-filter .home-filter-panel::before,.glance-filter .home-filter-panel::after,.glance-filter .glance-toggle::before,.glance-filter .glance-toggle::after{display:none!important}
-
-/* v1.13 canonical glance borders */
-.glance-filter>.glance-toggle{border:none!important}
-.glance-filter>#homeFilterPanel{border:none!important;border-top:1px solid #383838!important}
-
-/* v1.14 isolate glance surface from legacy controls */
-html body .app-shell>.home-tools.glance-filter{border:2px solid var(--ui-line)!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:var(--ui-panel)!important;border-radius:20px!important;background-clip:padding-box!important}
-html body .app-shell>.home-tools.glance-filter>#homeFilterToggle{border:0!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important}
-html body .app-shell>.home-tools.glance-filter>#homeFilterPanel{border:0!important;border-top:1px solid #383838!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important}
 
 /* v1.15 */
 .card-actions .pin-btn.pinned,.card-actions .pin-btn.pinned *{color:#f2c94c!important}
