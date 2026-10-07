@@ -267,3 +267,9 @@ button:focus-visible,.bottom-nav-item:focus-visible,.card-actions button:focus-v
 /* checklist rows use one controlled click target */
 .card-checklist .checklist-row{display:flex!important;align-items:center!important;gap:8px!important;min-height:34px!important;cursor:pointer!important;touch-action:manipulation!important;-webkit-tap-highlight-color:transparent!important}
 .card-checklist .checklist-row input{pointer-events:none!important;flex:0 0 auto!important}
+
+/* restore compact checklist appearance while retaining full-row toggle */
+.reminder-card.expanded .card-checklist,.calendar-home-card.expanded .card-checklist{display:flex!important;flex-wrap:wrap!important;align-items:flex-start!important;gap:4px!important;margin:5px 0 1px!important;padding:0!important;border:0!important;background:transparent!important}
+.reminder-card.expanded .card-checklist .checklist-row,.calendar-home-card.expanded .card-checklist .checklist-row{display:inline-flex!important;flex:0 1 auto!important;width:auto!important;max-width:100%!important;min-height:0!important;align-items:center!important;gap:4px!important;margin:0!important;padding:3px 6px!important;border:1px solid rgba(130,138,154,.18)!important;border-radius:8px!important;background:rgba(255,255,255,.035)!important;font-size:9px!important;line-height:1.2!important;color:#d5d9e2!important}
+.reminder-card.expanded .card-checklist .checklist-row input,.calendar-home-card.expanded .card-checklist .checklist-row input{width:13px!important;height:13px!important;margin:0!important;flex:0 0 auto!important}
+.reminder-card.expanded .card-checklist .checklist-row span,.calendar-home-card.expanded .card-checklist .checklist-row span{display:block!important;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important}
