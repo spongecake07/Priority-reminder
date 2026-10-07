@@ -15,3 +15,10 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .priority-bar.medium{background:#ff9a3d!important}
 .priority-bar.low{background:#f2cf4a!important}
 .priority-bar.misc{background:#5a9ee8!important}
+
+/* v94 illuminated urgency rails */
+.reminder-card .priority-bar{position:relative!important;z-index:3!important}
+.reminder-card .priority-bar.high{box-shadow:4px 0 12px #8f3434!important}
+.reminder-card .priority-bar.medium{box-shadow:4px 0 12px #985d2b!important}
+.reminder-card .priority-bar.low{box-shadow:4px 0 12px #8d7b32!important}
+.reminder-card .priority-bar.misc{box-shadow:4px 0 12px #365f8d!important}
