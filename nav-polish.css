@@ -33,8 +33,6 @@ html[data-theme="dark"] .card-actions button{background:#272c37!important;color:
 html[data-theme="dark"] .card-actions button.complete{background:#20372c!important;color:#72d39a!important}
 html[data-theme="dark"] .pin-btn.pinned{background:#3c3420!important;color:#f0bd4c!important}
 html[data-theme="dark"] .category-chip{background:#2d3252!important;color:#b8beff!important}
-html[data-theme="dark"] .card-checklist{background:#202530!important;border-color:#303644!important}
-html[data-theme="dark"] .card-checklist label{color:#d5d9e2!important}
 html[data-theme="dark"] .more-photos{background:#282d39!important;color:#b9c0ce!important}
 html[data-theme="dark"] .card-photo{border-color:#303644!important}
 html[data-theme="dark"] .dialog-head{background:rgba(25,29,38,.94)!important;border-color:#303644!important}
@@ -239,8 +237,6 @@ html[data-theme="dark"] .category-creator{background:#1d222d!important}
 .reminder-card.expanded .checklist-progress-head span{font-size:8px!important}.reminder-card.expanded .checklist-progress-head strong{font-size:8px!important}
 .reminder-card.expanded .checklist-progress-track{flex:1!important;height:4px!important;margin:0!important;border-radius:4px!important}
 .reminder-card.expanded .checklist-progress>small{font-size:8px!important;white-space:nowrap!important}
-.reminder-card.expanded .card-checklist{margin-top:4px!important;gap:3px!important}
-.reminder-card.expanded .card-checklist label{min-height:25px!important;padding:3px 5px!important;font-size:10px!important}
 .reminder-card.expanded .card-actions{padding:6px 10px 9px!important;gap:6px!important}
 .reminder-card.expanded .card-actions button{width:34px!important;height:30px!important;min-height:30px!important;border-radius:9px!important;font-size:13px!important}
 .reminder-card.expanded::after{content:'⌃'!important;right:12px!important;top:10px!important;font-size:13px!important}
@@ -266,12 +262,6 @@ html[data-theme="dark"] .category-creator{background:#1d222d!important}
 html[data-theme="dark"] .completed-divider{color:#7f8795}
 html[data-theme="dark"] .completed-divider::before,html[data-theme="dark"] .completed-divider::after{background:#333a47}
 
-/* Space-efficient expanded checklist v38 */
-.reminder-card.expanded .card-checklist{display:flex!important;flex-wrap:wrap!important;align-items:flex-start!important;gap:5px!important;margin:6px 0 2px!important;padding:0!important;border:0!important;background:transparent!important}
-.reminder-card.expanded .card-checklist label{display:inline-flex!important;flex:0 1 auto!important;width:auto!important;max-width:100%!important;min-height:0!important;align-items:center!important;gap:5px!important;margin:0!important;padding:4px 7px!important;border:1px solid rgba(130,138,154,.18)!important;border-radius:9px!important;background:rgba(255,255,255,.045)!important;font-size:10px!important;line-height:1.2!important}
-.reminder-card.expanded .card-checklist label input{flex:0 0 auto!important;width:15px!important;height:15px!important;margin:0!important}
-.reminder-card.expanded .card-checklist label span{display:block!important;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important}
-html[data-theme="dark"] .reminder-card.expanded .card-checklist label{background:rgba(255,255,255,.035)!important;border-color:rgba(255,255,255,.08)!important}
 
 /* Home + expanded reminder refinement v39 */
 .reminder-list{gap:7px!important;padding-bottom:118px!important}
@@ -294,9 +284,6 @@ html[data-theme="dark"] .reminder-card.expanded .card-checklist label{background
 .reminder-card.expanded .checklist-progress-head strong{font-size:8px!important}
 .reminder-card.expanded .checklist-progress-track{height:3px!important}
 .reminder-card.expanded .checklist-progress>small{font-size:7px!important;color:#8d94a3!important}
-.reminder-card.expanded .card-checklist{gap:4px!important;margin:5px 0 1px!important}
-.reminder-card.expanded .card-checklist label{padding:3px 6px!important;border-radius:8px!important;font-size:9px!important;gap:4px!important}
-.reminder-card.expanded .card-checklist label input{width:13px!important;height:13px!important}
 .reminder-card.expanded .card-photo-strip{margin-top:6px!important}
 .reminder-card.expanded .card-actions{display:flex!important;justify-content:flex-end!important;align-items:center!important;padding:4px 9px 7px!important;gap:5px!important;border-top:0!important}
 .reminder-card.expanded .card-actions button{width:30px!important;height:28px!important;min-height:28px!important;border-radius:8px!important;font-size:12px!important;box-shadow:none!important}
