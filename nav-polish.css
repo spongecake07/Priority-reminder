@@ -1300,3 +1300,146 @@ dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
  .today-summary{padding-left:4px!important;padding-right:4px!important}
  .today-summary small{font-size:9px!important}
 }
+
+
+/* Black canvas + white-outline system v81 — based on approved mockup */
+:root,
+html[data-scheme],
+html[data-theme="dark"][data-scheme]{
+ --scheme-bg:#000!important;
+ --scheme-surface:#050505!important;
+ --scheme-soft:#111!important;
+ --scheme-primary:#fff!important;
+ --scheme-primary2:#fff!important;
+ --scheme-text:#fff!important;
+ --scheme-muted:#aaa!important;
+ --scheme-border:#e8e8e8!important;
+ --scheme-nav:#000!important;
+ --bg:#000!important;
+ --card:#050505!important;
+ --text:#fff!important;
+ --muted:#aaa!important;
+ --line:#d9d9d9!important;
+ --primary:#fff!important;
+ --primary-dark:#fff!important;
+ color-scheme:dark!important;
+}
+html,body,#app,.app-shell,.app-main,.view{background:#000!important;color:#fff!important}
+body{overflow-x:hidden!important}
+button,input,select,textarea{color:#fff!important}
+input,select,textarea{background:#080808!important;border-color:#777!important}
+::placeholder{color:#929292!important}
+a{color:#fff!important}
+.minna-brand,.minna-brand strong,.minna-version,h1,h2,h3,h4,strong,.card-title,.reminder-title{color:#fff!important}
+small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
+
+/* White-outline surfaces */
+.topbar,.bottom-nav,.home-filter-panel,.home-filter-toggle,.today-dashboard,.minna-progress,
+.calendar-shell,.settings-card,.you-card,.achievement-card,dialog,.modal-card,.quick-add-dialog,
+.editor-dialog,.settings-dialog{
+ background:#050505!important;color:#fff!important;border-color:#dedede!important;box-shadow:none!important;
+}
+.today-dashboard,.minna-progress,.home-filter-panel{border:1px solid #dedede!important}
+.bottom-nav{background:#000!important;border-top:1px solid #666!important}
+.bottom-nav button{color:#bdbdbd!important;background:transparent!important}
+.bottom-nav button.active{color:#fff!important}
+.bottom-nav-add,.primary-btn,.save-btn,.done-action{
+ background:#fff!important;color:#000!important;border-color:#fff!important;
+}
+.secondary-btn,.card-actions button,.calendar-control,.photo-btn,.restore-btn{
+ background:#080808!important;color:#fff!important;border-color:#aaa!important;
+}
+.danger-btn{background:#000!important;color:#fff!important;border:1px solid #fff!important}
+
+/* Approved reminder treatment: black fill, white type, bright outline. */
+.reminder-card.collapsed,
+.calendar-day-list .calendar-home-card.collapsed{
+ background:#050505!important;
+ color:#fff!important;
+ border:1.5px solid #f2f2f2!important;
+ box-shadow:none!important;
+ overflow:hidden!important;
+}
+.reminder-card.collapsed .card-body,
+.calendar-day-list .calendar-home-card.collapsed>.card-body{
+ background:#050505!important;color:#fff!important;
+}
+.reminder-card.collapsed .card-body *,
+.calendar-day-list .calendar-home-card.collapsed>.card-body *{color:#fff!important}
+.reminder-card.collapsed::after,
+.calendar-day-list .calendar-home-card.collapsed::after{color:#fff!important;opacity:.9!important}
+
+/* Urgency remains the only strong color. Thicker 8px bars. */
+.reminder-card.collapsed .priority-bar,
+.calendar-day-list .calendar-home-card.collapsed>.priority-bar{
+ display:block!important;
+ width:8px!important;min-width:8px!important;max-width:8px!important;
+ height:100%!important;
+ border-radius:0!important;
+}
+.priority-bar.high,.calendar-priority.high{background:#d94a4a!important}
+.priority-bar.medium,.calendar-priority.medium{background:#e58a32!important}
+.priority-bar.low,.calendar-priority.low{background:#e0bd42!important}
+.priority-bar.misc,.calendar-priority.misc{background:#4f86c6!important}
+.calendar-day-list .calendar-home-card.collapsed{
+ grid-template-columns:8px minmax(0,1fr)!important;
+}
+.reminder-card.collapsed .card-body{padding-left:17px!important}
+.calendar-day-list .calendar-home-card.collapsed>.card-body{padding-left:15px!important}
+
+/* Expanded reminders follow the same black/white shell, retaining urgency strip. */
+.reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
+ background:#050505!important;color:#fff!important;border:1.5px solid #f2f2f2!important;box-shadow:none!important;
+}
+.reminder-card.expanded .card-body *,.calendar-home-card.expanded .card-body *{color:#fff!important}
+.reminder-card.expanded>.priority-bar,.calendar-day-list .calendar-home-card.expanded>.priority-bar{
+ width:8px!important;min-width:8px!important;max-width:8px!important;
+}
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{border-top-color:#555!important}
+
+/* Dashboard mirrors approved black mockup. */
+.today-dashboard,.minna-progress{background:#050505!important}
+.today-summary-grid{border-color:#555!important}
+.today-summary{background:#050505!important;color:#fff!important;border-color:#555!important}
+.today-summary *{color:#fff!important}
+.today-summary small{color:#aaa!important}
+.minna-day-track{background:#303030!important}
+.minna-day-track>i{background:#fff!important}
+.home-section-divider span{color:#e8e8e8!important}
+.home-section-divider::after,.home-section-divider i{background:#ddd!important}
+
+/* Controls remain monochrome; urgency color is reserved for reminders. */
+.pill.high,.pill.medium,.pill.low,.composer-priorities button,
+.summary-card,.smart-view,.filter-chip,.meta-chip,.category-chip{
+ background:#080808!important;color:#fff!important;border-color:#777!important;
+}
+.priority-picker input:checked+.pill,.smart-view.active,.filter-chip.active{
+ background:#fff!important;color:#000!important;border-color:#fff!important;
+}
+.summary-card.high strong,.summary-card.medium strong,.summary-card.low strong{color:#fff!important}
+.category-icon,.today-summary-icon,.coded-rank-badge,.rank-badge{filter:grayscale(1)!important}
+
+/* Visibility and collision protection */
+*,*::before,*::after{box-sizing:border-box}
+.topbar,.home-profile,.home-filter-panel,.today-dashboard,.minna-progress,.reminder-card,
+.card-body,.card-actions,.calendar-day-list,.bottom-nav,.composer-panel,.editor-dialog,.settings-dialog{min-width:0!important}
+.card-body,.card-copy,.reminder-copy,.today-summary>div,.home-profile-copy{min-width:0!important}
+.card-title,.reminder-title,.card-meta,.reminder-meta{overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+.reminder-card.collapsed .card-body{padding-right:42px!important}
+.today-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.today-summary{min-width:0!important;overflow:hidden!important}
+.today-summary>div{min-width:0!important}
+.today-summary strong,.today-summary small{display:block!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ width:calc(100% - 20px)!important;margin-left:10px!important;margin-right:10px!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
+.reminder-card.expanded>.card-actions>button,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button{min-width:0!important;overflow:hidden!important}
+@media(max-width:370px){
+ .reminder-card.expanded>.card-actions>button,
+ .calendar-day-list .calendar-home-card.expanded>.card-actions>button{font-size:10px!important;padding:0 2px!important}
+ .today-summary{padding-left:4px!important;padding-right:4px!important}
+}
