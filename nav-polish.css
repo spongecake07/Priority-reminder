@@ -124,9 +124,7 @@ html[data-theme="dark"] .minna-brand h1{color:#f4f5fa!important}
 
 /* Compact expandable reminders v27 */
 .reminder-card{position:relative}.card-expand-hit{display:none}
-.reminder-card.collapsed{min-height:68px!important;height:68px!important;overflow:hidden!important;display:flex!important;align-items:center!important;border-radius:18px!important}
-.reminder-card.collapsed .priority-bar{height:100%!important}
-.reminder-card.collapsed .card-body{padding:10px 52px 10px 14px!important;min-width:0!important;display:flex!important;align-items:center!important;width:100%!important}
+.reminder-card.collapsed{min-height:68px!important;height:68px!important;overflow:hidden!important;display:flex!important;align-items:center!important;border-radius:18px!important}.reminder-card.collapsed .card-body{padding:10px 52px 10px 14px!important;min-width:0!important;display:flex!important;align-items:center!important;width:100%!important}
 .reminder-card.collapsed .card-heading{width:100%!important;margin:0!important;display:flex!important;align-items:center!important;gap:8px!important}
 .reminder-card.collapsed .card-title-wrap{min-width:0!important;display:flex!important;align-items:center!important;gap:10px!important}
 .reminder-card.collapsed .category-icon{width:38px!important;height:38px!important;min-width:38px!important;border-radius:12px!important;font-size:17px!important}
@@ -134,31 +132,18 @@ html[data-theme="dark"] .minna-brand h1{color:#f4f5fa!important}
 .reminder-card.collapsed .category-chip{font-size:9px!important;padding:5px 7px!important;margin-left:auto!important;max-width:86px!important;overflow:hidden!important;text-overflow:ellipsis!important}
 .reminder-card.collapsed .card-notes,.reminder-card.collapsed .card-meta,.reminder-card.collapsed .checklist-progress,.reminder-card.collapsed .card-checklist,.reminder-card.collapsed .card-photo-strip,.reminder-card.collapsed .card-actions{display:none!important}
 .reminder-card.collapsed .card-expand-hit{display:block;position:absolute;inset:0;z-index:5;border:0;background:transparent;cursor:pointer}
-.reminder-card.collapsed::after{content:'›';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:25px;color:#8d95a7;pointer-events:none}
 .reminder-card.expanded{height:auto!important;min-height:0!important}
-.reminder-card.expanded::after{content:'⌃';position:absolute;right:18px;top:18px;font-size:16px;color:#8d95a7;pointer-events:none}
 .reminder-list{gap:10px!important}
-html[data-theme="dark"] .reminder-card.collapsed::after,html[data-theme="dark"] .reminder-card.expanded::after{color:#7e8799!important}
-@media(max-width:430px){.reminder-card.collapsed{height:64px!important;min-height:64px!important}.reminder-card.collapsed .card-body{padding-left:12px!important}.reminder-card.collapsed .category-icon{width:36px!important;height:36px!important;min-width:36px!important}.reminder-card.collapsed .card-title{font-size:15px!important}}
+html[data-theme="dark"] .reminder-card.collapsed::after,html[data-theme="dark"] @media(max-width:430px){.reminder-card.collapsed{height:64px!important;min-height:64px!important}.reminder-card.collapsed .card-body{padding-left:12px!important}.reminder-card.collapsed .category-icon{width:36px!important;height:36px!important;min-width:36px!important}.reminder-card.collapsed .card-title{font-size:15px!important}}
 
 /* Ultra-compact priority cards v28 */
-.reminder-card.collapsed{height:36px!important;min-height:36px!important;border-radius:11px!important;border:1px solid transparent!important;box-shadow:none!important}
-.reminder-card.collapsed:has(.priority-bar.high){background:#9d5558!important;border-color:#aa6063!important}
-.reminder-card.collapsed:has(.priority-bar.medium){background:#a77b43!important;border-color:#b18751!important}
-.reminder-card.collapsed:has(.priority-bar.low){background:#557d69!important;border-color:#628a76!important}
-.reminder-card.collapsed .priority-bar{display:none!important}
-.reminder-card.collapsed .card-body{padding:4px 35px 4px 10px!important}
+.reminder-card.collapsed{height:36px!important;min-height:36px!important;border-radius:11px!important;border:1px solid transparent!important;box-shadow:none!important}.reminder-card.collapsed .card-body{padding:4px 35px 4px 10px!important}
 .reminder-card.collapsed .category-icon{width:26px!important;height:26px!important;min-width:26px!important;border-radius:8px!important;font-size:12px!important;background:rgba(255,255,255,.16)!important;color:#fff!important}
 .reminder-card.collapsed .card-title{font-size:13px!important;font-weight:750!important;color:#fff!important}
 .reminder-card.collapsed .category-chip{font-size:8px!important;line-height:1!important;padding:4px 6px!important;background:rgba(20,22,28,.18)!important;color:rgba(255,255,255,.88)!important;border:0!important}
-.reminder-card.collapsed::after{right:12px!important;font-size:19px!important;color:rgba(255,255,255,.72)!important}
 .reminder-card.expanded{cursor:pointer}
 .reminder-card.expanded .card-body,.reminder-card.expanded .card-actions{cursor:default}
-@media(max-width:430px){.reminder-card.collapsed{height:36px!important;min-height:36px!important}.reminder-card.collapsed .card-body{padding:4px 34px 4px 9px!important}.reminder-card.collapsed .category-icon{width:26px!important;height:26px!important;min-width:26px!important}.reminder-card.collapsed .card-title{font-size:13px!important}}
-
-/* Miscellaneous priority v30 */
-.reminder-card.collapsed:has(.priority-bar.misc){background:#55758d!important;border-color:#64849b!important}
-.priority-bar.misc{background:#668aa3!important}
+@media(max-width:430px){.reminder-card.collapsed{height:36px!important;min-height:36px!important}.reminder-card.collapsed .card-body{padding:4px 34px 4px 9px!important}.reminder-card.collapsed .category-icon{width:26px!important;height:26px!important;min-width:26px!important}.reminder-card.collapsed .card-title{font-size:13px!important}}.priority-bar.misc{background:#668aa3!important}
 .pill.misc{background:#dce9f2!important;color:#36566d!important;border-color:#bfd3e1!important}
 .composer-priorities button[data-composer-priority="misc"]{background:#e6f0f6!important;color:#36566d!important}
 html[data-theme="dark"] .pill.misc{background:#263b4a!important;color:#c5dce9!important;border-color:#365468!important}
@@ -239,19 +224,13 @@ html[data-theme="dark"] .category-creator{background:#1d222d!important}
 .reminder-card.expanded .checklist-progress>small{font-size:8px!important;white-space:nowrap!important}
 .reminder-card.expanded .card-actions{padding:6px 10px 9px!important;gap:6px!important}
 .reminder-card.expanded .card-actions button{width:34px!important;height:30px!important;min-height:30px!important;border-radius:9px!important;font-size:13px!important}
-.reminder-card.expanded::after{content:'⌃'!important;right:12px!important;top:10px!important;font-size:13px!important}
 .reminder-card.collapsed .category-badge{display:inline-flex!important;align-items:center!important;gap:4px!important}
 .reminder-card.collapsed .category-badge b{font-size:8px!important}
 
 /* Completed reminders v34 */
 .compact-smart-views{grid-template-columns:repeat(5,minmax(0,1fr))!important}
 .smart-view.completed-view{color:#69717f!important}
-.reminder-card.is-completed.collapsed{filter:saturate(.32)!important;opacity:.64!important;background:#8b9198!important;border-color:#989ea5!important}
-.reminder-card.is-completed.collapsed:has(.priority-bar.high){background:#987d7f!important;border-color:#a38a8c!important}
-.reminder-card.is-completed.collapsed:has(.priority-bar.medium){background:#9a8c78!important;border-color:#a69a88!important}
-.reminder-card.is-completed.collapsed:has(.priority-bar.low){background:#788c82!important;border-color:#86988f!important}
-.reminder-card.is-completed.collapsed:has(.priority-bar.misc){background:#788793!important;border-color:#8795a0!important}
-.reminder-card.is-completed.expanded{filter:saturate(.45)!important;opacity:.76!important}
+.reminder-card.is-completed.collapsed{filter:saturate(.32)!important;opacity:.64!important;background:#8b9198!important;border-color:#989ea5!important}.reminder-card.is-completed.expanded{filter:saturate(.45)!important;opacity:.76!important}
 .reminder-card.is-completed .card-title{text-decoration:line-through!important;text-decoration-thickness:1px!important}
 @media(max-width:430px){.compact-smart-views{grid-template-columns:repeat(5,minmax(62px,1fr))!important;overflow-x:auto!important;padding-bottom:3px!important}.smart-view{min-width:62px!important}}
 
@@ -288,7 +267,6 @@ html[data-theme="dark"] .completed-divider::before,html[data-theme="dark"] .comp
 .reminder-card.expanded .card-actions{display:flex!important;justify-content:flex-end!important;align-items:center!important;padding:4px 9px 7px!important;gap:5px!important;border-top:0!important}
 .reminder-card.expanded .card-actions button{width:30px!important;height:28px!important;min-height:28px!important;border-radius:8px!important;font-size:12px!important;box-shadow:none!important}
 .reminder-card.expanded .card-actions button.complete{width:34px!important}
-.reminder-card.expanded::after{top:8px!important;right:10px!important;font-size:11px!important;opacity:.55!important}
 .completed-divider{margin:16px 3px 7px!important;gap:8px!important;font-size:8px!important;letter-spacing:.11em!important;color:#7f8796!important}
 .completed-divider::before,.completed-divider::after{background:#343a46!important;opacity:.8!important}
 .reminder-card.is-completed.collapsed{opacity:.5!important;filter:saturate(.22)!important}
@@ -1042,15 +1020,8 @@ html[data-theme="dark"] .today-dashboard{box-shadow:none!important}
  .today-summary-icon{width:20px!important;height:20px!important}
  .today-summary>div strong{font-size:15px!important}
  .today-summary>div small{font-size:8px!important}
-}
-
-
-/* Priority palette refinement v78 — warmer orange medium */
-.reminder-card.collapsed:has(.priority-bar.medium){background:#a96f38!important;border-color:#b77c45!important}
-.priority-bar.medium{background:#c7833f!important}
-.calendar-priority.medium{background:#a96f38!important}
-.reminder-card.is-completed.collapsed:has(.priority-bar.medium){background:#98816d!important;border-color:#a58f7a!important}
-.composer-priorities button[data-composer-priority="medium"]{background:#f7e6d4!important;color:#855020!important}
+}.priority-bar.medium{background:#c7833f!important}
+.calendar-priority.medium{background:#a96f38!important}.composer-priorities button[data-composer-priority="medium"]{background:#f7e6d4!important;color:#855020!important}
 .pill.medium{background:#f7e6d4!important;color:#855020!important}
 .summary-card.medium strong{color:#a7652e!important}
 
@@ -1080,35 +1051,11 @@ html[data-theme="dark"] .today-dashboard{box-shadow:none!important}
  border:1px solid var(--scheme-border,#e5e7eb)!important;
  box-shadow:none!important;
  overflow:hidden!important;
-}
-.reminder-card.collapsed .priority-bar{
- display:block!important;
- position:absolute!important;
- left:0!important;
- top:0!important;
- bottom:0!important;
- width:5px!important;
- height:100%!important;
- border-radius:0!important;
- z-index:2!important;
-}
-.reminder-card.collapsed .card-body{
+}.reminder-card.collapsed .card-body{
  height:39px!important;
  padding-left:14px!important;
  background:transparent!important;
-}
-.reminder-card.collapsed:has(.priority-bar.high),
-.reminder-card.collapsed:has(.priority-bar.medium),
-.reminder-card.collapsed:has(.priority-bar.low),
-.reminder-card.collapsed:has(.priority-bar.misc),
-.reminder-card.is-completed.collapsed:has(.priority-bar.high),
-.reminder-card.is-completed.collapsed:has(.priority-bar.medium),
-.reminder-card.is-completed.collapsed:has(.priority-bar.low),
-.reminder-card.is-completed.collapsed:has(.priority-bar.misc){
- background:var(--scheme-surface,#fff)!important;
- border-color:var(--scheme-border,#e5e7eb)!important;
-}
-.priority-bar.high{background:#a85d60!important}
+}.priority-bar.high{background:#a85d60!important}
 .priority-bar.medium{background:#b87538!important}
 .priority-bar.low{background:#5f806d!important}
 .priority-bar.misc{background:#5d7890!important}
@@ -1208,18 +1155,7 @@ small,.muted,.card-meta,.reminder-meta{color:#5f5f5f!important}
 .priority-bar.high,.calendar-priority.high{background:#000!important}
 .priority-bar.medium,.calendar-priority.medium{background:#555!important}
 .priority-bar.low,.calendar-priority.low{background:#999!important}
-.priority-bar.misc,.calendar-priority.misc{background:#d0d0d0!important}
-.reminder-card.collapsed:has(.priority-bar.high),
-.reminder-card.collapsed:has(.priority-bar.medium),
-.reminder-card.collapsed:has(.priority-bar.low),
-.reminder-card.collapsed:has(.priority-bar.misc),
-.reminder-card.is-completed.collapsed:has(.priority-bar.high),
-.reminder-card.is-completed.collapsed:has(.priority-bar.medium),
-.reminder-card.is-completed.collapsed:has(.priority-bar.low),
-.reminder-card.is-completed.collapsed:has(.priority-bar.misc){
- background:#fff!important;border-color:#cfcfcf!important;color:#000!important;
-}
-.pill.high,.pill.medium,.pill.low,
+.priority-bar.misc,.calendar-priority.misc{background:#d0d0d0!important}.pill.high,.pill.medium,.pill.low,
 .composer-priorities button,
 .summary-card,.smart-view,.filter-chip,.meta-chip,.category-chip{
  background:#fff!important;color:#000!important;border-color:#cfcfcf!important;
@@ -1263,7 +1199,6 @@ dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
  overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
 }
 .reminder-card.collapsed .card-body{padding-right:40px!important}
-.reminder-card.collapsed::after{right:12px!important}
 .reminder-card.expanded>.card-actions,
 .calendar-day-list .calendar-home-card.expanded>.card-actions{
  width:calc(100% - 20px)!important;margin-left:10px!important;margin-right:10px!important;
@@ -1354,17 +1289,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 .reminder-card.collapsed .card-body *,
 .calendar-day-list .calendar-home-card.collapsed>.card-body *{color:#fff!important}
 .reminder-card.collapsed::after,
-.calendar-day-list .calendar-home-card.collapsed::after{color:#fff!important;opacity:.9!important}
-
-/* Urgency remains the only strong color. Thicker 8px bars. */
-.reminder-card.collapsed .priority-bar,
-.calendar-day-list .calendar-home-card.collapsed>.priority-bar{
- display:block!important;
- width:8px!important;min-width:8px!important;max-width:8px!important;
- height:100%!important;
- border-radius:0!important;
-}
-.priority-bar.high,.calendar-priority.high{background:#d94a4a!important}
+.calendar-day-list .calendar-home-card.collapsed::after{color:#fff!important;opacity:.9!important}.priority-bar.high,.calendar-priority.high{background:#d94a4a!important}
 .priority-bar.medium,.calendar-priority.medium{background:#e58a32!important}
 .priority-bar.low,.calendar-priority.low{background:#e0bd42!important}
 .priority-bar.misc,.calendar-priority.misc{background:#4f86c6!important}
@@ -1378,11 +1303,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 .reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
  background:#050505!important;color:#fff!important;border:2px solid var(--oneui-edge,#464646)!important;box-shadow:none!important;
 }
-.reminder-card.expanded .card-body *,.calendar-home-card.expanded .card-body *{color:#fff!important}
-.reminder-card.expanded>.priority-bar,.calendar-day-list .calendar-home-card.expanded>.priority-bar{
- width:8px!important;min-width:8px!important;max-width:8px!important;
-}
-.reminder-card.expanded>.card-actions,
+.reminder-card.expanded .card-body *,.calendar-home-card.expanded .card-body *{color:#fff!important}.reminder-card.expanded>.card-actions,
 .calendar-day-list .calendar-home-card.expanded>.card-actions{border-top-color:#555!important}
 
 /* Dashboard mirrors approved black mockup. */
@@ -1531,13 +1452,6 @@ dialog,.quick-add-dialog,.editor-dialog,.settings-dialog{
 .priority-bar.medium,.calendar-priority.medium{background:#e58a32!important}
 .priority-bar.low,.calendar-priority.low{background:#e0bd42!important}
 .priority-bar.misc,.calendar-priority.misc{background:#4f86c6!important}
-.reminder-card.collapsed .priority-bar,
-.calendar-day-list .calendar-home-card.collapsed>.priority-bar,
-.reminder-card.expanded>.priority-bar,
-.calendar-day-list .calendar-home-card.expanded>.priority-bar{
- width:8px!important;min-width:8px!important;max-width:8px!important;
-}
-
 /* Prevent accidental horizontal overflow throughout every view */
 .app-shell,.calendar-view,.you-view,.profile-view,.bottom-nav,
 .calendar-shell,.calendar-grid,.calendar-day-list,.you-card,.profile-card,
@@ -1708,13 +1622,7 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 .reminder-card.collapsed:has(.card-due-split){
  display:grid!important;
  grid-template-columns:8px 66px minmax(0,1fr)!important;
-}
-.reminder-card.collapsed:has(.card-due-split)>.priority-bar{
- grid-column:1!important;grid-row:1!important;
- position:relative!important;inset:auto!important;
- width:8px!important;height:39px!important;
-}
-.reminder-card.collapsed>.card-due-split{
+}.reminder-card.collapsed>.card-due-split{
  grid-column:2!important;grid-row:1!important;
  position:relative!important;
  z-index:3!important;
