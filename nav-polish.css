@@ -1555,3 +1555,146 @@ dialog,.quick-add-dialog,.editor-dialog,.settings-dialog{
 .app-shell,.calendar-view,.you-view,.profile-view,.bottom-nav,
 .calendar-shell,.calendar-grid,.calendar-day-list,.you-card,.profile-card,
 .settings-card,.achievement-card{max-width:100%!important;overflow-x:hidden!important}
+
+
+/* v83 strict selector pass — actual Calendar / You / header / nav elements */
+body,.app-shell,#calendarDialog,#settingsDialog,
+#calendarDialog.calendar-dialog,#settingsDialog.settings-dialog{
+ background:#000!important;color:#fff!important;
+}
+
+/* Header had legacy blue components not covered by generic monochrome rules */
+.minna-topbar{background:#000!important;border-bottom:1px solid #777!important;box-shadow:none!important}
+.minna-logo{
+ background:#050505!important;border:1px solid #aaa!important;border-radius:5px!important;
+ box-shadow:none!important;transform:none!important;
+}
+.minna-logo b{color:#fff!important;transform:none!important}
+.minna-logo i{border-color:#777!important}
+.home-profile{
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ border-radius:5px!important;box-shadow:none!important;
+}
+.home-profile-copy>strong,.home-profile-copy>small b{color:#fff!important}
+.home-profile-copy>small{color:#aaa!important}
+.home-rank-badge,.coded-rank-badge{
+ background:#080808!important;border-color:#777!important;box-shadow:none!important;filter:grayscale(1)!important;
+}
+
+/* Calendar uses .calendar-dialog/.calendar-sheet/.calendar-head in the real markup */
+#calendarDialog,.calendar-dialog,.calendar-dialog[open]{
+ background:#000!important;border:0!important;border-radius:0!important;
+}
+#calendarDialog .calendar-sheet,.calendar-dialog .calendar-sheet{
+ background:#000!important;color:#fff!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-head{background:#000!important;color:#fff!important}
+#calendarDialog .calendar-head h2{color:#fff!important}
+#calendarDialog .calendar-head button{
+ width:40px!important;height:40px!important;padding:0!important;
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ border-radius:5px!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-weekdays{
+ background:#000!important;color:#aaa!important;border:0!important;
+}
+#calendarDialog .calendar-weekdays span{color:#aaa!important}
+#calendarDialog .calendar-grid{
+ background:#000!important;border-bottom:1px solid #555!important;gap:6px!important;
+}
+#calendarDialog .calendar-day{
+ background:#050505!important;color:#fff!important;border:1px solid #555!important;
+ border-radius:4px!important;box-shadow:none!important;transform:none!important;
+}
+#calendarDialog .calendar-day:hover{background:#0b0b0b!important}
+#calendarDialog .calendar-day.today{
+ background:#050505!important;color:#fff!important;border:1px solid #fff!important;
+ box-shadow:none!important;
+}
+#calendarDialog .calendar-day.selected,
+#calendarDialog .calendar-day.selected.today{
+ background:#fff!important;color:#000!important;border:1px solid #fff!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-day.selected *{color:#000!important}
+#calendarDialog .calendar-day small{
+ background:#fff!important;color:#000!important;border:0!important;border-radius:2px!important;
+}
+#calendarDialog .calendar-day-head{color:#fff!important}
+#calendarDialog .calendar-day-head strong{color:#fff!important}
+#calendarDialog #calendarTodayBtn{
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ border-radius:4px!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-day-list{
+ background:#000!important;color:#fff!important;border:0!important;
+}
+#calendarDialog .calendar-empty{
+ background:#050505!important;color:#aaa!important;border:1px solid #666!important;
+ border-radius:5px!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-add{
+ width:100%!important;background:#050505!important;color:#fff!important;
+ border:1px solid #888!important;border-radius:5px!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-close{
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;border-radius:5px!important;
+}
+
+/* Actual You page is #settingsDialog > .settings-sheet */
+#settingsDialog,.settings-dialog,.settings-dialog[open]{
+ background:#000!important;color:#fff!important;border:0!important;border-radius:0!important;
+}
+#settingsDialog .settings-sheet{
+ background:#000!important;color:#fff!important;box-shadow:none!important;
+}
+#settingsDialog .you-page-head{color:#fff!important}
+#settingsDialog .you-page-head small,#settingsDialog .you-page-head p{color:#aaa!important}
+#settingsDialog .you-page-head h2{color:#fff!important}
+#settingsDialog .text-btn{color:#fff!important}
+#settingsDialog .settings-section{
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ border-radius:5px!important;box-shadow:none!important;
+}
+#settingsDialog .settings-row,#settingsDialog .achievement-head,
+#settingsDialog .achievement-stats,#settingsDialog .achievement-next,
+#settingsDialog .rank-panel,#settingsDialog .achievement-grid{
+ background:#050505!important;color:#fff!important;border-color:#555!important;box-shadow:none!important;
+}
+#settingsDialog .achievement-stats>div,#settingsDialog .achievement-grid>*,
+#settingsDialog .rank-panel>*{
+ background:#080808!important;color:#fff!important;border-color:#555!important;border-radius:4px!important;box-shadow:none!important;
+}
+#settingsDialog button:not(.danger-btn){
+ background:#080808!important;color:#fff!important;border-color:#777!important;border-radius:4px!important;box-shadow:none!important;
+}
+#settingsDialog input,#settingsDialog select{
+ background:#080808!important;color:#fff!important;border:1px solid #666!important;border-radius:4px!important;
+}
+
+/* Actual fixed nav selectors: eliminate the old purple active tile and dark-blue bar */
+.bottom-nav{
+ background:#000!important;border-top:1px solid #666!important;box-shadow:none!important;
+ backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+.bottom-nav .bottom-nav-item,
+.bottom-nav .bottom-nav-item.active{
+ background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+}
+.bottom-nav .bottom-nav-item{color:#8f8f8f!important}
+.bottom-nav .bottom-nav-item.active{color:#fff!important}
+.bottom-nav .bottom-nav-item span,.bottom-nav .bottom-nav-item small{color:inherit!important}
+.bottom-nav .bottom-nav-add{
+ background:#fff!important;color:#000!important;border:1px solid #fff!important;
+ border-radius:50%!important;box-shadow:none!important;
+}
+
+/* Ensure no old dark-theme purple overrides win on these surfaces */
+html[data-theme="dark"] .minna-topbar,
+html[data-theme="dark"] .home-profile,
+html[data-theme="dark"] #calendarDialog,
+html[data-theme="dark"] #calendarDialog .calendar-sheet,
+html[data-theme="dark"] #settingsDialog,
+html[data-theme="dark"] #settingsDialog .settings-sheet,
+html[data-theme="dark"] .bottom-nav{background:#000!important;color:#fff!important}
+html[data-theme="dark"] .bottom-nav-item{background:transparent!important;color:#8f8f8f!important}
+html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important;color:#fff!important}
