@@ -2155,3 +2155,23 @@ dialog input,dialog textarea,dialog select{
  outline:0!important;
 }
 .home-section-divider::after,.home-section-divider i{background:#464646!important}
+
+
+/* v92 hard override: reminder edge must never inherit legacy white/scheme borders */
+html body .app-shell .reminder-list article.reminder-card,
+html body .app-shell .reminder-list article.reminder-card.collapsed,
+html body .app-shell .reminder-list article.reminder-card.expanded,
+html[data-theme] body .app-shell .reminder-list article.reminder-card,
+html[data-scheme] body .app-shell .reminder-list article.reminder-card,
+html body #calendarDialog .calendar-day-list article.calendar-home-card{
+ border-width:2px!important;
+ border-style:solid!important;
+ border-color:rgb(70,70,70)!important;
+ outline:none!important;
+ -webkit-box-shadow:none!important;
+ box-shadow:none!important;
+}
+html body .app-shell .reminder-list article.reminder-card .card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card .card-due-split{
+ border-right:2px solid rgb(70,70,70)!important;
+}
