@@ -171,4 +171,10 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.expanded>.card-due-split,.calendar-day-list .calendar-home-card.expanded>.card-due-split{min-height:86px!important;padding:7px 4px!important}
 
 /* v103 remove redundant expanded indicators */
-.reminder-card.expanded .due-alert,.calendar-home-card.expanded .due-alert,.reminder-card.expanded .card-meta,.calendar-home-card.expanded .card-meta,.reminder-card.expanded .checklist-progress,.calendar-home-card.expanded .checklist-progress{display:none!important}
+.reminder-card.expanded .card-meta,.calendar-home-card.expanded .card-meta{display:none!important}
+
+/* v104 left-column alert + progress-only checklist */
+.expanded-due .due-alert{display:flex!important;align-items:center!important;justify-content:center!important;width:22px!important;height:22px!important;margin-top:1px!important;background:#383838!important;border-radius:50%!important;font-size:12px!important}
+.reminder-card.expanded .checklist-progress,.calendar-home-card.expanded .checklist-progress{display:block!important;margin:10px 0 8px!important}
+.reminder-card.expanded .checklist-progress-head,.reminder-card.expanded .checklist-progress>small,.calendar-home-card.expanded .checklist-progress-head,.calendar-home-card.expanded .checklist-progress>small{display:none!important}
+.reminder-card.expanded .checklist-progress-track,.calendar-home-card.expanded .checklist-progress-track{height:5px!important;margin:0!important}
