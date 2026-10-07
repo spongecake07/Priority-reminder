@@ -225,3 +225,13 @@ html body .app-shell>.home-tools.glance-filter>#homeFilterPanel{margin:0!importa
 /* v1.16 collapsed Today's Summary matches Today's Progress */
 html body .app-shell>.home-tools.glance-filter:has(>#homeFilterPanel.hidden){margin:8px 0 10px!important;border-radius:14px!important}
 html body .app-shell>.home-tools.glance-filter:has(>#homeFilterPanel.hidden)>#homeFilterToggle{min-height:0!important;height:auto!important;padding:10px 12px!important}
+
+/* accessibility and touch polish */
+button,.bottom-nav-item,.card-actions button,.five-priorities .summary-card{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.card-actions button,.bottom-nav-item{min-height:46px!important}
+.five-priorities .summary-card{min-height:44px!important}
+button:focus-visible,.bottom-nav-item:focus-visible,.card-actions button:focus-visible,.five-priorities .summary-card:focus-visible{outline:2px solid var(--ui-accent)!important;outline-offset:2px!important}
+.card-actions button:active,.bottom-nav-item:active,.five-priorities .summary-card:active,#homeFilterToggle:active{transform:scale(.97)}
+.card-actions button,.bottom-nav-item,.five-priorities .summary-card,#homeFilterToggle{transition:transform .1s ease,background-color .15s ease,border-color .15s ease,color .15s ease}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media (max-width:430px){.card-actions button small,.bottom-nav-item small{font-size:max(10px,.72rem)!important}.five-priorities .summary-card span{font-size:max(10px,.68rem)!important}}
