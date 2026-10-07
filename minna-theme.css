@@ -227,3 +227,11 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 html body .app-shell>.home-tools.glance-filter{border:2px solid var(--ui-line)!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:var(--ui-panel)!important;border-radius:20px!important;background-clip:padding-box!important}
 html body .app-shell>.home-tools.glance-filter>#homeFilterToggle{border:0!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important}
 html body .app-shell>.home-tools.glance-filter>#homeFilterPanel{border:0!important;border-top:1px solid #383838!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important}
+
+/* v1.15 */
+.card-actions .pin-btn.pinned,.card-actions .pin-btn.pinned *{color:#f2c94c!important}
+.expanded-due{width:100%!important;box-sizing:border-box!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+.expanded-due .due-date{width:100%!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+.expanded-due .due-date b{font-size:23px!important;line-height:1!important}
+.expanded-due .due-date small{font-size:11px!important}
+.expanded-due .due-time{display:block!important;width:100%!important;box-sizing:border-box!important;font-size:13px!important;line-height:1.15!important;text-align:center!important;white-space:nowrap!important}
