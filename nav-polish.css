@@ -1175,3 +1175,128 @@ html[data-theme="dark"] .today-dashboard{box-shadow:none!important}
  .today-dashboard{padding-left:11px!important;padding-right:11px!important}
  .today-summary{padding-left:6px!important;padding-right:6px!important}
 }
+
+
+/* Monochrome system v80 — true black & white, high-visibility layout */
+:root,
+html[data-scheme],
+html[data-theme="dark"][data-scheme]{
+ --scheme-bg:#ffffff!important;
+ --scheme-surface:#ffffff!important;
+ --scheme-soft:#f3f3f3!important;
+ --scheme-primary:#000000!important;
+ --scheme-primary2:#000000!important;
+ --scheme-text:#000000!important;
+ --scheme-muted:#5f5f5f!important;
+ --scheme-border:#cfcfcf!important;
+ --scheme-nav:#ffffff!important;
+ --bg:#ffffff!important;
+ --card:#ffffff!important;
+ --text:#000000!important;
+ --muted:#5f5f5f!important;
+ --line:#cfcfcf!important;
+ --primary:#000000!important;
+ --primary-dark:#000000!important;
+ --high:#000000!important;
+ --medium:#000000!important;
+ --low:#000000!important;
+ --high-bg:#ffffff!important;
+ --medium-bg:#ffffff!important;
+ --low-bg:#ffffff!important;
+ color-scheme:light!important;
+}
+html,body,#app,.app-shell,.app-main,.view{background:#fff!important;color:#000!important}
+body{overflow-x:hidden!important}
+*,*::before,*::after{box-sizing:border-box}
+img,svg,video,canvas{max-width:100%}
+button,input,select,textarea{max-width:100%;color:#000!important}
+input,select,textarea{background:#fff!important;border-color:#bdbdbd!important}
+::placeholder{color:#707070!important;opacity:1!important}
+a{color:#000!important}
+.minna-brand,.minna-brand strong,.minna-version,
+h1,h2,h3,h4,strong,.card-title,.reminder-title{color:#000!important}
+small,.muted,.card-meta,.reminder-meta{color:#5f5f5f!important}
+
+/* Remove decorative color while preserving priority as monochrome patterns. */
+.priority-bar.high,.calendar-priority.high{background:#000!important}
+.priority-bar.medium,.calendar-priority.medium{background:#555!important}
+.priority-bar.low,.calendar-priority.low{background:#999!important}
+.priority-bar.misc,.calendar-priority.misc{background:#d0d0d0!important}
+.reminder-card.collapsed:has(.priority-bar.high),
+.reminder-card.collapsed:has(.priority-bar.medium),
+.reminder-card.collapsed:has(.priority-bar.low),
+.reminder-card.collapsed:has(.priority-bar.misc),
+.reminder-card.is-completed.collapsed:has(.priority-bar.high),
+.reminder-card.is-completed.collapsed:has(.priority-bar.medium),
+.reminder-card.is-completed.collapsed:has(.priority-bar.low),
+.reminder-card.is-completed.collapsed:has(.priority-bar.misc){
+ background:#fff!important;border-color:#cfcfcf!important;color:#000!important;
+}
+.pill.high,.pill.medium,.pill.low,
+.composer-priorities button,
+.summary-card,.smart-view,.filter-chip,.meta-chip,.category-chip{
+ background:#fff!important;color:#000!important;border-color:#cfcfcf!important;
+}
+.priority-picker input:checked+.pill,
+.smart-view.active,.filter-chip.active{
+ background:#000!important;color:#fff!important;border-color:#000!important;
+}
+.summary-card.high strong,.summary-card.medium strong,.summary-card.low strong{color:#000!important}
+.category-icon,.today-summary-icon,.coded-rank-badge,.rank-badge{filter:grayscale(1)!important}
+
+/* Surfaces and navigation */
+.topbar,.bottom-nav,.home-filter-panel,.home-filter-toggle,.today-dashboard,.minna-progress,
+.reminder-card,.calendar-shell,.calendar-day-list,.settings-card,.you-card,.achievement-card,
+dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
+ background:#fff!important;color:#000!important;border-color:#cfcfcf!important;
+}
+.bottom-nav{border-top:1px solid #cfcfcf!important}
+.bottom-nav button{color:#4d4d4d!important;background:transparent!important}
+.bottom-nav button.active{color:#000!important}
+.bottom-nav-add,.primary-btn,.save-btn,.done-action{
+ background:#000!important;color:#fff!important;border-color:#000!important;
+}
+.secondary-btn,.card-actions button,.calendar-control,.photo-btn,.restore-btn{
+ background:#fff!important;color:#000!important;border-color:#bdbdbd!important;
+}
+.danger-btn{background:#fff!important;color:#000!important;border:2px solid #000!important}
+
+/* At a glance: simple visible divisions, no colored status tiles. */
+.today-summary-grid{border-color:#cfcfcf!important}
+.today-summary{background:#fff!important;color:#000!important;border-color:#cfcfcf!important}
+.today-summary *{color:#000!important}
+.today-summary small{color:#5f5f5f!important}
+
+/* Layout safety: prevent text and controls from colliding. */
+.topbar,.home-profile,.home-filter-panel,.today-dashboard,.minna-progress,
+.reminder-card,.card-body,.card-actions,.calendar-day-list,.bottom-nav,
+.composer-panel,.editor-dialog,.settings-dialog{min-width:0!important}
+.card-body,.card-copy,.reminder-copy,.today-summary>div,.home-profile-copy{overflow:hidden!important;min-width:0!important}
+.card-title,.reminder-title,.card-meta,.reminder-meta{
+ overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+}
+.reminder-card.collapsed .card-body{padding-right:40px!important}
+.reminder-card.collapsed::after{right:12px!important}
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ width:calc(100% - 20px)!important;margin-left:10px!important;margin-right:10px!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
+.reminder-card.expanded>.card-actions>button,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button{
+ min-width:0!important;overflow:hidden!important;font-size:11px!important;
+}
+.today-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.today-summary{min-width:0!important;overflow:hidden!important}
+.today-summary>div{min-width:0!important}
+.today-summary strong,.today-summary small{display:block!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.compact-smart-views,.compact-priority-row{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.compact-smart-views>* ,.compact-priority-row>*{min-width:0!important;overflow:hidden!important}
+.bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+.bottom-nav button{min-width:0!important;overflow:hidden!important}
+@media(max-width:370px){
+ .reminder-card.expanded>.card-actions>button,
+ .calendar-day-list .calendar-home-card.expanded>.card-actions>button{font-size:10px!important;padding:0 2px!important}
+ .today-summary{padding-left:4px!important;padding-right:4px!important}
+ .today-summary small{font-size:9px!important}
+}
