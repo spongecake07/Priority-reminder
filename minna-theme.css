@@ -263,3 +263,7 @@ button:focus-visible,.bottom-nav-item:focus-visible,.card-actions button:focus-v
 
 /* full-row checklist touch target */
 .card-checklist label{cursor:pointer!important;touch-action:manipulation!important;-webkit-tap-highlight-color:transparent!important}
+
+/* checklist rows use one controlled click target */
+.card-checklist .checklist-row{display:flex!important;align-items:center!important;gap:8px!important;min-height:34px!important;cursor:pointer!important;touch-action:manipulation!important;-webkit-tap-highlight-color:transparent!important}
+.card-checklist .checklist-row input{pointer-events:none!important;flex:0 0 auto!important}
