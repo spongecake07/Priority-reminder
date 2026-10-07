@@ -1056,3 +1056,13 @@ html[data-theme="dark"] .today-dashboard{box-shadow:none!important}
  .today-summary>div strong{font-size:15px!important}
  .today-summary>div small{font-size:8px!important}
 }
+
+
+/* Priority palette refinement v78 — warmer orange medium */
+.reminder-card.collapsed:has(.priority-bar.medium){background:#a96f38!important;border-color:#b77c45!important}
+.priority-bar.medium{background:#c7833f!important}
+.calendar-priority.medium{background:#a96f38!important}
+.reminder-card.is-completed.collapsed:has(.priority-bar.medium){background:#98816d!important;border-color:#a58f7a!important}
+.composer-priorities button[data-composer-priority="medium"]{background:#f7e6d4!important;color:#855020!important}
+.pill.medium{background:#f7e6d4!important;color:#855020!important}
+.summary-card.medium strong{color:#a7652e!important}
