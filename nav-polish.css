@@ -1791,7 +1791,7 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 #homeFilterToggle span,#homeFilterToggle strong,#homeFilterToggle b{color:#fff!important}
 #homeFilterToggle small{color:#aaa!important}
 .home-filter-panel,#homeFilterPanel{
- background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ background:#050505!important;color:#fff!important;
 }
 .search-wrap,.search-wrap input,#searchInput{
  background:#080808!important;color:#fff!important;border-color:#666!important;
