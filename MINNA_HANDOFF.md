@@ -164,3 +164,119 @@ These SHAs are only a snapshot. **Always refetch current SHAs in the new convers
 Paste/send:
 > Continue developing my Minna app from the GitHub repository `spongecake07/Priority-reminder`. Read `MINNA_HANDOFF.md` first, then fetch the current files before making changes. GitHub is the source of truth. Preserve all local reminder data, achievements and existing functionality. We were most recently refining the selectable color schemes and fixing remaining hard-coded colors; v57 specifically fixed the center + button fill.
 
+
+
+# HANDOFF UPDATE — v1.27 (2026-10-07)
+
+This section is the newest source-of-truth handoff. Read it first in a new chat, then fetch the current GitHub files before changing anything.
+
+## Current release
+- Repository: `spongecake07/Priority-reminder`
+- Branch: `main`
+- GitHub is the source of truth.
+- Current visible version: **v1.27**
+- Current cache/query version: **127**
+- Current service worker cache: `minna-v127`
+- Current assets include `nav-polish.css?v=127`, `minna-theme.css?v=127`, and `app.js?v=127`.
+- Do not bump the version for documentation-only changes.
+
+## Required workflow
+1. Before any app change, tell the user exactly what will change in a short bullet list.
+2. Wait for the user's explicit **Ok**.
+3. Read this handoff and refetch every relevant GitHub file immediately before editing. Never reuse an old SHA.
+4. Preserve reminders, photos, achievements, settings, categories, themes, manual ordering, and all existing functionality.
+5. For a release, increment visible version and synchronize every cache/query version in `index.html` and `service-worker.js`.
+6. Verify every GitHub write returned a commit before claiming completion.
+7. After a successful release, the user wants only: `Done — v1.xx`. Do not send the deployment link.
+
+## Recent releases
+### v1.20 — reminder card polish
+Improved reminder hierarchy, typography, spacing, completed state, checklist spacing, action buttons, and pinned styling without changing the established layout.
+
+### v1.21–v1.25 — checklist interaction
+The user requested checklist items be selectable/unselectable by tapping anywhere on the checklist item, not only the checkbox.
+- The first implementation caused toggle problems and was corrected.
+- Current implementation uses a controlled `.checklist-row` as the click target on both Home and Calendar.
+- The checkbox inside the row has `pointer-events:none`; the row performs exactly one app-controlled toggle.
+- Full-row check/uncheck is confirmed working by the user.
+- The original compact checklist-chip appearance was restored after the interaction change.
+- A brief blue browser tap flash was suppressed with transparent tap highlight/focus styling.
+- Do not revert checklist rows to native label-driven toggling without carefully handling the double/native click behavior.
+
+Current conceptual markup:
+`<div class="checklist-row" data-action="check" data-check-index="..." role="checkbox" aria-checked="..."><input type="checkbox" tabindex="-1" ...><span>...</span></div>`
+Calendar uses `data-calendar-action="check"`.
+
+### v1.26 — controlled CSS cleanup
+Removed about 1.9 KB of obsolete legacy checklist styling from `nav-polish.css` and consolidated superseded checklist rules in `minna-theme.css`. No intended visual/functional change.
+
+### v1.27 — reminder-card legacy cleanup
+Removed about 4.5 KB more obsolete reminder-card CSS from `nav-polish.css`, including deleted `.priority-bar` markup styling, old priority-bar-dependent collapsed-card rules, and obsolete expand/collapse chevron styling. No intended visual/functional change.
+
+After v1.27:
+- `nav-polish.css` is still large (~153 KB) and contains additional historical CSS.
+- `minna-theme.css` remains the current visual source of truth and loads after legacy CSS.
+- Continue cleanup only in small, controlled stages with no visual regressions.
+
+## Critical UI baselines — do not regress
+- Expanded reminder actions are exactly four equal-width buttons in one row: **Pin | Calendar | Edit | Done**.
+- Home and Calendar reminder cards must remain aligned in appearance and behavior.
+- No expand/collapse chevrons/arrows on reminder cards.
+- Urgency is shown through card-body gradients; do not restore old priority rails or `.priority-bar` markup.
+- Expanded dated reminders use the left due column with category/date/time and notification bell.
+- Checklist progress bar remains; textual `0/5`-style progress counter should not be reintroduced on Home.
+- Checklist items remain compact chips and the **entire chip/row is tappable** to check or uncheck.
+- Checklist tapping must not produce a blue panel flash.
+- Pinned action is visually yellow.
+- Collapsed Today's Summary remains compact like Today's Progress.
+- Current design direction: black background, charcoal panels, dark-gray borders, soft off-white text, cyan accent, Samsung One UI-inspired, clean and compact.
+
+## Data safety
+- Reminder database: IndexedDB `priority-reminders-db`; preserve its object store/key behavior.
+- Achievements/lifetime state are stored separately in localStorage.
+- Start Fresh deletes reminders only; it must not wipe lifetime progress/profile/categories/theme/etc.
+- Backup JSON must remain compatible with reminders and photos.
+- Manual order remains in localStorage key `minna-manual-order`; do not migrate it into reminder records.
+- Do not advise clearing app/site data without first protecting/exporting user data.
+
+## CSS architecture / cleanup status
+- `nav-polish.css`: legacy structural/history file, still ~153 KB after v1.26/v1.27 cleanup.
+- `minna-theme.css`: current visual source of truth.
+- Avoid solving conflicts by endlessly appending overrides. When safe, remove obsolete legacy rules and keep one canonical current rule.
+- Cleanup already completed:
+  - v1.17: consolidated glance/filter override chain.
+  - v1.26: removed obsolete legacy checklist rules.
+  - v1.27: removed obsolete priority-bar/reminder-card/chevron rules.
+- Good next cleanup stages:
+  1. Remaining duplicated collapsed/expanded reminder-card rules.
+  2. Remaining historical Home/Summary/filter rules.
+  3. Calendar/Home duplicated card styling.
+  4. Old hard-coded colors replaced by theme variables.
+  5. Dead selectors for UI elements that no longer exist.
+  6. Only after CSS stabilizes, controlled `app.js` dead-code cleanup.
+- Always regression-check Home, Calendar, checklist, photos, Add/Edit, completed reminders, themes, and mobile layout after cleanup.
+
+## Feature work still available
+Previously discussed improvements that are not yet completed:
+- Home hierarchy/spacing refinement.
+- Faster Add Reminder flow.
+- Snooze/reschedule shortcuts.
+- Smarter notification presets.
+- Quick swipe/long-press actions.
+- Calendar refinement.
+- Backup/restore improvements.
+- PWA reliability: update detection, offline behavior, service-worker recovery, and safer caching.
+- Final systematic testing/regression pass.
+
+The user briefly selected PWA reliability (#8) but changed their mind before implementation and chose code cleanup (#9). Therefore **PWA reliability work has NOT yet been implemented**.
+
+## Known caveat
+A historical `updateHomeFilterStatus()` implementation may target the first `small` inside the Home filter toggle and could replace the Today label with status text. Do not silently change this unless verified/currently relevant or the user approves it.
+
+## New-chat instruction
+When the user starts a new chat and asks to continue Minna development:
+- Read this file first.
+- Fetch the latest GitHub versions of `index.html`, `app.js`, `nav-polish.css`, `minna-theme.css`, and `service-worker.js`.
+- Treat GitHub `main` as authoritative.
+- Do not assume this handoff's SHAs are still current.
+- Preserve all local user data and established UI baselines.
