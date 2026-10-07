@@ -188,3 +188,12 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .five-priorities .summary-card{min-width:0!important;padding:10px 2px!important}.five-priorities .summary-card strong{font-size:18px!important}.five-priorities .summary-card span{font-size:10px!important}
 .five-priorities .summary-card.misc{border-color:#3f6688!important}
 @media(max-width:420px){.five-priorities{gap:4px!important}.five-priorities .summary-card{padding-left:1px!important;padding-right:1px!important}}
+
+/* v109 filter interaction cleanup */
+.glance-toggle{position:relative!important}
+.glance-stat{cursor:pointer!important}
+.glance-expand-btn{align-self:center!important;justify-self:center!important;width:28px!important;height:42px!important;padding:0!important;border:0!important;background:transparent!important;color:var(--ui-text)!important;font-size:20px!important}
+.five-priorities .summary-card{background:var(--ui-panel2)!important;border:2px solid var(--ui-line)!important;color:var(--ui-text)!important;box-shadow:none!important}
+.five-priorities .summary-card.misc{border-color:var(--ui-line)!important;background:var(--ui-panel2)!important}
+.five-priorities .summary-card.active{background:#30345a!important;border-color:#555da0!important}
+.five-priorities .summary-card.misc.active{background:#30345a!important;border-color:#555da0!important}
