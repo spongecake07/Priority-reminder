@@ -922,3 +922,37 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
  transition:box-shadow .12s ease,transform .12s ease,opacity .12s ease!important;
 }
 .reminder-list.minna-reordering .reminder-card.collapsed:not(.minna-dragging){transition:transform .14s ease!important}
+
+
+/* Manual reminder reorder v72 — dedicated Android-safe handle */
+.reminder-card.collapsed .reorder-handle{
+ display:flex!important;
+ position:absolute!important;
+ z-index:8!important;
+ right:31px!important;
+ top:50%!important;
+ transform:translateY(-50%)!important;
+ align-items:center!important;
+ justify-content:center!important;
+ width:30px!important;
+ height:30px!important;
+ margin:0!important;
+ padding:0!important;
+ border:0!important;
+ border-radius:8px!important;
+ background:rgba(255,255,255,.12)!important;
+ color:rgba(255,255,255,.72)!important;
+ font-size:15px!important;
+ font-weight:800!important;
+ line-height:1!important;
+ box-shadow:none!important;
+ touch-action:none!important;
+ -webkit-user-select:none!important;
+ user-select:none!important;
+ cursor:grab!important;
+}
+.reminder-card.expanded .reorder-handle,
+.reminder-card.is-completed .reorder-handle{display:none!important}
+.reminder-card.collapsed .card-body{padding-right:68px!important}
+.reminder-card.collapsed.minna-dragging .reorder-handle{cursor:grabbing!important;background:rgba(255,255,255,.22)!important;color:#fff!important}
+.reminder-list.minna-reordering{touch-action:none!important;overscroll-behavior:contain!important}
