@@ -59,3 +59,49 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
 }
 .reminder-card .card-due-split,.calendar-day-list .calendar-home-card .card-due-split{color:#dedede!important}
+
+/* v99 expanded reminder cleanup */
+.reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
+ border-radius:22px!important;
+ background:var(--ui-panel)!important;
+ overflow:hidden!important;
+}
+.reminder-card.expanded>.card-body,.calendar-day-list .calendar-home-card.expanded>.card-body{
+ padding:16px 18px 14px!important;
+ min-height:0!important;
+}
+.reminder-card.expanded .card-title,.calendar-day-list .calendar-home-card.expanded .card-title{
+ font-size:19px!important;line-height:1.18!important;color:#e8e8e8!important;
+}
+.reminder-card.expanded .card-meta,.calendar-day-list .calendar-home-card.expanded .card-meta{
+ margin-top:8px!important;gap:6px!important;
+}
+.reminder-card.expanded .meta-chip,.reminder-card.expanded .category-chip,
+.calendar-day-list .calendar-home-card.expanded .meta-chip,.calendar-day-list .calendar-home-card.expanded .category-chip{
+ background:#343434!important;color:#dedede!important;border:0!important;border-radius:999px!important;
+ padding:5px 9px!important;
+}
+.reminder-card.expanded>.card-actions,.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ background:var(--ui-panel)!important;
+ border-top:1px solid #3b3b3b!important;
+ padding:10px 12px 12px!important;
+ margin:0!important;width:100%!important;
+ gap:7px!important;
+}
+.reminder-card.expanded>.card-actions>button,.calendar-day-list .calendar-home-card.expanded>.card-actions>button,
+.reminder-card.expanded>.card-actions>button.done-action,.calendar-day-list .calendar-home-card.expanded>.card-actions>button.done-action{
+ height:46px!important;min-height:46px!important;max-height:46px!important;
+ background:#353535!important;color:#dedede!important;
+ border:0!important;border-radius:15px!important;
+ padding:0 5px!important;font-size:13px!important;
+ box-shadow:none!important;
+}
+.reminder-card.expanded>.card-actions>button.done-action,.calendar-day-list .calendar-home-card.expanded>.card-actions>button.done-action{
+ background:#353535!important;color:#66d2da!important;
+}
+.reminder-card.expanded>.card-actions>button.done-action *,.calendar-day-list .calendar-home-card.expanded>.card-actions>button.done-action *{color:#66d2da!important}
+.reminder-card.expanded>.card-actions>button.pin-action,.calendar-day-list .calendar-home-card.expanded>.card-actions>button.pin-action{background:#353535!important;color:#dedede!important}
+.reminder-card.expanded.urgency-high>.card-body{background:linear-gradient(90deg,#a73f42 0%,#513033 34%,var(--ui-panel) 82%)!important}
+.reminder-card.expanded.urgency-medium>.card-body{background:linear-gradient(90deg,#bd6e2c 0%,#5b422e 34%,var(--ui-panel) 82%)!important}
+.reminder-card.expanded.urgency-low>.card-body{background:linear-gradient(90deg,#a58c32 0%,#51492e 34%,var(--ui-panel) 82%)!important}
+.reminder-card.expanded.urgency-misc>.card-body{background:linear-gradient(90deg,#3d75ad 0%,#30465b 34%,var(--ui-panel) 82%)!important}
