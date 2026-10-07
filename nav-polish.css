@@ -1443,3 +1443,115 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
  .calendar-day-list .calendar-home-card.expanded>.card-actions>button{font-size:10px!important;padding:0 2px!important}
  .today-summary{padding-left:4px!important;padding-right:4px!important}
 }
+
+
+/* Full-app monochrome refinement v82 — thin lines, restrained corners */
+:root{--minna-line:#9a9a9a;--minna-line-strong:#d8d8d8;--minna-radius:5px;--minna-radius-lg:7px}
+
+/* One geometry system across Home, Calendar, You, dialogs and settings */
+.home-filter-toggle,.home-filter-panel,.today-dashboard,.minna-progress,
+.reminder-card,.calendar-shell,.calendar-day-list .calendar-home-card,
+.calendar-grid,.calendar-day,.calendar-day-list,.you-card,.profile-card,
+.achievement-card,.settings-card,.developer-card,.dev-card,
+.quick-add-dialog,.editor-dialog,.settings-dialog,.modal-card,
+.search-wrap,.compact-selects select,.smart-view,.summary-card,
+.composer-panel,.composer-actions button,.composer-panel button,
+.priority-picker .pill,.secondary-btn,.primary-btn,.danger-btn,.restore-btn,.photo-btn{
+ border-radius:var(--minna-radius)!important;
+ box-shadow:none!important;
+}
+.today-dashboard,.minna-progress,.home-filter-panel,.you-card,.profile-card,
+.achievement-card,.settings-card,.developer-card,.dev-card,.calendar-shell{
+ border:1px solid var(--minna-line)!important;
+}
+.reminder-card.collapsed,.calendar-day-list .calendar-home-card.collapsed,
+.reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
+ border:1px solid var(--minna-line-strong)!important;
+ border-radius:var(--minna-radius)!important;
+}
+
+/* Calendar: same black canvas and thin white/gray line language */
+.calendar-view,.calendar-page,.calendar-wrap,.calendar-main,.calendar-shell,
+.calendar-header,.calendar-toolbar,.calendar-weekdays,.calendar-grid,.calendar-day-list{
+ background:#000!important;color:#fff!important;
+}
+.calendar-day,.calendar-control,.calendar-month-nav button{
+ background:#050505!important;color:#fff!important;border:1px solid #666!important;box-shadow:none!important;
+}
+.calendar-day{border-radius:4px!important}
+.calendar-day.selected,.calendar-day.today{
+ border-color:#fff!important;background:#111!important;color:#fff!important;
+}
+.calendar-day .day-number,.calendar-day strong{color:#fff!important}
+.calendar-day small,.calendar-day .calendar-count{color:#aaa!important}
+
+/* You/profile: remove colorful/gamified surfaces but keep information legible */
+.you-view,.you-page,.profile-view,.profile-page{background:#000!important;color:#fff!important}
+.you-card,.profile-card,.achievement-card,.settings-card,.developer-card,.dev-card{
+ background:#050505!important;color:#fff!important;
+}
+.you-card *,.profile-card *,.achievement-card *,.settings-card *,.developer-card *,.dev-card *{border-color:#666}
+.you-card h2,.you-card h3,.profile-card h2,.profile-card h3,.achievement-card strong,.settings-card strong{color:#fff!important}
+.achievement-item,.achievement-row,.stat-card,.profile-stat,.you-stat{
+ background:#080808!important;color:#fff!important;border:1px solid #555!important;border-radius:4px!important;box-shadow:none!important;
+}
+.achievement-item.locked,.achievement-row.locked{opacity:.58!important}
+.achievement-medal,.achievement-icon,.rank-art,.home-rank-badge,.coded-rank-badge{filter:grayscale(1)!important}
+.progress-bar,.rank-progress,.achievement-progress{background:#2b2b2b!important;border-radius:2px!important}
+.progress-bar>*,.rank-progress>*,.achievement-progress>*{background:#fff!important;border-radius:2px!important}
+
+/* Bottom navigation: integrated black strip, thin top divider, no floating game-like buttons */
+.bottom-nav{
+ background:#000!important;
+ border:0!important;
+ border-top:1px solid #777!important;
+ border-radius:0!important;
+ box-shadow:none!important;
+ padding-top:6px!important;
+}
+.bottom-nav-item{
+ background:transparent!important;border:0!important;border-radius:0!important;color:#9d9d9d!important;box-shadow:none!important;
+}
+.bottom-nav-item.active{color:#fff!important}
+.bottom-nav-item span{color:inherit!important}
+.bottom-nav-item small{color:inherit!important}
+.bottom-nav-add{
+ width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important;
+ border-radius:50%!important;
+ background:#fff!important;color:#000!important;border:1px solid #fff!important;
+ box-shadow:none!important;
+}
+.bottom-nav-add:active{transform:none!important;background:#dcdcdc!important}
+
+/* Home dashboard and controls: thinner, less rounded */
+.today-dashboard,.minna-progress{border-color:#888!important;border-radius:7px!important}
+.today-summary{border-right:1px solid #4e4e4e!important}
+.home-filter-toggle{border:1px solid #666!important}
+.smart-view,.summary-card,.filter-chip,.meta-chip,.category-chip{border-width:1px!important;border-radius:4px!important}
+.meta-chip,.category-chip{padding-top:2px!important;padding-bottom:2px!important}
+
+/* Dialog/editor consistency */
+dialog,.quick-add-dialog,.editor-dialog,.settings-dialog{
+ background:#050505!important;color:#fff!important;border:1px solid #aaa!important;
+}
+.dialog-head,.quick-add-head{border-bottom-color:#555!important}
+.field input,.field textarea,.field select,.composer-when-fields input{
+ background:#080808!important;color:#fff!important;border:1px solid #666!important;border-radius:4px!important;
+}
+
+/* Preserve urgency as the only color family and keep bars thick. */
+.priority-bar.high,.calendar-priority.high{background:#d94a4a!important}
+.priority-bar.medium,.calendar-priority.medium{background:#e58a32!important}
+.priority-bar.low,.calendar-priority.low{background:#e0bd42!important}
+.priority-bar.misc,.calendar-priority.misc{background:#4f86c6!important}
+.reminder-card.collapsed .priority-bar,
+.calendar-day-list .calendar-home-card.collapsed>.priority-bar,
+.reminder-card.expanded>.priority-bar,
+.calendar-day-list .calendar-home-card.expanded>.priority-bar{
+ width:8px!important;min-width:8px!important;max-width:8px!important;
+}
+
+/* Prevent accidental horizontal overflow throughout every view */
+.app-shell,.calendar-view,.you-view,.profile-view,.bottom-nav,
+.calendar-shell,.calendar-grid,.calendar-day-list,.you-card,.profile-card,
+.settings-card,.achievement-card{max-width:100%!important;overflow-x:hidden!important}
