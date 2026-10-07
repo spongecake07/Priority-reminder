@@ -1356,7 +1356,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 .calendar-day-list .calendar-home-card.collapsed{
  background:#050505!important;
  color:#fff!important;
- border:1.5px solid #f2f2f2!important;
+ border:2px solid var(--oneui-edge,#464646)!important;
  box-shadow:none!important;
  overflow:hidden!important;
 }
@@ -1389,7 +1389,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 
 /* Expanded reminders follow the same black/white shell, retaining urgency strip. */
 .reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
- background:#050505!important;color:#fff!important;border:1.5px solid #f2f2f2!important;box-shadow:none!important;
+ background:#050505!important;color:#fff!important;border:2px solid var(--oneui-edge,#464646)!important;box-shadow:none!important;
 }
 .reminder-card.expanded .card-body *,.calendar-home-card.expanded .card-body *{color:#fff!important}
 .reminder-card.expanded>.priority-bar,.calendar-day-list .calendar-home-card.expanded>.priority-bar{
@@ -1803,7 +1803,7 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 .calendar-day-list .calendar-home-card.expanded{
  background:#050505!important;
  color:#fff!important;
- border:1px solid #d8d8d8!important;
+ border:2px solid var(--oneui-edge,#464646)!important;
  box-shadow:none!important;
 }
 .reminder-card.expanded>.card-body,
@@ -2131,3 +2131,27 @@ dialog input,dialog textarea,dialog select{
  background:#464646!important;
 }
 .bottom-nav{border-top-color:#464646!important}
+
+
+/* v91 final cascade guard — single source of truth for One UI edges */
+:root{--oneui-edge:#464646!important}
+.reminder-card.collapsed,
+.reminder-card.expanded,
+.calendar-day-list .calendar-home-card.collapsed,
+.calendar-day-list .calendar-home-card.expanded{
+ border:2px solid #464646!important;
+ outline:0!important;
+}
+.reminder-card.collapsed>.card-due-split,
+.calendar-day-list .calendar-home-card.collapsed>.card-due-split{
+ border-right:2px solid #464646!important;
+}
+.home-filter-toggle,#homeFilterToggle,.home-filter-panel,#homeFilterPanel,
+.today-dashboard,.minna-progress,.home-profile,.minna-logo,
+#calendarDialog .calendar-day,#calendarDialog .calendar-empty,#calendarDialog .calendar-add,
+#calendarDialog .calendar-head button,#calendarDialog #calendarTodayBtn,
+#settingsDialog .settings-section{
+ border:2px solid #464646!important;
+ outline:0!important;
+}
+.home-section-divider::after,.home-section-divider i{background:#464646!important}
