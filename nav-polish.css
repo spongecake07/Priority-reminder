@@ -1894,3 +1894,173 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
  }
  .calendar-day-list .calendar-home-card.collapsed>.card-due-split{width:58px!important;min-width:58px!important}
 }
+
+
+/* v88 Samsung One UI inspired visual system — reference palette and geometry */
+:root{
+ --oneui-bg:#000000;
+ --oneui-panel:#1f1f1f;
+ --oneui-panel-2:#292929;
+ --oneui-control:#3b3b3b;
+ --oneui-control-off:#484848;
+ --oneui-text:#f4f4f4;
+ --oneui-muted:#b7b7b7;
+ --oneui-line:#343434;
+ --oneui-accent:#59cbd4;
+ --oneui-radius:28px;
+ --oneui-radius-small:20px;
+}
+html,body,.app-shell,#calendarDialog,#settingsDialog,
+#calendarDialog .calendar-sheet,#settingsDialog .settings-sheet{
+ background:var(--oneui-bg)!important;color:var(--oneui-text)!important;
+}
+body{color:var(--oneui-text)!important}
+
+/* Header: dark, soft and integrated rather than outlined */
+.minna-topbar{
+ background:#080808!important;border-bottom:1px solid var(--oneui-line)!important;
+ padding-bottom:16px!important;
+}
+.minna-logo{
+ background:var(--oneui-panel)!important;border:0!important;border-radius:18px!important;box-shadow:none!important;
+}
+.home-profile{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;border:0!important;
+ border-radius:22px!important;box-shadow:none!important;
+}
+.home-rank-badge,.coded-rank-badge{background:var(--oneui-control)!important;border:0!important}
+
+/* Main dashboard surfaces */
+.home-filter-toggle,#homeFilterToggle,
+.home-filter-panel,#homeFilterPanel,
+.today-dashboard,.minna-progress,
+.settings-section,#settingsDialog .settings-section{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:var(--oneui-radius)!important;box-shadow:none!important;
+}
+#homeFilterToggle small,.dashboard-kicker,.progress-kicker,
+.today-dashboard small,.minna-progress small{color:var(--oneui-muted)!important}
+.search-wrap,.search-wrap input,#searchInput,
+#homeFilterPanel input,#homeFilterPanel select{
+ background:var(--oneui-control)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:18px!important;
+}
+
+/* At a glance feels like One UI grouped controls */
+.today-dashboard .dashboard-grid,
+.today-dashboard [class*="dashboard-grid"]{border-color:var(--oneui-line)!important}
+.today-dashboard button{
+ background:transparent!important;color:var(--oneui-text)!important;
+ border-color:var(--oneui-line)!important;border-radius:0!important;box-shadow:none!important;
+}
+
+/* Reminder cards: retain urgency strip but adopt soft One UI cards */
+.reminder-card.collapsed,
+.calendar-day-list .calendar-home-card.collapsed{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:var(--oneui-radius-small)!important;box-shadow:none!important;
+ overflow:hidden!important;
+}
+.reminder-card.collapsed>.card-due-split,
+.calendar-day-list .calendar-home-card.collapsed>.card-due-split{
+ background:var(--oneui-panel-2)!important;color:var(--oneui-text)!important;
+ border-right:1px solid #4b4b4b!important;
+}
+.reminder-card.collapsed>.card-body,
+.calendar-day-list .calendar-home-card.collapsed>.card-body{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+}
+.reminder-card.expanded,
+.calendar-day-list .calendar-home-card.expanded{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:var(--oneui-radius-small)!important;box-shadow:none!important;
+ overflow:hidden!important;
+}
+.reminder-card.expanded>.card-body,
+.calendar-day-list .calendar-home-card.expanded>.card-body,
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+}
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{border-top:1px solid #414141!important}
+.reminder-card.expanded .meta-chip,
+.reminder-card.expanded .category-chip,
+.calendar-home-card.expanded .meta-chip,
+.calendar-home-card.expanded .category-chip{
+ background:var(--oneui-control)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:999px!important;
+}
+.reminder-card.expanded>.card-actions>button,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button{
+ background:var(--oneui-control)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:18px!important;box-shadow:none!important;
+}
+.reminder-card.expanded>.card-actions>button.done-action,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button.done-action{
+ background:var(--oneui-accent)!important;color:#071516!important;border:0!important;
+}
+.reminder-card.expanded>.card-actions>button.done-action *,
+.calendar-day-list .calendar-home-card.expanded>.card-actions>button.done-action *{color:#071516!important}
+
+/* Calendar */
+#calendarDialog .calendar-head button,#calendarDialog #calendarTodayBtn,
+#calendarDialog .calendar-add,#calendarDialog .calendar-empty{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:var(--oneui-radius-small)!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-grid{background:#000!important;border:0!important;gap:6px!important}
+#calendarDialog .calendar-day{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:16px!important;box-shadow:none!important;
+}
+#calendarDialog .calendar-day.today{
+ background:var(--oneui-control)!important;color:#fff!important;border:0!important;
+}
+#calendarDialog .calendar-day.selected,
+#calendarDialog .calendar-day.selected.today{
+ background:var(--oneui-accent)!important;color:#071516!important;border:0!important;
+}
+#calendarDialog .calendar-day.selected *{color:#071516!important}
+
+/* You/settings grouped surfaces */
+#settingsDialog .settings-section,
+#settingsDialog .settings-row,#settingsDialog .achievement-head,
+#settingsDialog .achievement-stats,#settingsDialog .achievement-next,
+#settingsDialog .rank-panel,#settingsDialog .achievement-grid{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;border-color:var(--oneui-line)!important;
+}
+#settingsDialog .achievement-stats>div,#settingsDialog .achievement-grid>*,
+#settingsDialog .rank-panel>*{
+ background:var(--oneui-panel-2)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:18px!important;
+}
+#settingsDialog button:not(.danger-btn),#settingsDialog input,#settingsDialog select{
+ background:var(--oneui-control)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:18px!important;
+}
+
+/* Bottom navigation follows reference: black field, simple active white, cyan center action */
+.bottom-nav{
+ background:#050505!important;border-top:1px solid var(--oneui-line)!important;box-shadow:none!important;
+}
+.bottom-nav .bottom-nav-item,.bottom-nav .bottom-nav-item.active{
+ background:transparent!important;border:0!important;border-radius:0!important;
+}
+.bottom-nav .bottom-nav-item{color:#8d8d8d!important}
+.bottom-nav .bottom-nav-item.active{color:var(--oneui-text)!important}
+.bottom-nav .bottom-nav-add{
+ width:62px!important;height:62px!important;min-width:62px!important;min-height:62px!important;
+ background:var(--oneui-accent)!important;color:#071516!important;border:0!important;border-radius:50%!important;
+ box-shadow:0 0 0 8px #050505!important;
+}
+
+/* Dialogs/composer/editor should share the same tactile surfaces */
+dialog:not(#calendarDialog):not(#settingsDialog),.dialog-card,.quick-add-sheet,.editor-sheet{
+ background:var(--oneui-panel)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:var(--oneui-radius)!important;
+}
+dialog input,dialog textarea,dialog select{
+ background:var(--oneui-control)!important;color:var(--oneui-text)!important;
+ border:0!important;border-radius:16px!important;
+}
