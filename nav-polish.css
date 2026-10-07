@@ -1698,3 +1698,20 @@ html[data-theme="dark"] #settingsDialog .settings-sheet,
 html[data-theme="dark"] .bottom-nav{background:#000!important;color:#fff!important}
 html[data-theme="dark"] .bottom-nav-item{background:transparent!important;color:#8f8f8f!important}
 html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important;color:#fff!important}
+
+
+/* v84 bottom add button clipping fix — preserve approved size */
+.bottom-nav{
+ overflow:visible!important;
+}
+.bottom-nav .bottom-nav-add{
+ width:62px!important;
+ height:62px!important;
+ min-width:62px!important;
+ min-height:62px!important;
+ margin-top:-24px!important;
+ align-self:start!important;
+ justify-self:center!important;
+ overflow:visible!important;
+ flex-shrink:0!important;
+}
