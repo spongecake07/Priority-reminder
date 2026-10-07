@@ -1,6 +1,6 @@
 :root{--ui-bg:#000;--ui-panel:#1f1f1f;--ui-panel2:#292929;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#59cbd4;--ui-r:20px}
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
-.home-filter-toggle,#homeFilterToggle,.home-filter-panel,#homeFilterPanel,.today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:2px solid var(--ui-line)!important;box-shadow:none!important}
+.today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:2px solid var(--ui-line)!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
 .reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{background:var(--ui-panel2)!important;border-right:2px solid var(--ui-line)!important}
 .reminder-card.collapsed>.card-body,.reminder-card.expanded>.card-body,.calendar-home-card>.card-body{background:var(--ui-panel)!important;color:var(--ui-text)!important}
@@ -218,3 +218,7 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .glance-filter .glance-toggle{border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;background:transparent!important}
 .glance-filter .home-filter-panel{border:0!important;border-top:1px solid #383838!important;outline:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;background:transparent!important}
 .glance-filter .home-filter-panel::before,.glance-filter .home-filter-panel::after,.glance-filter .glance-toggle::before,.glance-filter .glance-toggle::after{display:none!important}
+
+/* v1.13 canonical glance borders */
+.glance-filter>.glance-toggle{border:none!important}
+.glance-filter>#homeFilterPanel{border:none!important;border-top:1px solid #383838!important}
