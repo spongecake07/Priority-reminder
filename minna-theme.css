@@ -212,3 +212,9 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .glance-filter .home-filter-panel{margin:0!important;padding:12px 14px 14px!important;border:0!important;border-top:1px solid #383838!important;border-radius:0!important;background:var(--ui-panel)!important;box-shadow:none!important}
 .glance-filter .home-filter-panel.hidden{display:none!important}
 .glance-filter .five-priorities{margin:0!important}
+
+/* v1.12 single-border glance component */
+.glance-filter{border:2px solid var(--ui-line)!important;border-radius:20px!important;overflow:hidden!important;background:var(--ui-panel)!important;box-shadow:none!important;padding:0!important}
+.glance-filter .glance-toggle{border:0!important;outline:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;background:transparent!important}
+.glance-filter .home-filter-panel{border:0!important;border-top:1px solid #383838!important;outline:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important;background:transparent!important}
+.glance-filter .home-filter-panel::before,.glance-filter .home-filter-panel::after,.glance-filter .glance-toggle::before,.glance-filter .glance-toggle::after{display:none!important}
