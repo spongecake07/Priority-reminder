@@ -2099,3 +2099,35 @@ dialog input,dialog textarea,dialog select{
 dialog input,dialog textarea,dialog select{
  border:2px solid var(--oneui-edge-soft)!important;
 }
+
+
+/* v90 border normalization — every structural outline uses the same dark gray */
+:root{
+ --oneui-edge:#464646!important;
+ --oneui-edge-soft:#464646!important;
+}
+.home-filter-toggle,#homeFilterToggle,.home-filter-panel,#homeFilterPanel,
+.today-dashboard,.minna-progress,.home-profile,.minna-logo,
+.reminder-card.collapsed,.reminder-card.expanded,
+.calendar-day-list .calendar-home-card.collapsed,
+.calendar-day-list .calendar-home-card.expanded,
+#calendarDialog .calendar-day,#calendarDialog .calendar-empty,#calendarDialog .calendar-add,
+#calendarDialog .calendar-head button,#calendarDialog #calendarTodayBtn,
+#settingsDialog .settings-section,#settingsDialog .achievement-stats>div,
+#settingsDialog .achievement-grid>*,#settingsDialog .rank-panel>*,
+.search-wrap,#searchInput,#homeFilterPanel input,#homeFilterPanel select,
+dialog input,dialog textarea,dialog select{
+ border-color:#464646!important;
+}
+.reminder-card.collapsed>.card-due-split,
+.calendar-day-list .calendar-home-card.collapsed>.card-due-split{
+ border-right-color:#464646!important;
+}
+.reminder-card.expanded>.card-actions,
+.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ border-top-color:#464646!important;
+}
+.home-section-divider::after,.home-section-divider i{
+ background:#464646!important;
+}
+.bottom-nav{border-top-color:#464646!important}
