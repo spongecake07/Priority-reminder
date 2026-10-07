@@ -222,3 +222,8 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 /* v1.13 canonical glance borders */
 .glance-filter>.glance-toggle{border:none!important}
 .glance-filter>#homeFilterPanel{border:none!important;border-top:1px solid #383838!important}
+
+/* v1.14 isolate glance surface from legacy controls */
+html body .app-shell>.home-tools.glance-filter{border:2px solid var(--ui-line)!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:var(--ui-panel)!important;border-radius:20px!important;background-clip:padding-box!important}
+html body .app-shell>.home-tools.glance-filter>#homeFilterToggle{border:0!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important}
+html body .app-shell>.home-tools.glance-filter>#homeFilterPanel{border:0!important;border-top:1px solid #383838!important;outline:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:transparent!important}
