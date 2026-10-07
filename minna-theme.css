@@ -197,3 +197,8 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .five-priorities .summary-card.misc{border-color:var(--ui-line)!important;background:var(--ui-panel2)!important}
 .five-priorities .summary-card.active{background:#30345a!important;border-color:#555da0!important}
 .five-priorities .summary-card.misc.active{background:#30345a!important;border-color:#555da0!important}
+
+/* v110 summary block toggles filters */
+.glance-filter .glance-toggle{grid-template-columns:repeat(3,minmax(0,1fr))!important;cursor:pointer!important}
+.glance-stat{pointer-events:none!important;cursor:default!important}
+.glance-expand-btn{display:none!important}
