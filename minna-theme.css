@@ -121,3 +121,37 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.expanded.urgency-medium>.card-body{background:linear-gradient(90deg,#a9612b 0%,#503d2d 32%,var(--ui-panel) 78%)!important}
 .reminder-card.expanded.urgency-low>.card-body{background:linear-gradient(90deg,#907b31 0%,#49432e 32%,var(--ui-panel) 78%)!important}
 .reminder-card.expanded.urgency-misc>.card-body{background:linear-gradient(90deg,#386b9e 0%,#304355 32%,var(--ui-panel) 78%)!important}
+
+/* v101 expanded date column + simplified metadata */
+.reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
+ grid-template-columns:66px minmax(0,1fr)!important;
+}
+.reminder-card.expanded:not(:has(>.card-due-split)),.calendar-day-list .calendar-home-card.expanded:not(:has(>.card-due-split)){
+ grid-template-columns:minmax(0,1fr)!important;
+}
+.reminder-card.expanded>.card-due-split,.calendar-day-list .calendar-home-card.expanded>.card-due-split{
+ display:flex!important;grid-column:1!important;grid-row:1!important;align-items:center!important;justify-content:center!important;
+ width:66px!important;min-width:66px!important;height:100%!important;min-height:72px!important;margin:0!important;padding:8px 5px!important;
+ background:var(--ui-panel2)!important;border:0!important;border-right:2px solid var(--ui-line)!important;box-sizing:border-box!important;
+}
+.reminder-card.expanded>.card-body,.calendar-day-list .calendar-home-card.expanded>.card-body{
+ grid-column:2!important;grid-row:1!important;
+}
+.reminder-card.expanded:not(:has(>.card-due-split))>.card-body,.calendar-day-list .calendar-home-card.expanded:not(:has(>.card-due-split))>.card-body{
+ grid-column:1!important;
+}
+.reminder-card.expanded>.card-actions,.calendar-day-list .calendar-home-card.expanded>.card-actions{
+ grid-column:1 / -1!important;grid-row:2!important;
+}
+.reminder-card.expanded .card-meta:empty,.calendar-home-card.expanded .card-meta:empty{display:none!important}
+.reminder-card.expanded .meta-icon,.calendar-home-card.expanded .meta-icon{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ width:28px!important;height:28px!important;margin:0!important;border-radius:50%!important;background:#343434!important;
+ font-size:14px!important;line-height:1!important;
+}
+.reminder-card.expanded .card-photo-strip,.calendar-home-card.expanded .card-photo-strip{
+ margin-top:10px!important;display:flex!important;gap:8px!important;align-items:flex-start!important;flex-wrap:wrap!important;
+}
+.reminder-card.expanded .card-photo,.calendar-home-card.expanded .card-photo{
+ width:92px!important;height:92px!important;object-fit:cover!important;border-radius:14px!important;border:1px solid var(--ui-line)!important;
+}
