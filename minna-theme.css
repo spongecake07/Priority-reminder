@@ -155,3 +155,17 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.expanded .card-photo,.calendar-home-card.expanded .card-photo{
  width:92px!important;height:92px!important;object-fit:cover!important;border-radius:14px!important;border:1px solid var(--ui-line)!important;
 }
+
+/* v102 expanded due stack */
+.card-due-split .expanded-due{display:none}
+.reminder-card.expanded .card-due-split .collapsed-due,.calendar-home-card.expanded .card-due-split .collapsed-due{display:none!important}
+.reminder-card.expanded .card-due-split .expanded-due,.calendar-home-card.expanded .card-due-split .expanded-due{
+ display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;width:100%!important;
+}
+.reminder-card.expanded .card-heading>.category-chip,.calendar-home-card.expanded .card-heading>.category-chip{display:none!important}
+.expanded-due .due-category{max-width:58px!important;font-size:9px!important;line-height:1.05!important;color:#bdbdbd!important;text-align:center!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.expanded-due .due-date{display:flex!important;flex-direction:column!important;align-items:center!important;line-height:1!important}
+.expanded-due .due-date b{font-size:17px!important;color:#e4e4e4!important}.expanded-due .due-date small{margin-top:2px!important;font-size:9px!important;letter-spacing:.08em!important;color:#9f9f9f!important}
+.expanded-due .due-time{font-size:10px!important;font-weight:700!important;color:#c7c7c7!important}
+.expanded-due .due-alert{display:flex!important;align-items:center!important;justify-content:center!important;width:22px!important;height:22px!important;margin-top:1px!important;font-size:12px!important;background:#383838!important;border-radius:50%!important}
+.reminder-card.expanded>.card-due-split,.calendar-day-list .calendar-home-card.expanded>.card-due-split{min-height:86px!important;padding:7px 4px!important}
