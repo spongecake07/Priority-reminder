@@ -291,3 +291,8 @@ html body .home-tools.glance-filter,html body #minnaProgress,html body .today-da
 html body #homeFilterToggle,html body #minnaProgress,html body .today-dashboard{border-radius:24px!important;border:2px solid var(--ui-line)!important;box-shadow:none!important;box-sizing:border-box!important}
 html body #homeFilterToggle,html body #minnaProgress{min-height:76px!important}
 html body #minnaProgress{margin-left:0!important;margin-right:0!important}
+
+/* v1.33: canonical collapsed card height, Home and Calendar */
+html body .reminder-list article.reminder-card.collapsed,html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed{height:52px!important;min-height:52px!important;box-sizing:border-box!important;border-radius:24px!important}
+html body .reminder-list article.reminder-card.collapsed>.card-body,html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-body{height:100%!important;min-height:0!important;box-sizing:border-box!important;align-self:stretch!important}
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.priority-bar{height:100%!important}
