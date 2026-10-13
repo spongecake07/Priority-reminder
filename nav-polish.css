@@ -137,7 +137,7 @@ html[data-theme="dark"] .minna-brand h1{color:#f4f5fa!important}
 html[data-theme="dark"] .reminder-card.collapsed::after,html[data-theme="dark"] @media(max-width:430px){.reminder-card.collapsed{height:64px!important;min-height:64px!important}.reminder-card.collapsed .card-body{padding-left:12px!important}.reminder-card.collapsed .category-icon{width:36px!important;height:36px!important;min-width:36px!important}.reminder-card.collapsed .card-title{font-size:15px!important}}
 
 /* Ultra-compact priority cards v28 */
-.reminder-card.collapsed{height:36px!important;min-height:36px!important;border-radius:11px!important;border:1px solid transparent!important;box-shadow:none!important}.reminder-card.collapsed .card-body{padding:4px 35px 4px 10px!important}
+.reminder-card.collapsed{height:36px!important;min-height:36px!important;border-radius:11px!important;border:0!important;box-shadow:none!important}.reminder-card.collapsed .card-body{padding:4px 35px 4px 10px!important}
 .reminder-card.collapsed .category-icon{width:26px!important;height:26px!important;min-width:26px!important;border-radius:8px!important;font-size:12px!important;background:rgba(255,255,255,.16)!important;color:#fff!important}
 .reminder-card.collapsed .card-title{font-size:13px!important;font-weight:750!important;color:#fff!important}
 .reminder-card.collapsed .category-chip{font-size:8px!important;line-height:1!important;padding:4px 6px!important;background:rgba(20,22,28,.18)!important;color:rgba(255,255,255,.88)!important;border:0!important}
@@ -816,7 +816,7 @@ html[data-scheme]:not([data-scheme="current"]) .reminder-card.expanded .card-act
  box-sizing:border-box!important;
  /* restore the reminder-card's own colored surface */
  background:var(--collapsed-bg,inherit);
- border:1px solid transparent!important;
+ border:0!important;
  box-shadow:none!important;
 }
 .calendar-day-list .calendar-home-card.collapsed>.priority-bar{
@@ -1048,7 +1048,7 @@ html[data-theme="dark"] .today-dashboard{box-shadow:none!important}
  min-height:39px!important;
  border-radius:7px!important;
  background:var(--scheme-surface,#fff)!important;
- border:1px solid var(--scheme-border,#e5e7eb)!important;
+ border:0!important;
  box-shadow:none!important;
  overflow:hidden!important;
 }.reminder-card.collapsed .card-body{
@@ -1370,11 +1370,11 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 }
 .today-dashboard,.minna-progress,.home-filter-panel,.you-card,.profile-card,
 .achievement-card,.settings-card,.developer-card,.dev-card,.calendar-shell{
- border:1px solid var(--minna-line)!important;
+ border:0!important;
 }
 .reminder-card.collapsed,.calendar-day-list .calendar-home-card.collapsed,
 .reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
- border:1px solid var(--minna-line-strong)!important;
+ border:0!important;
  border-radius:var(--minna-radius)!important;
 }
 
@@ -1636,7 +1636,7 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
  padding:0 5px!important;
  background:#050505!important;
  color:#fff!important;
- border-right:1px solid #777!important;
+ border-right:0!important;
  line-height:1!important;
  overflow:hidden!important;
 }
@@ -1693,21 +1693,4 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 }
 .search-wrap span{color:#aaa!important}
 
-/* v92 hard override: reminder edge must never inherit legacy white/scheme borders */
-html body .app-shell .reminder-list article.reminder-card,
-html body .app-shell .reminder-list article.reminder-card.collapsed,
-html body .app-shell .reminder-list article.reminder-card.expanded,
-html[data-theme] body .app-shell .reminder-list article.reminder-card,
-html[data-scheme] body .app-shell .reminder-list article.reminder-card,
-html body #calendarDialog .calendar-day-list article.calendar-home-card{
- border-width:2px!important;
- border-style:solid!important;
- border-color:rgb(70,70,70)!important;
- outline:none!important;
- -webkit-box-shadow:none!important;
- box-shadow:none!important;
-}
-html body .app-shell .reminder-list article.reminder-card .card-due-split,
-html body #calendarDialog .calendar-day-list article.calendar-home-card .card-due-split{
- border-right:2px solid rgb(70,70,70)!important;
-}
+/* v1.43: removed obsolete v92 high-specificity card border override. */
