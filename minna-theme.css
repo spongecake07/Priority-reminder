@@ -1,4 +1,4 @@
-:root{--ui-bg:#000;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
+:root{--ui-bg:#E6E6E6;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
 .today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:2px solid var(--ui-line)!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
@@ -304,3 +304,11 @@ html body #calendarDialog .calendar-day-list article.calendar-home-card.collapse
 .reminder-card.collapsed.urgency-low>.card-body,.calendar-home-card.collapsed.urgency-low>.card-body,.reminder-card.expanded.urgency-low>.card-body,.calendar-home-card.expanded.urgency-low>.card-body{background:linear-gradient(90deg,#59CD90 0%,color-mix(in srgb,#59CD90 52%,#2F2F2F) 43%,#2F2F2F 100%)!important}
 .reminder-card.collapsed.urgency-misc>.card-body,.calendar-home-card.collapsed.urgency-misc>.card-body,.reminder-card.expanded.urgency-misc>.card-body,.calendar-home-card.expanded.urgency-misc>.card-body{background:linear-gradient(90deg,#3FA7D6 0%,color-mix(in srgb,#3FA7D6 52%,#2F2F2F) 43%,#2F2F2F 100%)!important}
 .bottom-nav .bottom-nav-add{background:#3FA7D6!important}.minna-day-track>i{background:#59CD90!important}
+
+/* v1.35: light-gray app canvas, dark readable surfaces */
+html,body,.app-shell{background:#E6E6E6!important}
+html body .topbar{background:#E6E6E6!important;color:#2F2F2F!important}
+html body .minna-brand h1,html body .minna-brand small,html body .minna-version{color:#2F2F2F!important}
+html body .home-section-divider span{color:#2F2F2F!important}
+html body .home-section-divider::after,html body .home-section-divider i{background:#9A9A9A!important}
+html body .bottom-nav{background:#2F2F2F!important;color:#F4F4F4!important}
