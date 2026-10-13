@@ -1,11 +1,11 @@
 :root{--ui-bg:#F5F5F5;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
-.today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:2px solid var(--ui-line)!important;box-shadow:none!important}
+.today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:0!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
-.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{background:var(--ui-panel2)!important;border-right:2px solid var(--ui-line)!important}
+.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{background:var(--ui-panel2)!important;border-right:0!important}
 .reminder-card.collapsed>.card-body,.reminder-card.expanded>.card-body,.calendar-home-card>.card-body{background:var(--ui-panel)!important;color:var(--ui-text)!important}
 .search-wrap,#searchInput,#homeFilterPanel input,#homeFilterPanel select{background:var(--ui-control)!important;color:var(--ui-text)!important;border:2px solid var(--ui-line)!important}
-.reminder-card.expanded>.card-actions,.calendar-home-card.expanded>.card-actions{background:var(--ui-panel)!important;border-top:2px solid var(--ui-line)!important}
+.reminder-card.expanded>.card-actions,.calendar-home-card.expanded>.card-actions{background:var(--ui-panel)!important;border-top:0!important}
 .home-section-divider::after,.home-section-divider i{background:var(--ui-line)!important}
 .bottom-nav{background:#050505!important;border-top:2px solid var(--ui-line)!important;overflow:visible!important}.bottom-nav .bottom-nav-item,.bottom-nav .bottom-nav-item.active{background:transparent!important;border:0!important;box-shadow:none!important}.bottom-nav .bottom-nav-item{color:#8d8d8d!important}.bottom-nav .bottom-nav-item.active{color:var(--ui-text)!important}.bottom-nav .bottom-nav-add{background:var(--ui-accent)!important;color:#071516!important;border:0!important}
 
@@ -13,7 +13,7 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.collapsed,.calendar-day-list .calendar-home-card.collapsed{grid-template-columns:auto minmax(0,1fr)!important}
 .reminder-card.collapsed:not(:has(.card-due-split)),.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split)){grid-template-columns:minmax(0,1fr)!important}
 .reminder-card.collapsed:has(.card-due-split),.calendar-day-list .calendar-home-card.collapsed:has(.card-due-split){grid-template-columns:66px minmax(0,1fr)!important}
-.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{grid-column:1!important;background:var(--ui-panel2)!important;border-right:2px solid var(--ui-line)!important}
+.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{grid-column:1!important;background:var(--ui-panel2)!important;border-right:0!important}
 .reminder-card.collapsed>.card-body,.calendar-day-list .calendar-home-card.collapsed>.card-body{grid-column:2!important}
 .reminder-card.collapsed:not(:has(.card-due-split))>.card-body,.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split))>.card-body{grid-column:1!important}
 .reminder-card.collapsed.urgency-high>.card-body,.calendar-home-card.collapsed.urgency-high>.card-body{background:linear-gradient(90deg,#c94a4a 0%,#74383a 42%,var(--ui-panel) 100%)!important}
@@ -364,3 +364,7 @@ html body .calendar-day-list .calendar-home-card::before,
 html body .calendar-day-list .calendar-home-card::after{
  border:0!important;box-shadow:none!important;
 }
+
+/* v1.41: eliminate rounded-edge strokes at their sources, including nested shells */
+html body .reminder-card:is(.collapsed,.expanded),html body .calendar-day-list .calendar-home-card:is(.collapsed,.expanded){border:0!important;outline:0!important;background-clip:padding-box!important}
+html body .reminder-card:is(.collapsed,.expanded)>.card-body,html body .calendar-day-list .calendar-home-card:is(.collapsed,.expanded)>.card-body{border:0!important;outline:0!important;box-shadow:none!important}
