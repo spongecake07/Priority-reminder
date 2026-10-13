@@ -1546,6 +1546,47 @@ body,.app-shell,#calendarDialog,#settingsDialog,
  background:#fff!important;color:#292B42!important;border:0!important;border-radius:14px!important;
 }
 
+/* Calendar light theme: override legacy dark page rules, including dark-mode selectors. */
+html body #calendarDialog,
+html body #calendarDialog.calendar-dialog,
+html[data-theme="dark"] body #calendarDialog,
+html[data-theme="dark"] #calendarDialog,
+html[data-theme="dark"] #calendarDialog .calendar-sheet,
+html body #calendarDialog .calendar-sheet{
+ background:#FAF7F6!important;
+ background-color:#FAF7F6!important;
+ color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;
+}
+html body #calendarDialog .calendar-head{
+ background:#FAF7F6!important;
+ border-radius:22px!important;
+ overflow:hidden!important;
+}
+html body #calendarDialog .calendar-day-head,
+html body #calendarDialog .calendar-day-head strong,
+html body #calendarDialog .calendar-day-head span,
+html body #calendarDialog .calendar-day-head time{
+ color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;
+}
+html body #calendarDialog .calendar-weekdays,
+html body #calendarDialog .calendar-grid{
+ border-top:0!important;
+ border-bottom:0!important;
+ box-shadow:none!important;
+ outline:0!important;
+}
+html body #calendarDialog .calendar-weekdays{
+ border-radius:22px 22px 0 0!important;
+}
+html body #calendarDialog .calendar-weekdays::before,
+html body #calendarDialog .calendar-weekdays::after,
+html body #calendarDialog .calendar-grid::before{
+ border:0!important;
+ box-shadow:none!important;
+}
+
 /* Actual You page is #settingsDialog > .settings-sheet */
 #settingsDialog,.settings-dialog,.settings-dialog[open]{
  background:#000!important;color:#fff!important;border:0!important;border-radius:0!important;
