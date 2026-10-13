@@ -1079,7 +1079,7 @@ html[data-theme="dark"] .today-dashboard{box-shadow:none!important}
 .today-summary{
  min-height:58px!important;
  padding:10px 9px!important;
- border:0!important;
+ border:1px solid var(--scheme-border,#e7e9f0)!important;
  border-right:1px solid var(--scheme-border,#e5e7eb)!important;
  border-radius:0!important;
  background:transparent!important;
@@ -1411,7 +1411,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 /* Bottom navigation: integrated black strip, thin top divider, no floating game-like buttons */
 .bottom-nav{
  background:#000!important;
- border:0!important;
+ border:1px solid #777!important;
  border-top:1px solid #777!important;
  border-radius:0!important;
  box-shadow:none!important;
@@ -1473,7 +1473,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 .minna-logo b{color:#fff!important;transform:none!important}
 .minna-logo i{border-color:#777!important}
 .home-profile{
- background:#050505!important;color:#fff!important;border:0!important;
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
  border-radius:5px!important;box-shadow:none!important;
 }
 .home-profile-copy>strong,.home-profile-copy>small b{color:#fff!important}
@@ -1493,7 +1493,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 #calendarDialog .calendar-head h2{color:#fff!important}
 #calendarDialog .calendar-head button{
  width:40px!important;height:40px!important;padding:0!important;
- background:#050505!important;color:#fff!important;border:0!important;
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
  border-radius:5px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-weekdays{
@@ -1523,7 +1523,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 #calendarDialog .calendar-day-head{color:#fff!important}
 #calendarDialog .calendar-day-head strong{color:#fff!important}
 #calendarDialog #calendarTodayBtn{
- background:#050505!important;color:#fff!important;border:0!important;
+ background:#050505!important;color:#fff!important;border:1px solid #777!important;
  border-radius:4px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-day-list{
