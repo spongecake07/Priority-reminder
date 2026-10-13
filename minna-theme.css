@@ -1139,3 +1139,221 @@ html body .calendar-day-list .calendar-home-card::after{
   border:0!important;
   box-shadow:none!important;
 }
+
+
+/* v1.68: expanded reminders — soft section-card layout (Option B). */
+html body .reminder-card.expanded,
+html body .calendar-home-card.expanded{
+ display:flex!important;
+ flex-direction:column!important;
+ height:auto!important;
+ min-height:0!important;
+ overflow:hidden!important;
+ background:#FFFFFF!important;
+ border-radius:28px!important;
+ color:#292B42!important;
+}
+html body .reminder-card.expanded>.card-due-split,
+html body .calendar-home-card.expanded>.card-due-split{display:none!important}
+html body .reminder-card.expanded>.card-body,
+html body .calendar-home-card.expanded>.card-body{
+ width:100%!important;
+ box-sizing:border-box!important;
+ padding:18px 18px 16px!important;
+ background:#FFFFFF!important;
+ color:#292B42!important;
+ display:flex!important;
+ flex-direction:column!important;
+ gap:10px!important;
+}
+html body .reminder-card.collapsed .minna-expanded-date-row,
+html body .calendar-home-card.collapsed .minna-expanded-date-row{display:none!important}
+html body .reminder-card.expanded .minna-expanded-date-row,
+html body .calendar-home-card.expanded .minna-expanded-date-row{
+ display:flex!important;
+ align-items:center!important;
+ min-height:32px!important;
+ padding-right:38px!important;
+}
+html body .reminder-card.expanded .minna-expanded-date-badge,
+html body .calendar-home-card.expanded .minna-expanded-date-badge{
+ display:inline-flex!important;
+ background:var(--minna-date-tint,#FFE0E2)!important;
+ border-radius:12px!important;
+ padding:8px 12px!important;
+ color:#914B59!important;
+ -webkit-text-fill-color:#914B59!important;
+ font-size:12px!important;
+ font-weight:800!important;
+ letter-spacing:.04em!important;
+}
+html body .reminder-card.expanded .minna-card-more,
+html body .calendar-home-card.expanded .minna-card-more{
+ top:23px!important;
+ right:19px!important;
+ color:#85879A!important;
+ -webkit-text-fill-color:#85879A!important;
+}
+html body .reminder-card.expanded .card-heading,
+html body .calendar-home-card.expanded .card-heading{
+ display:flex!important;
+ flex-direction:column!important;
+ gap:8px!important;
+ width:100%!important;
+}
+html body .reminder-card.expanded .card-title-wrap,
+html body .calendar-home-card.expanded .card-title-wrap{display:flex!important;flex-direction:column!important;gap:6px!important}
+html body .reminder-card.expanded .card-title,
+html body .calendar-home-card.expanded .card-title{
+ font-size:25px!important;
+ line-height:1.18!important;
+ font-weight:800!important;
+ color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;
+ margin:0!important;
+}
+html body .reminder-card.expanded .minna-card-topline,
+html body .calendar-home-card.expanded .minna-card-topline{display:none!important}
+html body .reminder-card.expanded .minna-description-preview,
+html body .calendar-home-card.expanded .minna-description-preview{display:none!important}
+html body .reminder-card.expanded .card-notes,
+html body .calendar-home-card.expanded .card-notes{
+ display:block!important;
+ color:#85879A!important;
+ -webkit-text-fill-color:#85879A!important;
+ font-size:14px!important;
+ line-height:1.5!important;
+ margin:0!important;
+ overflow-wrap:anywhere!important;
+}
+html body .reminder-card.expanded .category-chip,
+html body .calendar-home-card.expanded .category-chip{
+ display:inline-flex!important;
+ align-self:flex-start!important;
+ background:#F7F3FF!important;
+ color:#7454AB!important;
+ -webkit-text-fill-color:#7454AB!important;
+ border:0!important;
+ border-radius:11px!important;
+ padding:7px 10px!important;
+ font-size:12px!important;
+}
+html body .reminder-card.expanded .card-meta,
+html body .calendar-home-card.expanded .card-meta{
+ display:flex!important;
+ gap:6px!important;
+ flex-wrap:wrap!important;
+ margin:0!important;
+}
+html body .reminder-card.expanded .card-meta .meta-chip,
+html body .calendar-home-card.expanded .card-meta .meta-chip{
+ background:#F7F3FF!important;
+ color:#7454AB!important;
+ -webkit-text-fill-color:#7454AB!important;
+ border:0!important;
+ border-radius:11px!important;
+ padding:6px 9px!important;
+ font-size:11px!important;
+}
+html body .reminder-card.expanded .checklist-progress,
+html body .calendar-home-card.expanded .checklist-progress{
+ background:#F8F7FB!important;
+ color:#292B42!important;
+ border-radius:18px 18px 0 0!important;
+ padding:15px 15px 6px!important;
+ margin:8px 0 -10px!important;
+ border:0!important;
+}
+html body .reminder-card.expanded .checklist-progress *,
+html body .calendar-home-card.expanded .checklist-progress *{
+ color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;
+}
+html body .reminder-card.expanded .checklist-progress-track,
+html body .calendar-home-card.expanded .checklist-progress-track{background:#E7E6EE!important;border-radius:99px!important}
+html body .reminder-card.expanded .card-checklist,
+html body .calendar-home-card.expanded .card-checklist{
+ display:flex!important;
+ flex-direction:column!important;
+ gap:6px!important;
+ background:#F8F7FB!important;
+ border-radius:0 0 18px 18px!important;
+ padding:8px 15px 16px!important;
+ margin:0!important;
+ border:0!important;
+}
+html body .reminder-card.expanded .checklist-row,
+html body .calendar-home-card.expanded .checklist-row{
+ display:flex!important;
+ align-items:flex-start!important;
+ gap:10px!important;
+ background:transparent!important;
+ color:#41465E!important;
+ -webkit-text-fill-color:#41465E!important;
+ border:0!important;
+ min-height:30px!important;
+ padding:5px 0!important;
+ line-height:1.4!important;
+ overflow-wrap:anywhere!important;
+}
+html body .reminder-card.expanded .checklist-row span,
+html body .calendar-home-card.expanded .checklist-row span{
+ color:#41465E!important;
+ -webkit-text-fill-color:#41465E!important;
+ font-size:13px!important;
+}
+html body .reminder-card.expanded .card-photo-strip,
+html body .calendar-home-card.expanded .card-photo-strip{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ gap:10px!important;
+ background:#F8F7FB!important;
+ padding:14px!important;
+ border-radius:18px!important;
+ margin:8px 0 0!important;
+ border:0!important;
+}
+html body .reminder-card.expanded .card-photo,
+html body .calendar-home-card.expanded .card-photo{
+ width:calc(50% - 5px)!important;
+ max-width:180px!important;
+ height:132px!important;
+ object-fit:cover!important;
+ border-radius:14px!important;
+}
+html body .reminder-card.expanded>.card-actions,
+html body .calendar-home-card.expanded>.card-actions{
+ display:grid!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:7px!important;
+ width:100%!important;
+ box-sizing:border-box!important;
+ padding:12px 14px 16px!important;
+ background:#FFFFFF!important;
+ border:0!important;
+}
+html body .reminder-card.expanded>.card-actions>button,
+html body .calendar-home-card.expanded>.card-actions>button{
+ min-width:0!important;
+ width:100%!important;
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ gap:4px!important;
+ padding:9px 2px!important;
+ background:#F6F4FA!important;
+ color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;
+ border-radius:15px!important;
+ font-size:12px!important;
+ box-shadow:none!important;
+}
+html body .reminder-card.expanded>.card-actions>button.done-action,
+html body .calendar-home-card.expanded>.card-actions>button.done-action{
+ background:#E0F5E9!important;
+ color:#246F50!important;
+ -webkit-text-fill-color:#246F50!important;
+}
+html body .reminder-card.expanded>.card-actions>button small,
+html body .calendar-home-card.expanded>.card-actions>button small{font-size:11px!important;white-space:nowrap!important}
