@@ -1261,7 +1261,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 .editor-dialog,.settings-dialog{
  background:#050505!important;color:#fff!important;border-color:#dedede!important;box-shadow:none!important;
 }
-.today-dashboard,.minna-progress,.home-filter-panel{border:1px solid #dedede!important}
+.today-dashboard,.minna-progress,.home-filter-panel{border:0!important}
 .bottom-nav{background:#000!important;border-top:1px solid #666!important}
 .bottom-nav button{color:#bdbdbd!important;background:transparent!important}
 .bottom-nav button.active{color:#fff!important}
@@ -1278,7 +1278,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 .calendar-day-list .calendar-home-card.collapsed{
  background:#050505!important;
  color:#fff!important;
- border:2px solid var(--oneui-edge,#464646)!important;
+ border:0!important;
  box-shadow:none!important;
  overflow:hidden!important;
 }
@@ -1301,7 +1301,7 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 
 /* Expanded reminders follow the same black/white shell, retaining urgency strip. */
 .reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
- background:#050505!important;color:#fff!important;border:2px solid var(--oneui-edge,#464646)!important;box-shadow:none!important;
+ background:#050505!important;color:#fff!important;border:0!important;box-shadow:none!important;
 }
 .reminder-card.expanded .card-body *,.calendar-home-card.expanded .card-body *{color:#fff!important}.reminder-card.expanded>.card-actions,
 .calendar-day-list .calendar-home-card.expanded>.card-actions{border-top-color:#555!important}
@@ -1432,9 +1432,9 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 .bottom-nav-add:active{transform:none!important;background:#dcdcdc!important}
 
 /* Home dashboard and controls: thinner, less rounded */
-.today-dashboard,.minna-progress{border-color:#888!important;border-radius:7px!important}
+.today-dashboard,.minna-progress{border-color:transparent!important;border-radius:7px!important}
 .today-summary{border-right:1px solid #4e4e4e!important}
-.home-filter-toggle{border:1px solid #666!important}
+.home-filter-toggle{border:0!important}
 .smart-view,.summary-card,.filter-chip,.meta-chip,.category-chip{border-width:1px!important;border-radius:4px!important}
 .meta-chip,.category-chip{padding-top:2px!important;padding-bottom:2px!important}
 
