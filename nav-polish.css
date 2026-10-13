@@ -1893,3 +1893,45 @@ html[data-theme="dark"] body #editorDialog .edit-more-panel .toggle-row small{
 }
 html body #editorDialog .edit-more-panel .toggle-row small{color:#85879A!important;-webkit-text-fill-color:#85879A!important}
 html body #editorDialog .edit-more-panel .toggle-row input[type="checkbox"]{accent-color:#7454AB!important;opacity:1!important}
+
+
+/* Compact editor header and accessible checklist selection. */
+html body #editorDialog .dialog-head{
+ display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+ align-items:center!important;column-gap:6px!important;
+}
+html body #editorDialog .dialog-head #cancelBtn{
+ grid-column:1!important;justify-self:start!important;width:auto!important;min-width:0!important;
+}
+html body #editorDialog .dialog-head h2{
+ grid-column:2!important;justify-self:center!important;white-space:nowrap!important;
+ font-size:16px!important;
+}
+html body #editorDialog .dialog-head .text-btn.save{
+ grid-column:3!important;justify-self:end!important;flex:none!important;
+ width:auto!important;min-width:64px!important;max-width:74px!important;
+ padding:8px 12px!important;box-sizing:border-box!important;
+ text-align:center!important;white-space:nowrap!important;
+}
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"],
+html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]{
+ -webkit-appearance:none!important;appearance:none!important;
+ display:inline-grid!important;place-content:center!important;
+ flex:0 0 19px!important;width:19px!important;height:19px!important;
+ margin:0!important;padding:0!important;
+ background:#FFFFFF!important;border:1.5px solid #A99ACB!important;
+ border-radius:5px!important;box-shadow:none!important;
+ cursor:pointer!important;
+}
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:checked,
+html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:checked{
+ background:#EEE9FF!important;border-color:#7454AB!important;
+}
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:checked::after{
+ content:""!important;display:block!important;width:5px!important;height:9px!important;
+ border:solid #67439D!important;border-width:0 2px 2px 0!important;
+ transform:rotate(45deg) translate(-1px,-1px)!important;
+}
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:focus-visible{
+ outline:2px solid #7454AB!important;outline-offset:2px!important;
+}
