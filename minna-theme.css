@@ -733,6 +733,79 @@ html body #calendarDialog .calendar-day-list article.calendar-home-card.urgency-
 html body .reminder-list article.reminder-card.urgency-misc>.card-due-split,
 html body #calendarDialog .calendar-day-list article.calendar-home-card.urgency-misc>.card-due-split{background:#DDEFFF!important}
 
+/* Collapsed reminder typography shares Today's Progress design tokens. */
+html body .reminder-card.collapsed>.card-body,
+html body .calendar-home-card.collapsed>.card-body{
+ font-family:inherit!important;
+ display:flex!important;
+ flex-direction:column!important;
+ justify-content:center!important;
+ align-items:stretch!important;
+ gap:5px!important;
+ min-width:0!important;
+ padding-top:10px!important;
+ padding-bottom:10px!important;
+}
+html body .reminder-card.collapsed .card-heading,
+html body .calendar-home-card.collapsed .card-heading{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:flex-start!important;
+ gap:4px!important;
+ min-width:0!important;
+ padding-right:20px!important;
+}
+html body .reminder-card .minna-reminder-eyebrow,
+html body .calendar-home-card .minna-reminder-eyebrow{display:none}
+html body .reminder-card.collapsed .minna-reminder-eyebrow,
+html body .calendar-home-card.collapsed .minna-reminder-eyebrow{
+ display:block!important;
+ color:var(--ui-progress-muted)!important;
+ -webkit-text-fill-color:var(--ui-progress-muted)!important;
+ font-family:inherit!important;
+ font-size:11px!important;
+ font-weight:800!important;
+ letter-spacing:.09em!important;
+ line-height:1.15!important;
+}
+html body .reminder-card.collapsed .card-title,
+html body .calendar-home-card.collapsed .card-title{
+ font-family:inherit!important;
+ font-size:18px!important;
+ font-weight:750!important;
+ line-height:1.25!important;
+ letter-spacing:-.012em!important;
+ color:var(--ui-progress-title)!important;
+ -webkit-text-fill-color:var(--ui-progress-title)!important;
+}
+html body .reminder-card.collapsed .card-meta,
+html body .calendar-home-card.collapsed .card-meta{
+ display:flex!important;
+ position:static!important;
+ flex-wrap:wrap!important;
+ gap:6px!important;
+ margin-top:3px!important;
+ font-family:inherit!important;
+ font-size:12px!important;
+ color:var(--ui-progress-muted)!important;
+ -webkit-text-fill-color:var(--ui-progress-muted)!important;
+}
+html body .reminder-card.collapsed .card-meta .meta-chip,
+html body .calendar-home-card.collapsed .card-meta .meta-chip{
+ font-family:inherit!important;
+ font-size:11px!important;
+}
+html body .reminder-card.collapsed .card-heading>.category-chip,
+html body .calendar-home-card.collapsed .card-heading>.category-chip{
+ font-size:11px!important;
+ max-width:100%!important;
+}
+html body .reminder-card.collapsed .minna-card-more,
+html body .calendar-home-card.collapsed .minna-card-more{
+ color:var(--ui-progress-muted)!important;
+ -webkit-text-fill-color:var(--ui-progress-muted)!important;
+}
+
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
