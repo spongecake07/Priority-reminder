@@ -334,16 +334,33 @@ html body .bottom-nav .bottom-nav-add{background:#3FA7D6!important;color:#162B35
 /* v1.38: Strong 3D elevation on panels; no layout changes */
 html body .reminder-card,html body .calendar-day-list .calendar-home-card,html body .today-dashboard,html body #minnaProgress,html body .home-profile,html body .home-filter-toggle,html body .home-filter-panel,html body .summary-card,html body .smart-view,html body #settingsDialog .settings-section,html body .editor-dialog{box-shadow:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15)!important}
 
-/* v1.39: borderless reminder cards in collapsed and expanded Home/Calendar states */
-html body .reminder-list article.reminder-card,
-html body .reminder-list article.reminder-card.collapsed,
-html body .reminder-list article.reminder-card.expanded,
-html body #calendarDialog .calendar-day-list article.calendar-home-card,
-html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed,
-html body #calendarDialog .calendar-day-list article.calendar-home-card.expanded{border:0!important;outline:0!important;box-shadow:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15)!important}
-html body .reminder-list article.reminder-card>.card-body,
-html body .reminder-list article.reminder-card>.card-actions,
-html body .reminder-list article.reminder-card>.card-due-split,
-html body #calendarDialog .calendar-day-list article.calendar-home-card>.card-body,
-html body #calendarDialog .calendar-day-list article.calendar-home-card>.card-actions,
-html body #calendarDialog .calendar-day-list article.calendar-home-card>.card-due-split{border:0!important;outline:0!important}
+/* v1.40: borderless panels; replace old 2px borders and internal separators */
+html body .reminder-card,
+html body .reminder-card.collapsed,
+html body .reminder-card.expanded,
+html body .calendar-day-list .calendar-home-card,
+html body .calendar-day-list .calendar-home-card.collapsed,
+html body .calendar-day-list .calendar-home-card.expanded,
+html body .today-dashboard,
+html body #minnaProgress,
+html body #homeFilterToggle,
+html body .home-filter-panel,
+html body .summary-card,
+html body #settingsDialog .settings-section,
+html body .editor-dialog{
+ border-width:0!important;border-style:none!important;outline:0!important;
+ box-shadow:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15)!important;
+}
+html body .reminder-card>.card-body,
+html body .reminder-card>.card-actions,
+html body .reminder-card>.card-due-split,
+html body .calendar-day-list .calendar-home-card>.card-body,
+html body .calendar-day-list .calendar-home-card>.card-actions,
+html body .calendar-day-list .calendar-home-card>.card-due-split{
+ border:0!important;outline:0!important;
+}
+html body .reminder-card::before,html body .reminder-card::after,
+html body .calendar-day-list .calendar-home-card::before,
+html body .calendar-day-list .calendar-home-card::after{
+ border:0!important;box-shadow:none!important;
+}
