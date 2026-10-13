@@ -1605,3 +1605,28 @@ html body .calendar-home-card.expanded .minna-alert-badge{
 }
 html body .reminder-card.collapsed .minna-alert-badge,
 html body .calendar-home-card.collapsed .minna-alert-badge{display:none!important}
+
+
+/* Checklist touch feedback: suppress card-wide Android tap flash. */
+html body .reminder-card,
+html body .calendar-home-card,
+html body .reminder-card .card-body,
+html body .calendar-home-card .card-body,
+html body .reminder-card .card-checklist,
+html body .calendar-home-card .card-checklist,
+html body .reminder-card .checklist-row,
+html body .calendar-home-card .checklist-row,
+html body .reminder-card .checklist-row *,
+html body .calendar-home-card .checklist-row *{
+ -webkit-tap-highlight-color:transparent!important;
+}
+html body .reminder-card.expanded:active,
+html body .calendar-home-card.expanded:active{
+ transform:none!important;
+}
+html body .reminder-card.expanded .checklist-row:active,
+html body .calendar-home-card.expanded .checklist-row:active{
+ background:transparent!important;
+ box-shadow:none!important;
+ outline:none!important;
+}
