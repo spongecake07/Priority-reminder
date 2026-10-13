@@ -280,3 +280,8 @@ button:focus-visible,.bottom-nav-item:focus-visible,.card-actions button:focus-v
 .card-checklist,.card-checklist .checklist-row,.card-checklist .checklist-row *{-webkit-tap-highlight-color:transparent!important}
 .card-checklist .checklist-row{outline:none!important;user-select:none!important;-webkit-user-select:none!important}
 .card-checklist .checklist-row:focus,.card-checklist .checklist-row:active{outline:none!important;box-shadow:none!important}
+
+/* v1.30 rounded UI */
+:root{--ui-r:24px}
+.reminder-card,.calendar-home-card,.today-dashboard,.minna-progress,.home-profile,.home-filter-toggle,.home-filter-panel,.summary-card,.smart-view,.settings-section,.editor-dialog,.category-chip,.meta-chip,.pill,.card-actions button,.card-checklist .checklist-row,.toast{border-radius:24px!important}
+button,input:not([type=checkbox]):not([type=radio]),select,textarea,dialog{border-radius:24px!important}
