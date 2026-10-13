@@ -1141,7 +1141,7 @@ html body .calendar-day-list .calendar-home-card::after{
 }
 
 
-/* v1.68: expanded reminders — soft section-card layout (Option B). */
+/* Expanded reminder: section-card layout. */
 html body .reminder-card.expanded,
 html body .calendar-home-card.expanded{
  display:flex!important;
@@ -1359,7 +1359,7 @@ html body .reminder-card.expanded>.card-actions>button small,
 html body .calendar-home-card.expanded>.card-actions>button small{font-size:11px!important;white-space:nowrap!important}
 
 
-/* v1.69: compact Option B and palette-aligned chips. */
+/* Expanded reminder: compact sizing and palette. */
 html body .reminder-card.collapsed .minna-expanded-priority,
 html body .calendar-home-card.collapsed .minna-expanded-priority{display:none!important}
 html body .reminder-card.expanded>.card-body,
@@ -1444,7 +1444,7 @@ html body .reminder-card.expanded>.card-actions>button,
 html body .calendar-home-card.expanded>.card-actions>button{padding:7px 2px!important;gap:2px!important;border-radius:13px!important}
 
 
-/* v1.70: restore white expanded surface and left-aligned hierarchy. */
+/* Expanded reminder: surface and alignment corrections. */
 html body .reminder-list article.reminder-card.expanded,
 html body #calendarDialog article.calendar-home-card.expanded{
  background:#FFFFFF!important;
@@ -1505,3 +1505,62 @@ html body .reminder-card.expanded .card-photo-strip,
 html body .calendar-home-card.expanded .card-photo-strip{padding:9px!important;margin-top:3px!important}
 html body .reminder-card.expanded .card-photo,
 html body .calendar-home-card.expanded .card-photo{height:88px!important}
+
+
+/* Expanded reminder: final chip and checklist refinements. */
+html body .reminder-card.collapsed .minna-expanded-category,
+html body .calendar-home-card.collapsed .minna-expanded-category,
+html body .reminder-card.collapsed .minna-checklist-heading,
+html body .calendar-home-card.collapsed .minna-checklist-heading{display:none!important}
+html body .reminder-card.expanded .minna-expanded-category,
+html body .calendar-home-card.expanded .minna-expanded-category{
+ display:inline-flex!important;
+ visibility:visible!important;
+ opacity:1!important;
+ align-self:flex-start!important;
+ background:#EEE9FF!important;
+ border-radius:10px!important;
+ padding:5px 8px!important;
+ color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;
+ font-size:11px!important;
+ font-weight:750!important;
+ text-transform:uppercase!important;
+}
+html body .reminder-card.urgency-high.expanded .minna-expanded-date-badge,
+html body .reminder-card.urgency-high.expanded .minna-expanded-priority,
+html body .calendar-home-card.urgency-high.expanded .minna-expanded-date-badge,
+html body .calendar-home-card.urgency-high.expanded .minna-expanded-priority{background:#FFE0E2!important;color:#914B59!important;-webkit-text-fill-color:#914B59!important}
+html body .reminder-card.urgency-medium.expanded .minna-expanded-date-badge,
+html body .reminder-card.urgency-medium.expanded .minna-expanded-priority,
+html body .calendar-home-card.urgency-medium.expanded .minna-expanded-date-badge,
+html body .calendar-home-card.urgency-medium.expanded .minna-expanded-priority{background:#FFF0C9!important;color:#74551D!important;-webkit-text-fill-color:#74551D!important}
+html body .reminder-card.urgency-low.expanded .minna-expanded-date-badge,
+html body .reminder-card.urgency-low.expanded .minna-expanded-priority,
+html body .calendar-home-card.urgency-low.expanded .minna-expanded-date-badge,
+html body .calendar-home-card.urgency-low.expanded .minna-expanded-priority{background:#E0F5E9!important;color:#246F50!important;-webkit-text-fill-color:#246F50!important}
+html body .reminder-card.urgency-misc.expanded .minna-expanded-date-badge,
+html body .reminder-card.urgency-misc.expanded .minna-expanded-priority,
+html body .calendar-home-card.urgency-misc.expanded .minna-expanded-date-badge,
+html body .calendar-home-card.urgency-misc.expanded .minna-expanded-priority{background:#DDEFFF!important;color:#286987!important;-webkit-text-fill-color:#286987!important}
+html body .reminder-card.expanded .minna-checklist-heading,
+html body .calendar-home-card.expanded .minna-checklist-heading{
+ display:flex!important;
+ align-items:center!important;
+ justify-content:space-between!important;
+ gap:8px!important;
+ margin:0 0 7px!important;
+ color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;
+ font-size:12px!important;
+}
+html body .reminder-card.expanded .minna-checklist-heading strong,
+html body .calendar-home-card.expanded .minna-checklist-heading strong{font-weight:750!important}
+html body .reminder-card.expanded .minna-checklist-heading span,
+html body .calendar-home-card.expanded .minna-checklist-heading span{color:#85879A!important;-webkit-text-fill-color:#85879A!important}
+html body .reminder-card.expanded>.card-body,
+html body .calendar-home-card.expanded>.card-body{gap:5px!important}
+html body .reminder-card.expanded .card-heading,
+html body .calendar-home-card.expanded .card-heading{gap:4px!important}
+html body .reminder-card.expanded .card-meta,
+html body .calendar-home-card.expanded .card-meta{margin-top:0!important}
