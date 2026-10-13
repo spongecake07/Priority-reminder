@@ -947,6 +947,92 @@ html body .reminder-card.collapsed .minna-description-text,
 html body .calendar-home-card.collapsed .minna-description-text{padding-right:45%!important;box-sizing:border-box!important}
 
 
+/* v1.64: compact metadata shares the category row; time lives inside date tile. */
+html body .reminder-card.collapsed .minna-card-topline,
+html body .calendar-home-card.collapsed .minna-card-topline{
+ display:flex!important;
+ align-items:center!important;
+ justify-content:space-between!important;
+ gap:6px!important;
+ width:100%!important;
+ min-width:0!important;
+ padding-right:34px!important;
+ box-sizing:border-box!important;
+}
+html body .reminder-card.collapsed .minna-card-topline .minna-reminder-eyebrow,
+html body .calendar-home-card.collapsed .minna-card-topline .minna-reminder-eyebrow{
+ flex:1 1 auto!important;
+ width:auto!important;
+ min-width:0!important;
+ margin:0!important;
+}
+html body .reminder-card.collapsed .minna-card-topline .minna-compact-details,
+html body .calendar-home-card.collapsed .minna-card-topline .minna-compact-details{
+ position:static!important;
+ display:inline-flex!important;
+ flex:0 0 auto!important;
+ align-items:center!important;
+ justify-content:center!important;
+ gap:5px!important;
+ max-width:55%!important;
+ width:auto!important;
+ margin:0!important;
+ padding:5px 8px!important;
+ border-radius:999px!important;
+ background:#F1E9FF!important;
+ overflow:hidden!important;
+ z-index:auto!important;
+}
+html body .reminder-card.collapsed .minna-detail-unit,
+html body .calendar-home-card.collapsed .minna-detail-unit{
+ display:inline-flex!important;
+ align-items:center!important;
+ gap:2px!important;
+ font-size:10px!important;
+ font-weight:700!important;
+ line-height:1!important;
+ white-space:nowrap!important;
+ color:#7454AB!important;
+ -webkit-text-fill-color:#7454AB!important;
+}
+html body .reminder-card.collapsed .minna-meta-svg,
+html body .calendar-home-card.collapsed .minna-meta-svg{
+ width:13px!important;
+ height:13px!important;
+}
+html body .reminder-card.collapsed .minna-description-text,
+html body .calendar-home-card.collapsed .minna-description-text{
+ padding-right:0!important;
+}
+html body .reminder-card.collapsed .card-due-split .collapsed-due,
+html body .calendar-home-card.collapsed .card-due-split .collapsed-due{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ gap:2px!important;
+ width:100%!important;
+}
+html body .reminder-card.collapsed .card-due-split .collapsed-due b,
+html body .calendar-home-card.collapsed .card-due-split .collapsed-due b{font-size:27px!important;line-height:1!important}
+html body .reminder-card.collapsed .card-due-split .collapsed-due small,
+html body .calendar-home-card.collapsed .card-due-split .collapsed-due small{margin:0!important;font-size:11px!important}
+html body .reminder-card.collapsed .minna-due-time,
+html body .calendar-home-card.collapsed .minna-due-time{
+ display:block!important;
+ margin-top:3px!important;
+ padding:3px 6px!important;
+ border-radius:999px!important;
+ background:rgba(255,255,255,.68)!important;
+ font-size:10px!important;
+ font-weight:750!important;
+ line-height:1.1!important;
+ letter-spacing:0!important;
+ color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;
+ font-variant-numeric:tabular-nums!important;
+}
+
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
