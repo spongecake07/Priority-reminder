@@ -1,4 +1,4 @@
-:root{--ui-surface-border:0;--ui-elevation:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15);--ui-bg:#F5F5F5;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
+:root{--ui-surface-border:0;--ui-elevation:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15);--ui-bg:#FAF7F6;--ui-header:#FAF7F6;--ui-brand-ink:#24243B;--ui-brand-muted:#88869A;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
 .today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:0!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
@@ -316,13 +316,14 @@ html body .bottom-nav{background:#E6E6E6!important;color:#2F2F2F!important}
 /* v1.36: matching light top and bottom banners */
 /* v1.37: target actual header and dark-theme specificity */
 html body header.topbar.minna-topbar,
-html[data-theme="dark"] body header.topbar.minna-topbar,
+html[data-theme="dark"] body header.topbar.minna-topbar{background:var(--ui-header)!important;color:var(--ui-brand-ink)!important}
 html body nav.bottom-nav,
 html[data-theme="dark"] body nav.bottom-nav,
 html body .bottom-nav,
 html[data-theme="dark"] body .bottom-nav{background:#E6E6E6!important;color:#2F2F2F!important}
-html body .minna-topbar h1,html body .minna-topbar h1 .minna-version,
-html body .minna-topbar .minna-brand small{color:#2F2F2F!important}
+html body .minna-topbar h1{color:var(--ui-brand-ink)!important}
+html body .minna-topbar h1 .minna-version,
+html body .minna-topbar .minna-brand small{color:var(--ui-brand-muted)!important}
 html body .bottom-nav .bottom-nav-item,
 html[data-theme="dark"] body .bottom-nav .bottom-nav-item{color:#555555!important;background:transparent!important}
 html body .bottom-nav .bottom-nav-item.active,
