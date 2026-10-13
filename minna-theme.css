@@ -1,4 +1,4 @@
-:root{--ui-surface-border:0;--ui-elevation:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15);--ui-bg:#FAF7F6;--ui-header:#FAF7F6;--ui-brand-ink:#24243B;--ui-brand-muted:#88869A;--ui-tile-today:#DEE2FF;--ui-tile-upcoming:#FFF0C9;--ui-tile-overdue:#FFDDE0;--ui-tile-ink:#292B42;--ui-progress-surface:#FFFFFF;--ui-progress-title:#25273F;--ui-progress-muted:#8288A1;--ui-progress-track:#E9EBF3;--ui-progress-fill:#A5B4FC;--ui-reminder-ink:#292B42;--ui-reminder-muted:#5C6178;--ui-reminder-high:#FFE1D9;--ui-reminder-medium:#FFF0C9;--ui-reminder-low:#DDF3E8;--ui-reminder-misc:#DDEFFF;--ui-reminder-shell:#FFFFFF;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
+:root{--ui-surface-border:0;--ui-elevation:0 5px 16px rgba(41,43,66,.08),0 1px 4px rgba(41,43,66,.04);--ui-bg:#FAF7F6;--ui-header:#FAF7F6;--ui-brand-ink:#24243B;--ui-brand-muted:#88869A;--ui-tile-today:#DEE2FF;--ui-tile-upcoming:#FFF0C9;--ui-tile-overdue:#FFDDE0;--ui-tile-ink:#292B42;--ui-progress-surface:#FFFFFF;--ui-progress-title:#25273F;--ui-progress-muted:#8288A1;--ui-progress-track:#E9EBF3;--ui-progress-fill:#A5B4FC;--ui-reminder-ink:#292B42;--ui-reminder-muted:#5C6178;--ui-reminder-high:#FFE1D9;--ui-reminder-medium:#FFF0C9;--ui-reminder-low:#DDF3E8;--ui-reminder-misc:#DDEFFF;--ui-reminder-shell:#FFFFFF;--ui-date-surface:#F5F0F5;--ui-date-ink:#292B42;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
 .today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:0!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
@@ -209,8 +209,8 @@ html body .app-shell>.home-tools.glance-filter>#homeFilterToggle{width:100%!impo
 .glance-filter .glance-stat{width:100%!important;min-width:0!important;text-align:center!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-height:100px!important;border:0!important;border-radius:22px!important;background:var(--ui-tile-today)!important;color:var(--ui-tile-ink)!important;padding:12px 4px!important;box-sizing:border-box!important}
 .glance-filter .glance-stat[data-view="upcoming"]{background:var(--ui-tile-upcoming)!important}
 .glance-filter .glance-stat[data-view="overdue"]{background:var(--ui-tile-overdue)!important}
-.glance-filter .glance-stat strong{display:block!important;width:100%!important;text-align:center!important;font-size:30px!important;color:var(--ui-tile-ink)!important}
-.glance-filter .glance-stat small{display:block!important;width:100%!important;text-align:center!important;font-size:14px!important;white-space:nowrap!important;color:var(--ui-tile-ink)!important}
+.glance-filter .glance-stat strong{display:block!important;width:100%!important;text-align:center!important;font-size:30px!important;color:var(--ui-tile-ink)!important;-webkit-text-fill-color:var(--ui-tile-ink)!important}
+.glance-filter .glance-stat small{display:block!important;width:100%!important;text-align:center!important;font-size:14px!important;white-space:nowrap!important;color:var(--ui-tile-ink)!important;-webkit-text-fill-color:var(--ui-tile-ink)!important}
 html body .app-shell>.home-tools.glance-filter>#homeFilterPanel{margin:8px 0 0!important;padding:12px 14px 14px!important;border:0!important;outline:0!important;border-radius:20px!important;box-shadow:none!important;-webkit-box-shadow:none!important;background:#fff!important}
 .glance-filter .home-filter-panel.hidden{display:none!important}
 .glance-filter .five-priorities{margin:0!important}
@@ -323,9 +323,9 @@ html body nav.bottom-nav,
 html[data-theme="dark"] body nav.bottom-nav,
 html body .bottom-nav,
 html[data-theme="dark"] body .bottom-nav{background:#E6E6E6!important;color:#2F2F2F!important}
-html body .minna-topbar h1{color:var(--ui-brand-ink)!important}
+html body .minna-topbar h1{color:var(--ui-brand-ink)!important;-webkit-text-fill-color:var(--ui-brand-ink)!important}
 html body .minna-topbar h1 .minna-version,
-html body .minna-topbar .minna-brand small{color:var(--ui-brand-muted)!important}
+html body .minna-topbar .minna-brand small{color:var(--ui-brand-muted)!important;-webkit-text-fill-color:var(--ui-brand-muted)!important}
 html body .bottom-nav .bottom-nav-item,
 html[data-theme="dark"] body .bottom-nav .bottom-nav-item{color:#555555!important;background:transparent!important}
 html body .bottom-nav .bottom-nav-item.active,
@@ -390,6 +390,7 @@ html body .calendar-day-list .calendar-home-card{
 html body .reminder-card .card-title,
 html body .calendar-day-list .calendar-home-card .card-title{
  color:var(--ui-reminder-ink)!important;
+ -webkit-text-fill-color:var(--ui-reminder-ink)!important;
  font-weight:700!important;
 }
 html body .reminder-card .card-notes,
@@ -400,13 +401,31 @@ html body .calendar-day-list .calendar-home-card .card-meta{
 }
 html body .reminder-card .card-due-split,
 html body .calendar-day-list .calendar-home-card .card-due-split{
- background:var(--ui-reminder-shell)!important;
- color:var(--ui-reminder-ink)!important;
+ background:var(--ui-date-surface)!important;
+ color:var(--ui-date-ink)!important;
+ -webkit-text-fill-color:var(--ui-date-ink)!important;
 }
 html body .reminder-card.is-completed .card-title,
 html body .calendar-day-list .calendar-home-card.is-completed .card-title{
  text-decoration:line-through!important;
  color:var(--ui-reminder-muted)!important;
+ -webkit-text-fill-color:var(--ui-reminder-muted)!important;
+}
+
+/* Ensure date numerals and all dashboard labels retain readable ink. */
+html body .reminder-card .card-due-split *,
+html body .calendar-day-list .calendar-home-card .card-due-split *{
+ color:var(--ui-date-ink)!important;
+ -webkit-text-fill-color:var(--ui-date-ink)!important;
+}
+html body #homeFilterToggle .glance-stat strong,
+html body #homeFilterToggle .glance-stat small{
+ color:var(--ui-tile-ink)!important;
+ -webkit-text-fill-color:var(--ui-tile-ink)!important;
+}
+html body .minna-topbar .minna-brand h1{
+ color:var(--ui-brand-ink)!important;
+ -webkit-text-fill-color:var(--ui-brand-ink)!important;
 }
 
 /* Canonical surface treatment: one place for borders and elevation. */
