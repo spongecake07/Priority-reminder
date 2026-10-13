@@ -1,4 +1,4 @@
-:root{--ui-bg:#F5F5F5;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
+:root{--ui-elevation:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15);--ui-surface-border:0;--ui-bg:#F5F5F5;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
 .today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:0!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
@@ -288,7 +288,7 @@ button,input:not([type=checkbox]):not([type=radio]),select,textarea,dialog{borde
 
 /* v1.31: align home dashboard panels */
 html body .home-tools.glance-filter,html body #minnaProgress,html body .today-dashboard{box-sizing:border-box!important;width:100%!important;max-width:100%!important}
-html body #homeFilterToggle,html body #minnaProgress,html body .today-dashboard{border-radius:24px!important;border:2px solid var(--ui-line)!important;box-shadow:none!important;box-sizing:border-box!important}
+html body #homeFilterToggle,html body #minnaProgress,html body .today-dashboard{border-radius:24px!important;border:0!important;box-shadow:none!important;box-sizing:border-box!important}
 html body #homeFilterToggle,html body #minnaProgress{min-height:76px!important}
 html body #minnaProgress{margin-left:0!important;margin-right:0!important}
 
@@ -332,7 +332,7 @@ html body .bottom-nav .bottom-nav-item small{color:inherit!important}
 html body .bottom-nav .bottom-nav-add{background:#3FA7D6!important;color:#162B35!important}
 
 /* v1.38: Strong 3D elevation on panels; no layout changes */
-html body .reminder-card,html body .calendar-day-list .calendar-home-card,html body .today-dashboard,html body #minnaProgress,html body .home-profile,html body .home-filter-toggle,html body .home-filter-panel,html body .summary-card,html body .smart-view,html body #settingsDialog .settings-section,html body .editor-dialog{box-shadow:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15)!important}
+html body .reminder-card,html body .calendar-day-list .calendar-home-card,html body .today-dashboard,html body #minnaProgress,html body .home-profile,html body .home-filter-toggle,html body .home-filter-panel,html body .summary-card,html body .smart-view,html body #settingsDialog .settings-section,html body .editor-dialog{box-shadow:var(--ui-elevation)!important}
 
 /* v1.40: borderless panels; replace old 2px borders and internal separators */
 html body .reminder-card,
@@ -349,7 +349,7 @@ html body .summary-card,
 html body #settingsDialog .settings-section,
 html body .editor-dialog{
  border-width:0!important;border-style:none!important;outline:0!important;
- box-shadow:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15)!important;
+ box-shadow:var(--ui-elevation)!important;
 }
 html body .reminder-card>.card-body,
 html body .reminder-card>.card-actions,
