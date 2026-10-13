@@ -885,12 +885,19 @@ html body .calendar-home-card .minna-compact-details{display:none}
 html body .reminder-card.collapsed .minna-compact-details,
 html body .calendar-home-card.collapsed .minna-compact-details{
  display:flex!important;
- flex-wrap:wrap!important;
+ position:absolute!important;
+ right:12px!important;
+ bottom:12px!important;
+ flex-wrap:nowrap!important;
  align-items:center!important;
- gap:6px!important;
- width:100%!important;
+ justify-content:flex-end!important;
+ gap:4px!important;
+ width:auto!important;
+ max-width:min(54%, 240px)!important;
  min-width:0!important;
- margin-top:5px!important;
+ margin:0!important;
+ overflow:hidden!important;
+ z-index:2!important;
 }
 html body .reminder-card.collapsed .minna-detail-pill,
 html body .calendar-home-card.collapsed .minna-detail-pill{
@@ -927,12 +934,18 @@ html body .reminder-card .minna-detail-pin,
 html body .calendar-home-card .minna-detail-pin{background:#FFE8E8!important;color:#D85666!important;-webkit-text-fill-color:#D85666!important}
 html body .reminder-card.collapsed .card-meta,
 html body .calendar-home-card.collapsed .card-meta{display:none!important}
-html body .reminder-list article.reminder-card.collapsed:has(.minna-compact-details),
-html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(.minna-compact-details){
- height:auto!important;
- min-height:112px!important;
- max-height:none!important;
-}
+/* Icon badges are overlays and never determine collapsed card height. */
+html body .reminder-card.collapsed>.card-body,
+html body .calendar-home-card.collapsed>.card-body{position:relative!important}
+html body .reminder-card.collapsed .minna-detail-pill,
+html body .calendar-home-card.collapsed .minna-detail-pill{padding:4px 6px!important;font-size:10px!important;gap:3px!important}
+html body .reminder-card.collapsed .minna-meta-svg,
+html body .calendar-home-card.collapsed .minna-meta-svg{width:13px!important;height:13px!important}
+html body .reminder-card.collapsed .minna-description-preview,
+html body .calendar-home-card.collapsed .minna-description-preview{max-width:100%!important}
+html body .reminder-card.collapsed .minna-description-text,
+html body .calendar-home-card.collapsed .minna-description-text{padding-right:45%!important;box-sizing:border-box!important}
+
 
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
