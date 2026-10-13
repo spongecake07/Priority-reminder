@@ -1,5 +1,5 @@
-const CACHE='minna-v141';
-const ASSETS=['./','./index.html','./styles.css','./nav-polish.css?v=141','./minna-theme.css?v=141','./app.js?v=141','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
+const CACHE='minna-v142';
+const ASSETS=['./','./index.html','./styles.css','./nav-polish.css?v=142','./minna-theme.css?v=142','./app.js?v=142','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
