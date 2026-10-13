@@ -806,6 +806,36 @@ html body .calendar-home-card.collapsed .minna-card-more{
  -webkit-text-fill-color:var(--ui-progress-muted)!important;
 }
 
+/* v1.60: progress-style stacked category/priority, title, then details. */
+html body .reminder-card.collapsed .card-heading>.category-chip,
+html body .calendar-home-card.collapsed .card-heading>.category-chip{
+ display:none!important;
+}
+html body .reminder-card.collapsed .card-title-wrap,
+html body .calendar-home-card.collapsed .card-title-wrap{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:flex-start!important;
+ gap:5px!important;
+ min-width:0!important;
+ width:100%!important;
+}
+html body .reminder-card.collapsed .minna-reminder-eyebrow,
+html body .calendar-home-card.collapsed .minna-reminder-eyebrow{
+ display:block!important;
+ width:100%!important;
+ white-space:nowrap!important;
+ overflow:hidden!important;
+ text-overflow:ellipsis!important;
+ text-transform:uppercase!important;
+}
+html body .reminder-card.collapsed .card-title,
+html body .calendar-home-card.collapsed .card-title{
+ display:block!important;
+ width:100%!important;
+ margin:0!important;
+}
+
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
