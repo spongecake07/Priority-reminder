@@ -975,7 +975,7 @@ button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-vis
  margin:8px 0 10px!important;
  padding:13px!important;
  box-sizing:border-box!important;
- border:1px solid var(--scheme-border,#e7e9f0)!important;
+ border:0!important;
  border-radius:17px!important;
  background:var(--scheme-surface,#fff)!important;
  box-shadow:0 7px 22px rgba(18,24,38,.045)!important;
@@ -997,7 +997,7 @@ button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-vis
  min-height:65px!important;
  padding:9px 8px!important;
  text-align:left!important;
- border:1px solid var(--scheme-border,#e7e9f0)!important;
+ border:0!important;
  border-radius:13px!important;
  background:var(--scheme-soft,#f7f8fc)!important;
  color:var(--scheme-text,#202534)!important;
@@ -1473,7 +1473,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 .minna-logo b{color:#fff!important;transform:none!important}
 .minna-logo i{border-color:#777!important}
 .home-profile{
- background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ background:#050505!important;color:#fff!important;border:0!important;
  border-radius:5px!important;box-shadow:none!important;
 }
 .home-profile-copy>strong,.home-profile-copy>small b{color:#fff!important}
@@ -1493,7 +1493,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 #calendarDialog .calendar-head h2{color:#fff!important}
 #calendarDialog .calendar-head button{
  width:40px!important;height:40px!important;padding:0!important;
- background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ background:#050505!important;color:#fff!important;border:0!important;
  border-radius:5px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-weekdays{
@@ -1523,7 +1523,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 #calendarDialog .calendar-day-head{color:#fff!important}
 #calendarDialog .calendar-day-head strong{color:#fff!important}
 #calendarDialog #calendarTodayBtn{
- background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ background:#050505!important;color:#fff!important;border:0!important;
  border-radius:4px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-day-list{
@@ -1538,7 +1538,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
  border:1px solid #888!important;border-radius:5px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-close{
- background:#050505!important;color:#fff!important;border:1px solid #777!important;border-radius:5px!important;
+ background:#050505!important;color:#fff!important;border:0!important;border-radius:5px!important;
 }
 
 /* Actual You page is #settingsDialog > .settings-sheet */
@@ -1553,7 +1553,7 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 #settingsDialog .you-page-head h2{color:#fff!important}
 #settingsDialog .text-btn{color:#fff!important}
 #settingsDialog .settings-section{
- background:#050505!important;color:#fff!important;border:1px solid #777!important;
+ background:#050505!important;color:#fff!important;border:0!important;
  border-radius:5px!important;box-shadow:none!important;
 }
 #settingsDialog .settings-row,#settingsDialog .achievement-head,
@@ -1680,7 +1680,7 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 #homeFilterToggle{
  background:#050505!important;
  color:#fff!important;
- border:1px solid #777!important;
+ border:0!important;
  box-shadow:none!important;
 }
 #homeFilterToggle span,#homeFilterToggle strong,#homeFilterToggle b{color:#fff!important}
