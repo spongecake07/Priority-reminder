@@ -331,25 +331,26 @@ html body .bottom-nav .bottom-nav-item span,
 html body .bottom-nav .bottom-nav-item small{color:inherit!important}
 html body .bottom-nav .bottom-nav-add{background:#3FA7D6!important;color:#162B35!important}
 
-/* v1.38: Strong 3D elevation on panels; no layout changes */
-html body .reminder-card,html body .calendar-day-list .calendar-home-card,html body .today-dashboard,html body #minnaProgress,html body .home-profile,html body .home-filter-toggle,html body .home-filter-panel,html body .summary-card,html body .smart-view,html body #settingsDialog .settings-section,html body .editor-dialog{box-shadow:var(--ui-elevation)!important}
-
-/* v1.40: borderless panels; replace old 2px borders and internal separators */
+/* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
-html body .reminder-card.collapsed,
-html body .reminder-card.expanded,
 html body .calendar-day-list .calendar-home-card,
-html body .calendar-day-list .calendar-home-card.collapsed,
-html body .calendar-day-list .calendar-home-card.expanded,
 html body .today-dashboard,
 html body #minnaProgress,
-html body #homeFilterToggle,
+html body .home-profile,
+html body .home-filter-toggle,
 html body .home-filter-panel,
 html body .summary-card,
+html body .smart-view,
 html body #settingsDialog .settings-section,
 html body .editor-dialog{
- border-width:0!important;border-style:none!important;outline:0!important;
- box-shadow:var(--ui-elevation)!important;
+  border:var(--ui-surface-border)!important;
+  outline:0!important;
+  box-shadow:var(--ui-elevation)!important;
+}
+html body .app-shell>.home-tools.glance-filter{
+  border:var(--ui-surface-border)!important;
+  outline:0!important;
+  box-shadow:var(--ui-elevation)!important;
 }
 html body .reminder-card>.card-body,
 html body .reminder-card>.card-actions,
@@ -357,32 +358,13 @@ html body .reminder-card>.card-due-split,
 html body .calendar-day-list .calendar-home-card>.card-body,
 html body .calendar-day-list .calendar-home-card>.card-actions,
 html body .calendar-day-list .calendar-home-card>.card-due-split{
- border:0!important;outline:0!important;
+  border:0!important;
+  outline:0!important;
 }
-html body .reminder-card::before,html body .reminder-card::after,
+html body .reminder-card::before,
+html body .reminder-card::after,
 html body .calendar-day-list .calendar-home-card::before,
 html body .calendar-day-list .calendar-home-card::after{
- border:0!important;box-shadow:none!important;
-}
-
-/* v1.41: eliminate rounded-edge strokes at their sources, including nested shells */
-html body .reminder-card:is(.collapsed,.expanded),html body .calendar-day-list .calendar-home-card:is(.collapsed,.expanded){border:0!important;outline:0!important;background-clip:padding-box!important}
-html body .reminder-card:is(.collapsed,.expanded)>.card-body,html body .calendar-day-list .calendar-home-card:is(.collapsed,.expanded)>.card-body{border:0!important;outline:0!important;box-shadow:none!important}
-
-/* v1.43: canonical card and dashboard surface borders. Shadows are controlled by --ui-elevation. */
-html body .app-shell .reminder-list article.reminder-card,
-html body #calendarDialog .calendar-day-list article.calendar-home-card,
-html body .app-shell .today-dashboard,
-html body .app-shell #minnaProgress,
-html body .app-shell .home-tools.glance-filter,
-html body .app-shell #homeFilterToggle{
- border:var(--ui-surface-border)!important;
- outline:0!important;
- box-shadow:var(--ui-elevation)!important;
-}
-html body .app-shell .reminder-list article.reminder-card>.card-due-split,
-html body #calendarDialog .calendar-day-list article.calendar-home-card>.card-due-split,
-html body .app-shell .reminder-list article.reminder-card>.card-actions,
-html body #calendarDialog .calendar-day-list article.calendar-home-card>.card-actions{
- border:0!important;
+  border:0!important;
+  box-shadow:none!important;
 }
