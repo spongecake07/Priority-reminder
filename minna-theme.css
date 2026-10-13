@@ -330,3 +330,6 @@ html[data-theme="dark"] body .bottom-nav .bottom-nav-item.active{color:#267FA9!i
 html body .bottom-nav .bottom-nav-item span,
 html body .bottom-nav .bottom-nav-item small{color:inherit!important}
 html body .bottom-nav .bottom-nav-add{background:#3FA7D6!important;color:#162B35!important}
+
+/* v1.38: Strong 3D elevation on panels; no layout changes */
+html body .reminder-card,html body .calendar-day-list .calendar-home-card,html body .today-dashboard,html body #minnaProgress,html body .home-profile,html body .home-filter-toggle,html body .home-filter-panel,html body .summary-card,html body .smart-view,html body #settingsDialog .settings-section,html body .editor-dialog{box-shadow:0 18px 32px rgba(0,0,0,.27),0 5px 10px rgba(0,0,0,.15)!important}
