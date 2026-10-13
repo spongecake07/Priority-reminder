@@ -1564,3 +1564,44 @@ html body .reminder-card.expanded .card-heading,
 html body .calendar-home-card.expanded .card-heading{gap:4px!important}
 html body .reminder-card.expanded .card-meta,
 html body .calendar-home-card.expanded .card-meta{margin-top:0!important}
+
+
+/* Expanded reminder: aligned category/priority badges and compact alert. */
+html body .reminder-card.expanded .minna-expanded-badges,
+html body .calendar-home-card.expanded .minna-expanded-badges{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ align-items:center!important;
+ gap:7px!important;
+ width:100%!important;
+ margin:0!important;
+}
+html body .reminder-card.collapsed .minna-expanded-badges,
+html body .calendar-home-card.collapsed .minna-expanded-badges{display:none!important}
+html body .reminder-card.expanded .minna-expanded-badges .minna-expanded-priority,
+html body .calendar-home-card.expanded .minna-expanded-badges .minna-expanded-priority,
+html body .reminder-card.expanded .minna-expanded-badges .minna-expanded-category,
+html body .calendar-home-card.expanded .minna-expanded-badges .minna-expanded-category{
+ align-self:center!important;
+ margin:0!important;
+ white-space:nowrap!important;
+}
+html body .reminder-card.expanded .minna-alert-badge,
+html body .calendar-home-card.expanded .minna-alert-badge{
+ display:inline-flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ width:31px!important;
+ height:31px!important;
+ padding:0!important;
+ border:0!important;
+ border-radius:12px!important;
+ background:#EEE9FF!important;
+ color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;
+ font-size:15px!important;
+ line-height:1!important;
+ box-shadow:none!important;
+}
+html body .reminder-card.collapsed .minna-alert-badge,
+html body .calendar-home-card.collapsed .minna-alert-badge{display:none!important}
