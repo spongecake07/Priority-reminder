@@ -1482,63 +1482,68 @@ body,.app-shell,#calendarDialog,#settingsDialog,
  background:#080808!important;border-color:#777!important;box-shadow:none!important;filter:grayscale(1)!important;
 }
 
-/* Calendar uses .calendar-dialog/.calendar-sheet/.calendar-head in the real markup */
+/* Calendar: approved light pastel layout, retaining existing grid and interactions. */
 #calendarDialog,.calendar-dialog,.calendar-dialog[open]{
- background:#000!important;border:0!important;border-radius:0!important;
+ background:#FAF7F6!important;color:#292B42!important;border:0!important;border-radius:0!important;
 }
 #calendarDialog .calendar-sheet,.calendar-dialog .calendar-sheet{
- background:#000!important;color:#fff!important;box-shadow:none!important;
+ background:#FAF7F6!important;color:#292B42!important;box-shadow:none!important;
 }
-#calendarDialog .calendar-head{background:#000!important;color:#fff!important}
-#calendarDialog .calendar-head h2{color:#fff!important}
+#calendarDialog .calendar-head{
+ background:#FAF7F6!important;color:#292B42!important;
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+}
+#calendarDialog .calendar-head h2{color:#292B42!important;font-size:23px!important}
 #calendarDialog .calendar-head button{
- width:40px!important;height:40px!important;padding:0!important;
- background:#050505!important;color:#fff!important;border:1px solid #777!important;
- border-radius:5px!important;box-shadow:none!important;
+ width:42px!important;height:42px!important;padding:0!important;
+ background:#fff!important;color:#292B42!important;border:0!important;
+ border-radius:14px!important;box-shadow:0 3px 12px rgba(41,43,66,.05)!important;
 }
 #calendarDialog .calendar-weekdays{
- background:#000!important;color:#aaa!important;border:0!important;
+ background:#fff!important;color:#85879A!important;border:0!important;
+ border-radius:22px 22px 0 0!important;padding-top:12px!important;
 }
-#calendarDialog .calendar-weekdays span{color:#aaa!important}
+#calendarDialog .calendar-weekdays span{color:#85879A!important}
 #calendarDialog .calendar-grid{
- background:#000!important;border-bottom:1px solid #555!important;gap:6px!important;
+ background:#fff!important;border:0!important;gap:5px!important;
+ border-radius:0 0 22px 22px!important;padding:5px 8px 14px!important;
 }
 #calendarDialog .calendar-day{
- background:#050505!important;color:#fff!important;border:1px solid #555!important;
- border-radius:4px!important;box-shadow:none!important;transform:none!important;
+ background:#fff!important;color:#292B42!important;border:0!important;
+ border-radius:12px!important;box-shadow:none!important;transform:none!important;
 }
-#calendarDialog .calendar-day:hover{background:#0b0b0b!important}
+#calendarDialog .calendar-day:hover{background:#F8F7FB!important}
 #calendarDialog .calendar-day.today{
- background:#050505!important;color:#fff!important;border:1px solid #fff!important;
+ background:#F8F7FB!important;color:#292B42!important;border:1px solid #D9DDF9!important;
  box-shadow:none!important;
 }
 #calendarDialog .calendar-day.selected,
 #calendarDialog .calendar-day.selected.today{
- background:#fff!important;color:#000!important;border:1px solid #fff!important;box-shadow:none!important;
+ background:#E2E5FF!important;color:#292B42!important;border:1px solid #D6DAFF!important;box-shadow:none!important;
 }
-#calendarDialog .calendar-day.selected *{color:#000!important}
+#calendarDialog .calendar-day.selected *{color:#292B42!important}
 #calendarDialog .calendar-day small{
- background:#fff!important;color:#000!important;border:0!important;border-radius:2px!important;
+ background:#F1E9FF!important;color:#67439D!important;border:0!important;border-radius:7px!important;
 }
-#calendarDialog .calendar-day-head{color:#fff!important}
-#calendarDialog .calendar-day-head strong{color:#fff!important}
+#calendarDialog .calendar-day-head{color:#292B42!important;margin-top:16px!important}
+#calendarDialog .calendar-day-head strong{color:#292B42!important}
 #calendarDialog #calendarTodayBtn{
- background:#050505!important;color:#fff!important;border:1px solid #777!important;
- border-radius:4px!important;box-shadow:none!important;
+ background:#EEE9FF!important;color:#67439D!important;border:0!important;
+ border-radius:12px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-day-list{
- background:#000!important;color:#fff!important;border:0!important;
+ background:transparent!important;color:#292B42!important;border:0!important;
 }
 #calendarDialog .calendar-empty{
- background:#050505!important;color:#aaa!important;border:1px solid #666!important;
- border-radius:5px!important;box-shadow:none!important;
+ background:#fff!important;color:#85879A!important;border:0!important;
+ border-radius:18px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-add{
- width:100%!important;background:#050505!important;color:#fff!important;
- border:1px solid #888!important;border-radius:5px!important;box-shadow:none!important;
+ width:100%!important;background:#E2E5FF!important;color:#414C9A!important;
+ border:0!important;border-radius:16px!important;box-shadow:none!important;
 }
 #calendarDialog .calendar-close{
- background:#050505!important;color:#fff!important;border:0!important;border-radius:5px!important;
+ background:#fff!important;color:#292B42!important;border:0!important;border-radius:14px!important;
 }
 
 /* Actual You page is #settingsDialog > .settings-sheet */
