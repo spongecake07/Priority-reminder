@@ -399,6 +399,21 @@ html body .calendar-day-list .calendar-home-card .card-notes,
 html body .calendar-day-list .calendar-home-card .card-meta{
  color:var(--ui-reminder-muted)!important;
 }
+/* Match the date panel to the entire 52px card, not the legacy 39px slot. */
+html body .reminder-list article.reminder-card.collapsed:has(>.card-due-split),
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(>.card-due-split){
+ background:var(--ui-date-surface)!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split{
+ height:100%!important;
+ min-height:100%!important;
+ align-self:stretch!important;
+ box-sizing:border-box!important;
+ margin:0!important;
+ padding-top:0!important;
+ padding-bottom:0!important;
+}
 html body .reminder-card.collapsed>.card-due-split,
 html body .calendar-day-list .calendar-home-card.collapsed>.card-due-split{
  background:var(--ui-date-surface)!important;
