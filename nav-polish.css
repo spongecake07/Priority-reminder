@@ -1740,3 +1740,118 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 .search-wrap span{color:#aaa!important}
 
 /* v1.43: removed obsolete v92 high-specificity card border override. */
+
+
+/* Compact pastel reminder editor: scoped to the existing editor dialog. */
+html body #editorDialog.editor-dialog,
+html[data-theme="dark"] body #editorDialog.editor-dialog{
+ background:#FAF7F6!important;color:#292B42!important;color-scheme:light!important;
+ border:0!important;border-radius:24px!important;
+}
+html body #editorDialog #reminderForm{
+ display:flex!important;flex-direction:column!important;gap:7px!important;
+ padding:0 10px 14px!important;background:#FAF7F6!important;color:#292B42!important;
+}
+html body #editorDialog .dialog-head,
+html[data-theme="dark"] body #editorDialog .dialog-head{
+ position:sticky!important;top:0!important;z-index:5!important;
+ margin:0 -10px 2px!important;padding:12px 13px!important;
+ background:#FAF7F6!important;border-bottom:1px solid #E9E6EC!important;
+ color:#292B42!important;
+}
+html body #editorDialog .dialog-head h2{color:#292B42!important}
+html body #editorDialog .dialog-head .save{
+ background:#EAE3FF!important;color:#67439D!important;
+ padding:9px 14px!important;border-radius:999px!important;font-weight:750!important;
+}
+html body #editorDialog .edit-panel{
+ display:block!important;box-sizing:border-box!important;
+ background:#fff!important;color:#292B42!important;
+ padding:12px!important;margin:0!important;border:0!important;
+ border-radius:18px!important;box-shadow:0 2px 12px rgba(41,43,66,.035)!important;
+}
+html body #editorDialog .edit-panel .field{margin:0!important;gap:5px!important}
+html body #editorDialog .edit-main-panel{display:flex!important;flex-direction:column!important;gap:10px!important}
+html body #editorDialog .edit-compact-row{gap:7px!important}
+html body #editorDialog .edit-priority-panel .priority-fieldset{margin:0!important;padding:0!important}
+html body #editorDialog .edit-panel .field>span,
+html body #editorDialog .edit-panel legend,
+html body #editorDialog .edit-panel .field-label{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+ font-size:10px!important;font-weight:750!important;text-transform:uppercase!important;
+}
+html body #editorDialog .edit-panel input[type="text"],
+html body #editorDialog .edit-panel input[type="date"],
+html body #editorDialog .edit-panel input[type="time"],
+html body #editorDialog .edit-panel select,
+html body #editorDialog .edit-panel textarea{
+ background:#F8F7FB!important;color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+ border:1px solid #EFEBF3!important;box-shadow:none!important;
+ border-radius:11px!important;font-size:13px!important;min-height:39px!important;
+}
+html body #editorDialog .edit-main-panel #titleInput{
+ font-size:17px!important;font-weight:700!important;background:#fff!important;
+ padding:5px 2px!important;border:0!important;border-radius:0!important;
+}
+html body #editorDialog .edit-main-panel .edit-compact-row{
+ padding-top:9px!important;border-top:1px solid #F0EDF3!important;
+}
+html body #editorDialog .edit-priority-panel .priority-picker{gap:5px!important}
+html body #editorDialog .edit-priority-panel .priority-picker .pill{
+ min-height:36px!important;border:2px solid transparent!important;
+ border-radius:11px!important;font-size:11px!important;font-weight:750!important;
+}
+html body #editorDialog .priority-picker .pill.high{background:#FFE0E2!important;color:#914B59!important}
+html body #editorDialog .priority-picker .pill.medium{background:#FFF0C9!important;color:#846321!important}
+html body #editorDialog .priority-picker .pill.low{background:#E0F5E9!important;color:#246F50!important}
+html body #editorDialog .priority-picker .pill.misc{background:#DDEFFF!important;color:#286987!important}
+html body #editorDialog .priority-picker input:checked+.pill.high{border-color:#914B59!important}
+html body #editorDialog .priority-picker input:checked+.pill.medium{border-color:#846321!important}
+html body #editorDialog .priority-picker input:checked+.pill.low{border-color:#246F50!important}
+html body #editorDialog .priority-picker input:checked+.pill.misc{border-color:#286987!important}
+html body #editorDialog .edit-notes-panel textarea{min-height:62px!important}
+html body #editorDialog .checklist-editor.edit-panel,
+html body #editorDialog .photo-section.edit-panel{margin:0!important;padding:12px!important;background:#fff!important}
+html body #editorDialog .checklist-editor .section-head{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:8px!important;margin:0 0 7px!important}
+html body #editorDialog .checklist-editor .section-head strong,
+html body #editorDialog .photo-section .field-label{color:#292B42!important;font-size:13px!important}
+html body #editorDialog .checklist-editor .section-head small{display:none!important}
+html body #editorDialog .edit-checklist-count{
+ display:inline-flex!important;background:#EEE9FF!important;color:#67439D!important;
+ padding:4px 8px!important;border-radius:999px!important;font-size:11px!important;font-weight:700!important;
+}
+html body #editorDialog .edit-checklist-progress{height:4px!important;background:#F0EDF5!important;border-radius:999px!important;overflow:hidden!important;margin:0 0 9px!important}
+html body #editorDialog .edit-checklist-progress span{display:block!important;height:100%!important;width:0;background:#7454AB!important;border-radius:inherit!important}
+html body #editorDialog .checklist-add{gap:6px!important;margin-bottom:6px!important}
+html body #editorDialog .checklist-add button,
+html body #editorDialog .photo-btn{
+ background:#EEE9FF!important;color:#67439D!important;border:0!important;
+ border-radius:11px!important;font-weight:700!important;
+}
+html body #editorDialog .checklist-editor-list{display:flex!important;flex-direction:column!important;gap:5px!important}
+html body #editorDialog .checklist-edit-row{
+ display:flex!important;align-items:center!important;gap:7px!important;margin:0!important;padding:0!important;
+}
+html body #editorDialog .checklist-edit-row input[type="text"]{flex:1!important;min-width:0!important;min-height:34px!important}
+html body #editorDialog .checklist-edit-row button{flex:0 0 auto!important}
+html body #editorDialog .edit-more-panel details summary{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ gap:8px!important;cursor:pointer!important;list-style:none!important;
+ color:#292B42!important;font-size:13px!important;font-weight:750!important;
+}
+html body #editorDialog .edit-more-panel details summary::-webkit-details-marker{display:none!important}
+html body #editorDialog .edit-more-panel details summary small{
+ color:#85879A!important;font-size:10px!important;font-weight:500!important;text-align:right!important;
+}
+html body #editorDialog .edit-more-panel details[open] summary{margin-bottom:12px!important}
+html body #editorDialog .edit-more-panel .two-col{gap:7px!important}
+html body #editorDialog .edit-more-panel .toggle-row{background:#F8F7FB!important;margin:8px 0 0!important}
+html body #editorDialog .photo-section .photo-actions{margin-top:9px!important;gap:7px!important}
+html body #editorDialog .photo-section .photo-preview{margin-top:8px!important}
+html body #editorDialog .danger-btn{margin:5px 0!important}
+@media(max-width:600px){
+ html body #editorDialog.editor-dialog{width:calc(100vw - 20px)!important;max-height:90dvh!important}
+ html body #editorDialog #reminderForm{max-height:90dvh!important;padding:0 9px 13px!important}
+ html body #editorDialog .dialog-head{margin-left:-9px!important;margin-right:-9px!important}
+ html body #editorDialog .edit-panel{padding:11px!important}
+}
