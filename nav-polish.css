@@ -1855,3 +1855,41 @@ html body #editorDialog .danger-btn{margin:5px 0!important}
  html body #editorDialog .dialog-head{margin-left:-9px!important;margin-right:-9px!important}
  html body #editorDialog .edit-panel{padding:11px!important}
 }
+
+
+/* Editor checklist and notification contrast corrections; isolate from legacy dark rules. */
+html body #editorDialog .checklist-editor.edit-panel .checklist-editor-list .checklist-edit-row,
+html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-editor-list .checklist-edit-row{
+ background:#F8F7FB!important;border:1px solid #F0EDF3!important;
+ color:#292B42!important;border-radius:11px!important;
+ padding:3px 6px!important;min-height:38px!important;box-shadow:none!important;
+}
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="text"],
+html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="text"]{
+ background:transparent!important;color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+ border:0!important;outline:0!important;box-shadow:none!important;
+ padding:5px 2px!important;min-height:30px!important;border-radius:0!important;
+}
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]{
+ flex:0 0 auto!important;accent-color:#7454AB!important;width:19px!important;height:19px!important;
+ background:#fff!important;border:1px solid #AAA5B7!important;border-radius:5px!important;
+}
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row button,
+html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row button{
+ background:#EEE9FF!important;color:#67439D!important;border:0!important;
+ width:29px!important;height:29px!important;min-width:29px!important;min-height:29px!important;
+ border-radius:9px!important;padding:0!important;font-size:17px!important;
+}
+html body #editorDialog .edit-more-panel .toggle-row.compact,
+html[data-theme="dark"] body #editorDialog .edit-more-panel .toggle-row.compact{
+ background:#F8F7FB!important;border:1px solid #F0EDF3!important;
+ color:#292B42!important;opacity:1!important;
+}
+html body #editorDialog .edit-more-panel .toggle-row strong,
+html body #editorDialog .edit-more-panel .toggle-row small,
+html[data-theme="dark"] body #editorDialog .edit-more-panel .toggle-row strong,
+html[data-theme="dark"] body #editorDialog .edit-more-panel .toggle-row small{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;opacity:1!important;
+}
+html body #editorDialog .edit-more-panel .toggle-row small{color:#85879A!important;-webkit-text-fill-color:#85879A!important}
+html body #editorDialog .edit-more-panel .toggle-row input[type="checkbox"]{accent-color:#7454AB!important;opacity:1!important}
