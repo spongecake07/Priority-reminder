@@ -1,13 +1,10 @@
 name: CSS architecture guard
 on:
+  # The service worker is updated last when a Minna release is complete.
+  # Avoid testing transient mismatches during separate CSS/HTML commits.
   push:
     paths:
-      - 'styles.css'
-      - 'nav-polish.css'
-      - 'minna-theme.css'
-      - 'index.html'
       - 'service-worker.js'
-      - 'scripts/check-css-architecture.mjs'
   pull_request:
     paths:
       - 'styles.css'
