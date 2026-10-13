@@ -1442,3 +1442,66 @@ html body .reminder-card.expanded>.card-actions,
 html body .calendar-home-card.expanded>.card-actions{padding:8px 12px 12px!important;gap:6px!important}
 html body .reminder-card.expanded>.card-actions>button,
 html body .calendar-home-card.expanded>.card-actions>button{padding:7px 2px!important;gap:2px!important;border-radius:13px!important}
+
+
+/* v1.70: restore white expanded surface and left-aligned hierarchy. */
+html body .reminder-list article.reminder-card.expanded,
+html body #calendarDialog article.calendar-home-card.expanded{
+ background:#FFFFFF!important;
+ background-color:#FFFFFF!important;
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:stretch!important;
+ border-radius:28px!important;
+ overflow:hidden!important;
+}
+html body .reminder-list article.reminder-card.expanded>.card-body,
+html body #calendarDialog article.calendar-home-card.expanded>.card-body{
+ background:#FFFFFF!important;
+ background-color:#FFFFFF!important;
+ flex:1 1 auto!important;
+ align-items:stretch!important;
+ text-align:left!important;
+ padding:14px 15px 10px!important;
+}
+html body .reminder-card.expanded .card-heading,
+html body .calendar-home-card.expanded .card-heading,
+html body .reminder-card.expanded .card-title-wrap,
+html body .calendar-home-card.expanded .card-title-wrap{
+ align-items:flex-start!important;
+ text-align:left!important;
+ width:100%!important;
+}
+html body .reminder-card.expanded .card-title,
+html body .calendar-home-card.expanded .card-title{
+ text-align:left!important;
+ align-self:flex-start!important;
+ margin:0!important;
+ padding:0!important;
+}
+html body .reminder-card.expanded .category-chip,
+html body .calendar-home-card.expanded .category-chip{
+ display:inline-flex!important;
+ visibility:visible!important;
+ opacity:1!important;
+ align-self:flex-start!important;
+ background:#EEE9FF!important;
+ color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;
+}
+html body .reminder-card.expanded .minna-expanded-priority,
+html body .calendar-home-card.expanded .minna-expanded-priority{
+ display:inline-flex!important;
+ background:var(--minna-date-tint,#FFE0E2)!important;
+ color:#292B42!important;
+}
+html body .reminder-card.expanded .card-meta .meta-chip,
+html body .calendar-home-card.expanded .card-meta .meta-chip{background:#EEE9FF!important;color:#67439D!important;-webkit-text-fill-color:#67439D!important}
+html body .reminder-card.expanded .checklist-progress,
+html body .calendar-home-card.expanded .checklist-progress{padding:9px 10px 3px!important;margin-top:3px!important}
+html body .reminder-card.expanded .card-checklist,
+html body .calendar-home-card.expanded .card-checklist{padding:4px 10px 9px!important}
+html body .reminder-card.expanded .card-photo-strip,
+html body .calendar-home-card.expanded .card-photo-strip{padding:9px!important;margin-top:3px!important}
+html body .reminder-card.expanded .card-photo,
+html body .calendar-home-card.expanded .card-photo{height:88px!important}
