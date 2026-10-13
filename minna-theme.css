@@ -2,7 +2,7 @@
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
 .today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:0!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
-.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{background:var(--ui-panel2)!important;border-right:0!important}
+.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{background:var(--ui-date-surface)!important;border-right:0!important}
 .reminder-card.collapsed>.card-body,.reminder-card.expanded>.card-body,.calendar-home-card>.card-body{background:var(--ui-panel)!important;color:var(--ui-text)!important}
 .search-wrap,#searchInput,#homeFilterPanel input,#homeFilterPanel select{background:var(--ui-control)!important;color:var(--ui-text)!important;border:2px solid var(--ui-line)!important}
 .reminder-card.expanded>.card-actions,.calendar-home-card.expanded>.card-actions{background:var(--ui-panel)!important;border-top:0!important}
@@ -13,7 +13,7 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.collapsed,.calendar-day-list .calendar-home-card.collapsed{grid-template-columns:auto minmax(0,1fr)!important}
 .reminder-card.collapsed:not(:has(.card-due-split)),.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split)){grid-template-columns:minmax(0,1fr)!important}
 .reminder-card.collapsed:has(.card-due-split),.calendar-day-list .calendar-home-card.collapsed:has(.card-due-split){grid-template-columns:66px minmax(0,1fr)!important}
-.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{grid-column:1!important;background:var(--ui-panel2)!important;border-right:0!important}
+.reminder-card.collapsed>.card-due-split,.calendar-day-list .calendar-home-card.collapsed>.card-due-split{grid-column:1!important;background:var(--ui-date-surface)!important;border-right:0!important}
 .reminder-card.collapsed>.card-body,.calendar-day-list .calendar-home-card.collapsed>.card-body{grid-column:2!important}
 .reminder-card.collapsed:not(:has(.card-due-split))>.card-body,.calendar-day-list .calendar-home-card.collapsed:not(:has(.card-due-split))>.card-body{grid-column:1!important}
 .reminder-card.collapsed.urgency-high>.card-body,.calendar-home-card.collapsed.urgency-high>.card-body{background:var(--ui-reminder-high)!important}
@@ -40,7 +40,7 @@ html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!imp
 .reminder-card.collapsed .card-title,.calendar-day-list .calendar-home-card.collapsed .card-title{
  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
 }
-.reminder-card .card-due-split,.calendar-day-list .calendar-home-card .card-due-split{color:#dedede!important}
+.reminder-card .card-due-split,.calendar-day-list .calendar-home-card .card-due-split{color:var(--ui-date-ink)!important}
 
 /* v99 expanded reminder cleanup */
 .reminder-card.expanded,.calendar-day-list .calendar-home-card.expanded{
@@ -399,8 +399,8 @@ html body .calendar-day-list .calendar-home-card .card-notes,
 html body .calendar-day-list .calendar-home-card .card-meta{
  color:var(--ui-reminder-muted)!important;
 }
-html body .reminder-card .card-due-split,
-html body .calendar-day-list .calendar-home-card .card-due-split{
+html body .reminder-card.collapsed>.card-due-split,
+html body .calendar-day-list .calendar-home-card.collapsed>.card-due-split{
  background:var(--ui-date-surface)!important;
  color:var(--ui-date-ink)!important;
  -webkit-text-fill-color:var(--ui-date-ink)!important;
@@ -413,8 +413,8 @@ html body .calendar-day-list .calendar-home-card.is-completed .card-title{
 }
 
 /* Ensure date numerals and all dashboard labels retain readable ink. */
-html body .reminder-card .card-due-split *,
-html body .calendar-day-list .calendar-home-card .card-due-split *{
+html body .reminder-card.collapsed>.card-due-split *,
+html body .calendar-day-list .calendar-home-card.collapsed>.card-due-split *{
  color:var(--ui-date-ink)!important;
  -webkit-text-fill-color:var(--ui-date-ink)!important;
 }
