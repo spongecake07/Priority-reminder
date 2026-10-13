@@ -879,6 +879,61 @@ html body #calendarDialog .calendar-day-list article.calendar-home-card.collapse
  align-self:center!important;
 }
 
+/* Unified Minna metadata: hand-defined vector icons and pastel pills. */
+html body .reminder-card .minna-compact-details,
+html body .calendar-home-card .minna-compact-details{display:none}
+html body .reminder-card.collapsed .minna-compact-details,
+html body .calendar-home-card.collapsed .minna-compact-details{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ align-items:center!important;
+ gap:6px!important;
+ width:100%!important;
+ min-width:0!important;
+ margin-top:5px!important;
+}
+html body .reminder-card.collapsed .minna-detail-pill,
+html body .calendar-home-card.collapsed .minna-detail-pill{
+ display:inline-flex!important;
+ align-items:center!important;
+ gap:5px!important;
+ border-radius:999px!important;
+ padding:5px 9px!important;
+ font-family:inherit!important;
+ font-size:12px!important;
+ font-weight:700!important;
+ line-height:1.1!important;
+ white-space:nowrap!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+html body .reminder-card .minna-meta-svg,
+html body .calendar-home-card .minna-meta-svg{
+ width:16px!important;
+ height:16px!important;
+ flex:none!important;
+ display:block!important;
+ stroke:currentColor!important;
+}
+html body .reminder-card .minna-detail-alert,
+html body .calendar-home-card .minna-detail-alert{background:#FFF2E8!important;color:#B86D22!important;-webkit-text-fill-color:#B86D22!important}
+html body .reminder-card .minna-detail-checklist,
+html body .calendar-home-card .minna-detail-checklist{background:#F1E9FF!important;color:#7E53C5!important;-webkit-text-fill-color:#7E53C5!important}
+html body .reminder-card .minna-detail-image,
+html body .calendar-home-card .minna-detail-image{background:#F1E9FF!important;color:#7454AB!important;-webkit-text-fill-color:#7454AB!important}
+html body .reminder-card .minna-detail-repeat,
+html body .calendar-home-card .minna-detail-repeat{background:#EAF2FF!important;color:#3377C9!important;-webkit-text-fill-color:#3377C9!important}
+html body .reminder-card .minna-detail-pin,
+html body .calendar-home-card .minna-detail-pin{background:#FFE8E8!important;color:#D85666!important;-webkit-text-fill-color:#D85666!important}
+html body .reminder-card.collapsed .card-meta,
+html body .calendar-home-card.collapsed .card-meta{display:none!important}
+html body .reminder-list article.reminder-card.collapsed:has(.minna-compact-details),
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(.minna-compact-details){
+ height:auto!important;
+ min-height:112px!important;
+ max-height:none!important;
+}
+
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
