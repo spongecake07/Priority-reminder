@@ -587,8 +587,8 @@ html body .reminder-card.urgency-misc,
 html body .calendar-home-card.urgency-misc{--minna-date-tint:#DDEFFF}
 html body .reminder-list article.reminder-card.collapsed,
 html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed{
- height:76px!important;
- min-height:76px!important;
+ height:94px!important;
+ min-height:94px!important;
 }
 html body .reminder-list article.reminder-card.collapsed>.card-body,
 html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-body,
@@ -704,6 +704,35 @@ html body .reminder-list article.reminder-card.collapsed>.card-body,
 html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-body{
  grid-column:2!important;
 }
+/* v1.58: Priority badge color and geometry must win over legacy date surfaces.
+   Direct background rules avoid inherited variable defaults being overridden by
+   earlier high-specificity date styles. Keep tile within the 94px card. */
+html body .reminder-list article.reminder-card.collapsed:has(>.card-due-split),
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(>.card-due-split){
+ height:94px!important;
+ min-height:94px!important;
+ max-height:none!important;
+ grid-template-columns:108px minmax(0,1fr)!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split{
+ height:76px!important;
+ min-height:76px!important;
+ max-height:76px!important;
+ width:88px!important;
+ margin:9px 10px!important;
+ box-sizing:border-box!important;
+ overflow:hidden!important;
+}
+html body .reminder-list article.reminder-card.urgency-high>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.urgency-high>.card-due-split{background:#FFE0E2!important}
+html body .reminder-list article.reminder-card.urgency-medium>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.urgency-medium>.card-due-split{background:#FFF0C9!important}
+html body .reminder-list article.reminder-card.urgency-low>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.urgency-low>.card-due-split{background:#E0F5E9!important}
+html body .reminder-list article.reminder-card.urgency-misc>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.urgency-misc>.card-due-split{background:#DDEFFF!important}
+
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
