@@ -15,7 +15,7 @@ assert(!/\/\* v\d+(?:\.\d+)?:/.test(canonical),'Version-numbered override append
 const version=index.match(/class="minna-version">v1\.(\d+)<\/span>/)?.[1];
 assert(!!version,'Missing visible app version');
 if(version){
- const assetVersion=String(Number(version));
+ const assetVersion=String(100+Number(version));
  for(const file of ['nav-polish.css','minna-theme.css','app.js']){
   assert(index.includes(file+'?v='+assetVersion),'index.html has stale '+file+' version');
   assert(sw.includes(file+'?v='+assetVersion),'service worker has stale '+file+' version');
