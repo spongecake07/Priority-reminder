@@ -285,3 +285,9 @@ button:focus-visible,.bottom-nav-item:focus-visible,.card-actions button:focus-v
 :root{--ui-r:24px}
 .reminder-card,.calendar-home-card,.today-dashboard,.minna-progress,.home-profile,.home-filter-toggle,.home-filter-panel,.summary-card,.smart-view,.settings-section,.editor-dialog,.category-chip,.meta-chip,.pill,.card-actions button,.card-checklist .checklist-row,.toast{border-radius:24px!important}
 button,input:not([type=checkbox]):not([type=radio]),select,textarea,dialog{border-radius:24px!important}
+
+/* v1.31: align home dashboard panels */
+html body .home-tools.glance-filter,html body #minnaProgress,html body .today-dashboard{box-sizing:border-box!important;width:100%!important;max-width:100%!important}
+html body #homeFilterToggle,html body #minnaProgress,html body .today-dashboard{border-radius:24px!important;border:2px solid var(--ui-line)!important;box-shadow:none!important;box-sizing:border-box!important}
+html body #homeFilterToggle,html body #minnaProgress{min-height:76px!important}
+html body #minnaProgress{margin-left:0!important;margin-right:0!important}
