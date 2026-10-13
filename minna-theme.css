@@ -1,4 +1,4 @@
-:root{--ui-surface-border:0;--ui-elevation:0 5px 16px rgba(41,43,66,.08),0 1px 4px rgba(41,43,66,.04);--ui-bg:#FAF7F6;--ui-header:#FAF7F6;--ui-brand-ink:#24243B;--ui-brand-muted:#88869A;--ui-tile-today:#DEE2FF;--ui-tile-upcoming:#FFF0C9;--ui-tile-overdue:#FFDDE0;--ui-tile-ink:#292B42;--ui-progress-surface:#FFFFFF;--ui-progress-title:#25273F;--ui-progress-muted:#8288A1;--ui-progress-track:#E9EBF3;--ui-progress-fill:#A5B4FC;--ui-reminder-ink:#292B42;--ui-reminder-muted:#5C6178;--ui-reminder-high:#FFE1D9;--ui-reminder-medium:#FFF0C9;--ui-reminder-low:#DDF3E8;--ui-reminder-misc:#DDEFFF;--ui-reminder-shell:#FFFFFF;--ui-date-surface:#F5F0F5;--ui-date-ink:#292B42;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
+:root{--ui-surface-border:0;--ui-elevation:0 5px 16px rgba(41,43,66,.08),0 1px 4px rgba(41,43,66,.04);--ui-bg:#FAF7F6;--ui-header:#FAF7F6;--ui-brand-ink:#24243B;--ui-brand-muted:#88869A;--ui-tile-today:#DEE2FF;--ui-tile-upcoming:#FFF0C9;--ui-tile-overdue:#FFDDE0;--ui-tile-ink:#292B42;--ui-progress-surface:#FFFFFF;--ui-progress-title:#25273F;--ui-progress-muted:#8288A1;--ui-progress-track:#E9EBF3;--ui-progress-fill:#A5B4FC;--ui-reminder-ink:#292B42;--ui-reminder-muted:#5C6178;--ui-reminder-high:#FFE1D9;--ui-reminder-medium:#FFF0C9;--ui-reminder-low:#DDF3E8;--ui-reminder-misc:#DDEFFF;--ui-reminder-shell:#FFFFFF;--ui-date-surface:#F5F0F5;--ui-date-ink:#292B42;--ui-section-ink:#565B73;--ui-section-line:#DADCE7;--ui-panel:#2F2F2F;--ui-panel2:#2F2F2F;--ui-control:#3b3b3b;--ui-text:#f4f4f4;--ui-muted:#b7b7b7;--ui-line:#464646;--ui-accent:#3FA7D6;--ui-r:20px}
 html,body,.app-shell,#calendarDialog,#settingsDialog{background:var(--ui-bg)!important;color:var(--ui-text)!important}
 .today-dashboard,.minna-progress,.home-profile,.minna-logo,.reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded,#settingsDialog .settings-section{background:var(--ui-panel)!important;color:var(--ui-text)!important;border:0!important;box-shadow:none!important}
 .reminder-card.collapsed,.reminder-card.expanded,.calendar-day-list .calendar-home-card.collapsed,.calendar-day-list .calendar-home-card.expanded{border-radius:var(--ui-r)!important;outline:0!important;overflow:hidden!important}
@@ -311,8 +311,8 @@ html body #calendarDialog .calendar-day-list article.calendar-home-card.collapse
 html,body,.app-shell{background:var(--ui-bg)!important}
 html body .topbar{background:var(--ui-header)!important;color:var(--ui-brand-ink)!important}
 html body .minna-brand h1{color:var(--ui-brand-ink)!important}html body .minna-brand small,html body .minna-version{color:var(--ui-brand-muted)!important}
-html body .home-section-divider span{color:#2F2F2F!important}
-html body .home-section-divider::after,html body .home-section-divider i{background:#9A9A9A!important}
+html body .home-section-divider span{color:var(--ui-section-ink)!important;font-size:11px!important;font-weight:800!important;letter-spacing:.085em!important}
+html body .home-section-divider::after,html body .home-section-divider i{background:var(--ui-section-line)!important;height:1px!important}
 html body .bottom-nav{background:#E6E6E6!important;color:#2F2F2F!important}
 
 /* v1.36: matching light top and bottom banners */
@@ -380,6 +380,14 @@ html body #minnaProgress .minna-stars{
  border-radius:999px!important;
 }
 
+/* Soft section dividers and consistent vertical rhythm. */
+html body .home-section-divider{
+ margin:22px 4px 12px!important;
+ gap:12px!important;
+ color:var(--ui-section-ink)!important;
+}
+html body .home-section-divider:first-child{margin-top:12px!important}
+html body .reminder-list{gap:12px!important}
 /* Pastel reminder text and surfaces, shared by Home and Calendar. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card{
