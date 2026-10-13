@@ -836,6 +836,49 @@ html body .calendar-home-card.collapsed .card-title{
  margin:0!important;
 }
 
+/* v1.61: description preview only on collapsed cards with notes. */
+html body .reminder-card .minna-description-preview,
+html body .calendar-home-card .minna-description-preview{display:none}
+html body .reminder-card.collapsed .minna-description-preview,
+html body .calendar-home-card.collapsed .minna-description-preview{
+ display:flex!important;
+ flex-direction:column!important;
+ gap:5px!important;
+ width:100%!important;
+ min-width:0!important;
+ margin-top:3px!important;
+}
+html body .reminder-card.collapsed .minna-description-divider,
+html body .calendar-home-card.collapsed .minna-description-divider{
+ display:block!important;
+ height:1px!important;
+ width:100%!important;
+ background:var(--ui-progress-track,#E6E8F0)!important;
+}
+html body .reminder-card.collapsed .minna-description-text,
+html body .calendar-home-card.collapsed .minna-description-text{
+ display:block!important;
+ font-family:inherit!important;
+ font-size:12px!important;
+ line-height:1.3!important;
+ font-weight:400!important;
+ color:var(--ui-progress-muted,#88869A)!important;
+ -webkit-text-fill-color:var(--ui-progress-muted,#88869A)!important;
+ white-space:nowrap!important;
+ overflow:hidden!important;
+ text-overflow:ellipsis!important;
+}
+html body .reminder-list article.reminder-card.collapsed:has(.minna-description-preview),
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(.minna-description-preview){
+ height:auto!important;
+ min-height:112px!important;
+ max-height:none!important;
+}
+html body .reminder-list article.reminder-card.collapsed:has(.minna-description-preview)>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(.minna-description-preview)>.card-due-split{
+ align-self:center!important;
+}
+
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
