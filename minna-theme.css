@@ -1630,3 +1630,71 @@ html body .calendar-home-card.expanded .checklist-row:active{
  box-shadow:none!important;
  outline:none!important;
 }
+
+
+/* Undated collapsed reminders: full-width compact card, no reserved date rail. */
+html body .reminder-list article.reminder-card.no-date.collapsed,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed{
+ display:block!important;
+ height:auto!important;
+ min-height:88px!important;
+ max-height:none!important;
+ grid-template-columns:none!important;
+ padding:0!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed>.card-body,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed>.card-body{
+ width:100%!important;
+ min-width:0!important;
+ box-sizing:border-box!important;
+ margin:0!important;
+ padding:18px 56px 18px 20px!important;
+ text-align:left!important;
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:stretch!important;
+ justify-content:center!important;
+}
+html body .reminder-card.no-date.collapsed .card-heading,
+html body .calendar-home-card.no-date.collapsed .card-heading,
+html body .reminder-card.no-date.collapsed .card-title-wrap,
+html body .calendar-home-card.no-date.collapsed .card-title-wrap{
+ width:100%!important;
+ min-width:0!important;
+ margin:0!important;
+ padding:0!important;
+ text-align:left!important;
+ align-items:flex-start!important;
+}
+html body .reminder-card.no-date.collapsed .card-title,
+html body .calendar-home-card.no-date.collapsed .card-title{
+ text-align:left!important;
+ margin:4px 0 0!important;
+ padding:0!important;
+ max-width:100%!important;
+}
+html body .reminder-card.no-date.collapsed .minna-card-topline,
+html body .calendar-home-card.no-date.collapsed .minna-card-topline{
+ width:100%!important;
+ min-width:0!important;
+ padding-right:0!important;
+ justify-content:flex-start!important;
+ gap:8px!important;
+}
+html body .reminder-card.no-date.collapsed .minna-card-topline .minna-reminder-eyebrow,
+html body .calendar-home-card.no-date.collapsed .minna-card-topline .minna-reminder-eyebrow{
+ flex:0 1 auto!important;
+ width:auto!important;
+ min-width:0!important;
+}
+html body .reminder-card.no-date.collapsed .minna-card-topline .minna-compact-details,
+html body .calendar-home-card.no-date.collapsed .minna-card-topline .minna-compact-details{
+ flex:0 0 auto!important;
+ max-width:55%!important;
+}
+html body .reminder-card.no-date.collapsed .minna-card-more,
+html body .calendar-home-card.no-date.collapsed .minna-card-more{
+ right:20px!important;
+ top:50%!important;
+ transform:translateY(-50%)!important;
+}
