@@ -1634,8 +1634,8 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
  min-width:66px!important;
  height:39px!important;
  padding:0 5px!important;
- background:#050505!important;
- color:#fff!important;
+ background:var(--ui-date-surface,#F5F0F5)!important;
+ color:var(--ui-date-ink,#292B42)!important;
  border-right:0!important;
  line-height:1!important;
  overflow:hidden!important;
@@ -1643,7 +1643,7 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 .reminder-card.collapsed>.card-due-split b{
  display:block!important;
  max-width:100%!important;
- color:#fff!important;
+ color:var(--ui-date-ink,#292B42)!important;
  font-size:11px!important;
  font-weight:850!important;
  white-space:nowrap!important;
@@ -1653,7 +1653,7 @@ html[data-theme="dark"] .bottom-nav-item.active{background:transparent!important
 .reminder-card.collapsed>.card-due-split small{
  display:block!important;
  margin-top:3px!important;
- color:#929292!important;
+ color:var(--ui-date-ink,#292B42)!important;
  font-size:6.5px!important;
  font-weight:850!important;
  letter-spacing:.08em!important;
