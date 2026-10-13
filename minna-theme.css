@@ -1063,6 +1063,46 @@ html body .calendar-home-card.collapsed .minna-card-topline .minna-compact-detai
   font-size:9px!important;
  }
 }
+/* v1.66: balanced date tile and tighter single-row metadata. */
+html body .reminder-list article.reminder-card.collapsed:has(>.card-due-split),
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(>.card-due-split){
+ min-height:152px!important;
+ height:auto!important;
+ grid-template-columns:112px minmax(0,1fr)!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split{
+ width:94px!important;
+ height:calc(100% - 24px)!important;
+ min-height:128px!important;
+ max-height:none!important;
+ margin:12px 9px!important;
+ align-self:stretch!important;
+ border-radius:27px!important;
+ display:flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+}
+html body .reminder-card.collapsed .card-due-split .collapsed-due,
+html body .calendar-home-card.collapsed .card-due-split .collapsed-due{gap:7px!important}
+html body .reminder-card.collapsed .minna-card-topline,
+html body .calendar-home-card.collapsed .minna-card-topline{gap:3px!important;padding-right:26px!important}
+html body .reminder-card.collapsed .minna-card-topline .minna-compact-details,
+html body .calendar-home-card.collapsed .minna-card-topline .minna-compact-details{
+ gap:3px!important;
+ padding:4px 4px!important;
+ max-width:58%!important;
+}
+html body .reminder-card.collapsed .minna-card-topline .minna-detail-unit,
+html body .calendar-home-card.collapsed .minna-card-topline .minna-detail-unit{gap:1px!important}
+html body .reminder-card.collapsed .minna-card-topline .minna-meta-svg,
+html body .calendar-home-card.collapsed .minna-card-topline .minna-meta-svg{width:12px!important;height:12px!important}
+@media(max-width:390px){
+ html body .reminder-list article.reminder-card.collapsed:has(>.card-due-split),
+ html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(>.card-due-split){grid-template-columns:108px minmax(0,1fr)!important}
+ html body .reminder-list article.reminder-card.collapsed>.card-due-split,
+ html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split{width:90px!important}
+}
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
