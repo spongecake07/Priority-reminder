@@ -658,6 +658,52 @@ html body .calendar-home-card.expanded>.card-actions{
  background:#F8F7FB!important;
 }
 
+/* Date tile geometry for the approved reference (no change to other panels). */
+html body .reminder-list article.reminder-card.collapsed:has(>.card-due-split),
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed:has(>.card-due-split){
+ display:grid!important;
+ grid-template-columns:108px minmax(0,1fr)!important;
+ background:#FFFFFF!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split{
+ grid-column:1!important;
+ width:88px!important;
+ min-width:0!important;
+ max-width:88px!important;
+ height:76px!important;
+ min-height:0!important;
+ margin:9px 10px!important;
+ border-radius:20px!important;
+ display:flex!important;
+ flex-direction:column!important;
+ justify-content:center!important;
+ align-items:center!important;
+ padding:0!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-due-split .collapsed-due,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split{
+ text-align:center!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-due-split b,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split b{
+ font-size:30px!important;
+ line-height:1.05!important;
+ font-weight:800!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-due-split small,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-due-split small{
+ display:block!important;
+ margin-top:4px!important;
+ font-size:12px!important;
+ line-height:1.1!important;
+ font-weight:750!important;
+ letter-spacing:.035em!important;
+}
+html body .reminder-list article.reminder-card.collapsed>.card-body,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed>.card-body{
+ grid-column:2!important;
+}
 /* Canonical surface treatment: one place for borders and elevation. */
 html body .reminder-card,
 html body .calendar-day-list .calendar-home-card,
