@@ -1997,6 +1997,14 @@ html body .glance-filter .five-priorities .summary-card.misc.active strong,
 html body .glance-filter .five-priorities .summary-card.misc.active span{
  color:#365D91!important;-webkit-text-fill-color:#365D91!important;
 }
+/* Header-free home: keep all account details in You. */
+html body .minna-legacy-controls{display:none!important}
+html body .app-shell{padding-top:12px!important}
+html body #settingsDialog .you-identity{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:wrap!important;margin-top:12px!important}
+html body #settingsDialog .you-identity-name{font-weight:750!important;color:var(--ui-text,#292B42)!important}
+html body #settingsDialog .you-identity-rank,html body #settingsDialog .you-identity-achievements{font-size:12px!important;color:var(--ui-progress-muted,#7A7D91)!important}
+html body #settingsDialog .you-identity .home-rank-badge{width:38px!important;height:38px!important}
+html body #settingsDialog .minna-app-about .minna-version{font-size:13px!important;color:var(--ui-progress-muted,#7A7D91)!important;white-space:nowrap!important}
 /* Canonical priority palette and fixed date tile colors. */
 :root{
  --ui-tile-today:#E8E1FF;
