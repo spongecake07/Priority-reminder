@@ -1951,3 +1951,108 @@ html[data-theme="dark"] body #calendarDialog .calendar-day-head,
 html[data-theme="dark"] body #calendarDialog .calendar-day-head strong{
  color:#292B42!important;-webkit-text-fill-color:#292B42!important;
 }
+
+
+/* You page step 1: pastel Progress & Achievements only. */
+html body #settingsDialog .minna-achievements-section{
+ background:#F1EEFF!important;color:#292B42!important;border:1px solid #E1DAF9!important;
+ border-radius:22px!important;padding:14px!important;box-shadow:none!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-head{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-head strong{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;font-size:19px!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-head small{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-stars{
+ background:#E1DCFF!important;color:#67439D!important;border:0!important;
+ border-radius:15px!important;padding:8px 12px!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-panel,
+html body #settingsDialog .minna-achievements-section .achievement-stats,
+html body #settingsDialog .minna-achievements-section .achievement-next,
+html body #settingsDialog .minna-achievements-section .achievement-grid{
+ background:transparent!important;color:#292B42!important;border:0!important;box-shadow:none!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-panel{
+ background:#FFF!important;border-radius:18px!important;padding:14px!important;margin-top:12px!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-panel>*,
+html body #settingsDialog .minna-achievements-section .rank-current,
+html body #settingsDialog .minna-achievements-section .achievement-stats>div{
+ background:transparent!important;color:#292B42!important;border:0!important;box-shadow:none!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-current strong,
+html body #settingsDialog .minna-achievements-section .rank-current b,
+html body #settingsDialog .minna-achievements-section .achievement-stats b,
+html body #settingsDialog .minna-achievements-section .achievement-next strong{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #settingsDialog .minna-achievements-section small,
+html body #settingsDialog .minna-achievements-section .achievement-stats span{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-track,
+html body #settingsDialog .minna-achievements-section .achievement-next-track{
+ background:#EAE6F5!important;border-radius:999px!important;overflow:hidden!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-track i,
+html body #settingsDialog .minna-achievements-section .achievement-next-track i{
+ background:#A996F3!important;border-radius:999px!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-path span{
+ background:#F1EEFA!important;color:#85879A!important;border:0!important;border-radius:999px!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-path span.reached{
+ background:#E5DDFF!important;color:#67439D!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-stats{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ background:#E8E3FF!important;border-radius:16px!important;padding:10px 3px!important;
+ margin-top:10px!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-stats>div{
+ padding:4px!important;border-radius:0!important;text-align:center!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-stats>div+div{
+ border-left:1px solid #D7CFF3!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-next{
+ background:#FFF!important;border-radius:16px!important;padding:12px!important;margin:10px 0!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-grid{
+ background:#FFF!important;border-radius:18px!important;padding:10px!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-subhead{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+ font-weight:750!important;padding:10px 6px!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-card{
+ display:flex!important;align-items:center!important;gap:10px!important;
+ background:#FFF!important;color:#292B42!important;border:1px solid #F0EDF4!important;
+ border-radius:14px!important;padding:10px!important;margin:5px 0!important;
+ box-shadow:none!important;opacity:1!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-card.locked{
+ background:#F8F7FA!important;opacity:.7!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-card strong{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-card small{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-card .achievement-medal{
+ display:grid!important;place-items:center!important;flex:0 0 34px!important;
+ width:34px!important;height:34px!important;border-radius:50%!important;
+ background:#EEE9FF!important;color:#67439D!important;filter:none!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-card.unlocked>b{
+ color:#287451!important;-webkit-text-fill-color:#287451!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-card.locked>b{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
