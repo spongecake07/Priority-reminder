@@ -1943,6 +1943,34 @@ html body #minnaProgress .minna-progress-details{padding:4px 15px 15px!important
 html body #minnaProgress .minna-progress-details[hidden]{display:none!important}
 html body #minnaProgress .minna-progress-details .minna-progress-top{padding:0 0 10px!important}
 html body #minnaProgress .minna-progress-details .minna-progress-bottom{padding:8px 0!important}
+/* Collapsible filter summary: reminder-first home. */
+html body .app-shell>.home-tools.glance-filter.filter-disclosure{padding:5px!important;margin-bottom:8px!important;background:#fff!important;border-radius:22px!important}
+html body .filter-disclosure #homeFilterToggle.home-filter-summary{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ width:100%!important;min-height:58px!important;height:auto!important;
+ padding:9px 15px!important;margin:0!important;border:0!important;border-radius:17px!important;
+ background:#D5DFEB!important;box-shadow:none!important;text-align:left!important;cursor:pointer!important;
+}
+html body .filter-disclosure .home-filter-summary-copy{display:flex!important;flex-direction:column!important;gap:2px!important;min-width:0!important}
+html body .filter-disclosure .home-filter-summary-copy strong{font-size:15px!important;line-height:1.2!important;color:#292B42!important}
+html body .filter-disclosure .home-filter-summary-copy small{font-size:12px!important;color:#53536B!important}
+html body .filter-disclosure .home-filter-chevron{font-size:22px!important;line-height:1!important;color:#625581!important;transition:transform .23s ease!important}
+html body .filter-disclosure #homeFilterToggle[aria-expanded="true"] .home-filter-chevron{transform:rotate(180deg)!important}
+html body .filter-disclosure #homeFilterPanel.home-filter-panel{
+ margin-top:6px!important;padding:6px!important;overflow:hidden!important;border-radius:18px!important;
+}
+html body .filter-disclosure #homeFilterPanel[hidden],html body .filter-disclosure #homeFilterPanel.hidden{display:none!important}
+html body .filter-disclosure .home-date-filter.date-filter-row{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:5px!important;padding:0!important;margin-bottom:8px!important;
+}
+html body .filter-disclosure .home-date-filter.date-filter-row .glance-stat{
+ min-height:62px!important;height:62px!important;padding:5px 1px!important;
+ border-radius:16px!important;pointer-events:auto!important;
+}
+html body .filter-disclosure .home-date-filter.date-filter-row .glance-stat strong{font-size:23px!important}
+html body .filter-disclosure .home-date-filter.date-filter-row .glance-stat small{font-size:clamp(9px,2.6vw,12px)!important}
+@media(prefers-reduced-motion:reduce){html body .filter-disclosure .home-filter-chevron{transition:none!important}}
 /* Canonical priority palette and fixed date tile colors. */
 :root{
  --ui-tile-today:#E8E1FF;
