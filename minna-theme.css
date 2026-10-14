@@ -1899,6 +1899,50 @@ html body .glance-filter .date-filter-row .glance-stat small{
  font-size:clamp(10px,2.7vw,13px)!important;
  letter-spacing:-.02em!important;
 }
+/* Compact reminder-first home layout. */
+html body .app-shell>.home-tools.glance-filter{margin-bottom:8px!important;padding:0!important}
+html body .app-shell>.home-tools.glance-filter>#homeFilterToggle{
+ min-height:0!important;padding:5px!important;gap:5px!important;border-radius:20px!important;
+}
+html body .glance-filter .date-filter-row .glance-stat{
+ min-height:62px!important;height:62px!important;padding:5px 1px!important;
+ gap:3px!important;border-radius:16px!important;
+}
+html body .glance-filter .date-filter-row .glance-stat strong{
+ font-size:23px!important;line-height:1.05!important;
+}
+html body .glance-filter .date-filter-row .glance-stat small{
+ font-size:clamp(9px,2.6vw,12px)!important;line-height:1.1!important;
+}
+html body .glance-filter .home-filter-panel{
+ padding:5px!important;margin-top:5px!important;border-radius:20px!important;
+}
+html body .glance-filter .five-priorities{gap:5px!important}
+html body .glance-filter .five-priorities .summary-card{
+ min-height:56px!important;height:56px!important;padding:5px 1px!important;
+ border-radius:16px!important;
+}
+html body .glance-filter .five-priorities .summary-card strong{font-size:19px!important;line-height:1.05!important}
+html body .glance-filter .five-priorities .summary-card span{font-size:11px!important;line-height:1.15!important}
+html body #minnaProgress.minna-progress-compact{
+ padding:0!important;margin:8px 0 10px!important;min-height:0!important;
+ border-radius:20px!important;overflow:hidden!important;
+}
+html body #minnaProgress .minna-progress-toggle{
+ width:100%!important;min-height:48px!important;display:flex!important;
+ align-items:center!important;justify-content:space-between!important;
+ padding:10px 15px!important;background:transparent!important;border:0!important;
+ color:var(--ui-progress-title,#292B42)!important;text-align:left!important;
+ font-size:14px!important;font-weight:700!important;cursor:pointer!important;
+}
+html body #minnaProgress .minna-progress-summary{display:flex!important;align-items:center!important;gap:14px!important}
+html body #minnaProgress .minna-progress-summary b{font-size:13px!important}
+html body #minnaProgress .minna-progress-summary span{font-size:18px!important;transition:transform .2s ease!important}
+html body #minnaProgress .minna-progress-toggle[aria-expanded="true"] .minna-progress-summary span{transform:rotate(180deg)!important}
+html body #minnaProgress .minna-progress-details{padding:4px 15px 15px!important}
+html body #minnaProgress .minna-progress-details[hidden]{display:none!important}
+html body #minnaProgress .minna-progress-details .minna-progress-top{padding:0 0 10px!important}
+html body #minnaProgress .minna-progress-details .minna-progress-bottom{padding:8px 0!important}
 /* Canonical priority palette and fixed date tile colors. */
 :root{
  --ui-tile-today:#E8E1FF;
