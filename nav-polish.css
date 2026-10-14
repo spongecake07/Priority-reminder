@@ -2178,3 +2178,87 @@ html body #settingsDialog .theme-settings .settings-row{
  html body #settingsDialog .settings-section.profile-settings .settings-row{flex-wrap:wrap!important;}
  html body #settingsDialog .profile-name-editor{width:100%!important;}
 }
+
+
+/* You page step 3: compact controls and light developer/danger sections. */
+html body #settingsDialog .profile-settings .settings-row{
+ display:block!important;
+}
+html body #settingsDialog .profile-settings .profile-name-editor{
+ display:grid!important;grid-template-columns:minmax(0,1fr) 90px!important;
+ align-items:center!important;gap:9px!important;width:100%!important;
+ margin-top:12px!important;
+}
+html body #settingsDialog .profile-settings .profile-name-editor input{
+ width:100%!important;min-width:0!important;max-width:none!important;
+ box-sizing:border-box!important;margin:0!important;
+}
+html body #settingsDialog .profile-settings .profile-name-editor button{
+ width:90px!important;min-width:0!important;max-width:90px!important;
+ margin:0!important;align-self:stretch!important;
+}
+html body #settingsDialog .theme-settings .settings-row{
+ display:block!important;
+}
+html body #settingsDialog .theme-settings .theme-toggle{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:8px!important;width:100%!important;margin-top:12px!important;
+}
+html body #settingsDialog .theme-settings .theme-toggle button{
+ width:100%!important;min-width:0!important;max-width:none!important;
+ margin:0!important;padding:12px 8px!important;
+}
+html body #settingsDialog .settings-section.dev-settings,
+html body #settingsDialog .settings-section.danger-settings{
+ background:#FFF!important;color:#292B42!important;
+ border:1px solid #EEEAF1!important;border-radius:19px!important;
+ padding:15px!important;box-shadow:0 3px 14px rgba(40,30,70,.035)!important;
+}
+html body #settingsDialog .dev-settings .dev-head,
+html body #settingsDialog .dev-settings .dev-head>div,
+html body #settingsDialog .dev-settings .dev-scheme-title,
+html body #settingsDialog .dev-settings .dev-rank-control,
+html body #settingsDialog .danger-settings .settings-row,
+html body #settingsDialog .danger-settings .settings-row>div{
+ background:transparent!important;color:#292B42!important;border:0!important;
+ box-shadow:none!important;
+}
+html body #settingsDialog .dev-settings strong,
+html body #settingsDialog .dev-settings .dev-rank-control>span,
+html body #settingsDialog .danger-settings strong{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #settingsDialog .dev-settings small,
+html body #settingsDialog .danger-settings small{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #settingsDialog .dev-settings .dev-rank-control select{
+ background:#FAF9FC!important;color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;border:1px solid #E3DFEC!important;
+ border-radius:12px!important;
+}
+html body #settingsDialog .dev-settings #clearDevRankBtn{
+ background:#EEE9FF!important;color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;border:1px solid #E3DBFB!important;
+ border-radius:12px!important;
+}
+html body #settingsDialog .dev-settings .scheme-picker{
+ background:transparent!important;gap:9px!important;
+}
+html body #settingsDialog .dev-settings .scheme-picker button{
+ background:#F8F7FB!important;color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;border:1px solid #E8E3F1!important;
+ border-radius:13px!important;box-shadow:none!important;
+}
+html body #settingsDialog .dev-settings .scheme-picker button[aria-pressed="true"],
+html body #settingsDialog .dev-settings .scheme-picker button.active{
+ background:#EEE9FF!important;border-color:#C8B7F5!important;
+}
+html body #settingsDialog .dev-settings .dev-divider{
+ background:#EEEAF1!important;border-color:#EEEAF1!important;
+}
+html body #settingsDialog .danger-settings #deleteAllRemindersBtn{
+ background:#FBE9EA!important;color:#9A454F!important;
+ -webkit-text-fill-color:#9A454F!important;border:1px solid #F2CDD1!important;
+ border-radius:13px!important;box-shadow:none!important;
+}
