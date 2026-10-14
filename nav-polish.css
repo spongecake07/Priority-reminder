@@ -1058,9 +1058,6 @@ dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
 .bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))!important}
 .bottom-nav button{min-width:0!important;overflow:hidden!important}
 @media(max-width:370px){
- .reminder-card.expanded>.card-actions>button,
- .calendar-day-list .calendar-home-card.expanded>.card-actions>button{font-size:10px!important;padding:0 2px!important}
- .today-summary{padding-left:4px!important;padding-right:4px!important}
  .today-summary small{font-size:9px!important}
 }
 
