@@ -1780,6 +1780,19 @@ html body .calendar-home-card.no-date.collapsed .card-title-wrap{
  justify-content:center!important;
  gap:8px!important;
 }
+/* Dated collapsed cards: align priority and title whether metadata or notes exist. */
+html body .reminder-card.collapsed.has-date .card-heading,
+html body .calendar-home-card.collapsed.has-date .card-heading{
+ gap:4px!important;
+}
+html body .reminder-card.collapsed.has-date .minna-card-topline,
+html body .calendar-home-card.collapsed.has-date .minna-card-topline{
+ min-height:26px!important;
+}
+html body .reminder-card.collapsed.has-date .card-title,
+html body .calendar-home-card.collapsed.has-date .card-title{
+ margin:0!important;
+}
 /* Reminder press feedback matches the Home summary bubbles. */
 html body .reminder-list article.reminder-card.collapsed,
 html body #calendarDialog article.calendar-home-card.collapsed{
