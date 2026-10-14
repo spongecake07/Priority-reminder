@@ -2396,3 +2396,18 @@ html body #minnaProgress .minna-daily-goal.is-done .minna-daily-goal-track i{
 @media(prefers-reduced-motion:reduce){
  html body #minnaProgress .minna-daily-goals-toggle span{transition:none!important;}
 }
+
+
+/* Match reminder-card spring on Today's Progress expansion and collapse. */
+html body #minnaProgress.minna-progress-opening{
+ animation:minna-reminder-open-press .23s ease-out both!important;
+ transform-origin:center top!important;
+}
+html body #minnaProgress.minna-progress-closing{
+ animation:minna-reminder-close-press .23s ease-out both!important;
+ transform-origin:center top!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html body #minnaProgress.minna-progress-opening,
+ html body #minnaProgress.minna-progress-closing{animation:none!important;}
+}
