@@ -2262,3 +2262,80 @@ html body #settingsDialog .danger-settings #deleteAllRemindersBtn{
  -webkit-text-fill-color:#9A454F!important;border:1px solid #F2CDD1!important;
  border-radius:13px!important;box-shadow:none!important;
 }
+
+
+/* Quick Add: pastel modal, preserving existing form and keyboard behavior. */
+html body #quickAddDialog.quick-add-dialog,
+html[data-theme="dark"] body #quickAddDialog.quick-add-dialog{
+ background:#FAF7F6!important;color:#292B42!important;color-scheme:light!important;
+ border:1px solid #EEEAF1!important;border-radius:23px!important;
+ box-shadow:0 18px 55px rgba(35,30,65,.19)!important;
+}
+html body #quickAddDialog #quickAddForm{
+ background:transparent!important;color:#292B42!important;
+}
+html body #quickAddDialog .quick-add-head{
+ background:transparent!important;border-color:#E9E4EF!important;
+}
+html body #quickAddDialog .quick-add-head h2{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #quickAddDialog .quick-add-head small{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #quickAddDialog #closeQuickAddBtn{
+ background:#EEE9FF!important;color:#67439D!important;border:0!important;
+ border-radius:50%!important;box-shadow:none!important;
+}
+html body #quickAddDialog .quick-add-title input{
+ background:#FFF!important;color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+ border:1px solid #E5DFEE!important;outline:0!important;
+ border-radius:16px!important;box-shadow:none!important;
+}
+html body #quickAddDialog .quick-add-title input::placeholder{
+ color:#A09CAD!important;-webkit-text-fill-color:#A09CAD!important;
+}
+html body #quickAddDialog .quick-add-title input:focus-visible{
+ outline:2px solid #A996F3!important;outline-offset:1px!important;
+}
+html body #quickAddDialog .composer-actions{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:7px!important;
+}
+html body #quickAddDialog .composer-actions button{
+ min-width:0!important;padding:9px 5px!important;
+ background:#FFF!important;color:#45475E!important;
+ -webkit-text-fill-color:#45475E!important;border:1px solid #E9E4EF!important;
+ border-radius:12px!important;box-shadow:none!important;
+ font-size:12px!important;white-space:nowrap!important;
+}
+html body #quickAddDialog .composer-actions button:active{
+ background:#EEE9FF!important;transform:scale(.97)!important;
+}
+html body #quickAddDialog .composer-panel{
+ background:#FFF!important;color:#292B42!important;
+ border:1px solid #EEEAF1!important;border-radius:15px!important;box-shadow:none!important;
+}
+html body #quickAddDialog .composer-panel small{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #quickAddDialog .composer-panel button,
+html body #quickAddDialog .composer-photo-actions label{
+ background:#EEE9FF!important;color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;border:1px solid #E3DBFB!important;
+ border-radius:11px!important;box-shadow:none!important;
+}
+html body #quickAddDialog .composer-when-fields input{
+ background:#FAF9FC!important;color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;border:1px solid #E5DFEE!important;
+ border-radius:11px!important;
+}
+html body #quickAddDialog .quick-add-save{
+ width:100%!important;background:#E5DFFF!important;color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;border:0!important;
+ border-radius:16px!important;box-shadow:none!important;
+ font-weight:800!important;
+}
+@media(max-width:370px){
+ html body #quickAddDialog .composer-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
