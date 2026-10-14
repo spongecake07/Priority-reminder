@@ -1053,10 +1053,10 @@ dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
 .calendar-day-list .calendar-home-card.expanded>.card-actions>button{
  min-width:0!important;overflow:hidden!important;font-size:11px!important;
 }
-.today-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
-.today-summary{min-width:0!important;overflow:hidden!important}
-.today-summary>div{min-width:0!important}
-.today-summary strong,.today-summary small{display:block!important;overflow:hidden!important;text-overflow:ellipsis!important}
+
+
+
+
 .compact-smart-views,.compact-priority-row{grid-template-columns:repeat(4,minmax(0,1fr))!important}
 .compact-smart-views>* ,.compact-priority-row>*{min-width:0!important;overflow:hidden!important}
 .bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))!important}
