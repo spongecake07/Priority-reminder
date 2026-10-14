@@ -22,23 +22,11 @@
 
 /* Complete dark-theme audit v16 */
 html[data-theme="dark"] .icon-btn{background:#202530!important;border-color:#303644!important;color:#f1f3f8!important;box-shadow:0 8px 20px rgba(0,0,0,.18)!important}
-html[data-theme="dark"] .empty-icon{background:#252a37!important;color:#aeb4ff!important;box-shadow:none!important}
-html[data-theme="dark"] .card-actions button{background:#272c37!important;color:#c4cad6!important;box-shadow:inset 0 0 0 1px #343a47!important}
-html[data-theme="dark"] .card-actions button.complete{background:#20372c!important;color:#72d39a!important}
-html[data-theme="dark"] .pin-btn.pinned{background:#3c3420!important;color:#f0bd4c!important}
-html[data-theme="dark"] .category-chip{background:#2d3252!important;color:#b8beff!important}
-html[data-theme="dark"] .more-photos{background:#282d39!important;color:#b9c0ce!important}
-html[data-theme="dark"] .card-photo{border-color:#303644!important}
-html[data-theme="dark"] .dialog-head{background:rgba(25,29,38,.94)!important;border-color:#303644!important}
-html[data-theme="dark"] .text-btn{color:#aab1c0!important}
-html[data-theme="dark"] .text-btn.save{color:#aeb4ff!important}
 html[data-theme="dark"] .field>span,html[data-theme="dark"] .field-label,html[data-theme="dark"] legend{color:#c5cad5!important}
 html[data-theme="dark"] .field input,html[data-theme="dark"] .field textarea,html[data-theme="dark"] .field select{background:#222733!important;border-color:#343a48!important;color:#f1f3f8!important}
 html[data-theme="dark"] .field input:focus,html[data-theme="dark"] .field textarea:focus,html[data-theme="dark"] .checklist-add input:focus,html[data-theme="dark"] .checklist-edit-row input[type=text]:focus{background:#252b37!important;border-color:#6974f3!important;box-shadow:0 0 0 4px rgba(105,116,243,.12)!important}
 html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .checklist-editor{background:#202530!important;border-color:#303644!important}
 html[data-theme="dark"] .checklist-add input,html[data-theme="dark"] .checklist-edit-row input[type=text]{background:#272c37!important;border-color:#353b49!important;color:#f1f3f8!important}
-html[data-theme="dark"] .checklist-edit-row button{background:#303541!important;color:#b7becd!important}
-html[data-theme="dark"] .photo-btn{background:#222733!important;border-color:#485061!important;color:#d4d8e2!important}
 html[data-theme="dark"] .photo-item{background:#252a35!important}
 html[data-theme="dark"] .danger-btn{background:#40262c!important;color:#ff8989!important}
 html[data-theme="dark"] .pill.high{background:#40262c!important;color:#ff8585!important}
