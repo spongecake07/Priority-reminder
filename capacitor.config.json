@@ -1,0 +1,6 @@
+{
+  "appId": "app.minna.reminders",
+  "appName": "Minna",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
