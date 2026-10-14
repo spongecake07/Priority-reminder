@@ -2009,6 +2009,10 @@ html body #settingsDialog .minna-app-about .minna-version{font-size:13px!importa
 html body .reminder-list article.reminder-card.no-date.collapsed>.card-body,
 html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed>.card-body{
  padding:5px 58px 5px 5px!important;
+ min-height:0!important;
+ height:auto!important;
+ box-sizing:border-box!important;
+ justify-content:flex-start!important;
 }
 html body .reminder-card.no-date.collapsed .card-title-wrap,
 html body .calendar-home-card.no-date.collapsed .card-title-wrap{
