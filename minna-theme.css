@@ -1831,3 +1831,24 @@ html body .five-priorities .summary-card.misc{background:#E7EEFC!important;borde
 html body .five-priorities .summary-card.active{background:#E8E1FF!important;border-color:#A995E5!important;color:#58428F!important;box-shadow:inset 0 0 0 1px #A995E5!important}
 html body .bottom-nav #addBtn.bottom-nav-add{background:#A996F3!important;color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;border-color:#F6F2FF!important;box-shadow:0 7px 22px rgba(118,93,181,.22)!important}
 html body .bottom-nav .bottom-nav-item.active{color:#7A65B5!important;-webkit-text-fill-color:#7A65B5!important}
+
+/* v1.132: coordinated priority palette and filter-aware Today tile. */
+:root{
+ --ui-tile-today:#E8E1FF;
+ --ui-tile-upcoming:#FFF0C2;
+ --ui-tile-overdue:#FAD7CF;
+ --ui-reminder-medium:#FFE5C4;
+ --ui-reminder-misc:#DFEBFC;
+}
+html body .five-priorities .summary-card[data-filter="all"]{background:#E8E1FF!important;border-color:#CDBDF1!important;color:#58428F!important}
+html body .five-priorities .summary-card[data-filter="high"]{background:#FCE3E5!important;border-color:#EFBCC2!important;color:#8A404C!important}
+html body .five-priorities .summary-card[data-filter="medium"]{background:#FFE5C4!important;border-color:#F3C28C!important;color:#89521F!important}
+html body .five-priorities .summary-card[data-filter="low"]{background:#DFF3E9!important;border-color:#B8DFCB!important;color:#39775C!important}
+html body .five-priorities .summary-card[data-filter="misc"]{background:#DFEBFC!important;border-color:#B9D0EF!important;color:#365D91!important}
+html body .five-priorities .summary-card.active{box-shadow:inset 0 0 0 2px currentColor!important}
+html body .glance-filter:has(.summary-card[data-filter="high"].active) .glance-stat[data-view="today"]{background:#FCE3E5!important}
+html body .glance-filter:has(.summary-card[data-filter="medium"].active) .glance-stat[data-view="today"]{background:#FFE5C4!important}
+html body .glance-filter:has(.summary-card[data-filter="low"].active) .glance-stat[data-view="today"]{background:#DFF3E9!important}
+html body .glance-filter:has(.summary-card[data-filter="misc"].active) .glance-stat[data-view="today"]{background:#DFEBFC!important}
+html body .glance-filter .glance-stat[data-view="upcoming"]{background:#FFF0C2!important}
+html body .glance-filter .glance-stat[data-view="overdue"]{background:#FAD7CF!important}
