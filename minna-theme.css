@@ -1790,3 +1790,22 @@ html body #calendarDialog article.calendar-home-card.expanded:active{
   transition:none!important;
  }
 }
+
+
+/* Keep the tap feedback visible after a reminder re-renders as expanded. */
+@keyframes minna-reminder-open-press{
+ 0%{transform:scale(.97)}
+ 65%{transform:scale(1.012)}
+ 100%{transform:scale(1)}
+}
+html body .reminder-list article.reminder-card.expanded,
+html body #calendarDialog article.calendar-home-card.expanded{
+ animation:minna-reminder-open-press .23s ease-out both!important;
+ transform-origin:center top!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html body .reminder-list article.reminder-card.expanded,
+ html body #calendarDialog article.calendar-home-card.expanded{
+  animation:none!important;
+ }
+}
