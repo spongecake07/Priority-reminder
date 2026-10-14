@@ -1486,9 +1486,6 @@ body,.app-shell,#calendarDialog,#settingsDialog,
 /* Calendar light theme: override legacy dark page rules, including dark-mode selectors. */
 html body #calendarDialog,
 html body #calendarDialog.calendar-dialog,
-html[data-theme="dark"] body #calendarDialog,
-html[data-theme="dark"] #calendarDialog,
-html[data-theme="dark"] #calendarDialog .calendar-sheet,
 html body #calendarDialog .calendar-sheet{
  background:#FAF7F6!important;
  background-color:#FAF7F6!important;
@@ -1678,8 +1675,7 @@ html[data-theme="dark"] .bottom-nav{background:#000!important;color:#fff!importa
 
 
 /* Compact pastel reminder editor: scoped to the existing editor dialog. */
-html body #editorDialog.editor-dialog,
-html[data-theme="dark"] body #editorDialog.editor-dialog{
+html body #editorDialog.editor-dialog{
  background:#FAF7F6!important;color:#292B42!important;color-scheme:light!important;
  border:0!important;border-radius:24px!important;
 }
@@ -1687,8 +1683,7 @@ html body #editorDialog #reminderForm{
  display:flex!important;flex-direction:column!important;gap:7px!important;
  padding:0 10px 14px!important;background:#FAF7F6!important;color:#292B42!important;
 }
-html body #editorDialog .dialog-head,
-html[data-theme="dark"] body #editorDialog .dialog-head{
+html body #editorDialog .dialog-head{
  position:sticky!important;top:0!important;z-index:5!important;
  margin:0 -10px 2px!important;padding:12px 13px!important;
  background:#FAF7F6!important;border-bottom:1px solid #E9E6EC!important;
@@ -1793,14 +1788,12 @@ html body #editorDialog .danger-btn{margin:5px 0!important}
 
 
 /* Editor checklist and notification contrast corrections; isolate from legacy dark rules. */
-html body #editorDialog .checklist-editor.edit-panel .checklist-editor-list .checklist-edit-row,
-html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-editor-list .checklist-edit-row{
+html body #editorDialog .checklist-editor.edit-panel .checklist-editor-list .checklist-edit-row{
  background:#F8F7FB!important;border:1px solid #F0EDF3!important;
  color:#292B42!important;border-radius:11px!important;
  padding:3px 6px!important;min-height:38px!important;box-shadow:none!important;
 }
-html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="text"],
-html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="text"]{
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="text"]{
  background:transparent!important;color:#292B42!important;-webkit-text-fill-color:#292B42!important;
  border:0!important;outline:0!important;box-shadow:none!important;
  padding:5px 2px!important;min-height:30px!important;border-radius:0!important;
@@ -1809,21 +1802,17 @@ html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[t
  flex:0 0 auto!important;accent-color:#7454AB!important;width:19px!important;height:19px!important;
  background:#fff!important;border:1px solid #AAA5B7!important;border-radius:5px!important;
 }
-html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row button,
-html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row button{
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row button{
  background:#EEE9FF!important;color:#67439D!important;border:0!important;
  width:29px!important;height:29px!important;min-width:29px!important;min-height:29px!important;
  border-radius:9px!important;padding:0!important;font-size:17px!important;
 }
-html body #editorDialog .edit-more-panel .toggle-row.compact,
-html[data-theme="dark"] body #editorDialog .edit-more-panel .toggle-row.compact{
+html body #editorDialog .edit-more-panel .toggle-row.compact{
  background:#F8F7FB!important;border:1px solid #F0EDF3!important;
  color:#292B42!important;opacity:1!important;
 }
 html body #editorDialog .edit-more-panel .toggle-row strong,
-html body #editorDialog .edit-more-panel .toggle-row small,
-html[data-theme="dark"] body #editorDialog .edit-more-panel .toggle-row strong,
-html[data-theme="dark"] body #editorDialog .edit-more-panel .toggle-row small{
+html body #editorDialog .edit-more-panel .toggle-row small{
  color:#292B42!important;-webkit-text-fill-color:#292B42!important;opacity:1!important;
 }
 html body #editorDialog .edit-more-panel .toggle-row small{color:#85879A!important;-webkit-text-fill-color:#85879A!important}
@@ -1848,8 +1837,7 @@ html body #editorDialog .dialog-head .text-btn.save{
  padding:8px 12px!important;box-sizing:border-box!important;
  text-align:center!important;white-space:nowrap!important;
 }
-html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"],
-html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]{
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]{
  -webkit-appearance:none!important;appearance:none!important;
  display:inline-grid!important;place-content:center!important;
  flex:0 0 19px!important;width:19px!important;height:19px!important;
@@ -1858,8 +1846,7 @@ html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checkli
  border-radius:5px!important;box-shadow:none!important;
  cursor:pointer!important;
 }
-html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:checked,
-html[data-theme="dark"] body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:checked{
+html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:checked{
  background:#EEE9FF!important;border-color:#7454AB!important;
 }
 html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:checked::after{
@@ -1874,16 +1861,12 @@ html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[t
 
 /* Calendar page: override the later legacy black-theme rule on the actual page surface. */
 html body #calendarDialog.calendar-dialog.app-page,
-html[data-theme="dark"] body #calendarDialog.calendar-dialog.app-page,
-html body #calendarDialog.calendar-dialog.app-page .calendar-sheet,
-html[data-theme="dark"] body #calendarDialog.calendar-dialog.app-page .calendar-sheet{
+html body #calendarDialog.calendar-dialog.app-page .calendar-sheet{
  background:#FAF7F6!important;background-color:#FAF7F6!important;
  color:#292B42!important;-webkit-text-fill-color:#292B42!important;
 }
 html body #calendarDialog .calendar-day-head,
-html body #calendarDialog .calendar-day-head strong,
-html[data-theme="dark"] body #calendarDialog .calendar-day-head,
-html[data-theme="dark"] body #calendarDialog .calendar-day-head strong{
+html body #calendarDialog .calendar-day-head strong{
  color:#292B42!important;-webkit-text-fill-color:#292B42!important;
 }
 
