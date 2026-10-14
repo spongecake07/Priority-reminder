@@ -1935,3 +1935,19 @@ html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[t
 html body #editorDialog .checklist-editor.edit-panel .checklist-edit-row input[type="checkbox"]:focus-visible{
  outline:2px solid #7454AB!important;outline-offset:2px!important;
 }
+
+
+/* Calendar page: override the later legacy black-theme rule on the actual page surface. */
+html body #calendarDialog.calendar-dialog.app-page,
+html[data-theme="dark"] body #calendarDialog.calendar-dialog.app-page,
+html body #calendarDialog.calendar-dialog.app-page .calendar-sheet,
+html[data-theme="dark"] body #calendarDialog.calendar-dialog.app-page .calendar-sheet{
+ background:#FAF7F6!important;background-color:#FAF7F6!important;
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #calendarDialog .calendar-day-head,
+html body #calendarDialog .calendar-day-head strong,
+html[data-theme="dark"] body #calendarDialog .calendar-day-head,
+html[data-theme="dark"] body #calendarDialog .calendar-day-head strong{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
