@@ -1622,7 +1622,7 @@ html body #editorDialog .edit-priority-panel .priority-picker .pill{
  border-radius:11px!important;font-size:11px!important;font-weight:750!important;
 }
 html body #editorDialog .priority-picker .pill.high{background:#FFE0E2!important;color:#914B59!important}
-html body #editorDialog .priority-picker .pill.medium{background:#FFF0C9!important;color:#846321!important}
+html body #editorDialog .priority-picker .pill.medium{background:#FFE5C4!important;color:#846321!important}
 html body #editorDialog .priority-picker .pill.low{background:#E0F5E9!important;color:#246F50!important}
 html body #editorDialog .priority-picker .pill.misc{background:#DDEFFF!important;color:#286987!important}
 html body #editorDialog .priority-picker input:checked+.pill.high{border-color:#914B59!important}
