@@ -1828,3 +1828,14 @@ html body #calendarDialog article.calendar-home-card.collapsed.minna-just-closed
   animation:none!important;
  }
 }
+
+/* v1.94: light-theme palette consistency for priority filters and navigation. */
+html body .five-priorities .summary-card{background:#F3F0FA!important;border:2px solid #E7E2F2!important;color:#45415F!important;-webkit-text-fill-color:#45415F!important;box-shadow:none!important}
+html body .five-priorities .summary-card strong,html body .five-priorities .summary-card span{color:inherit!important;-webkit-text-fill-color:inherit!important}
+html body .five-priorities .summary-card.high{background:#FCE8EB!important;border-color:#F4D9DF!important;color:#854957!important}
+html body .five-priorities .summary-card.medium{background:#FFF1D8!important;border-color:#F4E3BD!important;color:#806032!important}
+html body .five-priorities .summary-card.low{background:#E4F4EC!important;border-color:#D1E8DC!important;color:#39775C!important}
+html body .five-priorities .summary-card.misc{background:#E7EEFC!important;border-color:#D6E2F5!important;color:#486A9A!important}
+html body .five-priorities .summary-card.active{background:#E8E1FF!important;border-color:#A995E5!important;color:#58428F!important;box-shadow:inset 0 0 0 1px #A995E5!important}
+html body .bottom-nav #addBtn.bottom-nav-add{background:#A996F3!important;color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;border-color:#F6F2FF!important;box-shadow:0 7px 22px rgba(118,93,181,.22)!important}
+html body .bottom-nav .bottom-nav-item.active{color:#7A65B5!important;-webkit-text-fill-color:#7A65B5!important}
