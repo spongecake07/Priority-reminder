@@ -2339,3 +2339,60 @@ html body #quickAddDialog .quick-add-save{
 @media(max-width:370px){
  html body #quickAddDialog .composer-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
 }
+
+
+/* Expandable daily achievement goals within Today's Progress. */
+html body #minnaProgress .minna-daily-goals-toggle{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ width:100%!important;margin-top:10px!important;padding:10px 12px!important;
+ background:#EEE9FF!important;color:#67439D!important;
+ border:0!important;border-radius:12px!important;font-size:13px!important;
+ font-weight:750!important;cursor:pointer!important;
+}
+html body #minnaProgress .minna-daily-goals-toggle span{
+ transition:transform .2s ease!important;
+}
+html body #minnaProgress .minna-daily-goals-toggle[aria-expanded="true"] span{
+ transform:rotate(180deg)!important;
+}
+html body #minnaProgress .minna-daily-goals[hidden]{display:none!important;}
+html body #minnaProgress .minna-daily-goals{display:grid!important;gap:7px!important;margin-top:9px!important;}
+html body #minnaProgress .minna-daily-goal{
+ display:flex!important;align-items:center!important;gap:10px!important;
+ padding:11px!important;background:#FFF!important;border:1px solid #EEEAF1!important;
+ border-radius:14px!important;color:#292B42!important;
+}
+html body #minnaProgress .minna-daily-goal-icon{
+ display:grid!important;place-items:center!important;flex:0 0 33px!important;
+ width:33px!important;height:33px!important;background:#EEE9FF!important;
+ border-radius:50%!important;color:#67439D!important;font-size:16px!important;
+}
+html body #minnaProgress .minna-daily-goal.is-done .minna-daily-goal-icon{
+ background:#E0F5E9!important;color:#287451!important;
+}
+html body #minnaProgress .minna-daily-goal-content{
+ flex:1!important;min-width:0!important;display:grid!important;gap:3px!important;
+}
+html body #minnaProgress .minna-daily-goal-content strong{
+ color:#292B42!important;font-size:13px!important;
+}
+html body #minnaProgress .minna-daily-goal-content small{
+ color:#85879A!important;font-size:11px!important;
+}
+html body #minnaProgress .minna-daily-goal-count{
+ color:#67439D!important;font-weight:750!important;font-size:12px!important;
+}
+html body #minnaProgress .minna-daily-goal-track{
+ height:5px!important;background:#EAE6F5!important;border-radius:999px!important;
+ overflow:hidden!important;margin-top:3px!important;
+}
+html body #minnaProgress .minna-daily-goal-track i{
+ display:block!important;height:100%!important;background:#A996F3!important;
+ border-radius:999px!important;
+}
+html body #minnaProgress .minna-daily-goal.is-done .minna-daily-goal-track i{
+ background:#75C49C!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html body #minnaProgress .minna-daily-goals-toggle span{transition:none!important;}
+}
