@@ -317,12 +317,9 @@ html body .bottom-nav{background:#E6E6E6!important;color:#2F2F2F!important}
 
 /* v1.36: matching light top and bottom banners */
 /* v1.37: target actual header and dark-theme specificity */
-html body header.topbar.minna-topbar,
-html[data-theme="dark"] body header.topbar.minna-topbar{background:var(--ui-header)!important;color:var(--ui-brand-ink)!important}
+html body header.topbar.minna-topbar{background:var(--ui-header)!important;color:var(--ui-brand-ink)!important}
 html body nav.bottom-nav,
-html[data-theme="dark"] body nav.bottom-nav,
-html body .bottom-nav,
-html[data-theme="dark"] body .bottom-nav{
+html body .bottom-nav{
  background:#FFFFFF!important;
  color:#292B42!important;
  border:0!important;
@@ -356,10 +353,8 @@ html body .bottom-nav .bottom-nav-add{
 html body .minna-topbar h1{color:var(--ui-brand-ink)!important;-webkit-text-fill-color:var(--ui-brand-ink)!important}
 html body .minna-topbar h1 .minna-version,
 html body .minna-topbar .minna-brand small{color:var(--ui-brand-muted)!important;-webkit-text-fill-color:var(--ui-brand-muted)!important}
-html body .bottom-nav .bottom-nav-item,
-html[data-theme="dark"] body .bottom-nav .bottom-nav-item{color:#555555!important;background:transparent!important}
-html body .bottom-nav .bottom-nav-item.active,
-html[data-theme="dark"] body .bottom-nav .bottom-nav-item.active{color:#267FA9!important}
+html body .bottom-nav .bottom-nav-item{color:#555555!important;background:transparent!important}
+html body .bottom-nav .bottom-nav-item.active{color:#267FA9!important}
 html body .bottom-nav .bottom-nav-item span,
 html body .bottom-nav .bottom-nav-item small{color:inherit!important}
 html body .bottom-nav .bottom-nav-add{background:#3FA7D6!important;color:#162B35!important}
