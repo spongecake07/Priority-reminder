@@ -1762,10 +1762,14 @@ html body .calendar-home-card.no-date.collapsed .card-title{
 
 
 /* Keep priority and title together on collapsed reminders without descriptions. */
+html body .reminder-card.collapsed:not(.no-date):not(:has(.minna-description-preview))>.card-body,
+html body .calendar-home-card.collapsed:not(.no-date):not(:has(.minna-description-preview))>.card-body{
+ justify-content:flex-start!important;
+}
 html body .reminder-card.collapsed:not(.no-date):not(:has(.minna-description-preview)) .card-heading,
 html body .calendar-home-card.collapsed:not(.no-date):not(:has(.minna-description-preview)) .card-heading{
- justify-content:center!important;
- gap:8px!important;
+ justify-content:flex-start!important;
+ gap:4px!important;
 }
 html body .reminder-card.collapsed:not(.no-date):not(:has(.minna-description-preview)) .card-title,
 html body .calendar-home-card.collapsed:not(.no-date):not(:has(.minna-description-preview)) .card-title{
