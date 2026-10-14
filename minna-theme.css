@@ -2005,7 +2005,12 @@ html body #settingsDialog .you-identity-name{font-weight:750!important;color:var
 html body #settingsDialog .you-identity-rank,html body #settingsDialog .you-identity-achievements{font-size:12px!important;color:var(--ui-progress-muted,#7A7D91)!important}
 html body #settingsDialog .you-identity .home-rank-badge{width:38px!important;height:38px!important}
 html body #settingsDialog .minna-app-about .minna-version{font-size:13px!important;color:var(--ui-progress-muted,#7A7D91)!important;white-space:nowrap!important}
-/* Keep original undated priority panels; align their outer spacing with dated cards. */
+/* Keep original undated priority panels; use the same 5px outer inset on all sides. */
+html body .reminder-list article.reminder-card.no-date.collapsed,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed{
+ min-height:0!important;
+ height:fit-content!important;
+}
 html body .reminder-list article.reminder-card.no-date.collapsed>.card-body,
 html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed>.card-body{
  padding:5px 58px 5px 5px!important;
@@ -2013,6 +2018,7 @@ html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.
  height:auto!important;
  box-sizing:border-box!important;
  justify-content:flex-start!important;
+ align-self:stretch!important;
 }
 html body .reminder-card.no-date.collapsed .card-title-wrap,
 html body .calendar-home-card.no-date.collapsed .card-title-wrap{
