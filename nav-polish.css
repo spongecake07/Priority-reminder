@@ -2056,3 +2056,44 @@ html body #settingsDialog .minna-achievements-section .achievement-card.unlocked
 html body #settingsDialog .minna-achievements-section .achievement-card.locked>b{
  color:#85879A!important;-webkit-text-fill-color:#85879A!important;
 }
+
+
+/* You page contrast corrections, without changing settings behavior. */
+html body #settingsDialog.settings-dialog.app-page,
+html body #settingsDialog.settings-dialog.app-page .settings-sheet,
+html[data-theme="dark"] body #settingsDialog.settings-dialog.app-page,
+html[data-theme="dark"] body #settingsDialog.settings-dialog.app-page .settings-sheet{
+ background:#FAF7F6!important;background-color:#FAF7F6!important;color:#292B42!important;
+}
+html body #settingsDialog .you-page-head,
+html body #settingsDialog .you-page-head h2{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #settingsDialog .you-page-head small,
+html body #settingsDialog .you-page-head p{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-head,
+html body #settingsDialog .minna-achievements-section .achievement-head>div:first-child,
+html body #settingsDialog .minna-achievements-section .achievement-subhead{
+ background:transparent!important;background-color:transparent!important;
+ border:0!important;box-shadow:none!important;
+}
+html body #settingsDialog .minna-achievements-section .achievement-head strong,
+html body #settingsDialog .minna-achievements-section .achievement-subhead{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-panel-badge,
+html body #settingsDialog .minna-achievements-section .rank-panel-badge *,
+html body #settingsDialog .minna-achievements-section .rank-panel-badge::before,
+html body #settingsDialog .minna-achievements-section .rank-panel-badge::after{
+ filter:none!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-panel-badge{
+ background:radial-gradient(circle at 35% 30%,#EFC59B,#BD7C4F 72%,#915A39)!important;
+ border:3px solid #C98B5D!important;color:#6B3D27!important;
+ box-shadow:inset 0 0 0 3px #F6D4AF,0 2px 7px #9A694433!important;
+}
+html body #settingsDialog .minna-achievements-section .rank-panel-badge>b{
+ color:#754429!important;-webkit-text-fill-color:#754429!important;
+}
