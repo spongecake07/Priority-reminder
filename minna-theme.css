@@ -1809,3 +1809,22 @@ html body #calendarDialog article.calendar-home-card.expanded{
   animation:none!important;
  }
 }
+
+
+/* Reverse spring on collapse, only for the card the user just closed. */
+@keyframes minna-reminder-close-press{
+ 0%{transform:scale(1.012)}
+ 65%{transform:scale(.97)}
+ 100%{transform:scale(1)}
+}
+html body .reminder-list article.reminder-card.collapsed.minna-just-closed,
+html body #calendarDialog article.calendar-home-card.collapsed.minna-just-closed{
+ animation:minna-reminder-close-press .23s ease-out both!important;
+ transform-origin:center top!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html body .reminder-list article.reminder-card.collapsed.minna-just-closed,
+ html body #calendarDialog article.calendar-home-card.collapsed.minna-just-closed{
+  animation:none!important;
+ }
+}
