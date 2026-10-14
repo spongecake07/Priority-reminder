@@ -1829,7 +1829,7 @@ html body #calendarDialog article.calendar-home-card.collapsed.minna-just-closed
  }
 }
 
-/* v1.94: light-theme palette consistency for priority filters and navigation. */
+/* Light-theme palette consistency for priority filters and navigation. */
 html body .five-priorities .summary-card{background:#F3F0FA!important;border:2px solid #E7E2F2!important;color:#45415F!important;-webkit-text-fill-color:#45415F!important;box-shadow:none!important}
 html body .five-priorities .summary-card strong,html body .five-priorities .summary-card span{color:inherit!important;-webkit-text-fill-color:inherit!important}
 html body .five-priorities .summary-card.high{background:#FCE8EB!important;border-color:#F4D9DF!important;color:#854957!important}
