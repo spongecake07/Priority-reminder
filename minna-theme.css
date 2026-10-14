@@ -1866,6 +1866,43 @@ html body .five-priorities .summary-card.active{background:#E8E1FF!important;bor
 html body .bottom-nav #addBtn.bottom-nav-add{background:#A996F3!important;color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;border-color:#F6F2FF!important;box-shadow:0 7px 22px rgba(118,93,181,.22)!important}
 html body .bottom-nav .bottom-nav-item.active{color:#7A65B5!important;-webkit-text-fill-color:#7A65B5!important}
 
+/* Date filters: one coordinated four-column control, independent of priority filters. */
+html body .glance-filter .date-filter-row{
+ display:grid!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:6px!important;
+ padding:8px!important;
+ cursor:default!important;
+}
+html body .glance-filter .date-filter-row .glance-stat{
+ display:flex!important;
+ width:100%!important;
+ min-width:0!important;
+ min-height:94px!important;
+ padding:10px 2px!important;
+ border:2px solid transparent!important;
+ border-radius:20px!important;
+ box-sizing:border-box!important;
+ pointer-events:auto!important;
+ cursor:pointer!important;
+ background:#D5DFEB!important;
+ box-shadow:none!important;
+}
+html body .glance-filter .date-filter-row .glance-stat[data-view="today"]{background:#E8E1FF!important}
+html body .glance-filter .date-filter-row .glance-stat[data-view="today"][data-priority="high"]{background:#FCE3E5!important}
+html body .glance-filter .date-filter-row .glance-stat[data-view="today"][data-priority="medium"]{background:#FFE5C4!important}
+html body .glance-filter .date-filter-row .glance-stat[data-view="today"][data-priority="low"]{background:#DFF3E9!important}
+html body .glance-filter .date-filter-row .glance-stat[data-view="today"][data-priority="misc"]{background:#DFEBFC!important}
+html body .glance-filter .date-filter-row .glance-stat[data-view="upcoming"]{background:var(--ui-tile-upcoming)!important}
+html body .glance-filter .date-filter-row .glance-stat[data-view="overdue"]{background:var(--ui-tile-overdue)!important}
+html body .glance-filter .date-filter-row .glance-stat.active{
+ border-color:#8066BC!important;
+ box-shadow:inset 0 0 0 1px rgba(128,102,188,.22)!important;
+}
+html body .glance-filter .date-filter-row .glance-stat small{
+ font-size:clamp(10px,2.7vw,13px)!important;
+ letter-spacing:-.02em!important;
+}
 /* Canonical priority palette and filter-aware Today tile. */
 :root{
  --ui-tile-today:#E8E1FF;
