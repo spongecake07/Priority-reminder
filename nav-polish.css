@@ -2097,3 +2097,84 @@ html body #settingsDialog .minna-achievements-section .rank-panel-badge{
 html body #settingsDialog .minna-achievements-section .rank-panel-badge>b{
  color:#754429!important;-webkit-text-fill-color:#754429!important;
 }
+
+
+/* You page step 2: pastel settings cards, preserving controls and data. */
+html body #settingsDialog .settings-section.profile-settings,
+html body #settingsDialog .settings-section.notification-settings,
+html body #settingsDialog .settings-section.category-settings,
+html body #settingsDialog .settings-section.theme-settings,
+html body #settingsDialog .settings-section:has(.backup-actions),
+html body #settingsDialog .settings-section:has(#recentlyDeletedBtn){
+ background:#FFFFFF!important;color:#292B42!important;
+ border:1px solid #EEEAF1!important;border-radius:19px!important;
+ padding:15px!important;box-shadow:0 3px 14px rgba(40,30,70,.035)!important;
+}
+html body #settingsDialog .settings-section.profile-settings .settings-row,
+html body #settingsDialog .settings-section.notification-settings .settings-row,
+html body #settingsDialog .settings-section.category-settings .settings-row,
+html body #settingsDialog .settings-section.theme-settings .settings-row,
+html body #settingsDialog .settings-section:has(#recentlyDeletedBtn) .settings-row{
+ background:transparent!important;border:0!important;box-shadow:none!important;
+ color:#292B42!important;
+}
+html body #settingsDialog .settings-section.profile-settings strong,
+html body #settingsDialog .settings-section.notification-settings strong,
+html body #settingsDialog .settings-section.category-settings strong,
+html body #settingsDialog .settings-section.theme-settings strong,
+html body #settingsDialog .settings-section:has(.backup-actions)>strong,
+html body #settingsDialog .settings-section:has(#recentlyDeletedBtn) strong{
+ color:#292B42!important;-webkit-text-fill-color:#292B42!important;
+}
+html body #settingsDialog .settings-section.profile-settings small,
+html body #settingsDialog .settings-section.notification-settings small,
+html body #settingsDialog .settings-section.category-settings small,
+html body #settingsDialog .settings-section.theme-settings small,
+html body #settingsDialog .settings-section:has(.backup-actions)>p,
+html body #settingsDialog .settings-section:has(#recentlyDeletedBtn) small,
+html body #settingsDialog .category-settings .custom-category-list{
+ color:#85879A!important;-webkit-text-fill-color:#85879A!important;
+}
+html body #settingsDialog .profile-name-editor,
+html body #settingsDialog .theme-toggle,
+html body #settingsDialog .backup-actions{
+ background:transparent!important;border:0!important;box-shadow:none!important;
+}
+html body #settingsDialog .profile-name-editor input,
+html body #settingsDialog .category-settings input,
+html body #settingsDialog .category-settings select{
+ background:#FAF9FC!important;color:#292B42!important;
+ -webkit-text-fill-color:#292B42!important;border:1px solid #E3DFEC!important;
+ border-radius:12px!important;box-shadow:none!important;
+}
+html body #settingsDialog .profile-name-editor button,
+html body #settingsDialog .notification-settings button,
+html body #settingsDialog .category-settings button,
+html body #settingsDialog .settings-section:has(#recentlyDeletedBtn) button,
+html body #settingsDialog .backup-actions button,
+html body #settingsDialog .backup-actions .restore-btn{
+ background:#EEE9FF!important;color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;border:1px solid #E3DBFB!important;
+ border-radius:12px!important;box-shadow:none!important;
+}
+html body #settingsDialog .theme-settings .theme-toggle button{
+ background:#F8F7FB!important;color:#45475E!important;
+ -webkit-text-fill-color:#45475E!important;border:1px solid #EEEAF1!important;
+ border-radius:12px!important;box-shadow:none!important;
+}
+html body #settingsDialog .theme-settings .theme-toggle button.active,
+html body #settingsDialog .theme-settings .theme-toggle button[aria-pressed="true"]{
+ background:#E9E3FF!important;color:#67439D!important;
+ -webkit-text-fill-color:#67439D!important;border-color:#DCD2FC!important;
+}
+html body #settingsDialog .profile-settings .settings-row,
+html body #settingsDialog .notification-settings .settings-row,
+html body #settingsDialog .category-settings .settings-row,
+html body #settingsDialog .theme-settings .settings-row{
+ gap:12px!important;
+}
+@media(max-width:480px){
+ html body #settingsDialog .profile-name-editor input{min-width:0!important;}
+ html body #settingsDialog .settings-section.profile-settings .settings-row{flex-wrap:wrap!important;}
+ html body #settingsDialog .profile-name-editor{width:100%!important;}
+}
