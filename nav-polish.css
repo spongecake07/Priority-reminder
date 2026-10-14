@@ -22,10 +22,9 @@
 
 /* Complete dark-theme audit v16 */
 html[data-theme="dark"] .icon-btn{background:#202530!important;border-color:#303644!important;color:#f1f3f8!important;box-shadow:0 8px 20px rgba(0,0,0,.18)!important}
-html[data-theme="dark"] .restore-btn,html[data-theme="dark"] .secondary-btn,html[data-theme="dark"] .deleted-item button{background:#2d3252!important;color:#bcc2ff!important;box-shadow:none!important}
 
 /* Simple reminder composer v17 */
-.quick-add-dialog{width:min(560px,calc(100% - 16px));border-radius:30px}.quick-add-dialog form{padding:22px 20px calc(20px + env(safe-area-inset-bottom))}.quick-add-head{margin-bottom:14px}.quick-add-head h2{font-size:20px;letter-spacing:-.35px}.quick-add-title input{border:0!important;border-radius:17px!important;background:#f5f6fa!important;padding:17px 15px!important;font-size:17px!important;box-shadow:inset 0 0 0 1px #eaecf2}.composer-actions{display:flex;gap:7px;overflow-x:auto;margin:11px -2px 0;padding:2px;scrollbar-width:none}.composer-actions::-webkit-scrollbar{display:none}.composer-actions button{flex:0 0 auto;border:1px solid #e7e9f0;border-radius:999px;background:#fff;color:#5f6778;padding:9px 12px;font-size:11px;font-weight:800}.composer-panel{margin-top:9px;padding:11px;border-radius:16px;background:#f7f8fb;border:1px solid #ebedf3}.composer-panel>input{width:100%;border:0;border-radius:11px;background:#fff;padding:10px;color:var(--text);outline:none}.composer-panel>small{display:block;margin-top:7px;color:var(--muted);font-size:9px}.date-shortcuts,.composer-priorities{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}.date-shortcuts button,.composer-priorities button{border:0;border-radius:11px;background:#fff;padding:9px 5px;color:#5e6678;font-size:10px;font-weight:800}.composer-priorities{margin-bottom:0}.quick-add-dialog .quick-add-save{width:100%;margin-top:14px;border:0;border-radius:16px;padding:14px;background:linear-gradient(145deg,#6874f3,#5662df);color:#fff;font-weight:900;font-size:13px;box-shadow:0 8px 18px rgba(91,103,241,.22)}html[data-theme="dark"] .composer-panel>input,html[data-theme="dark"] .date-shortcuts button,html[data-theme="dark"] .composer-priorities button{background:#292e3a!important;color:#e3e6ed!important}
+.quick-add-dialog{width:min(560px,calc(100% - 16px));border-radius:30px}.quick-add-dialog form{padding:22px 20px calc(20px + env(safe-area-inset-bottom))}.quick-add-head{margin-bottom:14px}.quick-add-head h2{font-size:20px;letter-spacing:-.35px}.quick-add-title input{border:0!important;border-radius:17px!important;background:#f5f6fa!important;padding:17px 15px!important;font-size:17px!important;box-shadow:inset 0 0 0 1px #eaecf2}.composer-actions{display:flex;gap:7px;overflow-x:auto;margin:11px -2px 0;padding:2px;scrollbar-width:none}.composer-actions::-webkit-scrollbar{display:none}.composer-actions button{flex:0 0 auto;border:1px solid #e7e9f0;border-radius:999px;background:#fff;color:#5f6778;padding:9px 12px;font-size:11px;font-weight:800}.composer-panel{margin-top:9px;padding:11px;border-radius:16px;background:#f7f8fb;border:1px solid #ebedf3}.composer-panel>input{width:100%;border:0;border-radius:11px;background:#fff;padding:10px;color:var(--text);outline:none}.composer-panel>small{display:block;margin-top:7px;color:var(--muted);font-size:9px}.date-shortcuts,.composer-priorities{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}.date-shortcuts button,.composer-priorities button{border:0;border-radius:11px;background:#fff;padding:9px 5px;color:#5e6678;font-size:10px;font-weight:800}.composer-priorities{margin-bottom:0}.quick-add-dialog .quick-add-save{width:100%;margin-top:14px;border:0;border-radius:16px;padding:14px;background:linear-gradient(145deg,#6874f3,#5662df);color:#fff;font-weight:900;font-size:13px;box-shadow:0 8px 18px rgba(91,103,241,.22)}
 
 /* Keyboard-friendly reminder composer v19 */
 .quick-add-dialog[open]{position:fixed;top:max(12px,env(safe-area-inset-top));bottom:auto;margin:max(12px,env(safe-area-inset-top)) auto auto;max-height:min(76dvh,620px);overflow:auto}
@@ -34,7 +33,6 @@ html[data-theme="dark"] .restore-btn,html[data-theme="dark"] .secondary-btn,html
 
 /* Combined When + quick photo composer v20 */
 .composer-when-fields{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.composer-when-fields input{width:100%;min-width:0;border:0;border-radius:11px;background:#fff;padding:10px;color:var(--text);outline:none}.composer-photo-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.composer-photo-actions label{display:block;text-align:center;border:0;border-radius:11px;background:#fff;padding:10px 7px;color:#5e6678;font-size:11px;font-weight:800}.quick-photo-preview{display:flex;gap:7px;overflow-x:auto;margin-top:8px}.quick-photo-preview:empty{display:none}.quick-photo-preview>div{position:relative;flex:0 0 58px;width:58px;height:58px}.quick-photo-preview img{width:58px;height:58px;object-fit:cover;border-radius:11px}.quick-photo-preview button{position:absolute;right:-3px;top:-3px;width:20px;height:20px;border:0;border-radius:50%;background:#202532;color:#fff;font-size:14px;line-height:18px}.composer-actions button{min-width:max-content}
-html[data-theme="dark"] .composer-when-fields input,html[data-theme="dark"] .composer-photo-actions label{background:#292e3a!important;color:#e3e6ed!important}
 @media(max-width:390px){.composer-actions{gap:5px}.composer-actions button{padding:8px 9px;font-size:10px}.composer-when-fields{grid-template-columns:1fr 1fr}}
 
 /* App-style bottom navigation + full pages v22 */
@@ -52,7 +50,7 @@ body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
 .calendar-dialog .calendar-day-list{max-height:none}
 .calendar-dialog .calendar-close{margin-top:14px}
 .you-page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}.you-page-head small{font-size:9px;font-weight:900;letter-spacing:1.5px;color:#7d8495}.you-page-head h2{margin:3px 0 3px;font-size:28px}.you-page-head p{margin:0;color:#8b92a2;font-size:11px}.you-page-head .text-btn{margin-top:5px}
-.settings-dialog .settings-section{margin-bottom:12px}html[data-theme="dark"] .calendar-dialog[open],html[data-theme="dark"] .settings-dialog[open]{background:#151821!important}html[data-theme="dark"] .you-page-head p,html[data-theme="dark"] .you-page-head small{color:#929bac!important}
+.settings-dialog .settings-section{margin-bottom:12px}
 @media(max-width:430px){.bottom-nav{grid-template-columns:1fr 1fr 70px 1fr 1fr;padding-left:5px;padding-right:5px}.bottom-nav-item{padding:0 3px}.bottom-nav-add{width:58px;height:58px;font-size:30px}.calendar-dialog .calendar-sheet,.settings-dialog .settings-sheet{padding-left:13px;padding-right:13px}.calendar-dialog .calendar-grid{gap:4px}.calendar-dialog .calendar-day{min-height:52px}}
 
 /* Persistent navigation over Calendar and You v23 */
@@ -154,7 +152,6 @@ html[data-theme="dark"] .reminder-card.collapsed::after,html[data-theme="dark"] 
 .category-icon-picker button{aspect-ratio:1;border:1px solid #e0e4ec;border-radius:9px;background:#fff;font-size:15px}
 .category-icon-picker button.selected{border-color:#5b67f1;box-shadow:0 0 0 2px rgba(91,103,241,.14);background:#eef0ff}
 .category-creator-actions{display:flex;justify-content:flex-end;gap:7px}.category-creator-actions button{min-height:34px;padding:6px 12px;border-radius:10px}
-html[data-theme="dark"] .custom-category-item,html[data-theme="dark"] .category-icon-picker button,html[data-theme="dark"] .category-creator>input{background:#222834!important;border-color:#363d4c!important;color:#edf0f6!important}
 @media(max-width:390px){#editorDialog .edit-compact-row{grid-template-columns:minmax(0,1fr) 128px!important}.category-icon-picker{grid-template-columns:repeat(7,1fr)}}
 
 /* Cleaner expanded reminders v33 */
@@ -189,7 +186,6 @@ html[data-theme="dark"] .custom-category-item,html[data-theme="dark"] .category-
 .completed-divider{display:flex;align-items:center;gap:9px;margin:10px 2px 2px;color:#9299a5;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .completed-divider::before,.completed-divider::after{content:"";height:1px;background:#dfe3e9;flex:1}
 .completed-divider span{white-space:nowrap}
-html[data-theme="dark"] .completed-divider::before,html[data-theme="dark"] .completed-divider::after{background:#333a47}
 
 
 /* Home + expanded reminder refinement v39 */
@@ -257,7 +253,6 @@ html[data-theme="light"] .completed-divider::before,html[data-theme="light"] .co
 .settings-sheet{padding-bottom:20px!important}.settings-section{padding:12px!important;margin:7px 0!important;border-radius:14px!important}.settings-section>strong,.settings-row strong{font-size:11px!important}.settings-section p,.settings-row small{font-size:9px!important;line-height:1.35!important}.settings-row{gap:10px!important}.settings-row button,.backup-actions button,.restore-btn{min-height:34px!important;padding:7px 10px!important;border-radius:10px!important;font-size:9px!important}
 .notification-settings-btn{white-space:nowrap!important}.theme-toggle{gap:4px!important;padding:3px!important;border-radius:10px!important}.theme-toggle button{min-height:29px!important;padding:5px 8px!important}
 .backup-actions{gap:6px!important;margin-top:8px!important}.custom-category-list{margin-top:7px!important}
-html[data-theme="dark"] .calendar-dialog.app-page,html[data-theme="dark"] .settings-dialog.app-page{background:#12161f!important}
 html[data-theme="dark"] .calendar-reminder-title small,html[data-theme="dark"] .calendar-reminder-details>p,html[data-theme="dark"] .you-page-head p{color:#8f98aa!important}
 @media(max-width:430px){.calendar-dialog.app-page,.settings-dialog.app-page{padding-left:11px!important;padding-right:11px!important}.calendar-day{min-height:41px!important}.settings-section{padding:11px!important}}
 
