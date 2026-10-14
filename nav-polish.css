@@ -959,8 +959,7 @@ button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-vis
 
 
 /* Monochrome system v80 — true black & white, high-visibility layout */
-:root,
-html[data-scheme]{
+:root{
  --scheme-bg:#ffffff!important;
  --scheme-surface:#ffffff!important;
  --scheme-soft:#f3f3f3!important;
@@ -1071,8 +1070,7 @@ dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
 
 
 /* Black canvas + white-outline system v81 — based on approved mockup */
-:root,
-html[data-scheme]{
+:root{
  --scheme-bg:#000!important;
  --scheme-surface:#050505!important;
  --scheme-soft:#111!important;
