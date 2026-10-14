@@ -22,14 +22,6 @@
 
 /* Complete dark-theme audit v16 */
 html[data-theme="dark"] .icon-btn{background:#202530!important;border-color:#303644!important;color:#f1f3f8!important;box-shadow:0 8px 20px rgba(0,0,0,.18)!important}
-html[data-theme="dark"] .field>span,html[data-theme="dark"] .field-label,html[data-theme="dark"] legend{color:#c5cad5!important}
-html[data-theme="dark"] .field input,html[data-theme="dark"] .field textarea,html[data-theme="dark"] .field select{background:#222733!important;border-color:#343a48!important;color:#f1f3f8!important}
-html[data-theme="dark"] .field input:focus,html[data-theme="dark"] .field textarea:focus,html[data-theme="dark"] .checklist-add input:focus,html[data-theme="dark"] .checklist-edit-row input[type=text]:focus{background:#252b37!important;border-color:#6974f3!important;box-shadow:0 0 0 4px rgba(105,116,243,.12)!important}
-html[data-theme="dark"] .toggle-row,html[data-theme="dark"] .checklist-editor{background:#202530!important;border-color:#303644!important}
-html[data-theme="dark"] .checklist-add input,html[data-theme="dark"] .checklist-edit-row input[type=text]{background:#272c37!important;border-color:#353b49!important;color:#f1f3f8!important}
-html[data-theme="dark"] .quick-add-title input::placeholder,html[data-theme="dark"] .field input::placeholder,html[data-theme="dark"] .field textarea::placeholder,html[data-theme="dark"] .checklist-add input::placeholder{color:#747d8f!important}
-html[data-theme="dark"] .quick-add-options input,html[data-theme="dark"] .quick-add-options select{background:transparent!important;color:#f1f3f8!important}
-html[data-theme="dark"] .settings-section>p,html[data-theme="dark"] .settings-row small,html[data-theme="dark"] .settings-empty{color:#9fa7b7!important}
 html[data-theme="dark"] .restore-btn,html[data-theme="dark"] .secondary-btn,html[data-theme="dark"] .deleted-item button{background:#2d3252!important;color:#bcc2ff!important;box-shadow:none!important}
 
 /* Simple reminder composer v17 */
