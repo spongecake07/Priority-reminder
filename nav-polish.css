@@ -1133,9 +1133,9 @@ small,.muted,.card-meta,.reminder-meta{color:#aaa!important}
 .calendar-day-list .calendar-home-card.collapsed>.card-body *{color:#fff!important}
 .reminder-card.collapsed::after,
 .calendar-day-list .calendar-home-card.collapsed::after{color:#fff!important;opacity:.9!important}.priority-bar.high,.calendar-priority.high{background:#d94a4a!important}
-.priority-bar.medium,.calendar-priority.medium{background:#e58a32!important}
-.priority-bar.low,.calendar-priority.low{background:#e0bd42!important}
-.priority-bar.misc,.calendar-priority.misc{background:#4f86c6!important}
+
+
+
 .calendar-day-list .calendar-home-card.collapsed{
  grid-template-columns:8px minmax(0,1fr)!important;
 }
