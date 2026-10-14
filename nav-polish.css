@@ -20,9 +20,6 @@
 /* Pinned view + calendar actions v15 */
 .smart-views{grid-template-columns:repeat(5,minmax(0,1fr))!important}.calendar-add{width:100%;margin-top:10px;border:1px dashed rgba(91,103,241,.35);border-radius:15px;padding:11px;background:#f7f7ff;color:#5965e4;font-weight:850}.calendar-dots{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:2px;height:5px}.calendar-dots b{display:block;width:4px;height:4px;border-radius:50%}.calendar-dots .dot-high{background:#ef5b5b}.calendar-dots .dot-medium{background:#e6a820}.calendar-dots .dot-low{background:#55a978}.calendar-day small+.calendar-dots{bottom:3px}.calendar-day:has(small) .calendar-dots{left:7px;transform:none}.calendar-day.selected .calendar-dots b{box-shadow:0 0 0 1px rgba(255,255,255,.6)}@media(max-width:520px){.smart-view{padding-left:1px!important;padding-right:1px!important}.smart-view>span{font-size:13px!important}.smart-view strong{font-size:9px!important}.smart-view small{font-size:8px!important}}@media(max-width:370px){.smart-view>span{display:block!important;font-size:12px!important}.smart-view strong{font-size:8px!important}}
 
-/* Complete dark-theme audit v16 */
-html[data-theme="dark"] .icon-btn{background:#202530!important;border-color:#303644!important;color:#f1f3f8!important;box-shadow:0 8px 20px rgba(0,0,0,.18)!important}
-
 /* Simple reminder composer v17 */
 .quick-add-dialog{width:min(560px,calc(100% - 16px));border-radius:30px}.quick-add-dialog form{padding:22px 20px calc(20px + env(safe-area-inset-bottom))}.quick-add-head{margin-bottom:14px}.quick-add-head h2{font-size:20px;letter-spacing:-.35px}.quick-add-title input{border:0!important;border-radius:17px!important;background:#f5f6fa!important;padding:17px 15px!important;font-size:17px!important;box-shadow:inset 0 0 0 1px #eaecf2}.composer-actions{display:flex;gap:7px;overflow-x:auto;margin:11px -2px 0;padding:2px;scrollbar-width:none}.composer-actions::-webkit-scrollbar{display:none}.composer-actions button{flex:0 0 auto;border:1px solid #e7e9f0;border-radius:999px;background:#fff;color:#5f6778;padding:9px 12px;font-size:11px;font-weight:800}.composer-panel{margin-top:9px;padding:11px;border-radius:16px;background:#f7f8fb;border:1px solid #ebedf3}.composer-panel>input{width:100%;border:0;border-radius:11px;background:#fff;padding:10px;color:var(--text);outline:none}.composer-panel>small{display:block;margin-top:7px;color:var(--muted);font-size:9px}.date-shortcuts,.composer-priorities{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}.date-shortcuts button,.composer-priorities button{border:0;border-radius:11px;background:#fff;padding:9px 5px;color:#5e6678;font-size:10px;font-weight:800}.composer-priorities{margin-bottom:0}.quick-add-dialog .quick-add-save{width:100%;margin-top:14px;border:0;border-radius:16px;padding:14px;background:linear-gradient(145deg,#6874f3,#5662df);color:#fff;font-weight:900;font-size:13px;box-shadow:0 8px 18px rgba(91,103,241,.22)}
 
@@ -1050,8 +1047,7 @@ button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-vis
 
 /* Monochrome system v80 — true black & white, high-visibility layout */
 :root,
-html[data-scheme],
-html[data-theme="dark"][data-scheme]{
+html[data-scheme]{
  --scheme-bg:#ffffff!important;
  --scheme-surface:#ffffff!important;
  --scheme-soft:#f3f3f3!important;
@@ -1163,8 +1159,7 @@ dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
 
 /* Black canvas + white-outline system v81 — based on approved mockup */
 :root,
-html[data-scheme],
-html[data-theme="dark"][data-scheme]{
+html[data-scheme]{
  --scheme-bg:#000!important;
  --scheme-surface:#050505!important;
  --scheme-soft:#111!important;
@@ -1568,15 +1563,6 @@ html body #calendarDialog .calendar-grid::before{
  background:#fff!important;color:#000!important;border:1px solid #fff!important;
  border-radius:50%!important;box-shadow:none!important;
 }
-
-/* Ensure no old dark-theme purple overrides win on these surfaces */
-html[data-theme="dark"] .minna-topbar,
-html[data-theme="dark"] .home-profile,
-html[data-theme="dark"] #calendarDialog,
-html[data-theme="dark"] #calendarDialog .calendar-sheet,
-html[data-theme="dark"] #settingsDialog,
-html[data-theme="dark"] #settingsDialog .settings-sheet,
-html[data-theme="dark"] .bottom-nav{background:#000!important;color:#fff!important}
 
 
 /* v84 bottom add button clipping fix — preserve approved size */
