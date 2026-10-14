@@ -164,13 +164,13 @@ body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
 .reminder-card.expanded .meta-chip{font-size:8px!important;padding:4px 6px!important;border-radius:8px!important}
 .reminder-card.expanded .checklist-progress{display:flex!important;align-items:center!important;gap:7px!important;margin:7px 0 5px!important;padding:0!important;background:transparent!important;border:0!important}
 .reminder-card.expanded .checklist-progress-head{display:flex!important;align-items:center!important;gap:4px!important;white-space:nowrap!important;margin:0!important}
-.reminder-card.expanded .checklist-progress-head span{font-size:8px!important}.reminder-card.expanded .checklist-progress-head strong{font-size:8px!important}
+.reminder-card.expanded .checklist-progress-head span{font-size:8px!important}
 .reminder-card.expanded .checklist-progress-track{flex:1!important;height:4px!important;margin:0!important;border-radius:4px!important}
 .reminder-card.expanded .checklist-progress>small{font-size:8px!important;white-space:nowrap!important}
 .reminder-card.expanded .card-actions{padding:6px 10px 9px!important;gap:6px!important}
 .reminder-card.expanded .card-actions button{width:34px!important;height:30px!important;min-height:30px!important;border-radius:9px!important;font-size:13px!important}
 .reminder-card.collapsed .category-badge{display:inline-flex!important;align-items:center!important;gap:4px!important}
-.reminder-card.collapsed .category-badge b{font-size:8px!important}
+
 
 /* Completed reminders v34 */
 .compact-smart-views{grid-template-columns:repeat(5,minmax(0,1fr))!important}
@@ -1044,11 +1044,7 @@ dialog,.modal-card,.quick-add-dialog,.editor-dialog,.settings-dialog{
  overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
 }
 .reminder-card.collapsed .card-body{padding-right:40px!important}
-.reminder-card.expanded>.card-actions,
-.calendar-day-list .calendar-home-card.expanded>.card-actions{
- width:calc(100% - 20px)!important;margin-left:10px!important;margin-right:10px!important;
- grid-template-columns:repeat(4,minmax(0,1fr))!important;
-}
+
 .reminder-card.expanded>.card-actions>button,
 .calendar-day-list .calendar-home-card.expanded>.card-actions>button{
  min-width:0!important;overflow:hidden!important;font-size:11px!important;
