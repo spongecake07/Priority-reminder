@@ -1832,7 +1832,7 @@ html body .five-priorities .summary-card.active{background:#E8E1FF!important;bor
 html body .bottom-nav #addBtn.bottom-nav-add{background:#A996F3!important;color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;border-color:#F6F2FF!important;box-shadow:0 7px 22px rgba(118,93,181,.22)!important}
 html body .bottom-nav .bottom-nav-item.active{color:#7A65B5!important;-webkit-text-fill-color:#7A65B5!important}
 
-/* v1.132: coordinated priority palette and filter-aware Today tile. */
+/* Canonical priority palette and filter-aware Today tile. */
 :root{
  --ui-tile-today:#E8E1FF;
  --ui-tile-upcoming:#FFF0C2;
