@@ -1767,3 +1767,26 @@ html body .calendar-home-card.no-date.collapsed .card-title{
  color:#292B42!important;
  -webkit-text-fill-color:#292B42!important;
 }
+
+
+/* Reminder press feedback matches the Home summary bubbles. */
+html body .reminder-list article.reminder-card.collapsed,
+html body #calendarDialog article.calendar-home-card.collapsed{
+ transition:transform .1s ease!important;
+ transform-origin:center center!important;
+ -webkit-tap-highlight-color:transparent!important;
+}
+html body .reminder-list article.reminder-card.collapsed:active,
+html body #calendarDialog article.calendar-home-card.collapsed:active{
+ transform:scale(.97)!important;
+}
+html body .reminder-list article.reminder-card.expanded:active,
+html body #calendarDialog article.calendar-home-card.expanded:active{
+ transform:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html body .reminder-list article.reminder-card.collapsed,
+ html body #calendarDialog article.calendar-home-card.collapsed{
+  transition:none!important;
+ }
+}
