@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "mobile:sync": "cap sync",
+    "mobile:prepare": "node mobile/prepare-web.mjs",
+    "mobile:sync": "npm run mobile:prepare && cap sync",
     "mobile:android": "cap open android",
     "mobile:ios": "cap open ios"
   },
