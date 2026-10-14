@@ -2005,6 +2005,40 @@ html body #settingsDialog .you-identity-name{font-weight:750!important;color:var
 html body #settingsDialog .you-identity-rank,html body #settingsDialog .you-identity-achievements{font-size:12px!important;color:var(--ui-progress-muted,#7A7D91)!important}
 html body #settingsDialog .you-identity .home-rank-badge{width:38px!important;height:38px!important}
 html body #settingsDialog .minna-app-about .minna-version{font-size:13px!important;color:var(--ui-progress-muted,#7A7D91)!important;white-space:nowrap!important}
+/* Undated cards share dated-card geometry: a compact priority tile and white content. */
+html body .reminder-list article.reminder-card.no-date.collapsed,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed{
+ display:flex!important;flex-direction:row!important;align-items:stretch!important;
+ background:#fff!important;min-height:0!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed>.card-due-split{
+ display:flex!important;flex:0 0 auto!important;align-self:stretch!important;
+ height:auto!important;min-height:0!important;
+ background:var(--ui-date-surface)!important;border-radius:22px!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed>.card-body,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.no-date.collapsed>.card-body{
+ flex:1 1 0!important;width:auto!important;min-width:0!important;
+ padding:12px 52px 12px 12px!important;min-height:0!important;
+ justify-content:center!important;background:#fff!important;
+}
+html body .reminder-card.no-date.collapsed .card-title-wrap,
+html body .calendar-home-card.no-date.collapsed .card-title-wrap{
+ padding:0!important;margin:0!important;border-radius:0!important;
+ background:transparent!important;gap:4px!important;justify-content:center!important;
+}
+html body .reminder-card.no-date.collapsed .card-title,
+html body .calendar-home-card.no-date.collapsed .card-title{margin:0!important}
+html body .reminder-card.no-date.collapsed .minna-undated-label,
+html body .calendar-home-card.no-date.collapsed .minna-undated-label{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;gap:3px!important;
+}
+html body .reminder-card.no-date.collapsed .minna-undated-label b,
+html body .calendar-home-card.no-date.collapsed .minna-undated-label b{font-size:25px!important;line-height:1!important}
+html body .reminder-card.no-date.collapsed .minna-undated-label small,
+html body .calendar-home-card.no-date.collapsed .minna-undated-label small{font-size:10px!important;letter-spacing:.02em!important}
 /* Canonical priority palette and fixed date tile colors. */
 :root{
  --ui-tile-today:#E8E1FF;
