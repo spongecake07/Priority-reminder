@@ -1,3 +1,6 @@
 /* v1.175: 40px right inset for dated and undated priority tint. */
 html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low,.urgency-misc)::before{right:40px!important}
 html body .reminder-list article.reminder-card.no-date.collapsed>.card-body{padding-right:40px!important}
+
+/* Match undated three-dot alignment to dated reminder cards. */
+html body .reminder-list article.reminder-card.no-date.collapsed .minna-card-more{right:14px!important}
