@@ -2,6 +2,10 @@ name: Android release bundle (unsigned preview)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/android-release-preview.yml'
 
 permissions:
   contents: read
