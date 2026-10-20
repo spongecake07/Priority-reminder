@@ -1,0 +1,2 @@
+/* Improve Cancel visibility in New Reminder editor without altering layout. */
+html body #editorDialog .dialog-head #cancelBtn{color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;opacity:1!important}
