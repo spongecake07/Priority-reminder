@@ -1,25 +1,50 @@
-/* v1.192: vertically center the priority/title pair in compact dated cards. */
+/* v1.196: one authoritative layout for compact dated reminders.
+   Center the entire label/title stack by intrinsic height, never by offsets. */
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date>.card-body{
- display:flex!important;flex-direction:column!important;
- justify-content:center!important;align-self:stretch!important;
- min-height:48px!important;height:auto!important;
- padding-top:2px!important;padding-bottom:2px!important;
+ display:grid!important;
+ grid-template-columns:minmax(0,1fr)!important;
+ grid-template-rows:minmax(0,1fr)!important;
+ align-items:center!important;
+ justify-content:stretch!important;
+ min-height:48px!important;
+ height:auto!important;
+ padding:4px 40px 4px 0!important;
+ box-sizing:border-box!important;
+ overflow:visible!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-heading{
  display:flex!important;flex-direction:column!important;
- justify-content:center!important;flex:1 1 auto!important;
- min-height:0!important;height:auto!important;margin:0!important;
+ justify-content:center!important;align-items:stretch!important;
+ align-self:center!important;
+ flex:0 0 auto!important;
+ width:100%!important;
+ min-width:0!important;
+ min-height:0!important;height:auto!important;
+ margin:0!important;padding:0!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-title-wrap{
  display:flex!important;flex-direction:column!important;
- justify-content:center!important;flex:0 0 auto!important;
- min-height:0!important;height:auto!important;
- padding-top:0!important;padding-bottom:0!important;gap:2px!important;
+ justify-content:center!important;align-items:stretch!important;
+ align-self:center!important;
+ flex:0 0 auto!important;
+ width:100%!important;
+ min-width:0!important;min-height:0!important;height:auto!important;
+ padding:0!important;margin:0!important;
+ gap:2px!important;
+ transform:none!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .minna-card-topline{
- flex:0 0 auto!important;min-height:0!important;
- padding-top:0!important;padding-bottom:0!important;margin:0!important;
+ display:flex!important;align-items:center!important;
+ flex:0 0 auto!important;
+ min-height:0!important;height:auto!important;
+ padding:0!important;margin:0!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-title{
- flex:0 0 auto!important;margin:0!important;line-height:1.13!important;
+ flex:0 0 auto!important;
+ margin:0!important;padding:0!important;
+ line-height:1.13!important;
+ transform:none!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date.minna-two-line-title>.card-body{
+ padding-top:7px!important;padding-bottom:7px!important;
 }
