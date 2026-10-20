@@ -1,5 +1,5 @@
-const CACHE='minna-v266';
-const ASSETS=['./','./index.html','./settings-colors-v166.css?v=266','./settings-fix-v165.css?v=265','./progress-fold-v164.css?v=264','./progress-fold-v164.js?v=264','./settings-panels-v163.css?v=263','./cancel-contrast-v162.css?v=262','./bottom-nav-depth.css?v=260','./add-button-shadow-v161.css?v=261','./styles.css','./nav-polish.css?v=259','./minna-theme.css?v=259','./app.js?v=259','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
+const CACHE='minna-v267';
+const ASSETS=['./','./index.html','./dated-card-tints-v167.css?v=267','./settings-colors-v166.css?v=266','./settings-fix-v165.css?v=265','./progress-fold-v164.css?v=264','./progress-fold-v164.js?v=264','./settings-panels-v163.css?v=263','./cancel-contrast-v162.css?v=262','./bottom-nav-depth.css?v=260','./add-button-shadow-v161.css?v=261','./styles.css','./nav-polish.css?v=259','./minna-theme.css?v=259','./app.js?v=259','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS))));
 self.addEventListener('message',event=>{if(event.data?.type==='SKIP_WAITING')self.skipWaiting()});
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('minna-v')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
