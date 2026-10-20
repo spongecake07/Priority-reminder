@@ -1,0 +1,2 @@
+/* Bring dated reminder details closer to the date tile, without moving the tile or menu. */
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-body{padding-left:8px!important}
