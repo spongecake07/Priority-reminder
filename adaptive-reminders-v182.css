@@ -17,10 +17,10 @@ html body .reminder-list article.reminder-card.collapsed.has-date .card-due-spli
 }
 html body .reminder-list article.reminder-card.collapsed.has-date .card-due-split .collapsed-due>.minna-due-time{
  grid-column:1 / 3!important;grid-row:2!important;justify-self:center!important;
- font-size:9px!important;line-height:1!important;margin:0!important;padding:2px 5px!important;
+ font-size:11px!important;line-height:1.1!important;margin:0!important;padding:2px 5px!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date>.card-due-split{
- min-height:44px!important;height:calc(100% - 10px)!important;
+ min-height:48px!important;height:calc(100% - 10px)!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-due-split .collapsed-due{
  min-height:0!important;height:100%!important;
@@ -32,7 +32,7 @@ html body .reminder-list article.reminder-card.collapsed.minna-title-only>.card-
  min-height:0!important;height:auto!important;padding-top:2px!important;padding-bottom:2px!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.no-date>.card-body{
- min-height:44px!important;padding-top:2px!important;padding-bottom:2px!important;
+ min-height:48px!important;padding-top:2px!important;padding-bottom:2px!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only .minna-card-topline{
  min-height:0!important;height:auto!important;padding-top:0!important;padding-bottom:0!important;margin:0!important;
