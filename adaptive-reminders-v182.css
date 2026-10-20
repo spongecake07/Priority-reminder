@@ -62,3 +62,14 @@ html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-onl
 html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .card-title{
  margin:0!important;line-height:1.13!important;
 }
+
+/* v1.186: remove legacy 88px minimum that leaves a thick white outer rim. */
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only{
+ min-height:48px!important;height:auto!important;max-height:none!important;
+ padding:0!important;box-sizing:border-box!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only>.card-body{
+ min-height:48px!important;height:auto!important;
+ padding:2px 40px 2px 5px!important;
+ margin:0!important;box-sizing:border-box!important;
+}
