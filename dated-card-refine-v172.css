@@ -1,0 +1,12 @@
+/* v1.172: stronger dated fills, tighter vertical grouping and responsive titles. */
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-high{--tint:#FFE5E9!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-medium{--tint:#FFF0D9!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-low{--tint:#E4F7ED!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-misc{--tint:#E2F1FE!important}
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-due-split{box-shadow:2px 4px 9px rgba(40,37,53,.14)!important}
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-body{display:flex!important;flex-direction:column!important;justify-content:center!important;min-height:0!important;padding-top:4px!important;padding-bottom:4px!important}
+html body .reminder-list article.reminder-card.collapsed.has-date .card-heading{display:flex!important;flex-direction:column!important;justify-content:center!important;min-height:0!important;gap:2px!important}
+html body .reminder-list article.reminder-card.collapsed.has-date .card-title-wrap{display:flex!important;flex-direction:column!important;justify-content:center!important;gap:3px!important;min-height:0!important}
+html body .reminder-list article.reminder-card.collapsed.has-date .minna-card-topline{min-height:0!important}
+html body .reminder-list article.reminder-card.collapsed.has-date .card-title{font-size:var(--minna-fit-font,19px)!important;line-height:1.15!important;white-space:normal!important;display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:2!important;line-clamp:2!important;overflow:hidden!important;overflow-wrap:anywhere!important;text-overflow:ellipsis!important;max-width:100%!important}
+html body .reminder-list article.reminder-card.collapsed.has-date .minna-description-preview{margin-top:2px!important;min-height:0!important}
