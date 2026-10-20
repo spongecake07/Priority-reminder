@@ -2075,3 +2075,14 @@ html body .glance-filter .glance-stat[data-view="overdue"]{background:var(--ui-t
 
 /* v1.158: keep the first home bubble fully below Android system bars. */
 .app-shell{padding-top:calc(16px + env(safe-area-inset-top, 0px))!important}
+
+/* v1.159 compact date totals */
+html body #homeFilterToggle{flex-wrap:wrap!important;row-gap:7px!important}
+html body #homeFilterToggle .home-summary-counts{display:flex!important;order:3!important;flex:0 0 100%!important;justify-content:space-between!important;gap:5px!important;padding-top:7px!important;border-top:1px solid #00000016!important}
+html body #homeFilterToggle .home-summary-counts>span{display:flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;white-space:nowrap!important}
+html body #homeFilterToggle .home-summary-counts strong{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-width:35px!important;height:35px!important;padding:0 5px!important;border-radius:11px!important;font-size:19px!important;font-weight:800!important}
+html body #homeFilterToggle .home-summary-counts small{font-size:11px!important;color:#555!important}
+html body #homeFilterToggle .home-summary-counts>span:nth-child(1) strong{background:#E3F3FA!important;color:#2784AD!important}
+html body #homeFilterToggle .home-summary-counts>span:nth-child(2) strong{background:#E2F5F1!important;color:#238A80!important}
+html body #homeFilterToggle .home-summary-counts>span:nth-child(3) strong{background:#FBEAEC!important;color:#B85862!important}
+@media(max-width:360px){html body #homeFilterToggle .home-summary-counts strong{min-width:30px!important;height:32px!important;font-size:17px!important}html body #homeFilterToggle .home-summary-counts small{font-size:10px!important}}
