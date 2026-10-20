@@ -1,0 +1,32 @@
+/* v1.181: consistent compact collapsed cards for all four priorities. */
+html body .reminder-list article.reminder-card.collapsed.minna-title-only{
+  min-height:0!important;height:auto!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only>.card-body{
+  min-height:0!important;height:auto!important;padding-top:2px!important;padding-bottom:2px!important;
+  justify-content:center!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only .card-heading,
+html body .reminder-list article.reminder-card.collapsed.minna-title-only .card-title-wrap{
+  min-height:0!important;height:auto!important;gap:1px!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only .minna-card-topline{
+  min-height:0!important;height:auto!important;margin:0!important;padding-top:0!important;padding-bottom:0!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only .card-title{
+  margin:0!important;line-height:1.13!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.no-date>.card-body{
+  padding-top:4px!important;padding-bottom:4px!important;
+}
+/* Date blocks cannot be 44px when a date/time must remain legible. */
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date>.card-due-split{
+  min-height:64px!important;height:auto!important;overflow:visible!important;
+  align-self:stretch!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .collapsed-due{
+  min-height:64px!important;height:100%!important;box-sizing:border-box!important;
+  display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+  overflow:visible!important;
+}
+/* Preserve the colored priority inset, including Misc. */
