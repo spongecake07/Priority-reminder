@@ -88,7 +88,7 @@ jobs:
             }
           }
           ''')
-                    PY
+          PY
       - name: Build debug APK
         run: |
           cd android
