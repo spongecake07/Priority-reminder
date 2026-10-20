@@ -1,0 +1,2 @@
+/* Stronger floating navigation shadow, isolated from existing theme rules. */
+html body nav.bottom-nav { background: #fff !important; box-shadow: 0 8px 18px rgba(0,0,0,.22), 0 18px 38px rgba(0,0,0,.28) !important; }
