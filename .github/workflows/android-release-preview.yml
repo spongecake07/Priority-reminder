@@ -1,0 +1,60 @@
+name: Android release bundle (unsigned preview)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Prepare Android web assets
+        run: npm run android:prepare
+      - name: Generate Android project
+        run: npx cap add android
+      - name: Sync native plugins
+        run: npx cap sync android
+      - name: Configure Android metadata and notification permission
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, re
+          metadata = json.loads(Path('android-version.json').read_text())
+          gradle = Path('android/app/build.gradle')
+          content = gradle.read_text()
+          content, codes = re.subn(r'versionCode\s+\d+', f"versionCode {metadata['versionCode']}", content, count=1)
+          content, names = re.subn(r'versionName\s+["\'][^"\']+["\']', f"versionName \"{metadata['versionName']}\"", content, count=1)
+          if codes != 1 or names != 1:
+              raise RuntimeError('Android version metadata not found')
+          gradle.write_text(content)
+          manifest = Path('android/app/src/main/AndroidManifest.xml')
+          text = manifest.read_text()
+          if 'android.permission.POST_NOTIFICATIONS' not in text:
+              text = text.replace('<application', '<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n    <application', 1)
+          manifest.write_text(text)
+          PY
+      - name: Build unsigned release bundle
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew bundleRelease --no-daemon
+      - name: Upload unsigned preview bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: minna-unsigned-release-preview
+          path: android/app/build/outputs/bundle/release/*.aab
+          if-no-files-found: error
+          retention-days: 14
