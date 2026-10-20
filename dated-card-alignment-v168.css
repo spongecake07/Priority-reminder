@@ -1,0 +1,5 @@
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-high{--tint:#FFF4F5}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-medium{--tint:#FFFAF2}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-low{--tint:#F2FBF6}
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low){background:linear-gradient(to right,#fff 98px,var(--tint) 98px,var(--tint) calc(100% - 76px),#fff calc(100% - 76px))!important}
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low)>.card-body{background:transparent!important}
