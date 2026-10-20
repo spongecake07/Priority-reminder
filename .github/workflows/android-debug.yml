@@ -37,8 +37,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Verify preinstalled Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          test -d "$ANDROID_HOME"
+          test -x "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --version
       - name: Install Capacitor dependencies
         run: npm install --no-audit --no-fund
       - name: Prepare bundled Minna files
