@@ -68,6 +68,8 @@ public class MainActivity extends BridgeActivity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     Window window = getWindow();
+    // Let Android reserve its system-bar space before rendering the WebView.
+    androidx.core.view.WindowCompat.setDecorFitsSystemWindows(window, true);
     window.setStatusBarColor(Color.rgb(230, 230, 230));
     window.getDecorView().setSystemUiVisibility(
         window.getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
