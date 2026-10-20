@@ -1,4 +1,4 @@
-const CACHE='minna-v258';
+const CACHE='minna-v259';
 const ASSETS=['./','./index.html','./styles.css','./nav-polish.css?v=258','./minna-theme.css?v=258','./app.js?v=258','./manifest.json','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS))));
 self.addEventListener('message',event=>{if(event.data?.type==='SKIP_WAITING')self.skipWaiting()});
