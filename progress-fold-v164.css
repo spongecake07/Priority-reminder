@@ -1,0 +1,5 @@
+#settingsDialog .minna-lifetime-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0;border:0;background:transparent;color:inherit;font:700 16px system-ui;text-align:left;cursor:pointer}
+#settingsDialog .minna-lifetime-toggle span:last-child{font-size:22px;transition:transform .2s ease}
+#settingsDialog .minna-lifetime-details[hidden]{display:none!important}
+#settingsDialog .minna-achievements-section .achievement-head{display:block!important}
+#settingsDialog .minna-achievements-section .achievement-head .achievement-stars{margin-top:8px}
