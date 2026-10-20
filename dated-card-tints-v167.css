@@ -1,0 +1,6 @@
+/* v1.167: soft priority fills only on dated collapsed reminders. */
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-high>.card-body{background:#FFF4F5!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-medium>.card-body{background:#FFFAF2!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-low>.card-body{background:#F2FBF6!important}
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-actions{background:#FFFFFF!important}
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-due-split{box-shadow:3px 3px 10px rgba(42,39,59,.23)!important}
