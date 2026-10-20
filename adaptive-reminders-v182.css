@@ -73,3 +73,24 @@ html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-onl
  padding:2px 40px 2px 5px!important;
  margin:0!important;box-sizing:border-box!important;
 }
+
+/* v1.187: actual cause of oversized no-date rim is the inner tinted panel's
+   legacy 13px vertical padding and 8px flex gap, not only the outer card. */
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only>.card-body{
+ padding:4px 40px 4px 5px!important;
+ min-height:48px!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .card-heading{
+ margin:0!important;padding:0!important;min-height:0!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .card-title-wrap{
+ padding:3px 12px!important;gap:1px!important;
+ min-height:40px!important;box-sizing:border-box!important;
+ border-radius:18px!important;justify-content:center!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .minna-card-topline{
+ margin:0!important;padding:0!important;gap:3px!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .card-title{
+ margin:0!important;line-height:1.12!important;
+}
