@@ -1,0 +1,24 @@
+/* v1.190: compact expanded reminders with no notes, checklist, photos or recurrence.
+   This includes alert-only reminders such as "The. H". Detailed cards stay unchanged. */
+html body .reminder-list article.reminder-card.expanded.minna-title-only{
+ min-height:0!important;height:auto!important;
+}
+html body .reminder-list article.reminder-card.expanded.minna-title-only>.card-body{
+ flex:0 0 auto!important;min-height:0!important;height:auto!important;
+ padding:10px 14px 4px!important;gap:4px!important;
+}
+html body .reminder-list article.reminder-card.expanded.minna-title-only .card-heading,
+html body .reminder-list article.reminder-card.expanded.minna-title-only .card-title-wrap{
+ min-height:0!important;height:auto!important;gap:6px!important;
+}
+html body .reminder-list article.reminder-card.expanded.minna-title-only .card-meta{
+ min-height:0!important;height:auto!important;
+ margin:3px 0 0!important;padding:0!important;gap:4px!important;
+}
+html body .reminder-list article.reminder-card.expanded.minna-title-only .card-meta:empty{
+ display:none!important;
+}
+html body .reminder-list article.reminder-card.expanded.minna-title-only>.card-actions{
+ margin-top:4px!important;margin-bottom:8px!important;
+ padding-top:0!important;padding-bottom:0!important;
+}
