@@ -1,0 +1,15 @@
+/* v1.165: repair settings contrast and lifetime achievement heading */
+html body #settingsDialog .minna-manual-update .settings-row,html body #settingsDialog .minna-app-about .settings-row{background:transparent!important;background-color:transparent!important;color:#303044!important;box-shadow:none!important}
+html body #settingsDialog .minna-manual-update .settings-row>div,html body #settingsDialog .minna-app-about .settings-row>div{background:transparent!important;color:#303044!important}
+html body #settingsDialog .minna-manual-update .settings-row strong,html body #settingsDialog .minna-app-about .settings-row strong{color:#303044!important;-webkit-text-fill-color:#303044!important}
+html body #settingsDialog .minna-manual-update .settings-row small,html body #settingsDialog .minna-app-about .settings-row small{color:#777789!important;-webkit-text-fill-color:#777789!important}
+html body #settingsDialog .minna-app-about .minna-version{color:#6B5B96!important;-webkit-text-fill-color:#6B5B96!important}
+html body #settingsDialog .minna-achievements-section .achievement-head{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:12px!important}
+html body #settingsDialog .minna-achievements-section .achievement-head>div:first-of-type{min-width:0!important}
+html body #settingsDialog .minna-achievements-section .achievement-head .minna-lifetime-toggle{grid-column:1!important;grid-row:1!important;display:flex!important;align-items:center!important;gap:8px!important;justify-content:flex-start!important;width:100%!important;min-width:0!important;max-width:100%!important;padding:0!important;margin:0!important;background:transparent!important;background-color:transparent!important;border:0!important;box-shadow:none!important;color:#303044!important;-webkit-text-fill-color:#303044!important;font:700 17px/1.3 system-ui!important;white-space:normal!important;text-align:left!important}
+html body #settingsDialog .minna-achievements-section .achievement-head .minna-lifetime-toggle span:first-child{min-width:0!important;flex:1!important}
+html body #settingsDialog .minna-achievements-section .achievement-head .minna-lifetime-toggle span:last-child{flex:none!important;color:#7363A7!important;-webkit-text-fill-color:#7363A7!important}
+html body #settingsDialog .minna-achievements-section .achievement-head>div:first-of-type{grid-column:1!important;grid-row:2!important;background:transparent!important}
+html body #settingsDialog .minna-achievements-section .achievement-head>div:first-of-type strong{display:none!important}
+html body #settingsDialog .minna-achievements-section .achievement-head>div:first-of-type small{color:#777789!important}
+html body #settingsDialog .minna-achievements-section .achievement-head .achievement-stars{grid-column:2!important;grid-row:1!important;margin:0!important;justify-self:end!important}
