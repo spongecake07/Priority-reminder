@@ -1,0 +1,5 @@
+/* v1.169: rounded inset tint matching undated cards, behind the date tile. */
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low){position:relative!important;background:#FFFFFF!important;isolation:isolate!important}
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low)::before{content:""!important;display:block!important;position:absolute!important;inset:10px 76px 10px 10px!important;border-radius:24px!important;background:var(--tint)!important;z-index:-1!important;pointer-events:none!important}
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low)>.card-body{background:transparent!important;position:relative!important;z-index:1!important}
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low)>.card-due-split{position:relative!important;z-index:2!important}
