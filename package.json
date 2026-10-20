@@ -1,0 +1,17 @@
+{
+  "name": "minna-reminders",
+  "version": "1.156.0",
+  "private": true,
+  "scripts": {
+    "android:prepare": "node scripts/prepare-android.mjs",
+    "android:sync": "npm run android:prepare && npx cap sync android",
+    "android:debug": "npm run android:sync && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0"
+  }
+}
