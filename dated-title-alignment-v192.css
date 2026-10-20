@@ -1,4 +1,4 @@
-/* v1.196: one authoritative layout for compact dated reminders.
+/* v1.197: one authoritative layout for compact dated reminders.
    Center the entire label/title stack by intrinsic height, never by offsets. */
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date>.card-body{
  display:grid!important;
@@ -6,9 +6,9 @@ html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-da
  grid-template-rows:minmax(0,1fr)!important;
  align-items:center!important;
  justify-content:stretch!important;
- min-height:48px!important;
+ min-height:64px!important;
  height:auto!important;
- padding:4px 40px 4px 0!important;
+ padding:8px 40px 8px 0!important;
  box-sizing:border-box!important;
  overflow:visible!important;
 }
@@ -46,5 +46,16 @@ html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-da
  transform:none!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date.minna-two-line-title>.card-body{
- padding-top:7px!important;padding-bottom:7px!important;
+ min-height:88px!important;
+ padding-top:12px!important;padding-bottom:12px!important;
+}
+
+/* Center the label and title as a single intrinsic-size group, with enough room
+   for their combined line-height. The alert icon is an overlay, not a row. */
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-title-wrap{
+ justify-self:stretch!important;align-self:center!important;
+ justify-content:center!important;gap:3px!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-heading{
+ align-self:center!important;justify-content:center!important;
 }
