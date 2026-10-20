@@ -1,0 +1,2 @@
+/* Match the undated card's 5px inset and 20px corner radius. */
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low)::before{inset:5px 58px 5px 5px!important;border-radius:20px!important}
