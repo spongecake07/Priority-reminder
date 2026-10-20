@@ -1,0 +1,2 @@
+/* Tighten dated reminder text-to-date spacing slightly more. */
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-body{padding-left:3px!important}
