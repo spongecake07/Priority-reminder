@@ -49,6 +49,18 @@ jobs:
         run: npm run android:prepare
       - name: Generate Android project
         run: npx cap add android
+      - name: Sync native notification plugin
+        run: npx cap sync android
+      - name: Declare Android notification permission
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('android/app/src/main/AndroidManifest.xml')
+          s = p.read_text()
+          if 'android.permission.POST_NOTIFICATIONS' not in s:
+              s = s.replace('<application', '<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n    <application', 1)
+          p.write_text(s)
+          PY
       - name: Configure Android status bar
         run: |
           python3 - <<'PY'
