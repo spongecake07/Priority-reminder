@@ -1,0 +1,6 @@
+/* v1.171: Misc dated reminders use the same rounded inset treatment. */
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-misc{--tint:#F0F8FF;position:relative!important;background:#FFFFFF!important;isolation:isolate!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-misc::before{content:""!important;display:block!important;position:absolute!important;inset:5px 58px 5px 5px!important;border-radius:20px!important;background:var(--tint)!important;z-index:0!important;pointer-events:none!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-misc>.card-body{background:transparent!important;position:relative!important;z-index:1!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-misc>.card-due-split{position:relative!important;z-index:2!important;box-shadow:3px 3px 10px rgba(42,39,59,.23)!important}
+html body .reminder-list article.reminder-card.collapsed.has-date.urgency-misc>.card-actions{background:#FFFFFF!important}
