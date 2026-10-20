@@ -38,3 +38,27 @@ html body .reminder-list article.reminder-card.collapsed.minna-title-only .minna
  min-height:0!important;height:auto!important;padding-top:0!important;padding-bottom:0!important;margin:0!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only .card-title{margin:0!important}
+
+/* v1.185: no-date compact cards: override legacy spacing and wrapping. */
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only{
+ min-height:48px!important;height:auto!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only>.card-body{
+ min-height:48px!important;height:auto!important;
+ padding:2px 40px 2px 5px!important;
+ justify-content:center!important;box-sizing:border-box!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .card-title-wrap{
+ min-height:0!important;height:auto!important;
+ padding-top:0!important;padding-bottom:0!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .minna-card-topline{
+ flex-wrap:nowrap!important;gap:3px!important;
+ min-height:0!important;height:auto!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .minna-card-topline .minna-reminder-eyebrow{
+ min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed.minna-title-only .card-title{
+ margin:0!important;line-height:1.13!important;
+}
