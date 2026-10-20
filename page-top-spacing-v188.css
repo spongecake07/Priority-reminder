@@ -1,0 +1,8 @@
+/* v1.188: consistent 36px top breathing room on every main page. */
+html body main.app-shell{
+ padding-top:calc(36px + env(safe-area-inset-top, 0px))!important;
+}
+html body section#calendarDialog.app-page,
+html body section#settingsDialog.app-page{
+ padding-top:calc(36px + env(safe-area-inset-top, 0px))!important;
+}
