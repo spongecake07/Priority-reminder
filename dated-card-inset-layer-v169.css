@@ -1,0 +1,1 @@
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low)::before{z-index:0!important}
