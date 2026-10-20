@@ -68,27 +68,27 @@ jobs:
           p = Path('android/app/src/main/java/app/minna/reminders/MainActivity.java')
           p.parent.mkdir(parents=True, exist_ok=True)
           p.write_text('''package app.minna.reminders;
-
-import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.graphics.Color;
-import com.getcapacitor.BridgeActivity;
-
-public class MainActivity extends BridgeActivity {
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    Window window = getWindow();
-    // Let Android reserve its system-bar space before rendering the WebView.
-    androidx.core.view.WindowCompat.setDecorFitsSystemWindows(window, true);
-    window.setStatusBarColor(Color.rgb(230, 230, 230));
-    window.getDecorView().setSystemUiVisibility(
-        window.getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-  }
-}
-''')
-          PY
+          
+          import android.os.Bundle;
+          import android.view.View;
+          import android.view.Window;
+          import android.graphics.Color;
+          import com.getcapacitor.BridgeActivity;
+          
+          public class MainActivity extends BridgeActivity {
+            @Override
+            public void onCreate(Bundle savedInstanceState) {
+              super.onCreate(savedInstanceState);
+              Window window = getWindow();
+              // Let Android reserve its system-bar space before rendering the WebView.
+              androidx.core.view.WindowCompat.setDecorFitsSystemWindows(window, true);
+              window.setStatusBarColor(Color.rgb(230, 230, 230));
+              window.getDecorView().setSystemUiVisibility(
+                  window.getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            }
+          }
+          ''')
+                    PY
       - name: Build debug APK
         run: |
           cd android
