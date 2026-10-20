@@ -1,3 +1,3 @@
-/* v1.175: move rounded tint edge 12px closer to the three-dot menu. */
-html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low,.urgency-misc)::before{right:46px!important}
-html body .reminder-list article.reminder-card.no-date.collapsed>.card-body{padding-right:46px!important}
+/* v1.175: 30px right inset for dated and undated priority tint. */
+html body .reminder-list article.reminder-card.collapsed.has-date:is(.urgency-high,.urgency-medium,.urgency-low,.urgency-misc)::before{right:30px!important}
+html body .reminder-list article.reminder-card.no-date.collapsed>.card-body{padding-right:30px!important}
