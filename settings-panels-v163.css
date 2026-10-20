@@ -1,0 +1,7 @@
+/* Keep the About and App Updates panels light, without changing layout or controls. */
+html body #settingsDialog .settings-section.minna-app-about,
+html body #settingsDialog .settings-section.minna-manual-update { background:#FFFFFF!important; color:#34343B!important; }
+html body #settingsDialog .minna-app-about strong,
+html body #settingsDialog .minna-manual-update strong { color:#34343B!important; }
+html body #settingsDialog .minna-app-about small,
+html body #settingsDialog .minna-manual-update small { color:#6D6D78!important; }
