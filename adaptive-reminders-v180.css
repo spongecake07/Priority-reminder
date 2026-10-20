@@ -1,0 +1,30 @@
+/* v1.180: Adaptive collapsed reminders, all priorities including Misc. */
+/* Detailed cards retain their existing layout, tints, date bubbles and shadows. */
+html body .reminder-list article.reminder-card.collapsed .card-title{
+  display:-webkit-box!important;-webkit-box-orient:vertical!important;
+  -webkit-line-clamp:2!important;line-clamp:2!important;
+  white-space:normal!important;overflow:hidden!important;
+  overflow-wrap:anywhere!important;text-overflow:ellipsis!important;
+}
+/* Only genuinely title-only reminders use the compact treatment. */
+html body .reminder-list article.reminder-card.collapsed.minna-title-only{
+  min-height:0!important;height:auto!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only>.card-body{
+  min-height:0!important;height:auto!important;
+  padding-top:3px!important;padding-bottom:3px!important;
+  justify-content:center!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only .card-heading,
+html body .reminder-list article.reminder-card.collapsed.minna-title-only .card-title-wrap{
+  min-height:0!important;height:auto!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only .card-title{
+  line-height:1.14!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date>.card-due-split{
+  min-height:44px!important;height:auto!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.no-date>.card-body{
+  padding-top:4px!important;padding-bottom:4px!important;
+}
