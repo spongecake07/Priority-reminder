@@ -40,7 +40,7 @@ input.addEventListener('input',scheduleBubblePosition);
 new ResizeObserver(scheduleBubblePosition).observe(modal);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateStr=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
-let pending=null,priority='medium',checkItems=[],suggestedPriority='medium';
+let pending=null,priority='medium',checkItems=[],suggestedPriority='medium',suggestionConfident=false;
 function detectList(title){
  const m=/^(buy|pick up|get|pack|bring|clean|prepare|order|purchase)\s+(.+)$/i.exec(title);
  if(!m)return null;
@@ -79,7 +79,7 @@ function previewCard(){
 function prepare(){
  const raw=input.value.trim();if(!raw)return;
  pending=parse(raw);const detected=detectList(pending.title);checkItems=detected?detected.items:[];if(detected)pending.title=detected.title;if(!pending.title){convo.innerHTML='<p class="mc-note">Please include what you want to remember.</p>';return;}
- const suggestion=window.MinnaPriorityLearning?.suggest(pending.title);suggestedPriority=suggestion?.priority||'medium';priority=suggestedPriority;
+ const suggestion=window.MinnaPriorityLearning?.suggest(pending.title);suggestedPriority=suggestion?.priority||'medium';suggestionConfident=!!suggestion?.confident;priority=suggestedPriority;
  convo.innerHTML=previewCard();renderChecklist();convo.querySelector('[data-mc-priority="'+priority+'"]')?.classList.add('selected');
  modal.classList.add('mc-reviewing');input.blur();
  input.value='';convo.scrollTop=convo.scrollHeight;scheduleBubblePosition();
@@ -118,7 +118,7 @@ function bridge(edit){
  $('quickAddTitle').value=pending.title;
  $('quickAddDate').value=date;$('quickAddTime').value=time;$('quickAddPriority').value=priority;
  if(edit){$('quickAddMoreBtn').click();return;}
- window.minnaPriorityLearningPending={title:pending.title,priority,predicted:suggestedPriority};
+ window.minnaPriorityLearningPending={title:pending.title,priority,predicted:suggestedPriority,confident:suggestionConfident};
  window.minnaChatChecklistPayload=checkItems.map(x=>({text:x.text.trim(),done:false})).filter(x=>x.text);
  $('quickAddForm').requestSubmit();
 }
