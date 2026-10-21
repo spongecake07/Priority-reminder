@@ -1,0 +1,27 @@
+/* v1.237 — dated collapsed cards with description previews.
+   Remove the legacy 112px minimum only for this card type.
+   Keep title/preview content in natural flow and retain the date tile. */
+html body .reminder-list article.reminder-card.collapsed.has-date:has(.minna-description-preview){
+ min-height:0!important;
+ height:auto!important;
+ max-height:none!important;
+}
+html body .reminder-list article.reminder-card.collapsed.has-date:has(.minna-description-preview)>.card-body{
+ min-height:0!important;
+ height:auto!important;
+ padding-top:6px!important;
+ padding-bottom:6px!important;
+ box-sizing:border-box!important;
+ justify-content:center!important;
+}
+html body .reminder-list article.reminder-card.collapsed.has-date .minna-description-preview{
+ gap:2px!important;
+ margin-top:2px!important;
+ min-height:0!important;
+}
+html body .reminder-list article.reminder-card.collapsed.has-date .minna-description-text{
+ display:block!important;
+ white-space:nowrap!important;
+ overflow:hidden!important;
+ text-overflow:ellipsis!important;
+}
