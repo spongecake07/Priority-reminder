@@ -88,7 +88,7 @@ function previewCard(){
 }
 function prepare(){
  const raw=input.value.trim();if(!raw)return;
- pending=parse(raw);const detected=detectList(pending.title);checkItems=detected?detected.items:[];if(detected)pending.title=detected.title;category=window.MinnaCategoryLearning?.suggest(raw,window.minnaAvailableCategories?.()||[])||'';if(!pending.title){convo.innerHTML='<p class="mc-note">Please include what you want to remember.</p>';return;}
+ pending=parse(raw);pending.categoryLearningTitle=raw;const detected=detectList(pending.title);checkItems=detected?detected.items:[];if(detected)pending.title=detected.title;category=window.MinnaCategoryLearning?.suggest(raw,window.minnaAvailableCategories?.()||[])||'';if(!pending.title){convo.innerHTML='<p class="mc-note">Please include what you want to remember.</p>';return;}
  const suggestion=window.MinnaPriorityLearning?.suggest(pending.title);suggestedPriority=suggestion?.priority||'medium';suggestionConfident=!!suggestion?.confident;suggestionSimilar=suggestion?.similar||0;priority=suggestedPriority;
  convo.innerHTML=previewCard();renderChecklist();convo.querySelector('[data-mc-priority="'+priority+'"]')?.classList.add('selected');
  modal.classList.add('mc-reviewing');input.blur();
@@ -128,7 +128,7 @@ function bridge(edit){
  $('quickAddTitle').value=pending.title;
  $('quickAddDate').value=date;$('quickAddTime').value=time;$('quickAddPriority').value=priority;
  if(edit){$('quickAddMoreBtn').click();return;}
- window.minnaChatCategoryPending=category;\n window.minnaPriorityLearningPending={title:pending.title,priority,predicted:suggestedPriority,confident:suggestionConfident};
+ window.minnaChatCategoryPending=category;window.minnaChatCategoryLearningTitle=pending.categoryLearningTitle||pending.title;\n window.minnaPriorityLearningPending={title:pending.title,priority,predicted:suggestedPriority,confident:suggestionConfident};
  window.minnaChatChecklistPayload=checkItems.map(x=>({text:x.text.trim(),done:false})).filter(x=>x.text);
  $('quickAddForm').requestSubmit();
 }
