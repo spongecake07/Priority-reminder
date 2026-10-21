@@ -135,3 +135,11 @@ dialog.minna-floating-chat .mc-confirm-save{position:relative!important;z-index:
 dialog.minna-floating-chat .mc-picker-direct{position:relative!important;padding:0!important;overflow:hidden!important;min-height:40px!important}
 dialog.minna-floating-chat .mc-picker-direct button{display:block!important;width:100%!important;min-width:112px!important;min-height:40px!important;padding:8px 14px!important;background:transparent!important;border:0!important;border-radius:10px!important;color:#3d3547!important;font-size:14px!important;font-weight:700!important;text-align:center!important;box-shadow:none!important;cursor:pointer!important}
 dialog.minna-floating-chat .mc-picker-direct input{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;pointer-events:none!important;z-index:-1!important}
+
+/* v1.221 Smart Add checklist */
+dialog.minna-floating-chat #mcChecklist{margin-top:9px}
+dialog.minna-floating-chat .mc-checklist-heading{font-size:11px;font-weight:800;letter-spacing:.04em;color:#78678c;margin-bottom:6px}
+dialog.minna-floating-chat .mc-check-row{display:flex;gap:6px;align-items:center;margin:5px 0}
+dialog.minna-floating-chat .mc-check-row input{flex:1;min-width:0!important;background:#ffffffad!important;color:#292638!important;-webkit-text-fill-color:#292638!important;border:1px solid #ffffff80!important;border-radius:9px!important;padding:7px 9px!important;font-size:13px!important;box-shadow:none!important}
+dialog.minna-floating-chat .mc-check-row button{width:27px;height:27px;flex:0 0 27px;border:0;border-radius:8px;background:#ffffff9c;color:#7a6b83;font-size:19px}
+dialog.minna-floating-chat .mc-check-toggle{display:block!important;margin:8px 0 0!important;padding:6px 2px!important;background:transparent!important;border:0!important;color:#745c9c!important;font-size:12px!important;font-weight:700!important;text-align:left!important}
