@@ -1,4 +1,4 @@
-/* Minna floating chat composer v1.220. Legacy quick add/editor retained as save and edit adapters. */
+/* Minna floating chat composer v1.221. Legacy quick add/editor retained as save and edit adapters. */
 (() => {
 'use strict';
 const $=id=>document.getElementById(id);
@@ -40,7 +40,21 @@ input.addEventListener('input',scheduleBubblePosition);
 new ResizeObserver(scheduleBubblePosition).observe(modal);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateStr=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
-let pending=null,priority='medium';
+let pending=null,priority='medium',checkItems=[];
+function detectList(title){
+ const m=/^(buy|pick up|get|pack|bring|clean|prepare|order|purchase)\s+(.+)$/i.exec(title);
+ if(!m)return null;
+ const body=m[2].replace(/[.!?]+$/,'').trim();
+ if(!/,|\s+and\s+|\s*&\s*/i.test(body))return null;
+ const parts=body.split(/,\s*|\s+and\s+|\s*&\s*/i).map(x=>x.trim()).filter(Boolean);
+ if(parts.length<2||parts.length>12||parts.some(x=>x.split(/\s+/).length>6))return null;
+ return {title:m[1].toLowerCase()==='buy'?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:parts.map(x=>({text:x[0].toUpperCase()+x.slice(1),done:false}))};
+}
+function renderChecklist(){
+ const host=convo.querySelector('#mcChecklist');if(!host)return;
+ host.innerHTML=checkItems.length?'<div class="mc-checklist-heading">CHECKLIST · '+checkItems.length+'</div>'+checkItems.map((x,i)=>'<div class="mc-check-row"><input type="text" data-mc-item="'+i+'" maxlength="160" aria-label="Checklist item '+(i+1)+'" value="'+escape(x.text)+'"><button type="button" data-mc-remove="'+i+'" aria-label="Remove item">×</button></div>').join(''):'';
+}
+
 function parse(raw){
  let title=raw.trim(),date='',time='';const today=new Date();today.setHours(12,0,0,0);
  const rel=/\b(day after tomorrow|tomorrow|today)\b/i.exec(title);
@@ -53,25 +67,26 @@ function parse(raw){
  title=title.replace(/\s+/g,' ').replace(/\s+([,.!?])/g,'$1').trim();
  return {title: title.slice(0,120),date,time};
 }
-function open(){if(legacy.open)legacy.close();pending=null;priority='medium';modal.classList.remove('mc-reviewing');input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();settleBubble();setTimeout(()=>{input.focus({preventScroll:true});settleBubble();},120);}
+function open(){if(legacy.open)legacy.close();pending=null;priority='medium';checkItems=[];modal.classList.remove('mc-reviewing');input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();settleBubble();setTimeout(()=>{input.focus({preventScroll:true});settleBubble();},120);}
 plus.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();open();},true);
 $('mcClose').onclick=()=>modal.close();
 $('mcOptions').onclick=()=>{$('mcOptionsPanel').hidden=!$('mcOptionsPanel').hidden;};
 function previewCard(){
  const date=pending.date?new Date(pending.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'}).toUpperCase():'Add date';
  const time=pending.time||'Add time';
- return '<div class="mc-reply mc-confirm"><div class="mc-reminder-card" data-priority="'+priority+'"><div class="mc-reminder-meta"><div class="mc-picker-direct"><button type="button" data-mc-picker="date" aria-label="Choose date">'+escape(date)+'</button><input id="mcDate" aria-label="Reminder date" type="date" value="'+escape(pending.date)+'"></div><div class="mc-picker-direct"><button type="button" data-mc-picker="time" aria-label="Choose time">'+escape(time)+'</button><input id="mcTime" aria-label="Reminder time" type="time" value="'+escape(pending.time)+'"></div></div><h3>'+escape(pending.title)+'</h3></div><p class="mc-tap-hint">Tap date or time to change</p><div class="mc-priorities" role="group" aria-label="Select reminder priority"><button type="button" data-mc-priority="high">High</button><button type="button" data-mc-priority="medium">Medium</button><button type="button" data-mc-priority="low">Low</button><button type="button" data-mc-priority="misc">Misc</button></div><button type="button" class="mc-confirm-save" id="mcSave">Add Reminder</button><p class="mc-warning" id="mcWarning" hidden></p></div>';
+ return '<div class="mc-reply mc-confirm"><div class="mc-reminder-card" data-priority="'+priority+'"><div class="mc-reminder-meta"><div class="mc-picker-direct"><button type="button" data-mc-picker="date" aria-label="Choose date">'+escape(date)+'</button><input id="mcDate" aria-label="Reminder date" type="date" value="'+escape(pending.date)+'"></div><div class="mc-picker-direct"><button type="button" data-mc-picker="time" aria-label="Choose time">'+escape(time)+'</button><input id="mcTime" aria-label="Reminder time" type="time" value="'+escape(pending.time)+'"></div></div><h3>'+escape(pending.title)+'</h3><div id="mcChecklist"></div></div><button type="button" class="mc-check-toggle" id="mcConvert">'+(checkItems.length?'Edit checklist · Add item':'Convert to checklist')+'</button><p class="mc-tap-hint">Tap date or time to change</p><div class="mc-priorities" role="group" aria-label="Select reminder priority"><button type="button" data-mc-priority="high">High</button><button type="button" data-mc-priority="medium">Medium</button><button type="button" data-mc-priority="low">Low</button><button type="button" data-mc-priority="misc">Misc</button></div><button type="button" class="mc-confirm-save" id="mcSave">Add Reminder</button><p class="mc-warning" id="mcWarning" hidden></p></div>';
 }
 function prepare(){
  const raw=input.value.trim();if(!raw)return;
- pending=parse(raw);if(!pending.title){convo.innerHTML='<p class="mc-note">Please include what you want to remember.</p>';return;}
+ pending=parse(raw);const detected=detectList(pending.title);checkItems=detected?detected.items:[];if(detected)pending.title=detected.title;if(!pending.title){convo.innerHTML='<p class="mc-note">Please include what you want to remember.</p>';return;}
  priority='medium';
- convo.innerHTML=previewCard();
+ convo.innerHTML=previewCard();renderChecklist();
  modal.classList.add('mc-reviewing');input.blur();
  input.value='';convo.scrollTop=convo.scrollHeight;scheduleBubblePosition();
 }
 $('mcSend').onclick=prepare;
 input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();prepare();}});
+convo.addEventListener('input',e=>{if(e.target.dataset.mcItem!==undefined){const n=Number(e.target.dataset.mcItem);if(checkItems[n])checkItems[n].text=e.target.value;}});
 convo.addEventListener('change',e=>{
  if(!pending)return;
  if(e.target.id==='mcDate')pending.date=e.target.value;
@@ -83,6 +98,8 @@ convo.addEventListener('change',e=>{
 });
 convo.addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
+ if(b.id==='mcConvert'){checkItems.push({text:'',done:false});renderChecklist();convo.querySelector('[data-mc-item="'+(checkItems.length-1)+'"]')?.focus();scheduleBubblePosition();return;}
+ if(b.dataset.mcRemove!==undefined){checkItems.splice(Number(b.dataset.mcRemove),1);renderChecklist();scheduleBubblePosition();return;}
  if(b.dataset.mcPicker){const picker=$(b.dataset.mcPicker==='date'?'mcDate':'mcTime');if(picker){try{picker.showPicker()}catch(_){picker.focus();picker.click()}}return;}
  if(b.dataset.mcPriority){
   priority=b.dataset.mcPriority;
@@ -101,6 +118,7 @@ function bridge(edit){
  $('quickAddTitle').value=pending.title;
  $('quickAddDate').value=date;$('quickAddTime').value=time;$('quickAddPriority').value=priority;
  if(edit){$('quickAddMoreBtn').click();return;}
+ window.minnaChatChecklistPayload=checkItems.map(x=>({text:x.text.trim(),done:false})).filter(x=>x.text);
  $('quickAddForm').requestSubmit();
 }
 $('mcFullEditor').onclick=()=>{pending={title:input.value.trim().slice(0,120),date:'',time:''};bridge(true);};
