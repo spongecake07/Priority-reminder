@@ -1,6 +1,6 @@
 {
   "name": "minna-reminders",
-  "version": "1.202.0",
+  "version": "1.203.0",
   "private": true,
   "scripts": {
     "android:prepare": "node scripts/prepare-android.mjs",
