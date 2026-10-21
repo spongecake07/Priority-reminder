@@ -1,0 +1,30 @@
+/* v1.200: the date tile and colored inset have identical vertical edges.
+   The card's grid row establishes the height; the date tile stretches within it. */
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-due-split{
+ align-self:stretch!important;
+ height:auto!important;
+ min-height:0!important;
+ margin:5px 5px!important;
+ box-sizing:border-box!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date>.card-due-split{
+ align-self:stretch!important;
+ height:auto!important;
+ min-height:0!important;
+ margin:5px 5px!important;
+}
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-due-split .collapsed-due{
+ height:100%!important;
+ min-height:0!important;
+ box-sizing:border-box!important;
+}
+html body .minna-home-version{
+ display:block;
+ width:max-content;
+ font-size:11px;
+ line-height:1.2;
+ font-weight:600;
+ letter-spacing:.03em;
+ color:#858297;
+ margin:0 0 8px 2px;
+}
