@@ -1,13 +1,15 @@
-/* Minna chat composer v1.211. Legacy quick add/editor retained as save and edit adapters. */
+/* Minna floating chat composer v1.212. Legacy quick add/editor retained as save and edit adapters. */
 (() => {
 'use strict';
 const $=id=>document.getElementById(id);
 const plus=$('addBtn'), legacy=$('quickAddDialog');
 if(!plus||!legacy)return;
-const modal=document.createElement('dialog');modal.id='minnaChatDialog';modal.className='minna-chat-dialog';
+const modal=document.createElement('dialog');modal.id='minnaChatDialog';modal.className='minna-chat-dialog minna-floating-chat';
 modal.innerHTML='<div class="mc-shell"><header class="mc-head"><strong>✦ Minna</strong><button type="button" id="mcClose" aria-label="Close">×</button></header><div class="mc-conversation" id="mcConversation"><div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div></div><div class="mc-compose"><textarea id="mcInput" rows="2" placeholder="Message Minna…" aria-label="Message Minna"></textarea><div class="mc-actions"><button type="button" id="mcOptions" aria-label="More options">＋</button><button type="button" id="mcSend" aria-label="Prepare reminder">↑</button></div><div class="mc-options" id="mcOptionsPanel" hidden><button type="button" id="mcFullEditor">Open Full Reminder Editor</button><button type="button" id="mcOldAdd">Classic Quick Add</button></div></div></div>';
 document.body.appendChild(modal);
 const convo=$('mcConversation'),input=$('mcInput');
+function positionBubble(){const vv=window.visualViewport;const keyboard=vv?Math.max(0,window.innerHeight-vv.height-vv.offsetTop):0;const raised=keyboard>100;modal.style.setProperty('--mc-bottom',(raised?keyboard+12:90)+'px');modal.classList.toggle('mc-keyboard-open',raised)}
+window.visualViewport?.addEventListener('resize',positionBubble);window.visualViewport?.addEventListener('scroll',positionBubble);window.addEventListener('resize',positionBubble);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateStr=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
 let pending=null,priority='medium';
@@ -23,7 +25,7 @@ function parse(raw){
  title=title.replace(/\s+/g,' ').replace(/\s+([,.!?])/g,'$1').trim();
  return {title: title.slice(0,120),date,time};
 }
-function open(){if(legacy.open)legacy.close();pending=null;priority='medium';input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.showModal();setTimeout(()=>input.focus(),120);}
+function open(){if(legacy.open)legacy.close();pending=null;priority='medium';input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();positionBubble();setTimeout(()=>{input.focus({preventScroll:true});positionBubble();},120);}
 plus.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();open();},true);
 $('mcClose').onclick=()=>modal.close();
 $('mcOptions').onclick=()=>{$('mcOptionsPanel').hidden=!$('mcOptionsPanel').hidden;};
