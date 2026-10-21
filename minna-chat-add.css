@@ -33,3 +33,41 @@ dialog.minna-chat-dialog::backdrop{background:#0006}
 .minna-chat-dialog .mc-save{background:#8067b6;color:white;border:0}
 .minna-chat-dialog .mc-edit{background:white;color:#67528c;border:1px solid #b9a9d7}
 .minna-chat-dialog .mc-warning{font-size:12px;color:#a33d4d}
+
+/* v1.212 floating composer: override the previous full-screen dialog only. */
+dialog.minna-chat-dialog.minna-floating-chat{
+ position:fixed!important;inset:auto 12px var(--mc-bottom,90px) 12px!important;
+ top:auto!important;left:12px!important;right:12px!important;
+ width:calc(100% - 24px)!important;max-width:520px!important;
+ height:auto!important;max-height:min(65dvh,480px)!important;
+ margin:0 auto!important;padding:0!important;
+ background:#fff!important;border:0!important;border-radius:24px!important;
+ box-shadow:0 14px 38px #34234738,0 5px 12px #34234720!important;
+ overflow:visible!important;z-index:9998!important;
+}
+dialog.minna-floating-chat .mc-shell{
+ height:auto!important;max-height:min(65dvh,480px)!important;
+ padding:0!important;overflow:visible!important;
+}
+dialog.minna-floating-chat .mc-head{
+ padding:12px 16px 7px!important;border:0!important;
+}
+dialog.minna-floating-chat .mc-head strong{font-size:14px!important}
+dialog.minna-floating-chat .mc-head button{width:27px!important;height:27px!important;font-size:20px!important}
+dialog.minna-floating-chat .mc-conversation{
+ flex:0 1 auto!important;min-height:0!important;max-height:260px!important;
+ padding:0 14px!important;overflow-y:auto!important;
+}
+dialog.minna-floating-chat .mc-welcome{display:none!important}
+dialog.minna-floating-chat .mc-conversation:has(.mc-welcome){display:none!important}
+dialog.minna-floating-chat .mc-compose{
+ margin:0 10px 10px!important;padding:8px 10px!important;
+ border:1px solid #e8e3ed!important;border-radius:18px!important;
+ box-shadow:none!important;
+}
+dialog.minna-floating-chat #mcInput{min-height:36px!important;max-height:100px!important;font-size:15px!important}
+dialog.minna-floating-chat .mc-actions{margin-top:2px!important}
+dialog.minna-floating-chat .mc-reply{margin-bottom:10px!important}
+dialog.minna-floating-chat .mc-options{z-index:2!important}
+dialog.minna-floating-chat.mc-keyboard-open{max-height:min(56dvh,420px)!important}
+@media(min-width:560px){dialog.minna-chat-dialog.minna-floating-chat{left:50%!important;right:auto!important;transform:translateX(-50%)!important;margin:0!important}}
