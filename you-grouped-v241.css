@@ -25,3 +25,9 @@
 #settingsDialog .notification-settings,#settingsDialog .minna-manual-update{border-left:3px solid #b3a1d6!important}
 #settingsDialog .settings-section:has(#exportBackupBtn),#settingsDialog .settings-section:has(#recentlyDeletedBtn){border-left:3px solid #9c88c7!important}
 #settingsDialog .danger-settings{margin-top:8px!important}
+
+/* Section labels mark groups while retaining every original settings control. */
+#settingsDialog .category-settings::before,#settingsDialog .notification-settings::before,#settingsDialog .settings-section:has(#exportBackupBtn)::before{display:block;font-size:15px;font-weight:750;color:#40364e;margin:0 0 12px}
+#settingsDialog .category-settings::before{content:"Personalization"}
+#settingsDialog .notification-settings::before{content:"App Settings"}
+#settingsDialog .settings-section:has(#exportBackupBtn)::before{content:"Data & Backup"}
