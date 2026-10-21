@@ -1,4 +1,4 @@
-/* Minna floating chat composer v1.217. Legacy quick add/editor retained as save and edit adapters. */
+/* Minna floating chat composer v1.218. Legacy quick add/editor retained as save and edit adapters. */
 (() => {
 'use strict';
 const $=id=>document.getElementById(id);
@@ -60,13 +60,13 @@ $('mcOptions').onclick=()=>{$('mcOptionsPanel').hidden=!$('mcOptionsPanel').hidd
 function previewCard(){
  const date=pending.date?new Date(pending.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'}).toUpperCase():'Add date';
  const time=pending.time||'Add time';
- return '<div class="mc-reply mc-confirm"><div class="mc-reminder-card" data-priority="'+priority+'"><div class="mc-reminder-meta"><label class="mc-picker"><span>📅 '+escape(date)+'</span><input id="mcDate" aria-label="Change reminder date" type="date" value="'+escape(pending.date)+'"></label><label class="mc-picker"><span>◷ '+escape(time)+'</span><input id="mcTime" aria-label="Change reminder time" type="time" value="'+escape(pending.time)+'"></label></div><h3>'+escape(pending.title)+'</h3></div><p class="mc-tap-hint">Tap date or time to change</p><div class="mc-priorities" role="group" aria-label="Confirm priority and save"><button type="button" data-mc-priority="high">High</button><button type="button" data-mc-priority="medium">Medium</button><button type="button" data-mc-priority="low">Low</button><button type="button" data-mc-priority="misc">Misc</button></div><p class="mc-warning" id="mcWarning" hidden></p></div>';
+ return '<div class="mc-reply mc-confirm"><div class="mc-reminder-card" data-priority="'+priority+'"><div class="mc-reminder-meta"><button type="button" class="mc-picker-button" data-mc-picker="date">📅 '+escape(date)+'</button><button type="button" class="mc-picker-button" data-mc-picker="time">◷ '+escape(time)+'</button></div><h3>'+escape(pending.title)+'</h3></div><p class="mc-tap-hint">Tap date or time to change</p><div class="mc-priorities" role="group" aria-label="Select reminder priority"><button type="button" data-mc-priority="high">High</button><button type="button" data-mc-priority="medium">Medium</button><button type="button" data-mc-priority="low">Low</button><button type="button" data-mc-priority="misc">Misc</button></div><button type="button" class="mc-confirm-save" id="mcSave">Add Reminder</button><p class="mc-warning" id="mcWarning" hidden></p><input class="mc-native-picker" id="mcDate" aria-label="Reminder date" type="date" value="'+escape(pending.date)+'"><input class="mc-native-picker" id="mcTime" aria-label="Reminder time" type="time" value="'+escape(pending.time)+'"></div>';
 }
 function prepare(){
  const raw=input.value.trim();if(!raw)return;
  pending=parse(raw);if(!pending.title){convo.innerHTML='<p class="mc-note">Please include what you want to remember.</p>';return;}
  priority='medium';
- convo.innerHTML='<div class="mc-message">'+escape(raw)+'</div>'+previewCard();
+ convo.innerHTML=previewCard();
  input.value='';convo.scrollTop=convo.scrollHeight;scheduleBubblePosition();
 }
 $('mcSend').onclick=prepare;
@@ -75,12 +75,25 @@ convo.addEventListener('change',e=>{
  if(!pending)return;
  if(e.target.id==='mcDate')pending.date=e.target.value;
  if(e.target.id==='mcTime')pending.time=e.target.value;
- const labels=convo.querySelectorAll('.mc-picker span');if(labels[0])labels[0].textContent='📅 '+(pending.date?new Date(pending.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'}).toUpperCase():'Add date');if(labels[1])labels[1].textContent='◷ '+(pending.time||'Add time');
+ const buttons=convo.querySelectorAll('.mc-picker-button');
+ if(buttons[0])buttons[0].textContent='📅 '+(pending.date?new Date(pending.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'}).toUpperCase():'Add date');
+ if(buttons[1])buttons[1].textContent='◷ '+(pending.time||'Add time');
  scheduleBubblePosition();
 });
 convo.addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
- if(b.dataset.mcPriority){priority=b.dataset.mcPriority;bridge(false);}
+ if(b.dataset.mcPicker){
+  const picker=$(b.dataset.mcPicker==='date'?'mcDate':'mcTime');
+  if(picker){try{if(typeof picker.showPicker==='function')picker.showPicker();else picker.click();}catch(_){picker.focus();picker.click();}}
+  return;
+ }
+ if(b.dataset.mcPriority){
+  priority=b.dataset.mcPriority;
+  const card=convo.querySelector('.mc-reminder-card');if(card)card.dataset.priority=priority;
+  convo.querySelectorAll('[data-mc-priority]').forEach(x=>x.classList.toggle('selected',x===b));
+  return;
+ }
+ if(b.id==='mcSave')bridge(false);
 });
 function bridge(edit){
  if(!pending){if(edit){pending={title:'',date:'',time:''};}else return;}
