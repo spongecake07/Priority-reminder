@@ -36,7 +36,7 @@ function suggest(title){
  const ranked=PRIORITIES.slice().sort((a,b)=>scores[b]-scores[a]);
  const best=ranked[0],runner=ranked[1];
  const confident=support[best]>=3&&scores[best]>=1.8&&scores[best]>=scores[runner]*1.8;
- return {priority:confident?best:'medium',confident,examples:examples.length,similar:confident?support[best]:0};
+ return {priority:confident?best:'medium',confident,examples:examples.length,similar:confident?support[best]:0,support:{...support},scores:{...scores},conflict:scores[best]>0&&scores[runner]>0&&scores[best]<scores[runner]*1.8,reason:confident?'Supported by distinct similar reminders':scores[best]===0?'No similar examples yet':scores[runner]>0&&scores[best]<scores[runner]*1.8?'Conflicting evidence':'Not enough reliable evidence'};
 }
 function record(title,chosen,predicted,confident=false){
  if(!PRIORITIES.includes(chosen)||!String(title||'').trim())return;
