@@ -54,3 +54,15 @@ html body .reminder-list article.reminder-card.collapsed.has-date>.card-due-spli
 html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed.has-date>.card-due-split{
  border-radius:16px!important;
 }
+
+/* v1.206: collapsible reminder sections */
+html body .reminder-list .minna-section-toggle{
+ width:100%;cursor:pointer;text-align:left;background:transparent;border:0;
+ font:inherit;color:inherit;display:flex;align-items:center;gap:5px;
+}
+html body .reminder-list .minna-section-toggle .minna-section-count{white-space:nowrap}
+html body .reminder-list .minna-section-toggle .minna-section-chevron{
+ margin-left:auto;font-size:17px;line-height:1;opacity:.65;transform:rotate(180deg);
+}
+html body .reminder-list .minna-section-toggle.minna-section-closed .minna-section-chevron{transform:rotate(0deg)}
+html body .reminder-list .minna-section-hidden{display:none!important}
