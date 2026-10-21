@@ -109,7 +109,8 @@ convo.addEventListener('change',e=>{
 });
 convo.addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
- if(b.id==='mcCategoryButton'){const picker=convo.querySelector('#mcCategorySelect');if(picker){try{picker.showPicker()}catch(_){picker.focus();picker.click()}}return;}\n if(b.id==='mcConvert'){checkItems.push({text:'',done:false});renderChecklist();convo.querySelector('[data-mc-item="'+(checkItems.length-1)+'"]')?.focus();scheduleBubblePosition();return;}
+ if(b.id==='mcCategoryButton'){const picker=convo.querySelector('#mcCategorySelect');if(picker){try{picker.showPicker()}catch(_){picker.focus();picker.click()}}return;}
+ if(b.id==='mcConvert'){checkItems.push({text:'',done:false});renderChecklist();convo.querySelector('[data-mc-item="'+(checkItems.length-1)+'"]')?.focus();scheduleBubblePosition();return;}
  if(b.dataset.mcRemove!==undefined){checkItems.splice(Number(b.dataset.mcRemove),1);renderChecklist();scheduleBubblePosition();return;}
  if(b.dataset.mcPicker){const picker=$(b.dataset.mcPicker==='date'?'mcDate':'mcTime');if(picker){try{picker.showPicker()}catch(_){picker.focus();picker.click()}}return;}
  if(b.dataset.mcPriority){
