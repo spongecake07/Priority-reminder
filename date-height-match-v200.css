@@ -47,3 +47,10 @@ html body .reminder-list article.reminder-card.collapsed.no-date .card-title-wra
 html body #calendarDialog article.calendar-home-card.collapsed.no-date .card-title-wrap{
  border-radius:24px!important;
 }
+
+/* v1.203: optically match the date tile's corners to the wider colored
+   reminder inset. A narrower tile needs a smaller numeric radius. */
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-due-split,
+html body #calendarDialog .calendar-day-list article.calendar-home-card.collapsed.has-date>.card-due-split{
+ border-radius:16px!important;
+}
