@@ -49,9 +49,11 @@ function detectList(title){
  // Avoid splitting ordinary sentences or descriptive purchases such as "buy new winter boots".
  if(!/,|\s+and\s+|\s*&\s*/i.test(body)){
   if(!/^(buy|pick up|get|order|purchase)$/i.test(m[1]))return null;
-  const nouns=new Set('book books crayon crayons milk bread eggs egg butter cheese yogurt yoghurt apples apple bananas banana oranges orange grapes grape rice pasta cereal flour sugar salt pepper coffee tea water juice soap shampoo toothpaste toothbrush diapers wipes batteries pens pen pencils pencil paper notebooks notebook markers marker glue tape socks shoes shirts shirt towels towel batteries battery carrots carrot potatoes potato onions onion tomatoes tomato lettuce spinach broccoli chicken beef fish beans bean'.split(' '));
   const tokens=body.split(/\s+/).filter(Boolean);
-  if(tokens.length<3||tokens.length>12||!tokens.every(w=>nouns.has(w.toLowerCase())))return null;
+  // A bare run of 3+ short item-like words is a possible list. Unknown items
+  // are allowed; descriptive phrases and sentence grammar are left untouched.
+  const grammar=/^(a|an|the|my|our|your|some|any|new|old|big|small|large|little|fresh|frozen|red|blue|green|black|white|winter|summer|birthday|school|work|home|office|good|best|cheap|expensive|two|three|four|five|to|for|from|of|in|on|at|by|before|after|because|when|while|that|which|who|is|are|was|were|will|should|can|need|needs|want|wants|with|without)$/i;
+  if(tokens.length<3||tokens.length>8||tokens.some(w=>!/^[-'a-zà-ÿ]+$/i.test(w)||grammar.test(w)))return null;
   return {title:/^buy$/i.test(m[1])?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:tokens.map(w=>({text:w[0].toUpperCase()+w.slice(1),done:false}))};
  }
  const parts=body.split(/,\s*|\s+and\s+|\s*&\s*/i).map(x=>x.trim()).filter(Boolean);
