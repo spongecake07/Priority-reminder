@@ -1972,7 +1972,7 @@ html body .filter-disclosure .home-date-filter.date-filter-row .glance-stat stro
 html body .filter-disclosure .home-date-filter.date-filter-row .glance-stat small{font-size:clamp(9px,2.6vw,12px)!important}
 @media(prefers-reduced-motion:reduce){html body .filter-disclosure .home-filter-chevron{transition:none!important}}
 /* Filter disclosure palette: date is the surface, priority is a separate chip. */
-html body .app-shell>.home-tools.glance-filter.filter-disclosure>#homeFilterToggle.home-filter-summary[data-view="all"]{background:#D5DFEB!important}
+html body .app-shell>.home-tools.glance-filter.filter-disclosure>#homeFilterToggle.home-filter-summary[data-view="all"]{background:#FFFFFF!important}
 html body .app-shell>.home-tools.glance-filter.filter-disclosure>#homeFilterToggle.home-filter-summary[data-view="today"]{background:#E8E1FF!important}
 html body .app-shell>.home-tools.glance-filter.filter-disclosure>#homeFilterToggle.home-filter-summary[data-view="upcoming"]{background:#CDEBE8!important}
 html body .app-shell>.home-tools.glance-filter.filter-disclosure>#homeFilterToggle.home-filter-summary[data-view="overdue"]{background:#E8A6A8!important}
