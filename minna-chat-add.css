@@ -79,3 +79,12 @@ dialog.minna-floating-chat .mc-head button{width:25px!important;height:25px!impo
 dialog.minna-floating-chat .mc-compose{margin:11px 10px 10px!important;padding:8px 10px!important;padding-top:22px!important}
 dialog.minna-floating-chat #mcInput{background:#fff!important;background-color:#fff!important;color:#302b40!important;-webkit-text-fill-color:#302b40!important;border:0!important;box-shadow:none!important;border-radius:0!important;appearance:none!important;-webkit-appearance:none!important}
 dialog.minna-floating-chat #mcInput::placeholder{color:#8c8596!important;-webkit-text-fill-color:#8c8596!important;opacity:1!important}
+
+/* v1.214 minimal chat controls */
+dialog.minna-floating-chat .mc-head{top:10px!important;right:13px!important}
+dialog.minna-floating-chat .mc-head button{background:transparent!important;border:0!important;box-shadow:none!important;color:#786f83!important;font-size:21px!important}
+dialog.minna-floating-chat .mc-compose{border:0!important;box-shadow:none!important;margin:0 10px 8px!important;padding:22px 10px 7px!important}
+dialog.minna-floating-chat #mcInput{resize:none!important;overflow-y:auto!important;outline:none!important}
+dialog.minna-floating-chat .mc-actions button{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;width:30px!important;height:30px!important;min-width:30px!important;min-height:30px!important;line-height:1!important;padding:0!important;box-shadow:none!important}
+dialog.minna-floating-chat #mcOptions{background:transparent!important;color:#8069b5!important;border:0!important;border-radius:0!important;font-size:27px!important;font-weight:400!important}
+dialog.minna-floating-chat #mcSend{background:#8069b5!important;color:white!important;border:0!important;border-radius:50%!important;font-size:20px!important;font-weight:600!important}
