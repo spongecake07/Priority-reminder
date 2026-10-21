@@ -22,7 +22,7 @@ $('mldTestRun').onclick=()=>{
  const title=$('mldTestInput').value.trim(),result=$('mldTestResult');
  if(!title){result.textContent='Enter a sample reminder first.';return;}
  const p=api.suggest(title),support=p.support||{},counts=Object.keys(labels).map(k=>labels[k]+': '+(support[k]||0)).join(' · ');
- result.innerHTML='<strong>Predicted: '+esc(labels[p.priority]||'Medium')+'</strong><small>Confidence: '+(p.confident?'Confident':'Fallback')+'</small><small>Distinct supporting examples: '+(p.confident?p.similar:Math.max(0,...Object.values(support)))+'</small><small>Conflicting evidence: '+(p.conflict?'Yes':'No clear conflict')+'</small><small>'+esc(p.reason||'Not enough reliable evidence')+'</small><small>Evidence by priority: '+esc(counts)+'</small>';
+ result.innerHTML='<strong>Predicted: '+esc(labels[p.priority]||'Medium')+'</strong><small>Confidence: '+(p.confident?'Confident':'Fallback')+'</small><small>Top matching distinct examples: '+Math.max(0,...Object.values(support))+'</small><small>Conflicting evidence: '+(p.conflict?'Yes':'No clear conflict')+'</small><small>'+esc(p.reason||'Not enough reliable evidence')+'</small><small>Evidence by priority: '+esc(counts)+'</small>';
 };
 $('mldTestInput').addEventListener('keydown',e=>{if(e.key==='Enter'){$('mldTestRun').click();}});
 $('mldExport').onclick=()=>{const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),examples:api.examples()},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='minna-priority-learning-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)};
