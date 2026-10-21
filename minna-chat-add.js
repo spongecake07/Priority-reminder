@@ -1,4 +1,4 @@
-/* Minna floating chat composer v1.215. Legacy quick add/editor retained as save and edit adapters. */
+/* Minna floating chat composer v1.216. Legacy quick add/editor retained as save and edit adapters. */
 (() => {
 'use strict';
 const $=id=>document.getElementById(id);
@@ -21,8 +21,23 @@ function positionBubble(){
 }
 let positionFrame=0;
 function scheduleBubblePosition(){cancelAnimationFrame(positionFrame);positionFrame=requestAnimationFrame(positionBubble)}
-
-window.visualViewport?.addEventListener('resize',scheduleBubblePosition);window.visualViewport?.addEventListener('scroll',scheduleBubblePosition);window.addEventListener('resize',scheduleBubblePosition);
+let settleTimer=0;
+function settleBubble(){
+ scheduleBubblePosition();
+ clearInterval(settleTimer);
+ let checks=0;
+ settleTimer=setInterval(()=>{
+  if(!modal.open||++checks>24){clearInterval(settleTimer);return;}
+  scheduleBubblePosition();
+ },75);
+}
+window.visualViewport?.addEventListener('resize',settleBubble);
+window.visualViewport?.addEventListener('scroll',scheduleBubblePosition);
+window.addEventListener('resize',settleBubble);
+window.addEventListener('orientationchange',settleBubble);
+input.addEventListener('focus',settleBubble);
+input.addEventListener('input',scheduleBubblePosition);
+new ResizeObserver(scheduleBubblePosition).observe(modal);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateStr=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
 let pending=null,priority='medium';
@@ -38,7 +53,7 @@ function parse(raw){
  title=title.replace(/\s+/g,' ').replace(/\s+([,.!?])/g,'$1').trim();
  return {title: title.slice(0,120),date,time};
 }
-function open(){if(legacy.open)legacy.close();pending=null;priority='medium';input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();scheduleBubblePosition();setTimeout(()=>{input.focus({preventScroll:true});scheduleBubblePosition();},120);}
+function open(){if(legacy.open)legacy.close();pending=null;priority='medium';input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();settleBubble();setTimeout(()=>{input.focus({preventScroll:true});settleBubble();},120);}
 plus.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();open();},true);
 $('mcClose').onclick=()=>modal.close();
 $('mcOptions').onclick=()=>{$('mcOptionsPanel').hidden=!$('mcOptionsPanel').hidden;};
