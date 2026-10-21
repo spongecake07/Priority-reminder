@@ -146,3 +146,9 @@ dialog.minna-floating-chat .mc-check-toggle{display:block!important;margin:8px 0
 
 /* v1.222 quiet learning hint */
 dialog.minna-floating-chat .mc-learning-hint{margin:7px 2px 4px!important;font-size:11px!important;font-weight:650!important;color:#79669a!important}
+
+/* v1.233 three compact metadata pickers */
+dialog.minna-floating-chat .mc-reminder-meta{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;flex-wrap:nowrap!important}
+dialog.minna-floating-chat .mc-picker-direct{min-width:0!important;width:100%!important}
+dialog.minna-floating-chat .mc-picker-direct button{min-width:0!important;width:100%!important;padding:8px 5px!important;font-size:12px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+dialog.minna-floating-chat #mcCategorySelect{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;pointer-events:none!important;z-index:-1!important}
