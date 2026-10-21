@@ -89,3 +89,30 @@ html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-da
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-title{
  margin:0!important;padding:0!important;
 }
+
+/* v1.199: anchor alert pill inside the priority row, away from rounded edge. */
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .minna-card-topline .minna-compact-details{
+ position:absolute!important;
+ top:50%!important;
+ right:12px!important;
+ bottom:auto!important;
+ transform:translateY(-50%)!important;
+ display:inline-flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ flex:0 0 auto!important;
+ width:max-content!important;
+ max-width:90px!important;
+ min-height:28px!important;
+ height:auto!important;
+ padding:4px 7px!important;
+ margin:0!important;
+ border-radius:999px!important;
+ overflow:visible!important;
+ box-sizing:border-box!important;
+ z-index:3!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .minna-card-topline{
+ padding-right:44px!important;
+ overflow:visible!important;
+}
