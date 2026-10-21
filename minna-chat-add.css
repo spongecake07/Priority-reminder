@@ -88,3 +88,6 @@ dialog.minna-floating-chat #mcInput{resize:none!important;overflow-y:auto!import
 dialog.minna-floating-chat .mc-actions button{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;width:30px!important;height:30px!important;min-width:30px!important;min-height:30px!important;line-height:1!important;padding:0!important;box-shadow:none!important}
 dialog.minna-floating-chat #mcOptions{background:transparent!important;color:#8069b5!important;border:0!important;border-radius:0!important;font-size:27px!important;font-weight:400!important}
 dialog.minna-floating-chat #mcSend{background:#8069b5!important;color:white!important;border:0!important;border-radius:50%!important;font-size:20px!important;font-weight:600!important}
+
+/* v1.215 viewport-anchored positioning; avoid CSS bottom competing with keyboard. */
+dialog.minna-chat-dialog.minna-floating-chat{top:var(--mc-top,auto)!important;bottom:auto!important;inset-block-end:auto!important}
