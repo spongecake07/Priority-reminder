@@ -66,3 +66,22 @@ html body .reminder-list .minna-section-toggle .minna-section-chevron{
 }
 html body .reminder-list .minna-section-toggle.minna-section-closed .minna-section-chevron{transform:rotate(0deg)}
 html body .reminder-list .minna-section-hidden{display:none!important}
+
+/* v1.207: keep section rule between title and far-right toggle. */
+html body .reminder-list button.home-section-divider.minna-section-toggle{
+ display:flex!important;align-items:center!important;width:calc(100% - 8px)!important;
+ justify-content:flex-start!important;gap:10px!important;
+}
+html body .reminder-list button.home-section-divider.minna-section-toggle::after{
+ content:""!important;display:block!important;flex:1 1 auto!important;
+ min-width:12px!important;order:1!important;height:1px!important;
+ background:var(--ui-section-line,#d5d5df)!important;
+}
+html body .reminder-list button.home-section-divider.minna-section-toggle .minna-section-chevron{
+ order:2!important;margin-left:0!important;margin-right:0!important;
+ flex:0 0 24px!important;text-align:center!important;
+ font-size:19px!important;opacity:.75!important;
+}
+html body .reminder-list article.reminder-card.minna-section-hidden{
+ display:none!important;
+}
