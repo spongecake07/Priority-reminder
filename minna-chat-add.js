@@ -17,7 +17,7 @@ function positionBubble(){
  modal.classList.toggle('mc-keyboard-open',raised);
  const desiredBottom=viewportBottom-(raised?12:90);
  const height=modal.getBoundingClientRect().height;
- modal.style.top=Math.max(vv?.offsetTop||0,desiredBottom-height)+'px';
+ modal.style.setProperty('--mc-top',Math.max(vv?.offsetTop||0,desiredBottom-height)+'px');
 }
 let positionFrame=0;
 function scheduleBubblePosition(){cancelAnimationFrame(positionFrame);positionFrame=requestAnimationFrame(positionBubble)}
