@@ -45,7 +45,15 @@ function detectList(title){
  const m=/^(buy|pick up|get|pack|bring|clean|prepare|order|purchase)\s+(.+)$/i.exec(title);
  if(!m)return null;
  const body=m[2].replace(/[.!?]+$/,'').trim();
- if(!/,|\s+and\s+|\s*&\s*/i.test(body))return null;
+ // Conservative undelimited shopping lists: require 3+ recognized standalone item nouns.
+ // Avoid splitting ordinary sentences or descriptive purchases such as "buy new winter boots".
+ if(!/,|\\s+and\\s+|\\s*&\\s*/i.test(body)){
+  if(!/^(buy|pick up|get|order|purchase)$/i.test(m[1]))return null;
+  const nouns=new Set('book books crayon crayons milk bread eggs egg butter cheese yogurt yoghurt apples apple bananas banana oranges orange grapes grape rice pasta cereal flour sugar salt pepper coffee tea water juice soap shampoo toothpaste toothbrush diapers wipes batteries pens pen pencils pencil paper notebooks notebook markers marker glue tape socks shoes shirts shirt towels towel batteries battery carrots carrot potatoes potato onions onion tomatoes tomato lettuce spinach broccoli chicken beef fish beans bean'.split(' '));
+  const tokens=body.split(/\\s+/).filter(Boolean);
+  if(tokens.length<3||tokens.length>12||!tokens.every(w=>nouns.has(w.toLowerCase())))return null;
+  return {title:/^buy$/i.test(m[1])?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:tokens.map(w=>({text:w[0].toUpperCase()+w.slice(1),done:false}))};
+ }
  const parts=body.split(/,\s*|\s+and\s+|\s*&\s*/i).map(x=>x.trim()).filter(Boolean);
  if(parts.length<2||parts.length>12||parts.some(x=>x.split(/\s+/).length>6))return null;
  return {title:m[1].toLowerCase()==='buy'?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:parts.map(x=>({text:x[0].toUpperCase()+x.slice(1),done:false}))};
