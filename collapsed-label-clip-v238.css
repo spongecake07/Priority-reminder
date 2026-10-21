@@ -1,0 +1,20 @@
+/* v1.238 — protect collapsed category/priority label glyphs from clipping.
+   Restrict changes to the metadata row; leave card geometry and previews alone. */
+html body .reminder-list article.reminder-card.collapsed .minna-card-topline{
+ min-height:20px!important;
+ height:auto!important;
+ overflow:visible!important;
+ align-items:center!important;
+}
+html body .reminder-list article.reminder-card.collapsed .minna-card-topline .minna-reminder-eyebrow{
+ display:block!important;
+ line-height:1.4!important;
+ min-height:1.4em!important;
+ padding-top:2px!important;
+ padding-bottom:1px!important;
+ box-sizing:content-box!important;
+ overflow:hidden!important;
+ text-overflow:ellipsis!important;
+ white-space:nowrap!important;
+ align-self:center!important;
+}
