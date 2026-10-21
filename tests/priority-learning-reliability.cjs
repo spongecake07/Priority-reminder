@@ -7,13 +7,13 @@ function test(records,title){
  vm.runInNewContext(code,context);
  return context.window.MinnaPriorityLearning.suggest(title);
 }
-const bill=[['pay electricity bill','high'],['pay internet bill','high'],['pay water bill','high'],['organize old electricity bills','low'],['sort old electricity bills','low'],['file electricity bill receipts','low']];
+const bill=[['pay electricity bill','high'],['pay internet bill','high'],['pay water bill','high'],['organize old electricity bills','low'],['sort old electricity bills','low'],['file electricity bill receipts','low'],['review old electricity bills','low']];
 assert.equal(test(bill,'pay electricity bill for december').priority,'high');
 assert.equal(test(bill,'organize old electricity bills').priority,'low');
 const repeat=Array.from({length:10},()=>['pay electricity bill','high']);
 assert.equal(test(repeat,'pay electricity bill').confident,false,'duplicates are not independent evidence');
 const conflict=[['review electricity bill','high'],['review electricity bill','low'],['review electricity bill records','high'],['review electricity bill records','low'],['review old electricity bill','high'],['review old electricity bill','low']];
 assert.equal(test(conflict,'review electricity bill').confident,false,'conflicting evidence should not be confident');
-assert.equal(test([['sort receipts','misc'],['sort bills','misc'],['sort invoices','misc']],'sort receipts').priority,'misc');
+assert.equal(test([['sort receipts folder','misc'],['sort receipts documents','misc'],['sort receipts archive','misc']],'sort receipts').priority,'misc');
 assert.equal(test([['call plumber','medium'],['call electrician','medium'],['call contractor','medium']],'call plumber').priority,'medium');
 console.log('Priority learning reliability tests passed');
