@@ -10,11 +10,11 @@ function suggest(title){
  const ranked=PRIORITIES.slice().sort((a,b)=>scores[b]-scores[a]);const best=ranked[0];const confident=matches>=3&&scores[best]>=1.2&&scores[best]>=scores[ranked[1]]*1.7;
  return {priority:confident?best:'medium',confident,examples:examples.length};
 }
-function record(title,chosen,predicted){
+function record(title,chosen,predicted,confident=false){
  if(!PRIORITIES.includes(chosen)||!String(title||'').trim())return;
- const state=read();state.examples.push({words:[...new Set(words(title))].slice(0,25),priority:chosen,predicted:PRIORITIES.includes(predicted)?predicted:'medium',at:Date.now()});
+ const state=read();state.examples.push({words:[...new Set(words(title))].slice(0,25),priority:chosen,predicted:PRIORITIES.includes(predicted)?predicted:'medium',confident:!!confident,title:String(title).trim().slice(0,120),at:Date.now()});
  state.examples=state.examples.slice(-200);
  try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){console.warn('Priority learning storage unavailable',e)}
 }
-window.MinnaPriorityLearning={suggest,record,stats:()=>{const x=read().examples;return {count:x.length,accuracy:x.length?Math.round(100*x.filter(e=>e.predicted===e.priority).length/x.length):null}}};
+window.MinnaPriorityLearning={suggest,record,examples:()=>read().examples.map(e=>({...e})),stats:()=>{const x=read().examples,c=x.filter(e=>e.confident===true);return {count:x.length,accuracy:c.length?Math.round(100*c.filter(e=>e.predicted===e.priority).length/c.length):null,confidentCount:c.length}}};
 })();
