@@ -71,3 +71,11 @@ dialog.minna-floating-chat .mc-reply{margin-bottom:10px!important}
 dialog.minna-floating-chat .mc-options{z-index:2!important}
 dialog.minna-floating-chat.mc-keyboard-open{max-height:min(56dvh,420px)!important}
 @media(min-width:560px){dialog.minna-chat-dialog.minna-floating-chat{left:50%!important;right:auto!important;transform:translateX(-50%)!important;margin:0!important}}
+
+/* v1.213: reclaim header space; keep existing bubble position and outer dimensions. */
+dialog.minna-floating-chat .mc-head{position:absolute!important;top:8px!important;right:9px!important;left:auto!important;width:auto!important;height:auto!important;padding:0!important;z-index:3!important;background:transparent!important}
+dialog.minna-floating-chat .mc-head strong{display:none!important}
+dialog.minna-floating-chat .mc-head button{width:25px!important;height:25px!important;min-width:25px!important;min-height:25px!important;line-height:25px!important;padding:0!important;font-size:18px!important;background:#f0eaf6!important;color:#79678e!important}
+dialog.minna-floating-chat .mc-compose{margin:11px 10px 10px!important;padding:8px 10px!important;padding-top:22px!important}
+dialog.minna-floating-chat #mcInput{background:#fff!important;background-color:#fff!important;color:#302b40!important;-webkit-text-fill-color:#302b40!important;border:0!important;box-shadow:none!important;border-radius:0!important;appearance:none!important;-webkit-appearance:none!important}
+dialog.minna-floating-chat #mcInput::placeholder{color:#8c8596!important;-webkit-text-fill-color:#8c8596!important;opacity:1!important}
