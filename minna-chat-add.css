@@ -120,3 +120,13 @@ dialog.minna-floating-chat .mc-priorities button.selected{outline:2px solid #806
 dialog.minna-floating-chat .mc-confirm-save{display:block!important;width:100%!important;margin-top:10px!important;border:0!important;border-radius:13px!important;padding:12px!important;background:#8069b5!important;color:#fff!important;font-weight:750!important;font-size:14px!important}
 dialog.minna-floating-chat .mc-conversation{max-height:min(52dvh,360px)!important}
 dialog.minna-floating-chat .mc-tap-hint{margin:5px 2px 7px!important}
+
+/* v1.219: reliable native controls and unobstructed confirmation */
+dialog.minna-floating-chat.mc-reviewing .mc-compose{display:none!important}
+dialog.minna-floating-chat.mc-reviewing .mc-conversation{display:block!important;max-height:min(62dvh,480px)!important;overflow-y:auto!important;padding:35px 12px 12px!important}
+dialog.minna-floating-chat.mc-reviewing .mc-shell{max-height:min(72dvh,560px)!important}
+dialog.minna-floating-chat.mc-reviewing .mc-head{top:6px!important;right:12px!important}
+dialog.minna-floating-chat .mc-picker-direct{display:flex!important;align-items:center!important;gap:4px!important;min-width:0!important;background:#ffffffb8!important;border-radius:10px!important;padding:4px 7px!important;color:#4d4558!important;font-size:12px!important}
+dialog.minna-floating-chat .mc-picker-direct input{position:static!important;display:block!important;width:125px!important;max-width:100%!important;height:34px!important;min-height:34px!important;opacity:1!important;pointer-events:auto!important;border:0!important;background:transparent!important;color:#332d3d!important;font-size:13px!important;padding:0!important;box-shadow:none!important;appearance:auto!important;-webkit-appearance:auto!important}
+dialog.minna-floating-chat .mc-picker-direct input[type=time]{width:105px!important}
+dialog.minna-floating-chat .mc-confirm-save{position:relative!important;z-index:2!important;visibility:visible!important;opacity:1!important}
