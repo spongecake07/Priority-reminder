@@ -85,3 +85,37 @@ html body .reminder-list button.home-section-divider.minna-section-toggle .minna
 html body .reminder-list article.reminder-card.minna-section-hidden{
  display:none!important;
 }
+
+/* v1.208: one slim chevron for all home disclosure controls */
+html body .reminder-list .minna-section-toggle .minna-section-chevron,
+html body #homeFilterToggle .home-filter-chevron,
+html body #minnaProgressToggle .minna-progress-summary>span,
+html body #minnaDailyGoalsToggle>span:last-child{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ width:20px!important;height:20px!important;min-width:20px!important;
+ font-size:0!important;line-height:0!important;color:transparent!important;
+ position:relative!important;flex:0 0 20px!important;
+}
+html body .reminder-list .minna-section-toggle .minna-section-chevron::after,
+html body #homeFilterToggle .home-filter-chevron::after,
+html body #minnaProgressToggle .minna-progress-summary>span::after,
+html body #minnaDailyGoalsToggle>span:last-child::after{
+ content:""!important;display:block!important;
+ width:8px!important;height:8px!important;
+ border-right:1.8px solid #77718a!important;
+ border-bottom:1.8px solid #77718a!important;
+ transform:translateY(-2px) rotate(45deg)!important;
+ border-radius:0!important;
+}
+html body .reminder-list .minna-section-toggle .minna-section-chevron,
+html body #homeFilterToggle .home-filter-chevron,
+html body #minnaProgressToggle .minna-progress-summary>span,
+html body #minnaDailyGoalsToggle>span:last-child{
+ transform:none!important;
+}
+html body .reminder-list .minna-section-toggle[aria-expanded="true"] .minna-section-chevron::after,
+html body #homeFilterToggle[aria-expanded="true"] .home-filter-chevron::after,
+html body #minnaProgressToggle[aria-expanded="true"] .minna-progress-summary>span::after,
+html body #minnaDailyGoalsToggle[aria-expanded="true"]>span:last-child::after{
+ transform:translateY(2px) rotate(225deg)!important;
+}
