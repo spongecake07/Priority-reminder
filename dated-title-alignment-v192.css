@@ -59,3 +59,33 @@ html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-da
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-heading{
  align-self:center!important;justify-content:center!important;
 }
+
+/* v1.198: the compact detail pill must not increase the priority row height.
+   A fixed intrinsic label row and a zero-gap title stack center together. */
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-title-wrap{
+ position:relative!important;
+ gap:0!important;
+ justify-content:center!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .minna-card-topline{
+ position:relative!important;
+ display:block!important;
+ flex:0 0 18px!important;
+ height:18px!important;min-height:18px!important;max-height:18px!important;
+ padding:0!important;margin:0!important;
+ overflow:visible!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .minna-reminder-eyebrow{
+ display:block!important;
+ line-height:18px!important;
+ white-space:nowrap!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .minna-compact-details{
+ position:absolute!important;
+ top:50%!important;right:0!important;
+ transform:translateY(-50%)!important;
+ margin:0!important;
+}
+html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .card-title{
+ margin:0!important;padding:0!important;
+}
