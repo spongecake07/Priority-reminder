@@ -28,3 +28,22 @@ html body .minna-home-version{
  color:#858297;
  margin:0 0 8px 2px;
 }
+
+/* v1.202: unified 24px corner radius for reminder surfaces and date tiles. */
+html body .reminder-list article.reminder-card.collapsed,
+html body .reminder-list article.reminder-card.expanded,
+html body #calendarDialog article.calendar-home-card.collapsed,
+html body #calendarDialog article.calendar-home-card.expanded{
+ border-radius:24px!important;
+}
+html body .reminder-list article.reminder-card.collapsed.has-date>.card-due-split,
+html body .reminder-list article.reminder-card.expanded.has-date>.card-due-split,
+html body #calendarDialog article.calendar-home-card.has-date>.card-due-split{
+ border-radius:24px!important;
+}
+html body .reminder-list article.reminder-card.collapsed.has-date::before,
+html body .reminder-list article.reminder-card.collapsed .card-body,
+html body .reminder-list article.reminder-card.collapsed.no-date .card-title-wrap,
+html body #calendarDialog article.calendar-home-card.collapsed.no-date .card-title-wrap{
+ border-radius:24px!important;
+}
