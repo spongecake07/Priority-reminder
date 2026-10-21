@@ -1,4 +1,4 @@
-/* Minna floating chat composer v1.219. Legacy quick add/editor retained as save and edit adapters. */
+/* Minna floating chat composer v1.220. Legacy quick add/editor retained as save and edit adapters. */
 (() => {
 'use strict';
 const $=id=>document.getElementById(id);
@@ -60,7 +60,7 @@ $('mcOptions').onclick=()=>{$('mcOptionsPanel').hidden=!$('mcOptionsPanel').hidd
 function previewCard(){
  const date=pending.date?new Date(pending.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'}).toUpperCase():'Add date';
  const time=pending.time||'Add time';
- return '<div class="mc-reply mc-confirm"><div class="mc-reminder-card" data-priority="'+priority+'"><div class="mc-reminder-meta"><label class="mc-picker-direct">📅 <input id="mcDate" aria-label="Reminder date" type="date" value="'+escape(pending.date)+'"></label><label class="mc-picker-direct">◷ <input id="mcTime" aria-label="Reminder time" type="time" value="'+escape(pending.time)+'"></label></div><h3>'+escape(pending.title)+'</h3></div><p class="mc-tap-hint">Tap date or time to change</p><div class="mc-priorities" role="group" aria-label="Select reminder priority"><button type="button" data-mc-priority="high">High</button><button type="button" data-mc-priority="medium">Medium</button><button type="button" data-mc-priority="low">Low</button><button type="button" data-mc-priority="misc">Misc</button></div><button type="button" class="mc-confirm-save" id="mcSave">Add Reminder</button><p class="mc-warning" id="mcWarning" hidden></p></div>';
+ return '<div class="mc-reply mc-confirm"><div class="mc-reminder-card" data-priority="'+priority+'"><div class="mc-reminder-meta"><div class="mc-picker-direct"><button type="button" data-mc-picker="date" aria-label="Choose date">'+escape(date)+'</button><input id="mcDate" aria-label="Reminder date" type="date" value="'+escape(pending.date)+'"></div><div class="mc-picker-direct"><button type="button" data-mc-picker="time" aria-label="Choose time">'+escape(time)+'</button><input id="mcTime" aria-label="Reminder time" type="time" value="'+escape(pending.time)+'"></div></div><h3>'+escape(pending.title)+'</h3></div><p class="mc-tap-hint">Tap date or time to change</p><div class="mc-priorities" role="group" aria-label="Select reminder priority"><button type="button" data-mc-priority="high">High</button><button type="button" data-mc-priority="medium">Medium</button><button type="button" data-mc-priority="low">Low</button><button type="button" data-mc-priority="misc">Misc</button></div><button type="button" class="mc-confirm-save" id="mcSave">Add Reminder</button><p class="mc-warning" id="mcWarning" hidden></p></div>';
 }
 function prepare(){
  const raw=input.value.trim();if(!raw)return;
@@ -76,10 +76,14 @@ convo.addEventListener('change',e=>{
  if(!pending)return;
  if(e.target.id==='mcDate')pending.date=e.target.value;
  if(e.target.id==='mcTime')pending.time=e.target.value;
+ const dateButton=convo.querySelector('[data-mc-picker="date"]'),timeButton=convo.querySelector('[data-mc-picker="time"]');
+ if(dateButton)dateButton.textContent=pending.date?new Date(pending.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'}).toUpperCase():'Add date';
+ if(timeButton)timeButton.textContent=pending.time||'Add time';
  scheduleBubblePosition();
 });
 convo.addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.mcPicker){const picker=$(b.dataset.mcPicker==='date'?'mcDate':'mcTime');if(picker){try{picker.showPicker()}catch(_){picker.focus();picker.click()}}return;}
  if(b.dataset.mcPriority){
   priority=b.dataset.mcPriority;
   const card=convo.querySelector('.mc-reminder-card');if(card)card.dataset.priority=priority;
