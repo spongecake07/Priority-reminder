@@ -117,46 +117,37 @@ html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-da
  overflow:visible!important;
 }
 
-/* v1.204: one metadata pill geometry for every collapsed reminder.
-   Dated title-only cards keep it overlaid so it cannot move the title. */
+/* v1.204: standardize compact metadata across dated and undated cards.
+   Keep title-only dated metadata absolutely positioned to avoid changing height. */
 html body .reminder-list article.reminder-card.collapsed .minna-card-topline .minna-compact-details,
 html body .calendar-home-card.collapsed .minna-card-topline .minna-compact-details{
- display:inline-flex!important;
- align-items:center!important;
- justify-content:center!important;
- flex:0 0 auto!important;
- gap:5px!important;
- width:max-content!important;
- min-width:30px!important;
- max-width:65%!important;
- height:30px!important;
- min-height:30px!important;
- padding:0 8px!important;
- margin:0!important;
- box-sizing:border-box!important;
- border-radius:15px!important;
- overflow:visible!important;
- white-space:nowrap!important;
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ flex:0 0 auto!important;gap:5px!important;
+ width:max-content!important;min-width:24px!important;max-width:65%!important;
+ height:24px!important;min-height:24px!important;max-height:24px!important;
+ padding:0 6px!important;margin:0!important;box-sizing:border-box!important;
+ border-radius:12px!important;overflow:visible!important;white-space:nowrap!important;
  background:#f1e9ff!important;
 }
 html body .reminder-list article.reminder-card.collapsed .minna-card-topline .minna-detail-unit,
 html body .calendar-home-card.collapsed .minna-card-topline .minna-detail-unit{
- display:inline-flex!important;
- align-items:center!important;
- justify-content:center!important;
- gap:2px!important;
- height:20px!important;
- line-height:20px!important;
- flex:0 0 auto!important;
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ gap:2px!important;height:18px!important;line-height:18px!important;flex:0 0 auto!important;
 }
 html body .reminder-list article.reminder-card.collapsed .minna-card-topline .minna-meta-svg,
 html body .calendar-home-card.collapsed .minna-card-topline .minna-meta-svg{
- width:16px!important;height:16px!important;flex:0 0 16px!important;
+ width:14px!important;height:14px!important;flex:0 0 14px!important;
 }
 html body .reminder-list article.reminder-card.collapsed.minna-title-only.has-date .minna-card-topline .minna-compact-details{
- position:absolute!important;
- right:12px!important;
- top:50%!important;
+ position:absolute!important;right:8px!important;top:50%!important;
  transform:translateY(-50%)!important;
- max-width:calc(100% - 12px)!important;
+ width:max-content!important;min-width:24px!important;max-width:65%!important;
+ height:24px!important;min-height:24px!important;max-height:24px!important;
+ padding:0 6px!important;
+}
+html body .reminder-list article.reminder-card.collapsed.has-date:not(.minna-title-only) .minna-card-topline .minna-compact-details{
+ margin-left:auto!important;margin-right:8px!important;
+}
+html body .reminder-list article.reminder-card.collapsed.no-date .minna-card-topline .minna-compact-details{
+ margin-left:auto!important;margin-right:8px!important;
 }
