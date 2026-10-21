@@ -119,3 +119,17 @@ html body #minnaProgressToggle[aria-expanded="true"] .minna-progress-summary>spa
 html body #minnaDailyGoalsToggle[aria-expanded="true"]>span:last-child::after{
  transform:translateY(2px) rotate(225deg)!important;
 }
+
+/* v1.209: remove old chevron graphics; only CSS-drawn chevron remains. */
+html body #homeFilterToggle .home-filter-chevron,
+html body #minnaProgressToggle .minna-progress-summary>span,
+html body #minnaDailyGoalsToggle>span:last-child,
+html body .reminder-list .minna-section-toggle .minna-section-chevron{
+ font-size:0!important;color:transparent!important;text-indent:0!important;
+}
+html body #homeFilterToggle .home-filter-chevron::before,
+html body #minnaProgressToggle .minna-progress-summary>span::before,
+html body #minnaDailyGoalsToggle>span:last-child::before,
+html body .reminder-list .minna-section-toggle .minna-section-chevron::before{
+ content:none!important;display:none!important;
+}
