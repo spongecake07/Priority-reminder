@@ -1,0 +1,37 @@
+/* v1.236: compact undated cards with description previews.
+   Overrides the legacy 112px description minimum only for undated cards.
+   The full notes remain in the expanded view. */
+html body .reminder-list article.reminder-card.no-date.collapsed:has(.minna-description-preview){
+ min-height:0!important;
+ height:auto!important;
+ max-height:none!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed:has(.minna-description-preview)>.card-body{
+ min-height:0!important;
+ height:auto!important;
+ padding:5px 58px 5px 5px!important;
+ justify-content:center!important;
+ box-sizing:border-box!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed:has(.minna-description-preview) .card-title-wrap{
+ min-height:0!important;
+ height:auto!important;
+ padding:6px 12px!important;
+ gap:2px!important;
+ box-sizing:border-box!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed .minna-description-preview{
+ gap:2px!important;
+ margin-top:2px!important;
+ min-height:0!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed .minna-description-text{
+ display:block!important;
+ white-space:nowrap!important;
+ overflow:hidden!important;
+ text-overflow:ellipsis!important;
+ padding-right:0!important;
+}
+html body .reminder-list article.reminder-card.no-date.collapsed>.card-body>.card-notes{
+ display:none!important;
+}
