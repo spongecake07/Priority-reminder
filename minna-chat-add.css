@@ -110,3 +110,13 @@ dialog.minna-floating-chat .mc-priorities button:nth-child(2){background:#ffe6c6
 dialog.minna-floating-chat .mc-priorities button:nth-child(3){background:#dff3ef!important;color:#287f77!important}
 dialog.minna-floating-chat .mc-priorities button:nth-child(4){background:#ebe4f8!important;color:#7053a5!important}
 dialog.minna-floating-chat .mc-warning[hidden]{display:none!important}
+
+/* v1.218 compact explicit confirmation */
+dialog.minna-floating-chat .mc-confirm{padding:0 0 4px!important}
+dialog.minna-floating-chat .mc-reminder-card h3{color:#292638!important;-webkit-text-fill-color:#292638!important;text-shadow:none!important}
+dialog.minna-floating-chat .mc-picker-button{display:inline-flex!important;align-items:center!important;justify-content:center!important;background:#ffffffb5!important;color:#4d4558!important;border:0!important;border-radius:11px!important;padding:9px 11px!important;font-size:12px!important;font-weight:750!important;min-height:34px!important;box-shadow:none!important}
+dialog.minna-floating-chat .mc-native-picker{position:absolute!important;left:-9999px!important;top:auto!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+dialog.minna-floating-chat .mc-priorities button.selected{outline:2px solid #8069b5!important;outline-offset:1px!important}
+dialog.minna-floating-chat .mc-confirm-save{display:block!important;width:100%!important;margin-top:10px!important;border:0!important;border-radius:13px!important;padding:12px!important;background:#8069b5!important;color:#fff!important;font-weight:750!important;font-size:14px!important}
+dialog.minna-floating-chat .mc-conversation{max-height:min(52dvh,360px)!important}
+dialog.minna-floating-chat .mc-tap-hint{margin:5px 2px 7px!important}
