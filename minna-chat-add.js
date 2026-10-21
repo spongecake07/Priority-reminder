@@ -99,7 +99,8 @@ input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventD
 convo.addEventListener('input',e=>{if(e.target.dataset.mcItem!==undefined){const n=Number(e.target.dataset.mcItem);if(checkItems[n])checkItems[n].text=e.target.value;}});
 convo.addEventListener('change',e=>{
  if(!pending)return;
- if(e.target.id==='mcCategorySelect'){category=e.target.value;const label=convo.querySelector('#mcCategoryButton');if(label)label.textContent=category||'Category';}\n if(e.target.id==='mcDate')pending.date=e.target.value;
+ if(e.target.id==='mcCategorySelect'){category=e.target.value;const label=convo.querySelector('#mcCategoryButton');if(label)label.textContent=category||'Category';}
+ if(e.target.id==='mcDate')pending.date=e.target.value;
  if(e.target.id==='mcTime')pending.time=e.target.value;
  const dateButton=convo.querySelector('[data-mc-picker="date"]'),timeButton=convo.querySelector('[data-mc-picker="time"]');
  if(dateButton)dateButton.textContent=pending.date?new Date(pending.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'}).toUpperCase():'Add date';
@@ -128,7 +129,8 @@ function bridge(edit){
  $('quickAddTitle').value=pending.title;
  $('quickAddDate').value=date;$('quickAddTime').value=time;$('quickAddPriority').value=priority;
  if(edit){$('quickAddMoreBtn').click();return;}
- window.minnaChatCategoryPending=category;window.minnaChatCategoryLearningTitle=pending.categoryLearningTitle||pending.title;\n window.minnaPriorityLearningPending={title:pending.title,priority,predicted:suggestedPriority,confident:suggestionConfident};
+ window.minnaChatCategoryPending=category;window.minnaChatCategoryLearningTitle=pending.categoryLearningTitle||pending.title;
+ window.minnaPriorityLearningPending={title:pending.title,priority,predicted:suggestedPriority,confident:suggestionConfident};
  window.minnaChatChecklistPayload=checkItems.map(x=>({text:x.text.trim(),done:false})).filter(x=>x.text);
  $('quickAddForm').requestSubmit();
 }
