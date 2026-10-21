@@ -1,4 +1,4 @@
-/* Minna floating chat composer v1.212. Legacy quick add/editor retained as save and edit adapters. */
+/* Minna floating chat composer v1.215. Legacy quick add/editor retained as save and edit adapters. */
 (() => {
 'use strict';
 const $=id=>document.getElementById(id);
@@ -8,8 +8,21 @@ const modal=document.createElement('dialog');modal.id='minnaChatDialog';modal.cl
 modal.innerHTML='<div class="mc-shell"><header class="mc-head"><strong>✦ Minna</strong><button type="button" id="mcClose" aria-label="Close">×</button></header><div class="mc-conversation" id="mcConversation"><div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div></div><div class="mc-compose"><textarea id="mcInput" rows="2" placeholder="Message Minna…" aria-label="Message Minna"></textarea><div class="mc-actions"><button type="button" id="mcOptions" aria-label="More options">＋</button><button type="button" id="mcSend" aria-label="Prepare reminder">↑</button></div><div class="mc-options" id="mcOptionsPanel" hidden><button type="button" id="mcFullEditor">Open Full Reminder Editor</button><button type="button" id="mcOldAdd">Classic Quick Add</button></div></div></div>';
 document.body.appendChild(modal);
 const convo=$('mcConversation'),input=$('mcInput');
-function positionBubble(){const vv=window.visualViewport;const keyboard=vv?Math.max(0,window.innerHeight-vv.height-vv.offsetTop):0;const raised=keyboard>100;modal.style.setProperty('--mc-bottom',(raised?keyboard+12:90)+'px');modal.classList.toggle('mc-keyboard-open',raised)}
-window.visualViewport?.addEventListener('resize',positionBubble);window.visualViewport?.addEventListener('scroll',positionBubble);window.addEventListener('resize',positionBubble);
+function positionBubble(){
+ if(!modal.open)return;
+ const vv=window.visualViewport;
+ const viewportBottom=vv?vv.offsetTop+vv.height:window.innerHeight;
+ const keyboard=vv?Math.max(0,window.innerHeight-viewportBottom):0;
+ const raised=keyboard>100;
+ modal.classList.toggle('mc-keyboard-open',raised);
+ const desiredBottom=viewportBottom-(raised?12:90);
+ const height=modal.getBoundingClientRect().height;
+ modal.style.top=Math.max(vv?.offsetTop||0,desiredBottom-height)+'px';
+}
+let positionFrame=0;
+function scheduleBubblePosition(){cancelAnimationFrame(positionFrame);positionFrame=requestAnimationFrame(positionBubble)}
+
+window.visualViewport?.addEventListener('resize',scheduleBubblePosition);window.visualViewport?.addEventListener('scroll',scheduleBubblePosition);window.addEventListener('resize',scheduleBubblePosition);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateStr=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
 let pending=null,priority='medium';
@@ -25,7 +38,7 @@ function parse(raw){
  title=title.replace(/\s+/g,' ').replace(/\s+([,.!?])/g,'$1').trim();
  return {title: title.slice(0,120),date,time};
 }
-function open(){if(legacy.open)legacy.close();pending=null;priority='medium';input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();positionBubble();setTimeout(()=>{input.focus({preventScroll:true});positionBubble();},120);}
+function open(){if(legacy.open)legacy.close();pending=null;priority='medium';input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();scheduleBubblePosition();setTimeout(()=>{input.focus({preventScroll:true});scheduleBubblePosition();},120);}
 plus.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();open();},true);
 $('mcClose').onclick=()=>modal.close();
 $('mcOptions').onclick=()=>{$('mcOptionsPanel').hidden=!$('mcOptionsPanel').hidden;};
