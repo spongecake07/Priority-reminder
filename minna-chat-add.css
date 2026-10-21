@@ -130,3 +130,8 @@ dialog.minna-floating-chat .mc-picker-direct{display:flex!important;align-items:
 dialog.minna-floating-chat .mc-picker-direct input{position:static!important;display:block!important;width:125px!important;max-width:100%!important;height:34px!important;min-height:34px!important;opacity:1!important;pointer-events:auto!important;border:0!important;background:transparent!important;color:#332d3d!important;font-size:13px!important;padding:0!important;box-shadow:none!important;appearance:auto!important;-webkit-appearance:auto!important}
 dialog.minna-floating-chat .mc-picker-direct input[type=time]{width:105px!important}
 dialog.minna-floating-chat .mc-confirm-save{position:relative!important;z-index:2!important;visibility:visible!important;opacity:1!important}
+
+/* v1.220 full-chip picker targets, no calendar or clock icons */
+dialog.minna-floating-chat .mc-picker-direct{position:relative!important;padding:0!important;overflow:hidden!important;min-height:40px!important}
+dialog.minna-floating-chat .mc-picker-direct button{display:block!important;width:100%!important;min-width:112px!important;min-height:40px!important;padding:8px 14px!important;background:transparent!important;border:0!important;border-radius:10px!important;color:#3d3547!important;font-size:14px!important;font-weight:700!important;text-align:center!important;box-shadow:none!important;cursor:pointer!important}
+dialog.minna-floating-chat .mc-picker-direct input{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;pointer-events:none!important;z-index:-1!important}
