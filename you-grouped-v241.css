@@ -1,0 +1,27 @@
+/* Minna v1.241: grouped, always-visible You page. Existing controls retain their IDs. */
+#settingsDialog .settings-sheet{display:flex!important;flex-direction:column!important;gap:12px!important}
+#settingsDialog .settings-section{margin:0!important;border-radius:18px!important}
+#settingsDialog .you-page-head{order:0}
+#settingsDialog .minna-you-profile{order:1;background:#ebe3fa!important;padding:18px!important;box-shadow:0 5px 16px #292b4214!important}
+#settingsDialog .minna-achievements-section{order:2}
+#settingsDialog .minna-achievements-section[hidden]{display:none!important}
+#settingsDialog .minna-you-profile>strong{display:block;font-size:17px;margin-bottom:12px}
+#settingsDialog .minna-you-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
+#settingsDialog .minna-you-summary>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:white;border-radius:12px;padding:12px 5px;min-width:0}
+#settingsDialog .minna-you-summary b{color:#7154a5;font-size:17px;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+#settingsDialog .minna-you-summary small{color:#81758d;font-size:10px}
+#settingsDialog #minnaViewAchievements{width:100%;margin-bottom:14px}
+#settingsDialog .minna-you-profile-editor{border-top:1px solid #d7cbea;padding-top:12px}
+#settingsDialog .minna-you-profile-editor>label{display:block;font-size:12px;font-weight:700;margin-bottom:8px}
+#settingsDialog .category-settings{order:4}
+#settingsDialog .minna-learning-entry{order:5}
+#settingsDialog .notification-settings{order:6}
+#settingsDialog .minna-manual-update{order:7}
+#settingsDialog .minna-app-about{order:10}
+#settingsDialog .danger-settings{order:11}
+#settingsDialog .settings-section:has(#exportBackupBtn){order:8}
+#settingsDialog .settings-section:has(#recentlyDeletedBtn){order:9}
+#settingsDialog .category-settings,#settingsDialog .minna-learning-entry{border-left:3px solid #aa90d8!important}
+#settingsDialog .notification-settings,#settingsDialog .minna-manual-update{border-left:3px solid #b3a1d6!important}
+#settingsDialog .settings-section:has(#exportBackupBtn),#settingsDialog .settings-section:has(#recentlyDeletedBtn){border-left:3px solid #9c88c7!important}
+#settingsDialog .danger-settings{margin-top:8px!important}
