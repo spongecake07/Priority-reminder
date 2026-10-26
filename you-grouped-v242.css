@@ -1,0 +1,34 @@
+/* v1.242 - You page: compact profile and one-open-at-a-time settings groups */
+#settingsDialog .settings-sheet{display:flex!important;flex-direction:column!important;gap:12px!important}
+#settingsDialog .you-page-head{order:0!important;margin-bottom:0!important}
+#settingsDialog .you-identity[hidden]{display:none!important}
+#settingsDialog .minna-you-profile{order:1!important;background:#eae2f8!important;border-radius:22px!important;padding:18px!important;margin:0!important;color:#352b46!important}
+#settingsDialog .minna-you-profile-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+#settingsDialog #minnaYouProfileName{color:#352b46!important;font-size:20px!important;font-weight:750!important}
+#settingsDialog #minnaYouProfileRankLabel{color:#725d8e!important;font-size:12px!important}
+#settingsDialog .minna-you-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
+#settingsDialog .minna-you-summary>div{background:white!important;border-radius:15px!important;display:flex;flex-direction:column;align-items:center;gap:5px;padding:13px 4px;min-width:0}
+#settingsDialog .minna-you-summary b{color:#7355a6!important;font-size:17px!important;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+#settingsDialog .minna-you-summary small{color:#81758d!important;font-size:10px!important}
+#settingsDialog #minnaViewAchievements{display:block!important;width:100%!important;background:#f7f1ff!important;color:#674b99!important;border:1px solid #dfd0f2!important;border-radius:13px!important;font-size:14px!important;font-weight:650!important;box-shadow:none!important;padding:12px!important;margin:0!important}
+#settingsDialog #minnaFullAchievements{order:2!important}
+#settingsDialog #minnaFullAchievements[hidden]{display:none!important}
+#settingsDialog .minna-you-group{display:block!important;background:#fff!important;border-radius:18px!important;box-shadow:0 5px 16px #292b4210!important;overflow:hidden!important;margin:0!important}
+#settingsDialog .minna-you-group[data-you-group="personal"]{order:3}
+#settingsDialog .minna-you-group[data-you-group="settings"]{order:4}
+#settingsDialog .minna-you-group[data-you-group="data"]{order:5}
+#settingsDialog .minna-you-group[data-you-group="about"]{order:6}
+#settingsDialog .minna-you-group[data-you-group="danger"]{order:7}
+#settingsDialog .minna-you-group-toggle{display:flex!important;align-items:center!important;gap:12px!important;width:100%!important;background:transparent!important;border:0!important;color:#393044!important;font-size:15px!important;font-weight:700!important;text-align:left!important;padding:15px!important;box-shadow:none!important;min-height:58px!important}
+#settingsDialog .minna-you-group-icon{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:10px;background:#f0e9fa;color:#8062b2;font-size:19px}
+#settingsDialog .minna-you-chevron{margin-left:auto;color:#8c7b9f;font-size:23px;line-height:1;transition:transform .2s}
+#settingsDialog .minna-you-group-toggle[aria-expanded="true"] .minna-you-chevron{transform:rotate(180deg)}
+#settingsDialog .minna-you-group-content{padding:0 14px 14px!important;border-top:1px solid #f0edf3!important}
+#settingsDialog .minna-you-group-content[hidden]{display:none!important}
+#settingsDialog .minna-you-group-content>.settings-section{margin:10px 0 0!important;padding:12px 4px!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}
+#settingsDialog .minna-you-group-content>.settings-section+.settings-section{border-top:1px solid #f0edf3!important}
+#settingsDialog .minna-you-group-content .minna-learning-entry,#settingsDialog .minna-you-group-content .minna-learning-entry .settings-row,#settingsDialog .minna-you-group-content .minna-learning-entry .settings-row>div{background:transparent!important;box-shadow:none!important}
+#settingsDialog .minna-you-profile-editor{padding:15px 4px 8px!important}
+#settingsDialog .minna-you-profile-editor label{display:block!important;color:#393044!important;font-size:13px!important;font-weight:650!important;margin-bottom:10px!important}
+#settingsDialog .minna-you-group[data-you-group="danger"] .minna-you-group-icon{background:#fbeaec;color:#ae6472}
+#settingsDialog .minna-you-group[data-you-group="danger"] .danger-settings{color:#9d4e60!important}
