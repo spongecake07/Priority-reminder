@@ -10,3 +10,7 @@ body .minna-learning-dialog[open],body .minna-learning-dialog .mld-shell,body .m
 
 /* v1.230 read-only test lab */
 .mld-lab label{display:block;margin:12px 0 6px;color:#51475b;font-size:13px}.mld-lab input{box-sizing:border-box;width:100%;min-height:43px;padding:10px 12px;border:1px solid #d6cfe0;border-radius:11px;background:#fff;color:#302c38;font:inherit}.mld-lab button{display:block;margin:10px 0;padding:11px 15px;border:0;border-radius:11px;background:#eae3fa;color:#59477b;font-weight:700}.mld-lab #mldTestResult{display:grid;gap:6px;margin-top:10px}.mld-lab #mldTestResult strong{color:#302c38}.mld-lab #mldTestResult small{display:block;color:#77717f}
+
+#minnaLearningDialog #mldTestInput{background:#fff!important;color:#302c38!important;color-scheme:light!important}
+#minnaLearningDialog #mldTestInput::placeholder{color:#81788b!important;opacity:1!important}
+#minnaLearningDialog #mldTestRun{background:#9c88db!important;color:#fff!important}
