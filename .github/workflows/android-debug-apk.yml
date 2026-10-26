@@ -25,7 +25,8 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-      - uses: android-actions/setup-android@v3
+      # Use the Android SDK already installed on GitHub's Ubuntu runner.
+      # setup-android's sdkmanager bootstrap failed on this runner.
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Prepare Android project
