@@ -182,8 +182,24 @@ async function restoreBackup(file){if(!file)return;try{const data=JSON.parse(awa
 /* Native Android scheduled notifications continue firing while Minna is closed. */
 function nativeNotifications(){return window.Capacitor?.Plugins?.LocalNotifications||null}
 function nativeNotificationId(id){let h=2166136261;for(const c of String(id)){h=Math.imul(h^c.charCodeAt(0),16777619)}return (h>>>1)||1}
+const MINNA_ALERT_CHANNEL='minna-reminder-alerts-v2';
+let nativeAlertChannelReady=false;
+async function ensureNativeAlertChannel(plugin){
+ if(nativeAlertChannelReady)return;
+ if(typeof plugin.createChannel!=='function')return;
+ await plugin.createChannel({
+  id:MINNA_ALERT_CHANNEL,
+  name:'Minna reminder alerts',
+  description:'Time-sensitive reminder notifications with sound and vibration',
+  importance:5,
+  visibility:1,
+  vibration:true,
+  lights:true
+ });
+ nativeAlertChannelReady=true;
+}
 let nativeSyncBusy=false;
-async function syncNativeNotifications(){const plugin=nativeNotifications();if(!plugin||nativeSyncBusy)return;nativeSyncBusy=true;try{const permission=await plugin.checkPermissions();if(permission.display!=='granted')return;const now=Date.now();const wanted=new Map();for(const r of reminders){if(!r.alert||r.completed||!r.date||!r.time)continue;const at=dueTimestamp(r);if(!Number.isFinite(at)||at<=now)continue;const id=nativeNotificationId(r.id);wanted.set(id,{id,title:r.priority==='high'?'High priority: '+r.title:r.title,body:r.notes||'Reminder due now',schedule:{at:new Date(at)},extra:{reminderId:String(r.id)}})}const pending=await plugin.getPending();const existing=pending.notifications||[];if(existing.length)await plugin.cancel({notifications:existing.map(n=>({id:n.id}))});const additions=[...wanted.values()];if(additions.length)await plugin.schedule({notifications:additions});}catch(e){console.warn('Native notification scheduling failed',e)}finally{nativeSyncBusy=false}}
+async function syncNativeNotifications(){const plugin=nativeNotifications();if(!plugin||nativeSyncBusy)return;nativeSyncBusy=true;try{const permission=await plugin.checkPermissions();if(permission.display!=='granted')return;await ensureNativeAlertChannel(plugin);const now=Date.now();const wanted=new Map();for(const r of reminders){if(!r.alert||r.completed||!r.date||!r.time)continue;const at=dueTimestamp(r);if(!Number.isFinite(at)||at<=now)continue;const id=nativeNotificationId(r.id);wanted.set(id,{id,title:r.priority==='high'?'High priority: '+r.title:r.title,body:r.notes||'Reminder due now',schedule:{at:new Date(at)},channelId:MINNA_ALERT_CHANNEL,extra:{reminderId:String(r.id)}})}const pending=await plugin.getPending();const existing=pending.notifications||[];if(existing.length)await plugin.cancel({notifications:existing.map(n=>({id:n.id}))});const additions=[...wanted.values()];if(additions.length)await plugin.schedule({notifications:additions});}catch(e){console.warn('Native notification scheduling failed',e)}finally{nativeSyncBusy=false}}
 async function requestNotifications(){try{const native=nativeNotifications();if(native){const p=await native.requestPermissions();if(p.display==='granted'){await syncNativeNotifications();showToast('Notifications enabled');return true}showToast('Notifications are blocked in Android settings.');return false}if(!('Notification'in window)){showToast('Notifications are not supported on this browser.');return false}if(Notification.permission==='granted')return true;if(Notification.permission==='denied'){showToast('Notifications are blocked in Android settings.');return false}const p=await Notification.requestPermission();if(p==='granted'){showToast('Notifications enabled');return true}showToast('Notifications were not enabled');return false}catch(e){console.warn('Notification permission request failed',e);showToast('Notification permission unavailable; reminder saved.');return false}}async function fireNotification(r){
  // Native installations schedule their alerts separately; do not duplicate them in the browser.
  if(nativeNotifications())return false;
