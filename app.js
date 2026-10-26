@@ -89,9 +89,10 @@ function reorderPinnedCardsWithoutRebuild(){
    return positions.get(a.card.dataset.id)-positions.get(b.card.dataset.id);
   });
   const first=entries[0].card;
+  const marker=document.createComment('pin-order');first.before(marker);
   const fragment=document.createDocumentFragment();
   for(const item of sorted)fragment.appendChild(item.card);
-  first.before(fragment);
+  marker.replaceWith(fragment);
  }
 }
 function togglePin(id){
