@@ -1,0 +1,11 @@
+/* v1.243 - force white compact accordion headers over legacy button styles */
+html body #settingsDialog .settings-sheet .minna-you-group{background:#fff!important;color:#393044!important;border:1px solid #eee9f2!important;border-radius:18px!important;box-shadow:0 4px 14px rgba(41,43,66,.07)!important;overflow:hidden!important;margin:0!important}
+html body #settingsDialog .settings-sheet .minna-you-group>button.minna-you-group-toggle,
+html body #settingsDialog .settings-sheet .minna-you-group>button.minna-you-group-toggle:hover,
+html body #settingsDialog .settings-sheet .minna-you-group>button.minna-you-group-toggle:focus,
+html body #settingsDialog .settings-sheet .minna-you-group>button.minna-you-group-toggle:active{background:#fff!important;background-color:#fff!important;background-image:none!important;color:#393044!important;border:0!important;box-shadow:none!important;text-shadow:none!important;min-height:50px!important;padding:10px 13px!important;gap:11px!important;font-size:14px!important;line-height:1.25!important;border-radius:18px!important}
+html body #settingsDialog .settings-sheet .minna-you-group .minna-you-group-icon{width:30px!important;height:30px!important;min-width:30px!important;border-radius:9px!important;background:#f0e9fa!important;color:#8062b2!important;font-size:17px!important}
+html body #settingsDialog .settings-sheet .minna-you-group .minna-you-chevron{color:#8c7b9f!important;font-size:20px!important}
+html body #settingsDialog .settings-sheet{gap:9px!important}
+html body #settingsDialog .settings-sheet .minna-you-group-content{background:#fff!important;color:#393044!important}
+html body #settingsDialog .settings-sheet .minna-you-group[data-you-group="danger"] .minna-you-group-icon{background:#fbeaec!important;color:#ae6472!important}
