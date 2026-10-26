@@ -1,0 +1,11 @@
+/* Skip layout and paint for reminder cards outside the viewport.
+   Keep cards in the DOM so filtering, checklist state, and expanded state work normally. */
+@supports (content-visibility: auto) {
+  #reminderList > .reminder-card {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 92px;
+  }
+  #reminderList > .reminder-card.expanded {
+    contain-intrinsic-size: auto 260px;
+  }
+}
