@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Minna 408 Combination Test Suite</title><style>body{font:16px system-ui;background:#f4f2f8;color:#29243a;max-width:620px;margin:24px auto;padding:18px}main{background:white;border-radius:22px;padding:22px;box-shadow:0 8px 24px #27203618}button,a.action{border:0;background:#947de4;color:white;padding:13px 16px;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;display:inline-block;text-decoration:none;margin:6px 4px 6px 0}button.remove{background:#59546b}button:disabled{opacity:.45}p,li{line-height:1.5}#status{white-space:pre-wrap;font-weight:600}small{color:#666}</style></head><body><main><h1>Minna 408 combination stress test</h1><p>Creates <strong>408 clearly labelled test reminders</strong> in this device's existing Minna storage. It never deletes or overwrites your real reminders.</p><p>Includes 3 title lengths × 4 description lengths × all 4 priorities × 4 date/time states × 2 checklist states (384 combinations), plus 24 edge cases: dates, times, overdue, no date, categories, checklists, repeat, long words, punctuation and completed/pinned states.</p><p><strong>Important:</strong> Save a Minna backup first. Test reminders have notifications disabled and can be removed together here.</p><button id="add">Add 408 test reminders</button><button id="remove" class="remove">Remove 408-suite reminders only</button><a class="action" href="./?v=345">Open Minna</a><p id="status" role="status">No changes made yet.</p><small>Test reminders use IDs beginning with minna-combination-test-v2-. Removing them does not touch your previous 72-suite reminders or other IDs.</small></main><script>
+(()=>{'use strict';const PREFIX='minna-combination-test-v2-',DB='priority-reminders-db',STORE='reminders',status=document.getElementById('status');
+const today=new Date();today.setHours(12,0,0,0);
+const dateAt=n=>{const d=new Date(today);d.setDate(d.getDate()+n);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+const titles=['Check window seals','Inspect and document the condition of the upstairs bedroom window frames','Review all remaining renovation supplies and confirm measurements before purchasing replacements'];
+const descriptions=['','Inspect the details and note anything unusual.','Inspect the details and note anything unusual. Compare measurements with the previous inspection and record any differences.','Inspect the details and note anything unusual. Compare measurements with the previous inspection and record any differences. Photograph the finished area, verify every measurement, and list any remaining repairs before closing the task.'];
+const priorities=['high','medium','low','misc'], categories=['','Shopping','House','Work','Family','Car','Repairs','Documents'];
+const checklist=n=>Array.from({length:n},(_,i)=>({id:crypto.randomUUID(),text:'Test checklist item '+(i+1),done:i===0&&n>1}));
+function make(){const items=[];let n=0;const add=(title,notes,priority,options={})=>{const i=n++,now=Date.now();items.push({id:PREFIX+String(i).padStart(3,'0'),title:'[T'+String(i+1).padStart(2,'0')+'] '+title,notes,priority,category:options.category||'',date:options.date||'',time:options.time||'',alert:false,repeat:options.repeat||'none',checklist:checklist(options.checklist||0),photos:[],completed:!!options.completed,pinned:!!options.pinned,createdAt:now+i,updatedAt:now+i,notifiedFor:null});};
+for(let t=0;t<3;t++)for(let d=0;d<4;d++)for(let p=0;p<4;p++)for(let v=0;v<4;v++)for(let c=0;c<2;c++){const variants=[{date:''},{date:dateAt(-3)},{date:dateAt(0),time:'09:15'},{date:dateAt(14),time:'18:45'}];add(titles[t],descriptions[d],priorities[p],{...variants[v],checklist:c?3:0,category:categories[(t*7+d*3+p+v+c)%categories.length]})}
+const edges=[
+{title:'One short title',date:''},{title:'Single line title',date:dateAt(0),time:'08:30'},
+{title:'Short title with alert-shaped metadata',date:dateAt(1),time:'23:59'},
+{title:'Overdue reminder example',date:dateAt(-5)},
+{title:'Future reminder example',date:dateAt(90)},
+{title:'Checklist with two items',checklist:2,date:dateAt(0)},
+{title:'Checklist with eight items',checklist:8,date:dateAt(0)},
+{title:'Checklist and long description',checklist:5,notes:descriptions[3],date:dateAt(2)},
+{title:'Checklist and long title with multiple possible wrapped lines',checklist:3,date:dateAt(1)},
+{title:'No date with checklist',checklist:4},
+{title:'No date and long description',notes:descriptions[3]},
+{title:'Daily repeating test',date:dateAt(1),repeat:'daily'},
+{title:'Weekly repeating test',date:dateAt(7),repeat:'weekly'},
+{title:'Monthly repeating test',date:dateAt(30),repeat:'monthly'},
+{title:'Pinned test',pinned:true,date:dateAt(2)},
+{title:'Completed test',completed:true,date:dateAt(-1)},
+{title:'SupercalifragilisticexpialidociousUnbrokenExtraLongWordToTestOverflow',date:dateAt(2)},
+{title:'Symbols & punctuation: ! ? / ( ) — + #',date:dateAt(2)},
+{title:'Numbers 1234567890 and 2026 reminders',date:dateAt(2)},
+{title:'Éléments français à vérifier bientôt',date:dateAt(2)},
+{title:'Category label and checklist indicator',category:'Shopping',checklist:2,date:dateAt(0)},
+{title:'Three rows title and long description with checklist',notes:descriptions[3],checklist:6,date:dateAt(2)},
+{title:'Time but no alert notification',date:dateAt(3),time:'15:45'},
+{title:'No date and no description',date:''}
+];
+for(let i=0;i<edges.length;i++){const e=edges[i];add(e.title,e.notes||'',priorities[i%4],e)}return items}
+const open=()=>new Promise((resolve,reject)=>{const request=indexedDB.open(DB,1);request.onupgradeneeded=()=>{const db=request.result;if(!db.objectStoreNames.contains(STORE))db.createObjectStore(STORE,{keyPath:'id'})};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)});
+async function transact(remove){const db=await open();try{const existing=await new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readonly');const req=tx.objectStore(STORE).getAllKeys();req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});const ids=existing.filter(id=>typeof id==='string'&&id.startsWith(PREFIX));if(remove&&!ids.length)return 0;const fixtures=make();if(!remove&&ids.length){throw Error('Test reminders already exist. Remove them first to reset the suite.')}await new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readwrite'),store=tx.objectStore(STORE);if(remove)ids.forEach(id=>store.delete(id));else fixtures.forEach(item=>store.put(item));tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error)});return remove?ids.length:fixtures.length}finally{db.close()}}
+async function run(remove){const message=remove?'Remove ONLY the layout test reminders from this device?':'Add 408 test reminders to Minna on this device? Existing reminders will be preserved.';if(!confirm(message))return;document.getElementById('add').disabled=document.getElementById('remove').disabled=true;try{const count=await transact(remove);status.textContent=remove?'Removed '+count+' test reminders. Your real reminders were not touched.':'Added '+count+' test reminders. Tap Open Minna to inspect them.'}catch(e){status.textContent='Could not complete operation: '+e.message}finally{document.getElementById('add').disabled=document.getElementById('remove').disabled=false}}
+document.getElementById('add').onclick=()=>run(false);document.getElementById('remove').onclick=()=>run(true);
+})();
+</script></body></html>
