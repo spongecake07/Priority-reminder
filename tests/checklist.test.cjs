@@ -12,6 +12,17 @@ function extract(start,end){
 const context=vm.createContext({});
 vm.runInContext(extract('function detectList(title){','function renderChecklist()'),context);
 const detect=title=>{const result=context.detectList(title);return result?Array.from(result.items,x=>x.text):null;};
+const itemStateCases=[
+ ['Buy eggs and milk',['Eggs','Milk']],
+ ['Buy bread, apples and water',['Bread','Apples','Water']],
+ ['Buy a new phone charger and batteries',['A new phone charger','Batteries']]
+];
+for(const [input,expected] of itemStateCases)test('unchecked ordered items: '+input,()=>{
+ const result=context.detectList(input);
+ assert.ok(result);
+ assert.deepEqual(Array.from(result.items,x=>({text:x.text,done:x.done})),expected.map(text=>({text,done:false})));
+});
+
 const cases=[
  ['Buy water milk and clothes',['Water','Milk','Clothes']],
  ['Buy water, milk and clothes',['Water','Milk','Clothes']],
