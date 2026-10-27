@@ -20,3 +20,18 @@
   display: block;
   text-align: center;
 }
+
+/* Expanded calendar cards show their date in the header badge only. */
+.calendar-day-list .calendar-home-card.expanded > .card-due-split,
+.calendar-day-list .calendar-home-card.expanded > .card-due-split::before,
+.calendar-day-list .calendar-home-card.expanded > .card-due-split::after {
+  display: none !important;
+}
+.calendar-day-list .calendar-home-card.expanded {
+  border-top: 0 !important;
+  background-image: none !important;
+}
+.calendar-day-list .calendar-home-card.expanded::before,
+.calendar-day-list .calendar-home-card.expanded::after {
+  display: none !important;
+}
