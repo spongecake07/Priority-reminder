@@ -25,6 +25,10 @@ const cases=[
  ['Buy a new phone charger and batteries',['A new phone charger','Batteries']],
  ['Buy a new winter jacket and socks',['A new winter jacket','Socks']],
  ['Buy water milk clothes',['Water','Milk','Clothes']],
+ ['Buy water milk gizmo',['Water','Milk','Gizmo']],
+ ['Buy gizmo and bread',['Gizmo','Bread']],
+ ['Buy custom wooden shelves and bread',['Custom wooden shelves','Bread']],
+ ['Buy new winter boots',null],
  ['Buy peanut butter ice cream and milk',['Peanut butter','Ice cream','Milk']],
  ['Buy a new phone',null],
  ['Buy winter boots',null]

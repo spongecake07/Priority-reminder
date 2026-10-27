@@ -75,7 +75,19 @@ function detectList(title){
   }
   return output;
  }
- const parts=body.replace(/\s*,?\s*\b(?:and|plus)\b\s*/gi,',').split(/\s*[,;\n&+]\s*/).map(x=>x.trim()).filter(Boolean).flatMap(splitKnownItems);
+ // For undelimited lists, allow one unfamiliar single-word item only when
+ // at least two other items are recognized. Never split unknown multiword phrases.
+ let parts=body.replace(/\s*,?\s*\b(?:and|plus)\b\s*/gi,',').split(/\s*[,;\n&+]\s*/).map(x=>x.trim()).filter(Boolean).flatMap(splitKnownItems);
+ if(!hasSeparator&&parts.length===1){
+  const words=body.split(/\s+/),lower=words.map(x=>x.toLowerCase());
+  const unknown=lower.filter(x=>!standalone.has(x));
+  if(words.length>=3&&words.length<=6&&unknown.length===1&&
+     words.every(x=>/^[a-zà-ÿ'-]+$/i.test(x))&&
+     !lower.some(x=>modifiers.has(x))&&
+     ![...compound,...extraPhrases].some(p=>lower.join(' ').includes(p))){
+   parts=words;
+  }
+ }
  if(parts.length<2||parts.length>12||parts.some(x=>x.split(/\s+/).length>6))return null;
  return {title:m[1].toLowerCase()==='buy'?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:parts.map(x=>({text:x[0].toUpperCase()+x.slice(1),done:false}))};
 }
