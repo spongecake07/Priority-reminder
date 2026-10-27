@@ -56,7 +56,19 @@ function detectList(title){
   if(tokens.length<3||tokens.length>8||tokens.some(w=>!/^[-'a-zà-ÿ]+$/i.test(w)||grammar.test(w)))return null;
   return {title:/^buy$/i.test(m[1])?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:tokens.map(w=>({text:w[0].toUpperCase()+w.slice(1),done:false}))};
  }
- const parts=body.replace(/\s*,?\s*\b(?:and|plus)\b\s*/gi,',').split(/\s*[,;\n&+]\s*/).map(x=>x.trim()).filter(Boolean);
+ // Split an undelimited segment only when every word is a recognized standalone
+ // shopping item. Keep unknown phrases and common multi-word products intact.
+ const standalone=new Set('water milk clothes eggs bread cheese butter rice pasta apples bananas oranges tomatoes potatoes onions carrots chicken beef fish salmon juice coffee tea sugar salt flour cereal yogurt yoghurt soap shampoo toothpaste diapers wipes detergent towels socks shirts pants shoes batteries paper pens pencils lettuce cucumber spinach grapes strawberries lemons limes oil vinegar honey jam beans corn peas garlic ginger soda tea'.split(' '));
+ const compound=new Set(['ice cream','peanut butter','olive oil','orange juice','apple juice','almond milk','oat milk','soy milk','coconut milk','toilet paper','paper towels','dish soap','laundry detergent','ground beef','chicken breast','sweet potatoes','green beans','hot dogs','baby wipes','baby food','coffee beans','black pepper','brown sugar','cream cheese','sour cream','winter boots','school supplies']);
+ function splitKnownItems(part){
+  const words=part.split(/\s+/).filter(Boolean);
+  if(words.length<2||words.length>8||words.some(w=>!/^[a-zà-ÿ'-]+$/i.test(w)))return [part];
+  const lower=words.map(w=>w.toLowerCase());
+  if(compound.has(lower.join(' ')))return [part];
+  if(words.every(w=>standalone.has(w.toLowerCase())))return words;
+  return [part];
+ }
+ const parts=body.replace(/\s*,?\s*\b(?:and|plus)\b\s*/gi,',').split(/\s*[,;\n&+]\s*/).map(x=>x.trim()).filter(Boolean).flatMap(splitKnownItems);
  if(parts.length<2||parts.length>12||parts.some(x=>x.split(/\s+/).length>6))return null;
  return {title:m[1].toLowerCase()==='buy'?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:parts.map(x=>({text:x[0].toUpperCase()+x.slice(1),done:false}))};
 }
