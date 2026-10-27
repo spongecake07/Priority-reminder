@@ -44,3 +44,10 @@ test('date and time parsing code remains present',()=>{
  assert.match(source,/mcDate/);
  assert.match(source,/mcTime/);
 });
+
+test('buy checklists default to Misc without learning',()=>{
+ assert.match(source,/automaticMisc=!!detected/);
+ assert.match(source,/suggestedPriority=automaticMisc\?'misc'/);
+ assert.match(source,/automaticMisc\?null:window\.MinnaPriorityLearning/);
+ assert.match(source,/minnaPriorityLearningPending=automaticMisc\?null/);
+});

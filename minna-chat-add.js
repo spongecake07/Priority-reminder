@@ -40,7 +40,7 @@ input.addEventListener('input',scheduleBubblePosition);
 new ResizeObserver(scheduleBubblePosition).observe(modal);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateStr=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
-let category='',pending=null,priority='medium',checkItems=[],suggestedPriority='medium',suggestionConfident=false,suggestionSimilar=0;
+let category='',pending=null,priority='medium',automaticMisc=false,checkItems=[],suggestedPriority='medium',suggestionConfident=false,suggestionSimilar=0;
 function detectList(title){
  const m=/^(buy|pick up|get|pack|bring|clean|prepare|order|purchase)\s+(.+)$/i.exec(title);
  if(!m)return null;
@@ -96,7 +96,7 @@ function parse(raw){
  title=title.replace(/\s+/g,' ').replace(/\s+([,.!?])/g,'$1').trim();
  return {title: title.slice(0,120),date,time};
 }
-function open(){if(legacy.open)legacy.close();pending=null;priority='medium';category='';checkItems=[];modal.classList.remove('mc-reviewing');input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();settleBubble();setTimeout(()=>{input.focus({preventScroll:true});settleBubble();},120);}
+function open(){if(legacy.open)legacy.close();pending=null;priority='medium';automaticMisc=false;category='';checkItems=[];modal.classList.remove('mc-reviewing');input.value='';convo.innerHTML='<div class="mc-welcome"><div class="mc-star">✦</div><h2>What can I remind you about?</h2><p>Tell me naturally. I’ll prepare the reminder for you.</p></div>';$('mcOptionsPanel').hidden=true;modal.show();settleBubble();setTimeout(()=>{input.focus({preventScroll:true});settleBubble();},120);}
 plus.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();open();},true);
 $('mcClose').onclick=()=>modal.close();
 $('mcOptions').onclick=()=>{$('mcOptionsPanel').hidden=!$('mcOptionsPanel').hidden;};
@@ -108,7 +108,7 @@ function previewCard(){
 function prepare(){
  const raw=input.value.trim();if(!raw)return;
  pending=parse(raw);pending.categoryLearningTitle=raw;const detected=detectList(pending.title);checkItems=detected?detected.items:[];if(detected)pending.title=detected.title;category=window.MinnaCategoryLearning?.suggest(raw,window.minnaAvailableCategories?.()||[])||'';if(!pending.title){convo.innerHTML='<p class="mc-note">Please include what you want to remember.</p>';return;}
- const suggestion=window.MinnaPriorityLearning?.suggest(pending.title);suggestedPriority=suggestion?.priority||'medium';suggestionConfident=!!suggestion?.confident;suggestionSimilar=suggestion?.similar||0;priority=suggestedPriority;
+ automaticMisc=!!detected&&/^buy\s+/i.test(raw);const suggestion=automaticMisc?null:window.MinnaPriorityLearning?.suggest(pending.title);suggestedPriority=automaticMisc?'misc':suggestion?.priority||'medium';suggestionConfident=automaticMisc||!!suggestion?.confident;suggestionSimilar=automaticMisc?0:suggestion?.similar||0;priority=suggestedPriority;
  convo.innerHTML=previewCard();renderChecklist();convo.querySelector('[data-mc-priority="'+priority+'"]')?.classList.add('selected');
  modal.classList.add('mc-reviewing');input.blur();
  input.value='';convo.scrollTop=convo.scrollHeight;scheduleBubblePosition();
@@ -150,7 +150,7 @@ function bridge(edit){
  $('quickAddDate').value=date;$('quickAddTime').value=time;$('quickAddPriority').value=priority;
  if(edit){$('quickAddMoreBtn').click();return;}
  window.minnaChatCategoryPending=category;window.minnaChatCategoryLearningTitle=pending.categoryLearningTitle||pending.title;
- window.minnaPriorityLearningPending={title:pending.title,priority,predicted:suggestedPriority,confident:suggestionConfident};
+ window.minnaPriorityLearningPending=automaticMisc?null:{title:pending.title,priority,predicted:suggestedPriority,confident:suggestionConfident};
  window.minnaChatChecklistPayload=checkItems.map(x=>({text:x.text.trim(),done:false})).filter(x=>x.text);
  $('quickAddForm').requestSubmit();
 }
