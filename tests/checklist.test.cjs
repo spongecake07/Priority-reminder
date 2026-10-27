@@ -12,6 +12,16 @@ function extract(start,end){
 const context=vm.createContext({});
 vm.runInContext(extract('function detectList(title){','function renderChecklist()'),context);
 const detect=title=>{const result=context.detectList(title);return result?Array.from(result.items,x=>x.text):null;};
+test('checklist items have independent completion state',()=>{
+ const result=context.detectList('Buy eggs, milk and bread');
+ assert.ok(result);
+ assert.equal(result.items.length,3);
+ assert.notEqual(result.items[0],result.items[1]);
+ assert.notEqual(result.items[1],result.items[2]);
+ result.items[0].done=true;
+ assert.deepEqual(Array.from(result.items,x=>x.done),[true,false,false]);
+});
+
 const itemStateCases=[
  ['Buy eggs and milk',['Eggs','Milk']],
  ['Buy bread, apples and water',['Bread','Apples','Water']],
