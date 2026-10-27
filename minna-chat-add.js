@@ -67,7 +67,7 @@ function detectList(title){
    // Keep modifiers attached to the following recognized product.
    if(modifiers.has(lower[i])){
     let j=i;while(j<words.length&&modifiers.has(lower[j]))j++;
-    if(j<words.length&&standalone.has(lower[j])){output.push(words.slice(i,j+1).join(' '));i=j+1;continue;}
+    if(j<words.length){let phraseSize=0;for(let size=Math.min(5,words.length-j);size>=2;size--){if(compound.has(lower.slice(j,j+size).join(' '))||extraPhrases.has(lower.slice(j,j+size).join(' '))){phraseSize=size;break;}}if(phraseSize){output.push(words.slice(i,j+phraseSize).join(' '));i=j+phraseSize;continue;}if(standalone.has(lower[j])){output.push(words.slice(i,j+1).join(' '));i=j+1;continue;}}
     return [part];
    }
    if(!standalone.has(lower[i]))return [part];
