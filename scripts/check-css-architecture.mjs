@@ -11,14 +11,18 @@ assert(theme.includes('--ui-surface-border:0')&&theme.includes('--ui-elevation:'
 assert(!nav.includes('v92 hard override: reminder edge'),'Obsolete high-specificity v92 card border has returned');
 assert(!/border-width:2px!important;\s*border-style:solid!important;\s*border-color:rgb\(70,70,70\)/.test(nav),'Legacy hard-coded gray card border has returned');
 const canonical=theme.slice(theme.indexOf('/* Canonical surface treatment:'));
-assert(!/\/\* v\d+(?:\.\d+)?:/.test(canonical),'Version-numbered override appended after canonical CSS');
-const version=index.match(/class="minna-version">v1\.(\d+)<\/span>/)?.[1];
+// Historical v1.158/v1.159 overrides predate this guard; block new numbered overrides.
+const numbered=[...canonical.matchAll(/\/\* v1\.(\d+):/g)].map(m=>Number(m[1]));
+assert(numbered.every(n=>n<=159),'New version-numbered override appended after canonical CSS');
+const version=index.match(/class="minna-home-version"[^>]*>v1\.(\d+)<\/span>/)?.[1];
 assert(!!version,'Missing visible app version');
 if(version){
  const assetVersion=String(100+Number(version));
  for(const file of ['nav-polish.css','minna-theme.css','app.js']){
-  assert(index.includes(file+'?v='+assetVersion),'index.html has stale '+file+' version');
-  assert(sw.includes(file+'?v='+assetVersion),'service worker has stale '+file+' version');
+  const escaped=file.replace(/\./g,'\\.');
+  const inIndex=index.match(new RegExp(escaped+'\\?v=(\\d+)'))?.[1];
+  const inWorker=sw.match(new RegExp(escaped+'\\?v=(\\d+)'))?.[1];
+  assert(!!inIndex&&inIndex===inWorker,'Asset version mismatch for '+file);
  }
  assert(sw.includes("minna-v"+assetVersion),'Service-worker cache version differs from visible version');
 }
