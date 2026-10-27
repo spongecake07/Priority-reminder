@@ -58,6 +58,16 @@ test('completion changes preserve all checklist item titles',()=>{
  assert.deepEqual(Array.from(result.items,x=>x.done),[false,false,true]);
 });
 
+test('removing a checklist item preserves remaining order and completion',()=>{
+ const result=context.detectList('Buy eggs, milk and bread');
+ assert.ok(result);
+ result.items[2].done=true;
+ result.items.splice(1,1);
+ assert.deepEqual(Array.from(result.items,x=>({text:x.text,done:x.done})),[
+  {text:'Eggs',done:false},{text:'Bread',done:true}
+ ]);
+});
+
 const itemStateCases=[
  ['Buy eggs and milk',['Eggs','Milk']],
  ['Buy bread, apples and water',['Bread','Apples','Water']],
