@@ -26,3 +26,11 @@ test('Android preparation copies app assets without deleting user storage',()=>{
  assert.ok(!app.includes('indexedDB.deleteDatabase('));
  assert.ok(!app.includes('localStorage.clear('));
 });
+
+test('reminder removal and clearing wait for transaction commit',()=>{
+ const section=app.slice(app.indexOf('function remove(id)'),app.indexOf('async function deleteAllReminders()'));
+ assert.ok(section.includes("transaction.objectStore(STORE).delete(id)"));
+ assert.ok(section.includes("transaction.objectStore(STORE).clear()"));
+ assert.equal((section.match(/transaction.oncomplete=\(\)=>resolve\(\)/g)||[]).length,2);
+ assert.equal((section.match(/transaction.onabort=/g)||[]).length,2);
+});
