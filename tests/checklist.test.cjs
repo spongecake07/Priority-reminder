@@ -22,6 +22,21 @@ test('checklist items have independent completion state',()=>{
  assert.deepEqual(Array.from(result.items,x=>x.done),[true,false,false]);
 });
 
+test('creating another checklist does not mutate the first checklist',()=>{
+ const first=context.detectList('Buy eggs and milk');
+ assert.ok(first);
+ first.items[0].done=true;
+ const second=context.detectList('Buy bread and water');
+ assert.ok(second);
+ assert.deepEqual(Array.from(first.items,x=>({text:x.text,done:x.done})),[
+  {text:'Eggs',done:true},{text:'Milk',done:false}
+ ]);
+ assert.deepEqual(Array.from(second.items,x=>({text:x.text,done:x.done})),[
+  {text:'Bread',done:false},{text:'Water',done:false}
+ ]);
+ assert.notEqual(first.items[0],second.items[0]);
+});
+
 const itemStateCases=[
  ['Buy eggs and milk',['Eggs','Milk']],
  ['Buy bread, apples and water',['Bread','Apples','Water']],
