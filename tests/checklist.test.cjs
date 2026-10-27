@@ -47,6 +47,17 @@ test('checklist completion can be toggled off without affecting other items',()=
  assert.deepEqual(Array.from(result.items,x=>x.text),['Eggs','Milk','Bread']);
 });
 
+test('completion changes preserve all checklist item titles',()=>{
+ const result=context.detectList('Buy peanut butter, orange juice and milk');
+ assert.ok(result);
+ const titles=Array.from(result.items,x=>x.text);
+ result.items[0].done=true;
+ result.items[2].done=true;
+ result.items[0].done=false;
+ assert.deepEqual(Array.from(result.items,x=>x.text),titles);
+ assert.deepEqual(Array.from(result.items,x=>x.done),[false,false,true]);
+});
+
 const itemStateCases=[
  ['Buy eggs and milk',['Eggs','Milk']],
  ['Buy bread, apples and water',['Bread','Apples','Water']],
