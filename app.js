@@ -190,7 +190,7 @@ async function restoreBackup(file){if(!file)return;try{const data=JSON.parse(awa
 /* Native Android scheduled notifications continue firing while Minna is closed. */
 function nativeNotifications(){return window.Capacitor?.Plugins?.LocalNotifications||null}
 function nativeNotificationId(id){let h=2166136261;for(const c of String(id)){h=Math.imul(h^c.charCodeAt(0),16777619)}return (h>>>1)||1}
-const MINNA_ALERT_CHANNEL='minna-reminder-alerts-v2';
+const MINNA_ALERT_CHANNEL='minna-reminder-alerts-v3';
 let nativeAlertChannelReady=false;
 async function ensureNativeAlertChannel(plugin){
  if(nativeAlertChannelReady)return;
@@ -202,6 +202,7 @@ async function ensureNativeAlertChannel(plugin){
   importance:5,
   visibility:1,
   vibration:true,
+  vibrationPattern:[0,350,200,350],
   lights:true
  });
  nativeAlertChannelReady=true;
