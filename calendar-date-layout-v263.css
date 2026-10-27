@@ -35,3 +35,9 @@
 .calendar-day-list .calendar-home-card.expanded::after {
   display: none !important;
 }
+
+/* The invisible expand-hit button inherits a visible dark edge in Calendar.
+   The calendar card itself already handles tap-to-collapse. */
+.calendar-day-list .calendar-home-card.expanded > .card-expand-hit {
+  display: none !important;
+}
