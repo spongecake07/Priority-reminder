@@ -34,3 +34,10 @@ test('reminder removal and clearing wait for transaction commit',()=>{
  assert.equal((section.match(/transaction.oncomplete=\(\)=>resolve\(\)/g)||[]).length,2);
  assert.equal((section.match(/transaction.onabort=/g)||[]).length,2);
 });
+
+test('delete-all retains in-memory reminders if storage clearing fails',()=>{
+ const section=app.slice(app.indexOf('async function deleteAllReminders()'),app.indexOf('const ACHIEVEMENTS='));
+ assert.ok(section.includes('try{await clearAll()}catch(error)'));
+ assert.ok(section.indexOf('return}reminders=[]')>section.indexOf('try{await clearAll()}catch(error)'));
+ assert.ok(section.includes('Could not delete reminders. Your existing data is unchanged.'));
+});
