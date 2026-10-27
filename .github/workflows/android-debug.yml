@@ -18,6 +18,7 @@ on:
       - 'android-version.json'
       - 'capacitor.config.json'
       - 'scripts/prepare-android.mjs'
+      - 'scripts/configure-backup-android.mjs'
       - '.github/workflows/android-debug.yml'
 
 permissions:

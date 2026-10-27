@@ -8,6 +8,6 @@ let source=await readFile(main,'utf8');
 if(!source.includes('registerPlugin(MinnaBackupPlugin.class)')){
  const anchor='super.onCreate(savedInstanceState);';
  if(!source.includes(anchor))throw Error('MainActivity onCreate anchor not found');
- source=source.replace(anchor,'registerPlugin(MinnaBackupPlugin.class);\\n              '+anchor);
+ source=source.replace(anchor,'registerPlugin(MinnaBackupPlugin.class);\n              '+anchor);
  await writeFile(main,source);
 }
