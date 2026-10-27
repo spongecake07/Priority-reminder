@@ -76,7 +76,7 @@ function detectList(title){
   return output;
  }
  const parts=body.replace(/\s*,?\s*\b(?:and|plus)\b\s*/gi,',').split(/\s*[,;\n&+]\s*/).map(x=>x.trim()).filter(Boolean).flatMap(splitKnownItems);
- if((!hasSeparator&&parts.length<3)||parts.length<2||parts.length>12||parts.some(x=>x.split(/\s+/).length>6))return null;
+ if(parts.length<2||parts.length>12||parts.some(x=>x.split(/\s+/).length>6))return null;
  return {title:m[1].toLowerCase()==='buy'?'Buy groceries':m[1][0].toUpperCase()+m[1].slice(1).toLowerCase(),items:parts.map(x=>({text:x[0].toUpperCase()+x.slice(1),done:false}))};
 }
 function renderChecklist(){
