@@ -34,6 +34,16 @@ jobs:
           npm run android:prepare
           npx cap add android
           npx cap sync android
+      - name: Declare exact-alarm permission
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('android/app/src/main/AndroidManifest.xml')
+          s = p.read_text()
+          if 'android.permission.SCHEDULE_EXACT_ALARM' not in s:
+              s = s.replace('<application', '<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />\\n    <application', 1)
+          p.write_text(s)
+          PY
       - name: Build debug APK
         run: |
           cd android

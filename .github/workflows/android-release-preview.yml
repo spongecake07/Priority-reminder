@@ -48,6 +48,8 @@ jobs:
           text = manifest.read_text()
           if 'android.permission.POST_NOTIFICATIONS' not in text:
               text = text.replace('<application', '<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n    <application', 1)
+          if 'android.permission.SCHEDULE_EXACT_ALARM' not in text:
+              text = text.replace('<application', '<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />\n    <application', 1)
           manifest.write_text(text)
           PY
       - name: Build unsigned release bundle
