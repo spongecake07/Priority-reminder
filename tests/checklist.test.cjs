@@ -37,6 +37,16 @@ test('creating another checklist does not mutate the first checklist',()=>{
  assert.notEqual(first.items[0],second.items[0]);
 });
 
+test('checklist completion can be toggled off without affecting other items',()=>{
+ const result=context.detectList('Buy eggs, milk and bread');
+ assert.ok(result);
+ result.items[1].done=true;
+ assert.deepEqual(Array.from(result.items,x=>x.done),[false,true,false]);
+ result.items[1].done=false;
+ assert.deepEqual(Array.from(result.items,x=>x.done),[false,false,false]);
+ assert.deepEqual(Array.from(result.items,x=>x.text),['Eggs','Milk','Bread']);
+});
+
 const itemStateCases=[
  ['Buy eggs and milk',['Eggs','Milk']],
  ['Buy bread, apples and water',['Bread','Apples','Water']],
