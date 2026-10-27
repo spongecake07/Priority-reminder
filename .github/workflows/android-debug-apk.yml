@@ -41,7 +41,7 @@ jobs:
           p = Path('android/app/src/main/AndroidManifest.xml')
           s = p.read_text()
           if 'android.permission.SCHEDULE_EXACT_ALARM' not in s:
-              s = s.replace('<application', '<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />\\n    <application', 1)
+              s = s.replace('<application', '<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />\n    <application', 1)
           p.write_text(s)
           PY
       - name: Build debug APK
