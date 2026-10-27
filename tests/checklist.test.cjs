@@ -38,7 +38,11 @@ const cases=[
  ['Buy milk before bread',null],
  ['Buy peanut butter ice cream and milk',['Peanut butter','Ice cream','Milk']],
  ['Buy a new phone',null],
- ['Buy winter boots',null]
+ ['Buy winter boots',null],
+ ['BUY MILK, BREAD',['MILK','BREAD']],
+ ['Buy bread, milk, eggs',['Bread','Milk','Eggs']],
+ ['Buy eggs & milk',['Eggs','Milk']],
+ ['Buy milk, bread!',['Milk','Bread']]
 ];
 for(const [input,expected] of cases)test('checklist: '+input,()=>assert.deepEqual(detect(input),expected));
 const ordinaryReminders=[
