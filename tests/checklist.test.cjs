@@ -41,6 +41,20 @@ const cases=[
  ['Buy winter boots',null]
 ];
 for(const [input,expected] of cases)test('checklist: '+input,()=>assert.deepEqual(detect(input),expected));
+const ordinaryReminders=[
+ 'Call the dentist tomorrow',
+ 'Pay the electricity bill',
+ 'Book a doctor appointment',
+ 'Send an email to the landlord',
+ 'Remember to buy milk and bread',
+ 'Meeting with Alex at noon',
+ 'Finish the bathroom renovation',
+ 'Pick up Ava from daycare',
+ 'Prepare for the meeting',
+ 'Clean the kitchen'
+];
+for(const input of ordinaryReminders)test('ordinary reminder stays intact: '+input,()=>assert.equal(detect(input),null));
+
 test('checklist deletion button and delegated removal remain present',()=>{
  assert.match(source,/data-mc-remove/);
  assert.match(source,/checkItems\.splice\(Number\(b\.dataset\.mcRemove\),1\)/);
