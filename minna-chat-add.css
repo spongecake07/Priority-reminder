@@ -152,3 +152,6 @@ dialog.minna-floating-chat .mc-reminder-meta{display:grid!important;grid-templat
 dialog.minna-floating-chat .mc-picker-direct{min-width:0!important;width:100%!important}
 dialog.minna-floating-chat .mc-picker-direct button{min-width:0!important;width:100%!important;padding:8px 5px!important;font-size:12px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
 dialog.minna-floating-chat #mcCategorySelect{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;pointer-events:none!important;z-index:-1!important}
+
+/* v1.266: visible, touch-friendly checklist removal control. */
+dialog.minna-floating-chat .mc-check-row button[data-mc-remove]{width:36px;height:36px;flex:0 0 36px;background:#fff!important;color:#5b263c!important;border:1px solid #bda6b1!important;font-weight:700;touch-action:manipulation}
