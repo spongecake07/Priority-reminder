@@ -6,7 +6,7 @@ await writeFile(join(dir,'MinnaBackupPlugin.java'),"package app.minna.reminders;
 const main=join(dir,'MainActivity.java');
 let source=await readFile(main,'utf8');
 if(!source.includes('registerPlugin(MinnaBackupPlugin.class)')){
- source=source.replace('super.onCreate(savedInstanceState);','registerPlugin(MinnaBackupPlugin.class);\n              super.onCreate(savedInstanceState);');
+ if(source.includes('super.onCreate(savedInstanceState);'))source=source.replace('super.onCreate(savedInstanceState);','registerPlugin(MinnaBackupPlugin.class);\n              super.onCreate(savedInstanceState);');\n else source=source.replace(/(public\\s+class\\s+MainActivity\\s+extends\\s+BridgeActivity\\s*\\{)/,'$1\\n  @Override public void onCreate(android.os.Bundle savedInstanceState) {\\n    registerPlugin(MinnaBackupPlugin.class);\\n    super.onCreate(savedInstanceState);\\n  }');
  if(!source.includes('registerPlugin(MinnaBackupPlugin.class)'))throw Error('Unable to register Minna backup plugin');
  await writeFile(main,source);
 }
