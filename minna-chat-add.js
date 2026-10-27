@@ -81,7 +81,10 @@ function detectList(title){
  if(!hasSeparator&&parts.length===1){
   const words=body.split(/\s+/),lower=words.map(x=>x.toLowerCase());
   const unknown=lower.filter(x=>!standalone.has(x));
+  // Time words and action verbs indicate a sentence, not an unknown product.
+  const sentenceWords=new Set(['today','tomorrow','tonight','yesterday','later','soon','morning','afternoon','evening','before','after','when','because','please','need','want','should','must','will','can','for','at','on','by','from','to']);
   if(words.length>=3&&words.length<=6&&unknown.length===1&&
+     !lower.some(x=>sentenceWords.has(x))&&
      words.every(x=>/^[a-zà-ÿ'-]+$/i.test(x))&&
      !lower.some(x=>modifiers.has(x))&&
      ![...compound,...extraPhrases].some(p=>lower.join(' ').includes(p))){

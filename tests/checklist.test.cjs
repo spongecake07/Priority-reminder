@@ -29,6 +29,9 @@ const cases=[
  ['Buy gizmo and bread',['Gizmo','Bread']],
  ['Buy custom wooden shelves and bread',['Custom wooden shelves','Bread']],
  ['Buy new winter boots',null],
+ ['Buy milk tomorrow bread',null],
+ ['Buy milk later bread',null],
+ ['Buy milk before bread',null],
  ['Buy peanut butter ice cream and milk',['Peanut butter','Ice cream','Milk']],
  ['Buy a new phone',null],
  ['Buy winter boots',null]
