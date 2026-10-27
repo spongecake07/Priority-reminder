@@ -93,6 +93,8 @@ jobs:
           }
           ''')
           PY
+      - name: Configure Android backup document picker
+        run: node scripts/configure-backup-android.mjs
       - name: Build debug APK
         run: |
           cd android

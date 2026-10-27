@@ -41,3 +41,13 @@ test('delete-all retains in-memory reminders if storage clearing fails',()=>{
  assert.ok(section.indexOf('return}reminders=[]')>section.indexOf('try{await clearAll()}catch(error)'));
  assert.ok(section.includes('Could not delete reminders. Your existing data is unchanged.'));
 });
+
+test('Android backup uses native document picker and confirms a completed write',()=>{
+ const plugin=readFileSync('scripts/configure-backup-android.mjs','utf8');
+ const section=app.slice(app.indexOf('async function exportBackup()'),app.indexOf('async function restoreBackup('));
+ assert.ok(section.includes('native.saveBackup({filename,contents})'));
+ assert.ok(section.includes('if(result?.saved)'));
+ assert.ok(plugin.includes('ACTION_CREATE_DOCUMENT'));
+ assert.ok(plugin.includes('stream.flush()'));
+ assert.ok(plugin.includes('call.resolve(response)'));
+});

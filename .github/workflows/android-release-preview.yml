@@ -52,6 +52,8 @@ jobs:
               text = text.replace('<application', '<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />\n    <application', 1)
           manifest.write_text(text)
           PY
+      - name: Configure Android backup document picker
+        run: node scripts/configure-backup-android.mjs
       - name: Build unsigned release bundle
         run: |
           cd android
